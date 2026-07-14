@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>广州海狮软件科技有限公司 — 塑料管材挤出线的测量与控制</title>
+<meta name="description" content="广州海狮软件科技有限公司，专业从事工业控制系统的研发、生产与销售，主营米重色母称重控制系统、超声波在线测厚系统、失重式喂料机、多组分混料与管材挤出云监控，服务塑料管道与燃气管道行业。">
+<meta name="keywords" content="米重控制系统,超声波在线测厚,失重式喂料机,色母称重,管材挤出控制,广州海狮">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=IBM+Plex+Mono:wght@400&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top"><img src="assets/logo.png" alt="广州海狮软件科技有限公司"></a>
+    <nav>
+      <ul>
+        <li><a href="#about">关于海狮</a></li>
+        <li><a href="#products">产品中心</a></li>
+        <li><a href="#apply">应用行业</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+    <a class="tel" href="tel:+862022109833">+86-20-2210 9833</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<main id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <span class="unit">g/m &nbsp;·&nbsp; mm &nbsp;·&nbsp; kg/h</span>
+      <h1>一根管子出厂前，<br>每一米都得<em>称过、量过</em>。</h1>
+      <p class="lead">广州海狮做的是挤出线上的那双眼睛和那只手——米重称多少、壁厚够不够、料配得准不准、机器有没有偷偷跑偏。二十余年，只做工业控制这一件事。</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#products">看产品</a>
+        <a class="btn btn-s" href="#contact">谈项目</a>
+      </div>
+      <div class="stats">
+        <div><span>2016</span><small>国家高新技术企业</small></div>
+        <div><span>7</span><small>核心系统</small></div>
+        <div><span>3</span><small>广州 · 北京 · 上海</small></div>
+      </div>
+    </div>
+
+    <!-- 签名元件：超声波测厚扫描环。管材截面 + 绕圈扫描 + 刻度读数 -->
+    <svg class="scan" viewBox="0 0 400 400" role="img" aria-label="管材截面壁厚在线测量示意">
+      <defs>
+        <linearGradient id="sw" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#FFB020" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#FFB020" stop-opacity=".55"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 外圈刻度：每 15°一根，正上方四根点亮 = 探头当前位 -->
+      <g stroke-width="1">
+        <line class="tick" x1="200" y1="16" x2="200" y2="30"/>
+        <circle cx="200" cy="200" r="185" fill="none" stroke="#243B50"/>
+      </g>
+      <g stroke-width="1">
+        <!-- 生成的刻度（静态写死，零依赖） -->
+        <g class="tick" stroke="#3C566E">
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(30 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(60 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(90 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(120 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(150 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(180 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(210 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(240 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(270 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(300 200 200)"/>
+          <line x1="200" y1="30" x2="200" y2="42" transform="rotate(330 200 200)"/>
+        </g>
+        <line class="tick on" x1="200" y1="26" x2="200" y2="44" stroke="#FFB020" stroke-width="2"/>
+      </g>
+
+      <!-- 管壁：外径 / 内径 -->
+      <circle cx="200" cy="200" r="145" fill="none" stroke="#4E6B84" stroke-width="1.5"/>
+      <circle cx="200" cy="200" r="112" fill="none" stroke="#4E6B84" stroke-width="1.5"/>
+      <path d="M200 55 a145 145 0 0 1 0 290 a145 145 0 0 1 0 -290 Z M200 88 a112 112 0 0 0 0 224 a112 112 0 0 0 0 -224 Z"
+            fill="#12293D" fill-rule="evenodd" opacity=".85"/>
+
+      <!-- 扫描扇区 -->
+      <g class="sweep">
+        <path d="M200 200 L200 55 A145 145 0 0 1 302.5 97.5 Z" fill="url(#sw)"/>
+        <line x1="200" y1="200" x2="200" y2="55" stroke="#FFB020" stroke-width="1.5"/>
+        <circle cx="200" cy="55" r="4" fill="#FFB020"/>
+      </g>
+
+      <!-- 中心读数 -->
+      <text class="read-l" x="200" y="190" text-anchor="middle">WALL THICKNESS</text>
+      <text class="read" x="200" y="216" text-anchor="middle">4.28 mm</text>
+      <text class="read-l" x="200" y="234" text-anchor="middle">TOL ±0.05</text>
+    </svg>
+  </div>
+</main>
+
+<!-- ===== 关于 ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="unit">About</span>
+    <h2 class="sec-title">把控制系统做透，比什么都做一点更值钱</h2>
+    <p class="sec-sub">广州海狮软件科技有限公司是一家专业致力于工业控制系统研发、生产、销售于一体的高新技术企业。</p>
+
+    <div class="grid">
+      <div>
+        <p>公司以高科技项目为主体、以高素质人才为支柱，专业领域覆盖硬件 EDA 开发、底层 DSP 开发、ARM 与上位机软件开发、电气控制系统设计、PLC 编程及机械设计——从一颗传感器到一整条挤出线的闭环，全部自己走通。</p>
+        <p>产品线围绕塑料管材挤出这一条主线展开：米重色母称重、超声波在线测厚、失重式喂料、多组分混料、管材表面缺陷检测、挤出云远程监控。测得准，才控得住；控得住，才省得下料。</p>
+        <p>我们以专业、专注、专心、专诚的企业精神，把最好的产品与最完善的服务带给客户。</p>
+        <ul class="honor">
+          <li>国家高新技术企业（2016 年 12 月）</li>
+          <li>科技创新小巨人企业</li>
+          <li>高新技术企业培育入库企业</li>
+          <li>中国城市燃气协会科学技术委员会受邀单位</li>
+        </ul>
+      </div>
+      <div>
+        <img src="assets/about-img1.jpg" alt="海狮工业控制系统应用现场">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 产品 ===== -->
+<section class="products" id="products">
+  <div class="wrap">
+    <span class="unit">Products</span>
+    <h2 class="sec-title">七套系统，一条挤出线</h2>
+    <p class="sec-sub">从配料、喂料、称重到测厚、检测、远程监控，覆盖挤出全流程的关键控制节点。</p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="no">01 / 称重控制</div>
+        <h3>米重色母称重控制系统</h3>
+        <p>实时称量单位长度用料，自动闭环调节牵引与螺杆转速，把米重稳定压在下限附近——省下的是每天几百公斤原料。</p>
+        <div class="en">Gravimetric Control System</div>
+        <img src="assets/homeprod-img1.jpg" alt="米重色母称重控制系统">
+      </article>
+
+      <article class="card">
+        <div class="no">02 / 在线测量</div>
+        <h3>超声波在线测厚系统</h3>
+        <p>不停机、不破坏，绕管一周连续测壁厚与偏心，超差立即报警并回传控制端。</p>
+        <div class="en">On-Line Ultrasonic Thickness Measuring</div>
+        <img src="assets/homeprod-img2.jpg" alt="超声波在线测厚系统">
+      </article>
+
+      <article class="card">
+        <div class="no">03 / 喂料</div>
+        <h3>失重式喂料机系统</h3>
+        <p>以失重法精确控制单位时间下料量，配方切换免调机，适配主料、色母、回料多路喂送。</p>
+        <div class="en">Loss-in-Weight Feeder</div>
+      </article>
+
+      <article class="card">
+        <div class="no">04 / 配料</div>
+        <h3>多组分混料系统</h3>
+        <p>多组分按比例自动称配，配方存档可追溯，杜绝人工配料的批次漂移。</p>
+        <div class="en">Multi-Component Mixture System</div>
+      </article>
+
+      <article class="card">
+        <div class="no">05 / 一模多出</div>
+        <h3>一出二控制系统</h3>
+        <p>一台挤出机双模头同步生产，两路米重独立闭环，互不抢料。</p>
+        <div class="en">Dual-Line Extrusion Control</div>
+      </article>
+
+      <article class="card">
+        <div class="no">06 / 质检</div>
+        <h3>管材表面缺陷检测系统</h3>
+        <p>机器视觉在线扫描管材表面，麻点、划伤、气泡实时判定并标记。</p>
+        <div class="en">Surface Defect Inspection</div>
+      </article>
+
+      <article class="card">
+        <div class="no">07 / 数字化</div>
+        <h3>管材挤出云远程监控系统</h3>
+        <p>产线数据上云，产量、米重、能耗、报警一屏总览，手机端随时看厂。</p>
+        <div class="en">Cloud Remote Monitoring</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 应用行业 ===== -->
+<section class="apply" id="apply">
+  <div class="wrap">
+    <span class="unit">Industries</span>
+    <h2 class="sec-title">凡是要把料挤成型的地方，都要算这笔账</h2>
+    <p class="sec-sub">扎根行业、深入场景做产品设计与创新，为工业制造行业提供解决方案。</p>
+    <div class="tags">
+      <span>PE 给水管</span>
+      <span>PE 燃气管</span>
+      <span>PPR 管材</span>
+      <span>PVC 管材</span>
+      <span>塑料管道</span>
+      <span>波纹管 / 缠绕管</span>
+      <span>片材与板材挤出</span>
+      <span>电缆护套</span>
+      <span>吹膜与流延</span>
+      <span>色母与改性料</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系 ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="unit">Contact</span>
+    <h2 class="sec-title">把产线的难处直接讲给我们听</h2>
+    <p class="sec-sub">米重压不下去、壁厚忽厚忽薄、配料对不上批次——这些都是我们每天在解的题。</p>
+
+    <div class="grid">
+      <ul class="info">
+        <li><b>Tel</b><span><a href="tel:+862022109833">+86-20-2210 9833</a></span></li>
+        <li><b>Email</b><span><a href="mailto:2428582102@qq.com">2428582102@qq.com</a></span></li>
+        <li><b>总部</b><span>广州市黄埔区联浦街 8 号<br>联东知识城数字谷 U4 栋 9 楼</span></li>
+        <li><b>分公司</b><span>北京 · 上海</span></li>
+      </ul>
+      <div class="map">
+        地图 / 二维码位置<br>（待王老师放入）
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>广州海狮软件科技有限公司</b> &nbsp;Guangzhou Sealion Software Technology Co., Ltd.</div>
+    <div>© 2026 版权所有</div>
+  </div>
+</footer>
+
+</body>
+</html>

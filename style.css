@@ -1,0 +1,207 @@
+/* 广州海狮软件科技有限公司 · sealion-tech.com
+   纯静态。无框架、无构建工具。外部依赖仅 Google Fonts。 */
+
+:root{
+  --ink:#0A1520;
+  --steel:#16293B;
+  --blue:#0061BC;        /* 沿用旧站品牌蓝 */
+  --blue-dk:#00478A;
+  --signal:#FFB020;      /* 刻度 / 测量标记 */
+  --paper:#FFFFFF;
+  --mist:#EEF2F6;
+  --line:#D5DDE5;
+  --muted:#6B7A88;
+
+  --display:"Barlow Semi Condensed","Noto Sans SC",sans-serif;
+  --body:"Noto Sans SC","Barlow Semi Condensed",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --wrap:1160px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* ---------- 单位标签：不是装饰，是这家公司真正在测的东西 ---------- */
+.unit{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+  display:inline-block;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--signal);
+  margin-bottom:18px;
+}
+.sec-title{
+  font-family:var(--display);
+  font-size:clamp(28px,3.4vw,42px);
+  font-weight:600;
+  letter-spacing:.02em;
+  line-height:1.25;
+}
+.sec-sub{color:var(--muted);margin-top:10px;max-width:640px}
+
+/* ---------- 顶栏 ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav img{height:38px;width:auto}
+.nav ul{display:flex;gap:32px;list-style:none;font-size:15px}
+.nav a{color:var(--steel);padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav a:hover{color:var(--blue);border-bottom-color:var(--blue)}
+.nav .tel{font-family:var(--mono);font-size:14px;color:var(--blue);white-space:nowrap}
+
+/* ---------- Hero：测量中的管材 ---------- */
+.hero{
+  background:
+    linear-gradient(180deg,#0A1520 0%,#16293B 100%);
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.hero .wrap{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:56px;
+  align-items:center;
+  padding-top:88px;
+  padding-bottom:88px;
+}
+.hero h1{
+  font-family:var(--display);
+  font-size:clamp(36px,5vw,62px);
+  font-weight:600;
+  line-height:1.18;
+  letter-spacing:.01em;
+}
+.hero h1 em{font-style:normal;color:var(--signal)}
+.hero p.lead{
+  margin-top:22px;
+  color:#B9C6D2;
+  font-size:17px;
+  max-width:520px;
+}
+.hero .unit{color:#7FB4E8;border-bottom-color:var(--signal)}
+.cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  padding:13px 30px;
+  font-size:15px;
+  border:1px solid transparent;
+  transition:.2s;
+}
+.btn-p{background:var(--blue);color:#fff}
+.btn-p:hover{background:#0071dd}
+.btn-s{border-color:#3C566E;color:#D6E2EC}
+.btn-s:hover{border-color:var(--signal);color:var(--signal)}
+
+/* 数据条 */
+.stats{
+  display:flex;gap:44px;margin-top:46px;flex-wrap:wrap;
+  border-top:1px solid #263D53;padding-top:26px;
+}
+.stats div span{
+  display:block;
+  font-family:var(--display);
+  font-size:30px;
+  font-weight:600;
+  color:#fff;
+  font-variant-numeric:tabular-nums;
+}
+.stats div small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#7E93A6;text-transform:uppercase}
+
+/* 签名元件：超声波测厚扫描环 */
+.scan{width:100%;max-width:400px;margin:0 auto}
+.scan .sweep{transform-origin:200px 200px;animation:sweep 4.5s linear infinite}
+.scan .tick{stroke:#3C566E}
+.scan .tick.on{stroke:var(--signal)}
+.scan .read{font-family:var(--mono);fill:#fff;font-size:19px}
+.scan .read-l{font-family:var(--mono);fill:#7E93A6;font-size:9px;letter-spacing:.12em}
+@keyframes sweep{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.scan .sweep{animation:none}}
+
+/* ---------- 通用区块 ---------- */
+section{padding:96px 0}
+.about{background:var(--paper)}
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:44px}
+.about p{color:#3E5163;margin-bottom:18px}
+.honor{list-style:none;margin-top:26px}
+.honor li{
+  padding:12px 0 12px 20px;
+  border-top:1px solid var(--line);
+  position:relative;
+  font-size:15px;
+}
+.honor li::before{content:"";position:absolute;left:0;top:22px;width:8px;height:1px;background:var(--signal)}
+
+/* ---------- 产品 ---------- */
+.products{background:var(--mist)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:44px;background:var(--line);border:1px solid var(--line)}
+.card{background:#fff;padding:34px 30px;transition:.25s}
+.card:hover{background:#fff;box-shadow:0 12px 34px rgba(10,21,32,.09);transform:translateY(-3px)}
+.card .no{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.12em}
+.card h3{font-family:var(--display);font-size:22px;font-weight:600;margin:12px 0 10px;line-height:1.35}
+.card p{font-size:14.5px;color:#5A6C7C;line-height:1.7}
+.card .en{font-family:var(--mono);font-size:11px;color:#9AA9B5;margin-top:14px;letter-spacing:.03em}
+.card img{margin-top:20px;border:1px solid var(--line)}
+
+/* ---------- 应用行业 ---------- */
+.apply{background:var(--ink);color:#fff}
+.apply .sec-sub{color:#8FA2B3}
+.tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.tags span{
+  border:1px solid #2C4257;
+  padding:12px 24px;
+  font-size:15px;
+  color:#D6E2EC;
+  transition:.2s;
+}
+.tags span:hover{border-color:var(--signal);color:var(--signal)}
+
+/* ---------- 联系 ---------- */
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:44px}
+.info li{list-style:none;display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.info li b{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);
+  min-width:76px;text-transform:uppercase;font-weight:400;padding-top:5px;
+}
+.info li span{font-size:16px;color:var(--ink)}
+.info a{color:var(--blue)}
+.map{background:var(--mist);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;min-height:260px;color:var(--muted);font-size:14px;text-align:center;padding:24px}
+
+/* ---------- 页脚 ---------- */
+footer{background:var(--steel);color:#93A6B6;padding:44px 0;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer b{color:#D6E2EC;font-weight:500}
+
+/* ---------- 响应式 ---------- */
+@media(max-width:940px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:56px;padding-bottom:64px}
+  .scan{max-width:300px;order:-1}
+  .about .grid,.contact .grid{grid-template-columns:1fr;gap:36px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .nav ul,.nav .tel{display:none}
+  section{padding:64px 0}
+}
+@media(max-width:600px){
+  .cards{grid-template-columns:1fr}
+  .stats{gap:28px}
+}
