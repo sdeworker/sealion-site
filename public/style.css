@@ -238,3 +238,31 @@ a.c-v:hover{color:var(--blue)}
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}
+
+
+/* ---------- 服务支持（S1–S4） ---------- */
+.service{background:var(--mist);border-top:1px solid var(--line)}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px;
+}
+.svc{
+  background:var(--paper-2);padding:30px 26px 32px;
+  position:relative;transition:background .22s ease,transform .22s ease;
+}
+.svc::before{
+  content:"";position:absolute;left:0;top:0;height:2px;width:0;
+  background:var(--signal);transition:width .3s ease;
+}
+.svc:hover{transform:translateY(-2px)}
+.svc:hover::before{width:100%}
+.svc-idx{
+  font-family:var(--mono,"IBM Plex Mono",monospace);
+  font-size:11px;letter-spacing:.16em;color:var(--blue);
+  display:block;padding-bottom:12px;
+}
+.svc h3{font-size:19px;line-height:1.4;margin:0 0 10px}
+.svc p{font-size:14.5px;line-height:1.75;color:var(--ink-70);margin:0}
+
+@media(max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
