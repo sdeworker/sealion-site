@@ -504,3 +504,10 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .cert figcaption{padding:0.7em 0.85em;font-size:0.78rem;color:var(--steel);line-height:1.45;border-top:1px solid var(--line)}
 @media(max-width:900px){.cert-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+/* certificate cards carry their own number */
+.cert{position:relative;display:flex;flex-direction:column}
+.cert-kind{position:absolute;top:8px;left:8px;z-index:1;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.05em;color:#fff;background:rgba(0,97,188,0.92);border-radius:3px;padding:0.25em 0.5em}
+.cert figcaption{display:flex;flex-direction:column;gap:0.25rem}
+.cert-t{font-size:0.8rem;color:var(--ink);line-height:1.4}
+.cert-no{font-family:var(--mono);font-size:0.66rem;color:var(--blue);word-break:break-all}
+.cert-dt{font-family:var(--mono);font-size:0.62rem;color:var(--steel)}
