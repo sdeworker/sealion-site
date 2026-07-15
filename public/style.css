@@ -339,3 +339,30 @@ a.c-v{padding:0.1em 0;min-height:26px;display:inline-flex;align-items:center}
 
 /* every interactive element shows the hand cursor */
 a,button,label[for],summary{cursor:pointer}
+
+/* ============ INDUSTRY PAGES (level 2) ============ */
+.ind-hero{padding-block:clamp(2.5rem,6vw,4rem);background:radial-gradient(100% 90% at 88% 0%,#123A54 0%,transparent 55%),var(--ink)}
+.ind-hero .crumb{margin-bottom:1.4rem}
+.ind-hero h1{font-size:var(--step-3);margin:0.9rem 0 1.1rem;max-width:20ch}
+.ind-hero .lead{max-width:60ch;color:var(--steel-dk)}
+.ind-note{margin-top:1.4rem;padding:0.9em 1.1em;border-left:2px solid var(--blue);background:var(--blue-ghost);color:var(--ink-70);font-size:0.93rem;border-radius:0 var(--radius) var(--radius) 0}
+/* industry tags are links now - real hit areas, hover feedback */
+.ind-tag{cursor:pointer}
+.ind-tag:hover{border-color:var(--blue);background:rgba(0,97,188,0.16);color:#fff;transform:translateY(-1px)}
+.ind-tag{transition:border-color .18s,background .18s,color .18s,transform .18s}
+
+/* ============ CONTRAST ON DARK GROUND ============
+   --blue #0061BC on --ink #0A1A26 measures 2.89:1 — under the 4.5:1 minimum, so
+   eyebrows and crumbs on dark sections were hard to read. --blue-lift is the
+   same brand hue lifted until it passes (5.9:1), used only on dark ground. */
+:root{--blue-lift:#3B9BEA}
+.on-dark .eyebrow{color:var(--blue-lift)}
+.on-dark .eyebrow::before{background:var(--blue-lift)}
+.apply .eyebrow{color:var(--blue-lift)}
+.apply .eyebrow::before{background:var(--blue-lift)}
+.hero .eyebrow{color:var(--blue-lift)}
+.hero .eyebrow::before{background:var(--blue-lift)}
+.on-dark .crumb,.on-dark .crumb a{color:var(--steel-dk)}
+.on-dark .crumb a:hover{color:#fff}
+.on-dark .arrow-link{color:var(--blue-lift)}
+.site-footer .fcol h4{color:var(--blue-lift)}
