@@ -78,7 +78,7 @@ img,svg{display:block;max-width:100%}
 .site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:1.5rem;min-height:68px}
 .brand{display:inline-flex;align-items:center;gap:0.65rem;margin-right:auto}
-.brand img{height:34px;width:auto}
+.brand img{height:42px;width:auto}
 .brand-text{display:flex;flex-direction:column;line-height:1}
 .brand-text strong{font-family:var(--display);font-size:1.12rem;letter-spacing:-0.02em;color:var(--ink)}
 .brand-sub{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.26em;color:var(--blue);margin-top:3px}
@@ -266,3 +266,10 @@ a.c-v:hover{color:var(--blue)}
 
 @media(max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
+
+/* ---------- 产品卡带图版 ---------- */
+.pcard--img{padding:0;overflow:hidden}
+.pcard--img .pc-img{background:#fff;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
+.pcard--img .pc-img img{max-height:82%;max-width:86%;object-fit:contain;transition:transform .3s ease}
+.pcard--img:hover .pc-img img{transform:scale(1.04)}
+.pcard--img .pc-body{padding:clamp(1.2rem,3vw,1.6rem);display:flex;flex-direction:column;gap:0.55rem;flex:1}
