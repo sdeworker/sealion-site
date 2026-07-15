@@ -366,3 +366,16 @@ a,button,label[for],summary{cursor:pointer}
 .on-dark .crumb a:hover{color:#fff}
 .on-dark .arrow-link{color:var(--blue-lift)}
 .site-footer .fcol h4{color:var(--blue-lift)}
+
+/* ============ CORE PATENTS ============ */
+.patents{margin-top:2.4rem;padding-top:2rem;border-top:1px solid var(--line)}
+.pat-head{margin-bottom:1.2rem}
+.pat-sub{color:var(--steel);font-size:0.92rem;margin-top:0.6rem;max-width:62ch}
+.pat-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0.7rem 1.6rem}
+.pat-list li{display:flex;gap:0.65rem;align-items:flex-start;color:var(--ink-70);font-size:0.93rem;line-height:1.5}
+.pat-ico{flex-shrink:0;width:7px;height:7px;border-radius:1px;background:var(--blue);margin-top:0.55em;transform:rotate(45deg)}
+.pat-nums{list-style:none;display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.4rem}
+.pat-nums li{display:inline-flex;align-items:center;gap:0.6em;border:1px solid var(--line);border-radius:var(--radius);padding:0.5em 0.85em;background:var(--paper-2)}
+.pat-no{font-family:var(--mono);font-size:0.78rem;color:var(--blue);letter-spacing:0.02em}
+.pat-nums li span{font-size:0.85rem;color:var(--steel)}
+@media(max-width:760px){.pat-list{grid-template-columns:1fr}}

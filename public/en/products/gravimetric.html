@@ -69,6 +69,33 @@
 <tr><td>Traceability</td><td>Once in the warehouse, nothing can be traced.</td><td class="hl">The whole run is recorded and stored, and can be traced afterwards.</td></tr></tbody></table></div>
 </div></section>
 
+<section class="section proof"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Measured</span><h2>The same line, recorded before and after control</h2>
+  <p class="lead">These 20 readings come from Sealion's own product manual — not a simulation, but weight-per-metre logged on one line, before and after.</p></div>
+  <svg class="proof-chart" viewBox="0 0 720 240" role="img"
+     aria-label="Before control the weight swings between 162 and 174; after control it holds at 164 to 165">
+  <line x1="44" y1="206.0" x2="704" y2="206.0" class="pg-grid"/><line x1="44" y1="159.5" x2="704" y2="159.5" class="pg-grid"/><line x1="44" y1="113.0" x2="704" y2="113.0" class="pg-grid"/><line x1="44" y1="66.5" x2="704" y2="66.5" class="pg-grid"/><line x1="44" y1="20.0" x2="704" y2="20.0" class="pg-grid"/>
+  <text x="36" y="210.0" class="pg-ylab">160</text><text x="36" y="163.5" class="pg-ylab">164</text><text x="36" y="117.0" class="pg-ylab">168</text><text x="36" y="70.5" class="pg-ylab">172</text><text x="36" y="24.0" class="pg-ylab">176</text>
+  <text x="36" y="14" class="pg-ylab">Weight/metre</text>
+  <line x1="374.0" y1="20" x2="374.0" y2="206" class="pg-split"/>
+  <polyline points="44.0,43.2 78.7,54.9 113.5,147.9 148.2,136.2 182.9,124.6 217.7,147.9 252.4,124.6 287.2,182.8 321.9,124.6 356.6,136.2" class="pg-line-b"/>
+  <polyline points="391.4,159.5 426.1,159.5 460.8,159.5 495.6,159.5 530.3,159.5 565.1,159.5 599.8,159.5 634.5,147.9 669.3,147.9 704.0,147.9" class="pg-line-a"/>
+  <circle cx="44.0" cy="43.2" r="3" class="pg-dot-b"/><circle cx="78.7" cy="54.9" r="3" class="pg-dot-b"/><circle cx="113.5" cy="147.9" r="3" class="pg-dot-b"/><circle cx="148.2" cy="136.2" r="3" class="pg-dot-b"/><circle cx="182.9" cy="124.6" r="3" class="pg-dot-b"/><circle cx="217.7" cy="147.9" r="3" class="pg-dot-b"/><circle cx="252.4" cy="124.6" r="3" class="pg-dot-b"/><circle cx="287.2" cy="182.8" r="3" class="pg-dot-b"/><circle cx="321.9" cy="124.6" r="3" class="pg-dot-b"/><circle cx="356.6" cy="136.2" r="3" class="pg-dot-b"/><circle cx="391.4" cy="159.5" r="3" class="pg-dot-a"/><circle cx="426.1" cy="159.5" r="3" class="pg-dot-a"/><circle cx="460.8" cy="159.5" r="3" class="pg-dot-a"/><circle cx="495.6" cy="159.5" r="3" class="pg-dot-a"/><circle cx="530.3" cy="159.5" r="3" class="pg-dot-a"/><circle cx="565.1" cy="159.5" r="3" class="pg-dot-a"/><circle cx="599.8" cy="159.5" r="3" class="pg-dot-a"/><circle cx="634.5" cy="147.9" r="3" class="pg-dot-a"/><circle cx="669.3" cy="147.9" r="3" class="pg-dot-a"/><circle cx="704.0" cy="147.9" r="3" class="pg-dot-a"/>
+  <text x="44.0" y="228" class="pg-xlab">Without control</text>
+  <text x="391.36842105263156" y="228" class="pg-xlab pg-xlab--a">With gravimetric control</text>
+</svg>
+  <div class="proof-stats">
+    <div class="pstat"><span class="pstat-n">162–174</span><span class="pstat-l">Weight range, uncontrolled</span></div>
+    <div class="pstat pstat--a"><span class="pstat-n">164–165</span><span class="pstat-l">Weight range, controlled</span></div>
+    <div class="pstat"><span class="pstat-n">12 → 1</span><span class="pstat-l">Spread narrowed</span></div>
+    <div class="pstat"><span class="pstat-n">3.5 → 0.5</span><span class="pstat-l">Std. deviation (about 1/7 the swing)</span></div>
+  </div>
+  <details class="proof-details"><summary>Show the raw data (20 readings from the manual)</summary>
+    <div class="proof-table"><table><thead><tr><th colspan="3">Without control system</th><th colspan="3" class="hl">With Sealion gravimetric control</th></tr><tr><th>#</th><th>Time</th><th>Weight</th><th>#</th><th>Time</th><th class="hl">Weight</th></tr></thead><tbody><tr><td class="pd-i">1</td><td class="pd-t">16:12</td><td class="pd-v">174</td><td class="pd-i">11</td><td class="pd-t">00:14</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">2</td><td class="pd-t">16:15</td><td class="pd-v">173</td><td class="pd-i">12</td><td class="pd-t">00:31</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">3</td><td class="pd-t">16:26</td><td class="pd-v">165</td><td class="pd-i">13</td><td class="pd-t">00:50</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">4</td><td class="pd-t">16:59</td><td class="pd-v">166</td><td class="pd-i">14</td><td class="pd-t">01:16</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">5</td><td class="pd-t">17:19</td><td class="pd-v">167</td><td class="pd-i">15</td><td class="pd-t">01:38</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">6</td><td class="pd-t">17:41</td><td class="pd-v">165</td><td class="pd-i">16</td><td class="pd-t">01:57</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">7</td><td class="pd-t">20:18</td><td class="pd-v">167</td><td class="pd-i">17</td><td class="pd-t">02:30</td><td class="pd-v pd-v--a">164</td></tr><tr><td class="pd-i">8</td><td class="pd-t">20:39</td><td class="pd-v">162</td><td class="pd-i">18</td><td class="pd-t">03:00</td><td class="pd-v pd-v--a">165</td></tr><tr><td class="pd-i">9</td><td class="pd-t">21:21</td><td class="pd-v">167</td><td class="pd-i">19</td><td class="pd-t">03:15</td><td class="pd-v pd-v--a">165</td></tr><tr><td class="pd-i">10</td><td class="pd-t">21:43</td><td class="pd-v">166</td><td class="pd-i">20</td><td class="pd-t">03:40</td><td class="pd-v pd-v--a">165</td></tr></tbody></table></div>
+    <p class="proof-src">Source: Sealion Technology Product Manual, Gravimetric Control System — Main function. Spread and standard deviation are computed directly from these readings.</p>
+  </details>
+</div></section>
+
 <section class="section"><div class="wrap narrow">
   <div class="sh"><span class="eyebrow">Workflow</span><h2>How the system works</h2></div>
   <p class="body-p">The system carries an intelligent weighing device: the hopper valve opens and closes in a continuous cycle so that every batch falls freely under identical pressure. Each opening and closing is governed by the microcomputer in this sequence:</p>
@@ -87,6 +114,27 @@
 <div class="func">Prevents scrap pipe caused by a blocked screen pack</div>
 <div class="func">Records and stores production data for full traceability</div>
 <div class="func">Single-weight dual-output control for high-speed PE/PPR/PERT lines with synchronised twin haul-off</div></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Technical structure</span><h2>Technical structure of the gravimetric control system</h2></div>
+  <div class="struct-grid">
+    <figure class="struct-fig"><img src="/assets/manual/gravimetric-structure.png" alt="Technical structure: display control unit, hopper weight and sensor unit, meter weight data acquisition unit, extruder rotating speed acquisition unit, tractor speed acquisition unit" loading="lazy"></figure>
+    <div class="struct-units"><div class="unit"><span class="unit-n">01</span><span>Display control unit</span></div><div class="unit"><span class="unit-n">02</span><span>Hopper weight & sensor unit</span></div><div class="unit"><span class="unit-n">03</span><span>Meter weight data acquisition unit</span></div><div class="unit"><span class="unit-n">04</span><span>Extruder rotating speed acquisition unit</span></div><div class="unit"><span class="unit-n">05</span><span>Tractor speed acquisition unit</span></div></div>
+  </div>
+</div></section>
+
+<section class="section mist"><div class="wrap narrow">
+  <div class="sh"><span class="eyebrow">Installation</span><h2>Installation</h2>
+  <p class="lead">The system installs on top of the extruder's feed port, without altering the existing line layout.</p></div>
+  <figure class="install-fig"><img src="/assets/manual/gravimetric-installation.png" alt="The production line before and after installing the Sealion gravimetric control system" loading="lazy">
+    <figcaption>Top: before installation　Bottom: after installing the Sealion gravimetric control system</figcaption></figure>
+</div></section>
+
+<section class="section"><div class="wrap narrow">
+  <div class="sh"><span class="eyebrow">Double output</span><h2>Double-output gravimetric control system</h2></div>
+  <p class="body-p">On today's popular PE/PPR/PERT high-speed production lines, linear speed reaches 20 m/min. Adjusting that speed makes the tube too thick or too thin — sometimes the pipe breaks outright.</p>
+  <p class="body-p">The double-output gravimetric control system controls both extrusions from the line's twin haul-off speeds and the host output. It works the same way: automatically regulating screw speed, twin haul-off speed and feed rate in real time to match the weight accuracy we set, so the pipe's weight-per-metre stays constant.</p>
 </div></section>
 
 <section class="section"><div class="wrap narrow">
