@@ -538,3 +538,12 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .ip-n code{font-family:var(--mono);font-size:0.76rem;color:var(--blue);white-space:nowrap}
 .ip-has{color:var(--signal);font-size:0.7em;margin-left:0.4em;vertical-align:super}
 .ip-all,.certs-all{margin-top:1.4rem;display:inline-flex}
+
+/* ============ THREE PILLARS OF R&D ============ */
+.rnd{margin-top:2.6rem;padding-top:2rem;border-top:1px solid var(--line)}
+.rnd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.5vw,1.8rem);margin-top:1.2rem}
+.rnd-i{border-left:2px solid var(--blue);padding-left:1.1rem}
+.rnd-n{font-family:var(--mono);font-size:0.74rem;color:var(--blue);letter-spacing:0.1em}
+.rnd-i h3{font-size:var(--step-1);margin:0.35rem 0 0.5rem}
+.rnd-i p{color:var(--steel);font-size:0.9rem;line-height:1.65}
+@media(max-width:860px){.rnd-grid{grid-template-columns:1fr;gap:1.2rem}}
