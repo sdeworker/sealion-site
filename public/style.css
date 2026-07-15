@@ -82,13 +82,17 @@ img,svg{display:block;max-width:100%}
 .brand-text{display:flex;flex-direction:column;line-height:1}
 .brand-text strong{font-family:var(--display);font-size:1.12rem;letter-spacing:-0.02em;color:var(--ink)}
 .brand-sub{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.26em;color:var(--blue);margin-top:3px}
-.nav{display:flex;gap:clamp(0.8rem,2vw,1.8rem)}
-.nav a{font-size:0.95rem;color:var(--ink-70);padding:0.4em 0;transition:color .2s}
-.nav a:hover{color:var(--ink)}
+.nav{display:flex;gap:clamp(0.1rem,0.6vw,0.5rem)}
+.nav a{display:inline-flex;align-items:center;font-size:0.95rem;color:var(--ink-70);padding:1.05em 0.62em;border-radius:var(--radius);transition:color .18s,background .18s}
+.nav a:hover{color:var(--ink);background:var(--blue-ghost)}
 .header-actions{display:flex;align-items:center;gap:0.9rem}
-.langlink{font-family:var(--mono);font-size:0.8rem;letter-spacing:0.05em;border:1px solid var(--line);border-radius:var(--radius);padding:0.35em 0.7em;color:var(--ink);transition:border-color .2s,color .2s}
-.langlink:hover{border-color:var(--blue);color:var(--blue)}
-.hotline{font-family:var(--mono);font-size:0.82rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.5em;letter-spacing:0.02em}
+/* hit areas: the visible box IS the clickable box, and it meets the 44px-ish
+   minimum so the pointer reacts as soon as it touches the edge */
+.langlink{display:inline-flex;align-items:center;justify-content:center;min-height:38px;min-width:50px;font-family:var(--mono);font-size:0.82rem;letter-spacing:0.05em;border:1px solid var(--line);border-radius:var(--radius);padding:0 0.85em;color:var(--ink);transition:border-color .18s,color .18s,background .18s}
+.langlink:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-ghost)}
+.langlink:active{background:color-mix(in srgb,var(--blue) 16%,transparent)}
+.hotline{font-family:var(--mono);font-size:0.82rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.5em;letter-spacing:0.02em;min-height:38px;padding:0 0.4em;border-radius:var(--radius);transition:color .18s,background .18s}
+.hotline:hover{color:var(--blue);background:var(--blue-ghost)}
 .hotline .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px var(--signal-soft)}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
 .burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.2s}
@@ -304,3 +308,34 @@ a.c-v:hover{color:var(--blue)}
 .gcard-body p{color:var(--steel);font-size:0.85rem;line-height:1.5}
 @media(max-width:900px){.growth-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.growth-grid{grid-template-columns:1fr}}
+
+/* ============ HIT AREAS ============
+   Complaint: you have to hit a link dead-centre before anything reacts.
+   Cause: the visible boxes were bigger than the actual click targets, and the
+   product cards weren't links at all - only the small "查看详情" text was.
+   Fix: whole card becomes the target (stretched-link), and every small control
+   gets a real, standards-sized hit box with visible hover feedback. */
+
+/* whole product card is clickable, not just the little arrow link */
+.pcard{position:relative}
+.pcard:has(.arrow-link){cursor:pointer}
+.pcard .arrow-link::before{content:"";position:absolute;inset:0;border-radius:var(--radius-lg)}
+.pcard:hover .arrow-link{color:var(--blue-dk)}
+.pcard:hover .arrow-link::after{transform:translateX(3px)}
+
+/* same for the industry cards */
+.ind-card{position:relative}
+
+/* arrow links get a real hit box */
+.arrow-link{padding:0.45em 0;min-height:32px}
+
+/* burger: 44x44 tap target */
+.burger{min-width:44px;min-height:44px;align-items:center;justify-content:center;border-radius:var(--radius)}
+.burger:hover{background:var(--blue-ghost)}
+
+/* footer + contact links: touchable rows */
+.fcol a{padding:0.15em 0;min-height:26px;display:inline-flex;align-items:center}
+a.c-v{padding:0.1em 0;min-height:26px;display:inline-flex;align-items:center}
+
+/* every interactive element shows the hand cursor */
+a,button,label[for],summary{cursor:pointer}
