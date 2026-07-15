@@ -268,9 +268,9 @@ a.c-v:hover{color:var(--blue)}
 @media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
 
 /* ---------- 产品卡带图版 ---------- */
-.pcard--img{padding:0;overflow:hidden}
-.pcard--img .pc-img{background:#fff;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
-.pcard--img .pc-img img{max-height:82%;max-width:86%;object-fit:contain;transition:transform .3s ease}
+.pcard--img{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.pcard--img .pc-img{background:#EAF3FB;height:200px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
+.pcard--img .pc-img img{max-height:88%;max-width:80%;object-fit:contain;transition:transform .3s ease}
 .pcard--img:hover .pc-img img{transform:scale(1.04)}
 .pcard--img .pc-body{padding:clamp(1.2rem,3vw,1.6rem);display:flex;flex-direction:column;gap:0.55rem;flex:1}
 
