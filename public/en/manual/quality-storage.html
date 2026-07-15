@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pipe Quality Safety Storage System — Sealion Product Manual</title>
+<meta name="description" content="Full end-of-line inspection: weight, laser thickness, encoder diameter, length, roundness, then flip to storage">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/product.css">
+<link rel="stylesheet" href="/manual.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/en/" aria-label="海狮科技 首页"><img src="/assets/logo.png" alt="海狮科技 Sea-lion Technology"></a>
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" class="burger" aria-label="菜单"><span></span><span></span><span></span></label>
+    <nav class="nav" aria-label="主导航">
+      <a href="/en/#about">About</a>
+      <a href="/en/#products">Products</a>
+      <a href="/en/#apply">Industries</a>
+      <a href="/en/#partners">Customers</a>
+      <a href="/en/#news">News</a>
+      <a href="/en/#service">Service</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="langlink" href="/manual/quality-storage.html" hreflang="zh">中文</a>
+      <a class="hotline" href="tel:4008404080"><span class="dot"></span>4008-4040-80</a>
+    </div>
+  </div>
+</header>
+
+<section class="section m-head on-dark">
+  <div class="wrap">
+    <nav class="crumb"><a href="/en/">Home</a> / <a href="/en/manual/">Product manual</a> / <span>Pipe Quality Safety Storage System</span></nav>
+    <span class="eyebrow">Manual · 06</span>
+    <h1>Pipe Quality Safety Storage System</h1>
+    <p class="lead">Full end-of-line inspection: weight, laser thickness, encoder diameter, length, roundness, then flip to storage</p>
+    <div class="m-actions">
+      <a class="btn btn--primary" href="/en/manual/reader.html?p=11">Read this chapter as pages</a>
+      <a class="btn btn--onDark" href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>Download PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap m-body">
+  <aside class="m-toc"><h3>In this chapter</h3><ol><li><a href="#what">Overview</a></li><li><a href="#function">Functional characteristics</a></li><li><a href="#model">Model & parameters</a></li></ol></aside>
+  <article class="m-article">
+    <section class="m-topic" id="what">
+      <h2>Overview<a class="m-anchor" href="#what" aria-label="link">#</a></h2>
+      <p class="body-p">The Sea-lion pipe quality and safety storage system is used at the end of the pipe extrusion machine and can be installed at the end of any production line, using a smooth mechanism to slide the pipe onto the testing platform for all kinds of measurement, without affecting any production task on the line.</p><p class="body-p">The system includes weight detection, laser thickness measurement, encoder diameter measurement, pipe length detection, non-roundness detection, qualified pipe turning and other standard functions. All test data can be sent to the MES system inside the factory, a production Kanban or other management system, for remote monitoring of pipe quality.</p>
+    </section><section class="m-topic" id="function">
+      <h2>Functional characteristics<a class="m-anchor" href="#function" aria-label="link">#</a></h2>
+      <dl class="m-def"><dt>Thickness measurement</dt><dd>The upper and lower limits of wall thickness and real-time wall thickness are set, and a patented structure is used for laser ranging inside and outside the pipe. The servo motor rotates one full turn, and the measured position and internal/external distance are calculated in an all-dimensional way to obtain the accurate thickness of the pipe, marking the position of the maximum and minimum values. The detection point is 30–50mm from the pipe end to avoid the notch flanging; the patented structure keeps the laser from irradiating the pipe surface directly, avoiding being affected by pipe colour, making results more accurate.</dd><dt>Outside diameter measurement</dt><dd>Measure the average outside diameter of the offline pipe, set the average upper and lower limits and the measured average OD value. Using the encoder outside the pipe, servo rotation for one turn makes an all-round calculation on the measured data to obtain the accurate OD. The detection point is 300mm away from the pipe port to meet national standard measurement standards.</dd><dt>Unroundness calculation</dt><dd>Two sets of lasers measure the outside diameters of several points to calculate unroundness and display it on the interface.</dd><dt>Ovality calculation</dt><dd>Calculate pipe ovality from the obtained wall thickness and display it on the interface.</dd><dt>Data preservation and collection</dt><dd>All data is saved in real time in Excel format in a specified folder. TCP / MQTT ports are open to facilitate uploading acquisition data to the company MES system and a customer-specified port. The collection methods are real-time detection result collection and original data collection. Data output can follow production orders or production date, output to Excel or PDF, exported via common USB disk.</dd><dt>Data display</dt><dd>Real-time display of the current production quantity, yield, NG number and OK number.</dd><dt>Deviation alarm function</dt><dd>Through the setting of outside diameter, weight, thickness, length and roundness, upper and lower deviation is compared for a qualified/not-qualified alarm prompt, with a bad-product alarm and a product-quantity reminder.</dd><dt>Data processing</dt><dd>Eliminate abnormal data; abnormal data is not associated with the traceability code.</dd><dt>Weight calculation</dt><dd>Using an imported high-precision load cell.</dd></dl>
+    </section><section class="m-topic" id="model">
+      <h2>Model & parameters<a class="m-anchor" href="#model" aria-label="link">#</a></h2>
+      <div class="model"><table><thead><tr><th>Model</th><th>Pipe O.D range (mm)</th><th>Production cycle</th><th>Pipe length (m)</th></tr></thead><tbody><tr><td>SLJK-250</td><td>φ90-250</td><td>30s/cycle</td><td>4-12m</td></tr><tr><td>SLJK-315</td><td>φ250-315</td><td>30s/cycle</td><td>4-12m</td></tr><tr><td>SLJK-400</td><td>φ315-400</td><td>30s/cycle</td><td>4-12m</td></tr></tbody></table></div>
+    </section>
+    <nav class="m-nav"><a class="m-pn" href="/en/manual/ultrasonic.html">← Ultrasonic Online Thickness Measuring System</a><a class="m-pn" href="/en/manual/intelligent-inspection.html">Pipe Online Intelligent Detection System →</a></nav>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><strong>海狮科技</strong><span>广州海狮软件科技有限公司</span></div>
+    <div class="fcol"><h4>Manual</h4>
+      <a href="/en/manual/">Manual home</a>
+      <a href="/en/manual/reader.html">Page reader</a>
+      <a href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>Download PDF</a>
+    </div>
+    <div class="fcol"><h4>Contact</h4>
+      <a href="tel:4008404080">4008-4040-80</a><a href="tel:+862022109833">+86-20-22109833</a><a href="mailto:2428582102@qq.com">2428582102@qq.com</a>
+    </div>
+  </div>
+  <div class="wrap foot-btm"><span>© <span id="yr"></span> 广州海狮软件科技有限公司</span></div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

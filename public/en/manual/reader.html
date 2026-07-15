@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page reader — Sealion Product Manual</title>
+<meta name="description" content="Page through the Sealion product manual in its original layout, 14 spreads.">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/product.css">
+<link rel="stylesheet" href="/manual.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/en/" aria-label="海狮科技 首页"><img src="/assets/logo.png" alt="海狮科技 Sea-lion Technology"></a>
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" class="burger" aria-label="菜单"><span></span><span></span><span></span></label>
+    <nav class="nav" aria-label="主导航">
+      <a href="/en/#about">About</a>
+      <a href="/en/#products">Products</a>
+      <a href="/en/#apply">Industries</a>
+      <a href="/en/#partners">Customers</a>
+      <a href="/en/#news">News</a>
+      <a href="/en/#service">Service</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="langlink" href="/manual/reader.html" hreflang="zh">中文</a>
+      <a class="hotline" href="tel:4008404080"><span class="dot"></span>4008-4040-80</a>
+    </div>
+  </div>
+</header>
+
+<div class="rd" data-total="14">
+  <div class="rd-bar">
+    <a class="rd-back" href="/en/manual/">← Manual home</a>
+    <div class="rd-chips"><button class="rd-chip" data-go="1">01 Company Profile</button><button class="rd-chip" data-go="2">02 Cloud-Based Extrusion Monitoring System</button><button class="rd-chip" data-go="3">03 Gravimetric Control System</button><button class="rd-chip" data-go="6">04 Gravimetric Masterbatch Control System</button><button class="rd-chip" data-go="8">05 Ultrasonic Online Thickness Measuring System</button><button class="rd-chip" data-go="11">06 Pipe Quality Safety Storage System</button><button class="rd-chip" data-go="12">07 Pipe Online Intelligent Detection System</button></div>
+    <a class="rd-dl btn btn--ghost" href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>Download</a>
+  </div>
+  <div class="rd-stage">
+    <button class="rd-arrow rd-prev" aria-label="Previous">‹</button>
+    <div class="rd-page"><img id="rd-img" src="/assets/manual/pages/p00.jpg" alt="Manual spread 1"></div>
+    <button class="rd-arrow rd-next" aria-label="Next">›</button>
+  </div>
+  <div class="rd-foot">
+    <input class="rd-range" type="range" min="1" max="14" value="1" aria-label="Jump to spread">
+    <span class="rd-count"><b id="rd-cur">1</b> / 14</span>
+    <span class="rd-hint">Use ← → to turn</span>
+  </div>
+</div>
+<script>
+(function(){
+  var TOTAL=14, cur=1;
+  var img=document.getElementById('rd-img'), lab=document.getElementById('rd-cur');
+  var range=document.querySelector('.rd-range');
+  function pad(n){return (n<10?'0':'')+n;}
+  function show(n){
+    cur=Math.min(TOTAL,Math.max(1,n));
+    img.src='/assets/manual/pages/p'+pad(cur-1)+'.jpg';
+    img.alt='Manual spread '+cur;
+    lab.textContent=cur; range.value=cur;
+    var u=new URL(location); u.searchParams.set('p',cur); history.replaceState(null,'',u);
+    pre(cur+1); pre(cur-1);
+  }
+  function pre(n){ if(n<1||n>TOTAL) return; var i=new Image(); i.src='/assets/manual/pages/p'+pad(n-1)+'.jpg'; }
+  document.querySelector('.rd-prev').addEventListener('click',function(){show(cur-1);});
+  document.querySelector('.rd-next').addEventListener('click',function(){show(cur+1);});
+  range.addEventListener('input',function(){show(parseInt(this.value,10));});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft') show(cur-1);
+    if(e.key==='ArrowRight') show(cur+1);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-go]'),function(b){
+    b.addEventListener('click',function(){show(parseInt(b.getAttribute('data-go'),10));});
+  });
+  var p=parseInt(new URL(location).searchParams.get('p')||'1',10);
+  show(isNaN(p)?1:p);
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><strong>海狮科技</strong><span>广州海狮软件科技有限公司</span></div>
+    <div class="fcol"><h4>Manual</h4>
+      <a href="/en/manual/">Manual home</a>
+      <a href="/en/manual/reader.html">Page reader</a>
+      <a href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>Download PDF</a>
+    </div>
+    <div class="fcol"><h4>Contact</h4>
+      <a href="tel:4008404080">4008-4040-80</a><a href="tel:+862022109833">+86-20-22109833</a><a href="mailto:2428582102@qq.com">2428582102@qq.com</a>
+    </div>
+  </div>
+  <div class="wrap foot-btm"><span>© <span id="yr"></span> 广州海狮软件科技有限公司</span></div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

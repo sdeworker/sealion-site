@@ -421,3 +421,5 @@ a,button,label[for],summary{cursor:pointer}
 .plogo--link:hover{border-color:var(--blue)}
 .plogo-ext{position:absolute;top:6px;right:8px;font-size:0.7rem;color:var(--steel-dk);opacity:0;transition:opacity .18s}
 .plogo--link:hover .plogo-ext{opacity:1}
+.dl-ways{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:0.9rem}
+.dl-ways .arrow-link{font-size:0.78rem}

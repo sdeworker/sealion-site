@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>超声波在线测厚系统 — 海狮产品手册</title>
+<meta name="description" content="理论分辨率 0.001mm，实际 0.01mm，处于行业先进水平">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/product.css">
+<link rel="stylesheet" href="/manual.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="海狮科技 首页"><img src="/assets/logo.png" alt="海狮科技 Sea-lion Technology"></a>
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" class="burger" aria-label="菜单"><span></span><span></span><span></span></label>
+    <nav class="nav" aria-label="主导航">
+      <a href="/#about">关于海狮</a>
+      <a href="/#products">产品中心</a>
+      <a href="/#apply">应用行业</a>
+      <a href="/#partners">合作客户</a>
+      <a href="/#news">海狮动态</a>
+      <a href="/#service">服务支持</a>
+      <a href="/#contact">联系我们</a>
+    </nav>
+    <div class="header-actions">
+      <a class="langlink" href="/en/manual/ultrasonic.html" hreflang="en">EN</a>
+      <a class="hotline" href="tel:4008404080"><span class="dot"></span>4008-4040-80</a>
+    </div>
+  </div>
+</header>
+
+<section class="section m-head on-dark">
+  <div class="wrap">
+    <nav class="crumb"><a href="/">首页</a> / <a href="/manual/">产品手册</a> / <span>超声波在线测厚系统</span></nav>
+    <span class="eyebrow">手册 · 05</span>
+    <h1>超声波在线测厚系统</h1>
+    <p class="lead">理论分辨率 0.001mm，实际 0.01mm，处于行业先进水平</p>
+    <div class="m-actions">
+      <a class="btn btn--primary" href="/manual/reader.html?p=8">在这一章翻页看原版</a>
+      <a class="btn btn--onDark" href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>下载 PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap m-body">
+  <aside class="m-toc"><h3>本章主题</h3><ol><li><a href="#what">什么是超声波在线测厚系统</a></li><li><a href="#why">为什么挤出生产线上必须配置</a></li><li><a href="#principle">工作原理</a></li><li><a href="#function">主要功能</a></li><li><a href="#structure">组成结构</a></li><li><a href="#scanbox">扫描箱</a></li><li><a href="#dsp">超声波数字信号处理</a></li><li><a href="#model-big">型号（大管）</a></li><li><a href="#model-small">型号（小管）SL-Ultrascan</a></li></ol></aside>
+  <article class="m-article">
+    <section class="m-topic" id="what">
+      <h2>什么是超声波在线测厚系统<a class="m-anchor" href="#what" aria-label="link">#</a></h2>
+      <p class="body-p">根据超声波脉冲反射原理来进行管材厚度测量，当探头发射的超声波脉冲通过媒介到达管材的内外径界面时，脉冲被反射回探头后，通过精确测量超声波在管材中传播的时间，超声波处理模块进行快速的运算来确定被测材料的厚度。</p><p class="body-p">超声波在线测厚系统是采用国内外先进技术的基础上，运用数字化处理模块技术，采用高精准度数据采集和处理芯片自主研发的高端管材在线测量系统，主要由海狮超声波处理模块和超声波探头、超声波扫描结构三部分组成。主机电路包括发射电路、接收电路、显示和控制电路三部分。超声波在线测厚系统理论测量分辨率达到 0.001mm，因为管材表面的不平整以及生产环境的影响，实际测量分辨率达到 0.01mm，处于行业先进水平。</p>
+    </section><section class="m-topic" id="why">
+      <h2>为什么挤出生产线上必须配置<a class="m-anchor" href="#why" aria-label="link">#</a></h2>
+      <div class="compare"><table><thead><tr><th>阶段</th><th>说明</th></tr></thead><tbody><tr><td>开机阶段</td><td>即可直观发现管材的状况，杜绝废品、次品产生，缩短开机时间。</td></tr><tr><td>生产过程阶段</td><td>系统实时监测管材的厚度、偏心、椭圆以及外径。全程监控产品的变化，做出详尽的生产记录，并完整的存档，以备您随时对生产状况进行查验，让管材生产一直在您的掌控之中。</td></tr><tr><td>生产入库后</td><td>即便已经送达施工现场，如果您想知道某批次的产品情况，您只需打开本系统资料库，即可为您进行追溯。</td></tr></tbody></table></div>
+    </section><section class="m-topic" id="principle">
+      <h2>工作原理<a class="m-anchor" href="#principle" aria-label="link">#</a></h2>
+      <p class="body-p">海狮超声波在线测厚系统采用超声学原理，运用精密的高频超声波传感器，通过 DSP 高速数据采集和处理，对挤出生产线上运动的管材和线缆做非接触式的测量，并通过工业触摸显示屏显示管材截面，可以显示多个方位的壁厚偏差和偏心数据，直观可靠的提供给现场生产人员参考，及时对厚度、偏心、椭圆以及外径偏差做出处理，减少废管的产生，缩短开机周期，为您节约大量昂贵的材料和人工成本。</p>
+    </section><section class="m-topic" id="function">
+      <h2>主要功能<a class="m-anchor" href="#function" aria-label="link">#</a></h2>
+      <ul class="m-list"><li>管材外径、内径、壁厚、偏心度、椭圆度实时测量</li><li>报警跟踪与查询</li><li>历史曲线、生产数据记录</li><li>生产参数、订单信息设置</li><li>生产配方、保存、管理</li></ul>
+    </section><section class="m-topic" id="structure">
+      <h2>组成结构<a class="m-anchor" href="#structure" aria-label="link">#</a></h2>
+      <div class=""><div class="struct-units"><div class="unit"><span class="unit-n">01</span><span>扫描箱 Scanning Box</span></div><div class="unit"><span class="unit-n">02</span><span>DSP 处理器 DSP processor</span></div><div class="unit"><span class="unit-n">03</span><span>工控机 IPC</span></div><div class="unit"><span class="unit-n">04</span><span>人机界面 Man-Machine Interface</span></div><div class="unit"><span class="unit-n">05</span><span>软件 Software</span></div></div></div>
+    </section><section class="m-topic" id="scanbox">
+      <h2>扫描箱<a class="m-anchor" href="#scanbox" aria-label="link">#</a></h2>
+      <p class="body-p">扫描箱结构可对任何管材曲面进行完全吻合，保证探头脉冲信号与管材曲面保持垂直相切，确保了测量数值的准确性。实现超声波介质的均匀稳定，维持 DSP 信号处理的恒定，减少介质不稳定对信号的影响。同时该结构设计简洁直观，操作简单便捷。</p><ul class="m-list"><li>内置自动跟随超声波探头，可以测量一系列范围的管材壁厚。专利号：ZL202121445714.5</li><li>超声波探头个数可选 1、2、3、4、6、8、16（根据具体型号确定）</li><li>超声波探头为 IP68 防护等级，从而可直接固定的扫描箱上，整体安装在水箱里面</li><li>可测量多层管材的厚度，每一层的厚度单独显示</li><li>激光测径装置：实时精准测量管材外径，测量显示精度 0.01MM。专利号：202420005454.7</li></ul>
+    </section><section class="m-topic" id="dsp">
+      <h2>超声波数字信号处理<a class="m-anchor" href="#dsp" aria-label="link">#</a></h2>
+      <ul class="m-list"><li>自主性：DSP 能快速而准确地接收回波并区别杂波</li><li>自调整：即使产品材质有所变化，根据所设参数，DSP 能自行调整捕捉窗口锁定回波</li><li>高精度：DSP 对捕捉到的信号同步运算，保证计量数值的准确性</li></ul>
+    </section><section class="m-topic" id="model-big">
+      <h2>型号（大管）<a class="m-anchor" href="#model-big" aria-label="link">#</a></h2>
+      <p class="body-p">配备工业级平板电脑，内置超声波测控软件，界面整洁直观。</p><div class="model"><table><thead><tr><th>型号 Model</th><th>可测管径（mm）</th><th>可测厚度（mm）</th><th>探头数（个）</th></tr></thead><tbody><tr><td>SL-meas63</td><td>Φ63</td><td>≤60</td><td>4</td></tr><tr><td>SL-meas125</td><td>Φ63-125</td><td>60</td><td>4、8</td></tr><tr><td>SL-meas250</td><td>Φ125-250</td><td>60</td><td>4、8</td></tr><tr><td>SL-meas315</td><td>Φ250-315</td><td>60</td><td>8、12、16</td></tr><tr><td>SL-meas450</td><td>Φ315-500</td><td>60</td><td>8、12、16、32</td></tr><tr><td>SL-meas630</td><td>Φ500-800</td><td>80</td><td>8、12、16、32</td></tr><tr><td>SL-meas1200</td><td>Φ800-1200</td><td>100</td><td>12、16、32</td></tr></tbody></table></div>
+    </section><section class="m-topic" id="model-small">
+      <h2>型号（小管）SL-Ultrascan<a class="m-anchor" href="#model-small" aria-label="link">#</a></h2>
+      <p class="body-p">SL-Ultrascan 系列是针对小管径在线测厚产品，同样采用超声波原理对管外径、厚度、偏心、椭圆实时测量及保存数据报表。适用于医疗导管，电线电缆，管材，汽车油管等相关挤出生产业。测量壁厚 0.18-10mm，直径 2-50mm；独创自动变径结构，自动适应不同管材规格、探头在线自动对中跟随，保障检测精准高效稳定。</p><div class="model"><table><thead><tr><th>型号 Model</th><th>可测管径（mm）</th><th>可测厚度（mm）</th><th>探头数（个）</th></tr></thead><tbody><tr><td>SL-Ultrascan10</td><td>Φ2-10</td><td>0.18-3</td><td>4</td></tr><tr><td>SL-Ultrascan20</td><td>Φ10-20</td><td>0.5-5</td><td>4</td></tr><tr><td>SL-Ultrascan50</td><td>Φ20-50</td><td>1-10</td><td>4</td></tr></tbody></table></div>
+    </section>
+    <nav class="m-nav"><a class="m-pn" href="/manual/masterbatch.html">← 米重色母一体控制系统</a><a class="m-pn" href="/manual/quality-storage.html">管材质量安全入库系统 →</a></nav>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><strong>海狮科技</strong><span>广州海狮软件科技有限公司</span></div>
+    <div class="fcol"><h4>手册</h4>
+      <a href="/manual/">手册总览</a>
+      <a href="/manual/reader.html">翻页阅读</a>
+      <a href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>下载 PDF</a>
+    </div>
+    <div class="fcol"><h4>联系</h4>
+      <a href="tel:4008404080">4008-4040-80</a><a href="tel:+862022109833">+86-20-22109833</a><a href="mailto:2428582102@qq.com">2428582102@qq.com</a>
+    </div>
+  </div>
+  <div class="wrap foot-btm"><span>© <span id="yr"></span> 广州海狮软件科技有限公司</span></div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

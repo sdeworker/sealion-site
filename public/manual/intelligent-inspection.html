@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>管材在线智能检测系统 — 海狮产品手册</title>
+<meta name="description" content="末端自动检测平台：激光测厚、编码器测径、不圆度、合格翻管">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/product.css">
+<link rel="stylesheet" href="/manual.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="海狮科技 首页"><img src="/assets/logo.png" alt="海狮科技 Sea-lion Technology"></a>
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" class="burger" aria-label="菜单"><span></span><span></span><span></span></label>
+    <nav class="nav" aria-label="主导航">
+      <a href="/#about">关于海狮</a>
+      <a href="/#products">产品中心</a>
+      <a href="/#apply">应用行业</a>
+      <a href="/#partners">合作客户</a>
+      <a href="/#news">海狮动态</a>
+      <a href="/#service">服务支持</a>
+      <a href="/#contact">联系我们</a>
+    </nav>
+    <div class="header-actions">
+      <a class="langlink" href="/en/manual/intelligent-inspection.html" hreflang="en">EN</a>
+      <a class="hotline" href="tel:4008404080"><span class="dot"></span>4008-4040-80</a>
+    </div>
+  </div>
+</header>
+
+<section class="section m-head on-dark">
+  <div class="wrap">
+    <nav class="crumb"><a href="/">首页</a> / <a href="/manual/">产品手册</a> / <span>管材在线智能检测系统</span></nav>
+    <span class="eyebrow">手册 · 07</span>
+    <h1>管材在线智能检测系统</h1>
+    <p class="lead">末端自动检测平台：激光测厚、编码器测径、不圆度、合格翻管</p>
+    <div class="m-actions">
+      <a class="btn btn--primary" href="/manual/reader.html?p=12">在这一章翻页看原版</a>
+      <a class="btn btn--onDark" href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>下载 PDF</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap m-body">
+  <aside class="m-toc"><h3>本章主题</h3><ol><li><a href="#what">系统概述</a></li><li><a href="#function">功能特点</a></li><li><a href="#model">型号与技术参数</a></li></ol></aside>
+  <article class="m-article">
+    <section class="m-topic" id="what">
+      <h2>系统概述<a class="m-anchor" href="#what" aria-label="link">#</a></h2>
+      <p class="body-p">海狮管材在线智能检测系统应用在管材挤出机末端，可安装在任何一条生产线的末端，管材自动到检测平台进行各种测量，不影响生产线的任何生产任务。</p><p class="body-p">系统包括激光测厚，编码器测径，不圆度检测，合格翻管等标配功能，所有检测数据可以发送到工厂内部的 MES 系统，生产看板或者其他管理系统，远程监控管材质量。</p>
+    </section><section class="m-topic" id="function">
+      <h2>功能特点<a class="m-anchor" href="#function" aria-label="link">#</a></h2>
+      <dl class="m-def"><dt>壁厚测量</dt><dd>设定壁厚上下限、实时壁厚。在管材内外利用专利结构进行激光测距，通过伺服电机旋转一周，将一周测量所测得的位置和内外距离进行全方位运算，得到管材的准确厚度，同时把最大最小值的位置标示出来。壁厚检测点在离管材端口 30-50mm 处，以避开管材切口翻边；此专利结构使激光不直接照射到管材表面上，避免受到管材颜色影响，以使测量结果更精确。</dd><dt>外径测量</dt><dd>下线管材平均外径测量，设定平均上下限、实测平均外径值。在管材外利用编码器，通过伺服旋转一周，将一周测量所测得的数据进行全方位运算，得到管材的准确外径。外径检测点在离管材端口 300mm 处，以符合国标测量标准。</dd><dt>不圆度计算</dt><dd>利用两组激光，共测量若干个点的外径来计算不圆度并且显示在界面。</dd><dt>椭圆度计算</dt><dd>根据得到的壁厚尺寸算出管材椭圆度并且显示在界面。</dd><dt>数据保存与采集</dt><dd>所有得到的数据都实时保存为 Excel 格式并且存在指定文件夹，开放 TCP / MQTT 端口便于采集数据上传公司 MES 系统及客户指定端口。采集方式为实时检测结果采集和原始数据采集。数据输出可根据生产订单或生产日期，分别输出为 Excel / PDF 格式，通用 U 盘导出。</dd><dt>数据显示</dt><dd>可实时显示当前生产的数量、良品率、NG 数、OK 数。</dd><dt>偏差报警功能</dt><dd>通过对设定的外径、重量、壁厚、长度、不圆度的上下偏差对比进行合格与否的报警提示功能，具有不良品报警功能以及产品数量达到提醒功能。</dd><dt>数据处理</dt><dd>剔除异常数据，异常数据不关联追溯码。</dd></dl>
+    </section><section class="m-topic" id="model">
+      <h2>型号与技术参数<a class="m-anchor" href="#model" aria-label="link">#</a></h2>
+      <div class="model"><table><thead><tr><th>型号 Model</th><th>可测管径（mm）</th><th>生产节拍</th><th>可测管材长度(m)</th></tr></thead><tbody><tr><td>SLJK-250</td><td>φ90-250</td><td>30s/cycle</td><td>4-12m</td></tr><tr><td>SLJK-315</td><td>φ250-315</td><td>30s/cycle</td><td>4-12m</td></tr><tr><td>SLJK-400</td><td>φ315-400</td><td>30s/cycle</td><td>4-12m</td></tr></tbody></table></div>
+    </section>
+    <nav class="m-nav"><a class="m-pn" href="/manual/quality-storage.html">← 管材质量安全入库系统</a><span></span></nav>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><strong>海狮科技</strong><span>广州海狮软件科技有限公司</span></div>
+    <div class="fcol"><h4>手册</h4>
+      <a href="/manual/">手册总览</a>
+      <a href="/manual/reader.html">翻页阅读</a>
+      <a href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>下载 PDF</a>
+    </div>
+    <div class="fcol"><h4>联系</h4>
+      <a href="tel:4008404080">4008-4040-80</a><a href="tel:+862022109833">+86-20-22109833</a><a href="mailto:2428582102@qq.com">2428582102@qq.com</a>
+    </div>
+  </div>
+  <div class="wrap foot-btm"><span>© <span id="yr"></span> 广州海狮软件科技有限公司</span></div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
