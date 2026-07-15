@@ -61,4 +61,6 @@
   <url><loc>https://www.sealion-tech.com/en/manual/quality-storage.html</loc><xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/quality-storage.html"/><changefreq>monthly</changefreq></url>
   <url><loc>https://www.sealion-tech.com/manual/intelligent-inspection.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/intelligent-inspection.html"/><changefreq>monthly</changefreq></url>
   <url><loc>https://www.sealion-tech.com/en/manual/intelligent-inspection.html</loc><xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/intelligent-inspection.html"/><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.sealion-tech.com/ip.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/ip.html"/><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.sealion-tech.com/en/ip.html</loc><xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/ip.html"/><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

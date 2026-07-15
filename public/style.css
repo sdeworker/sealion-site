@@ -511,3 +511,30 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .cert-t{font-size:0.8rem;color:var(--ink);line-height:1.4}
 .cert-no{font-family:var(--mono);font-size:0.66rem;color:var(--blue);word-break:break-all}
 .cert-dt{font-family:var(--mono);font-size:0.62rem;color:var(--steel)}
+
+/* ============ IP PORTFOLIO PAGE ============ */
+.ip-hero{padding-block:clamp(2.4rem,5vw,3.8rem);background:radial-gradient(100% 90% at 88% 0%,#123A54 0%,transparent 55%),var(--ink)}
+.ip-hero h1{font-size:var(--step-3);margin:0.9rem 0 1rem;max-width:20ch}
+.ip-hero .lead{max-width:60ch;color:var(--steel-dk)}
+.ip-stats{display:grid;grid-template-columns:repeat(4,auto);gap:clamp(1.4rem,4vw,3rem);justify-content:start;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line-dk)}
+.ips{display:flex;flex-direction:column;gap:0.3rem}
+.ips-n{font-family:var(--mono);font-size:clamp(1.5rem,3.5vw,2.2rem);color:#fff;font-weight:500;line-height:1}
+.ips-l{font-size:0.8rem;color:var(--blue-lift)}
+@media(max-width:640px){.ip-stats{grid-template-columns:repeat(2,1fr)}}
+.ip-note{color:var(--steel);font-size:0.92rem;line-height:1.7;max-width:78ch;margin-bottom:2.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
+.ip-note a{color:var(--blue)}
+.ip-group{margin-bottom:2.8rem}
+.ip-group h3{font-size:var(--step-1);margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem}
+.ip-c{font-family:var(--mono);font-size:0.72rem;color:var(--blue);background:var(--blue-ghost);border-radius:999px;padding:0.25em 0.65em}
+.ip-table{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--paper-2)}
+.ip-table table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.ip-table th{background:var(--mist);color:var(--ink);font-weight:500;text-align:left;padding:0.7em 0.9em;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:0.74rem;letter-spacing:0.05em;white-space:nowrap}
+.ip-table td{padding:0.65em 0.9em;border-bottom:1px solid var(--line);vertical-align:top}
+.ip-table tr:last-child td{border-bottom:none}
+.ip-table tr:hover td{background:var(--blue-ghost)}
+.ip-y{font-family:var(--mono);font-size:0.78rem;color:var(--steel);white-space:nowrap}
+.ip-t{color:var(--ink);line-height:1.5}
+.ip-v{font-family:var(--mono);font-size:0.78rem;color:var(--steel);white-space:nowrap}
+.ip-n code{font-family:var(--mono);font-size:0.76rem;color:var(--blue);white-space:nowrap}
+.ip-has{color:var(--signal);font-size:0.7em;margin-left:0.4em;vertical-align:super}
+.ip-all,.certs-all{margin-top:1.4rem;display:inline-flex}
