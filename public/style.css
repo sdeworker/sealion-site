@@ -275,8 +275,8 @@ a.c-v:hover{color:var(--blue)}
 
 .pcard--img{padding:0;overflow:hidden;display:flex;flex-direction:column;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .2s,transform .2s,box-shadow .2s}
 .pcard--img:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 16px 36px rgba(10,26,38,0.10)}
-.pcard--img .pc-img{background:linear-gradient(160deg,#F7FAFD,#EAF1F7);height:270px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden}
-.pcard--img .pc-img img{max-height:94%;max-width:92%;object-fit:contain;transition:transform .35s ease}
+.pcard--img .pc-img{background:#fff;height:260px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden;padding:14px}
+.pcard--img .pc-img img{max-height:100%;max-width:100%;object-fit:contain;border-radius:6px;transition:transform .35s ease}
 .pcard--img:hover .pc-img img{transform:scale(1.05)}
 .pcard--img .pc-body{padding:clamp(1.3rem,3vw,1.7rem);display:flex;flex-direction:column;gap:0.5rem;flex:1}
 
