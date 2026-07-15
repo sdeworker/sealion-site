@@ -423,6 +423,68 @@
 
 
   <!-- PARTNERS -->
+
+  <!-- CALC -->
+  <section class="section calc" id="calc">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">Run the numbers</span>
+        <h2>What gravimetric control pays back in a year</h2>
+        <p class="lead">The manual says it saves 2%–5% of raw material. Three numbers will tell you what that sentence is worth on your line.</p>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-inputs"><label class="calc-f">
+          <span class="calc-l">Output</span>
+          <span class="calc-in"><input type="number" id="c-out" value="500" min="0" step="any"><span class="calc-u">kg/h</span></span>
+          <span class="calc-h">Extruder throughput</span>
+        </label><label class="calc-f">
+          <span class="calc-l">Material price</span>
+          <span class="calc-in"><input type="number" id="c-price" value="9" min="0" step="any"><span class="calc-u">CNY/kg</span></span>
+          <span class="calc-h">Delivered price of PE / PVC etc.</span>
+        </label><label class="calc-f">
+          <span class="calc-l">Running hours / year</span>
+          <span class="calc-in"><input type="number" id="c-hours" value="6000" min="0" step="any"><span class="calc-u">h</span></span>
+          <span class="calc-h">About 6000 on two shifts</span>
+        </label></div>
+        <div class="calc-out">
+          <div class="calc-r">
+            <span class="calc-rl">At 2% (conservative)</span>
+            <span class="calc-rn"><b id="c-lo">—</b> <i>CNY / year</i></span>
+            <span class="calc-rt"><b id="c-lot">—</b> tonnes / year</span>
+          </div>
+          <div class="calc-r calc-r--hi">
+            <span class="calc-rl">At 5%</span>
+            <span class="calc-rn"><b id="c-hi">—</b> <i>CNY / year</i></span>
+            <span class="calc-rt"><b id="c-hit">—</b> tonnes / year</span>
+          </div>
+          <a class="btn btn--primary calc-cta" href="/en/#contact">Have an engineer run it on my line</a>
+        </div>
+      </div>
+      <p class="calc-note">Basis: Sealion Product Manual, Gravimetric Control System — Main function: "Solve the problem of meter weight deviation and waste material — can save 2%–5% raw material." This is arithmetic only; it excludes savings from start-up scrap, material changeover and screen-pack blockage. Real figures depend on your line — ask an engineer to run it properly.</p>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var ids=['out','price','hours'];
+    function n(id){var v=parseFloat(document.getElementById('c-'+id).value);return isFinite(v)&&v>0?v:0;}
+    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
+    function calc(){
+      var kg=n('out')*n('hours');           // kg per year
+      var cost=kg*n('price');
+      var lo=cost*0.02, hi=cost*0.05;
+      document.getElementById('c-lo').textContent=kg?fmt(lo):'—';
+      document.getElementById('c-hi').textContent=kg?fmt(hi):'—';
+      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'—';
+      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'—';
+    }
+    ids.forEach(function(i){
+      var el=document.getElementById('c-'+i);
+      el.addEventListener('input',calc); el.addEventListener('change',calc);
+    });
+    calc();
+  })();
+  </script>
+
   <section class="section partners on-dark" id="partners">
     <div class="wrap">
       <div class="sh">

@@ -427,6 +427,68 @@
   </section>
 
 
+
+  <!-- CALC -->
+  <section class="section calc" id="calc">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">算一笔账</span>
+        <h2>米重控制，一年能省回多少</h2>
+        <p class="lead">手册写的是「为您节省 2%–5% 原料」。这句话在你的产线上值多少钱，填三个数就知道。</p>
+      </div>
+      <div class="calc-grid">
+        <div class="calc-inputs"><label class="calc-f">
+          <span class="calc-l">挤出量</span>
+          <span class="calc-in"><input type="number" id="c-out" value="500" min="0" step="any"><span class="calc-u">kg/h</span></span>
+          <span class="calc-h">产线的主机产量</span>
+        </label><label class="calc-f">
+          <span class="calc-l">原料单价</span>
+          <span class="calc-in"><input type="number" id="c-price" value="9" min="0" step="any"><span class="calc-u">元/kg</span></span>
+          <span class="calc-h">PE / PVC 等主料的到厂价</span>
+        </label><label class="calc-f">
+          <span class="calc-l">年运行小时</span>
+          <span class="calc-in"><input type="number" id="c-hours" value="6000" min="0" step="any"><span class="calc-u">h</span></span>
+          <span class="calc-h">按两班制约 6000 小时</span>
+        </label></div>
+        <div class="calc-out">
+          <div class="calc-r">
+            <span class="calc-rl">按 2% 保守估算</span>
+            <span class="calc-rn"><b id="c-lo">—</b> <i>元 / 年</i></span>
+            <span class="calc-rt"><b id="c-lot">—</b> 吨 / 年</span>
+          </div>
+          <div class="calc-r calc-r--hi">
+            <span class="calc-rl">按 5% 估算</span>
+            <span class="calc-rn"><b id="c-hi">—</b> <i>元 / 年</i></span>
+            <span class="calc-rt"><b id="c-hit">—</b> 吨 / 年</span>
+          </div>
+          <a class="btn btn--primary calc-cta" href="/#contact">让工程师按我的产线算一遍</a>
+        </div>
+      </div>
+      <p class="calc-note">测算依据：《海狮科技产品手册》米重控制系统 · 主要功能——「解决生产过程中米重偏差浪费原料的问题，为您节省 2%–5% 原料」。本测算只做算术，不含开机废料、换料废管、过滤网堵塞等额外节省；实际数字以现场工况为准，欢迎让工程师按你的产线算一遍。</p>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var ids=['out','price','hours'];
+    function n(id){var v=parseFloat(document.getElementById('c-'+id).value);return isFinite(v)&&v>0?v:0;}
+    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
+    function calc(){
+      var kg=n('out')*n('hours');           // kg per year
+      var cost=kg*n('price');
+      var lo=cost*0.02, hi=cost*0.05;
+      document.getElementById('c-lo').textContent=kg?fmt(lo):'—';
+      document.getElementById('c-hi').textContent=kg?fmt(hi):'—';
+      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'—';
+      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'—';
+    }
+    ids.forEach(function(i){
+      var el=document.getElementById('c-'+i);
+      el.addEventListener('input',calc); el.addEventListener('change',calc);
+    });
+    calc();
+  })();
+  </script>
+
   <!-- PARTNERS -->
   <section class="section partners on-dark" id="partners">
     <div class="wrap">
