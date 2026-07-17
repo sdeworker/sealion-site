@@ -614,27 +614,49 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 @media(max-width:640px){.lb-prev,.lb-next{width:2.2rem;height:2.2rem;font-size:1.2rem}.lb-close{top:.8rem;right:.8rem}}
 
 /* ---------- 企业文化 ---------- */
-.culture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.culture-card{
-  position:relative;padding:2rem 1.6rem 1.7rem;border-radius:var(--radius);
-  background:linear-gradient(155deg,var(--paper-2) 0%,var(--mist) 100%);
-  border:1px solid var(--line);overflow:hidden;transition:transform .2s,box-shadow .2s;
+.culture-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
 }
-.culture-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(10,26,38,.08)}
-.culture-card::before{
-  content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;
-  background:var(--blue-ghost);border-radius:50%;
+.cul-card{
+  position:relative;display:flex;gap:1.15rem;
+  padding:2.1rem 1.9rem;background:#fff;
+  transition:background .22s ease;
 }
-.culture-card--wide{grid-column:span 3}
-.c-ico{
-  display:inline-flex;color:var(--blue);font-size:1.1rem;margin-bottom:.9rem;
-  position:relative;z-index:1;
+.cul-card:hover{background:var(--mist)}
+/* 左侧竖线 + 大编号 */
+.cul-num{
+  flex:0 0 auto;font-family:var(--mono);font-size:1rem;font-weight:500;
+  color:var(--blue);letter-spacing:.02em;line-height:1;
+  padding-right:1.15rem;border-right:2px solid var(--blue-ghost);
+  transition:border-color .22s ease;
 }
-.culture-card .c-idx{
-  display:block;font-family:var(--mono);font-size:.85rem;color:var(--steel);
-  margin-bottom:.3rem;position:relative;z-index:1;
+.cul-card:hover .cul-num{border-right-color:var(--blue)}
+.cul-body{flex:1 1 auto;min-width:0}
+.cul-body h3{
+  font-family:var(--display);font-size:1.32rem;font-weight:700;
+  color:var(--ink);margin:0 0 .7rem;letter-spacing:.01em;
 }
-.culture-card h3{font-family:var(--display);font-size:var(--step-1);margin-bottom:.5rem;position:relative;z-index:1}
-.culture-card p{font-size:var(--step--1);line-height:1.7;color:var(--ink-70);position:relative;z-index:1}
-@media(max-width:900px){.culture-grid{grid-template-columns:1fr 1fr}.culture-card--wide{grid-column:span 2}}
-@media(max-width:560px){.culture-grid{grid-template-columns:1fr}.culture-card--wide{grid-column:span 1}}
+.cul-body p{
+  font-size:.98rem;line-height:1.85;color:var(--steel);margin:0;
+}
+/* 前三条：核心精神，加浅蓝底强调 */
+.cul-card--hero{background:linear-gradient(160deg,rgba(0,97,188,.045),rgba(0,97,188,0) 60%)}
+.cul-card--hero:hover{background:linear-gradient(160deg,rgba(0,97,188,.08),rgba(0,97,188,.02) 60%)}
+.cul-card--hero .cul-body h3{color:var(--blue-dk)}
+/* 第七条：横跨整行，标题与正文并排 */
+.cul-card--full{grid-column:1 / -1}
+.cul-card--full .cul-body{display:flex;align-items:baseline;gap:2rem;flex-wrap:wrap}
+.cul-card--full .cul-body h3{flex:0 0 auto;margin:0}
+.cul-card--full .cul-body p{flex:1 1 320px;line-height:1.9}
+@media(max-width:900px){
+  .culture-grid{grid-template-columns:1fr 1fr}
+  .cul-card--full{grid-column:1 / -1}
+  .cul-card--full .cul-body{display:block}
+  .cul-card--full .cul-body h3{margin-bottom:.7rem}
+}
+@media(max-width:560px){
+  .culture-grid{grid-template-columns:1fr}
+  .cul-card{padding:1.7rem 1.4rem}
+}
