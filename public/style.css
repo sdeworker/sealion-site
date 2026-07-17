@@ -612,3 +612,29 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .lb-prev{left:1.5rem;top:50%;transform:translateY(-50%)}
 .lb-next{right:1.5rem;top:50%;transform:translateY(-50%)}
 @media(max-width:640px){.lb-prev,.lb-next{width:2.2rem;height:2.2rem;font-size:1.2rem}.lb-close{top:.8rem;right:.8rem}}
+
+/* ---------- 企业文化 ---------- */
+.culture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.culture-card{
+  position:relative;padding:2rem 1.6rem 1.7rem;border-radius:var(--radius);
+  background:linear-gradient(155deg,var(--paper-2) 0%,var(--mist) 100%);
+  border:1px solid var(--line);overflow:hidden;transition:transform .2s,box-shadow .2s;
+}
+.culture-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(10,26,38,.08)}
+.culture-card::before{
+  content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;
+  background:var(--blue-ghost);border-radius:50%;
+}
+.culture-card--wide{grid-column:span 3}
+.c-ico{
+  display:inline-flex;color:var(--blue);font-size:1.1rem;margin-bottom:.9rem;
+  position:relative;z-index:1;
+}
+.culture-card .c-idx{
+  display:block;font-family:var(--mono);font-size:.85rem;color:var(--steel);
+  margin-bottom:.3rem;position:relative;z-index:1;
+}
+.culture-card h3{font-family:var(--display);font-size:var(--step-1);margin-bottom:.5rem;position:relative;z-index:1}
+.culture-card p{font-size:var(--step--1);line-height:1.7;color:var(--ink-70);position:relative;z-index:1}
+@media(max-width:900px){.culture-grid{grid-template-columns:1fr 1fr}.culture-card--wide{grid-column:span 2}}
+@media(max-width:560px){.culture-grid{grid-template-columns:1fr}.culture-card--wide{grid-column:span 1}}
