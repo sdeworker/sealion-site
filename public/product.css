@@ -112,3 +112,8 @@
 .install-fig img{width:100%;height:auto;display:block}
 .install-fig figcaption{padding:0.8em 1em;font-size:0.82rem;color:var(--steel);border-top:1px solid var(--line);background:var(--paper-2)}
 @media(max-width:860px){.struct-grid{grid-template-columns:1fr}}
+
+/* ---------- IP清单证书链接 ---------- */
+.ip-cert-link{text-decoration:none;border-bottom:1px dashed var(--blue);transition:background .15s}
+.ip-cert-link:hover{background:var(--blue-ghost)}
+.ip-cert-link code{cursor:zoom-in;color:var(--blue)}
