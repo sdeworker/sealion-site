@@ -698,3 +698,39 @@ a.pcust:hover .pcust-name{color:var(--blue)}
   .ts-hero-media{min-height:200px}
 }
 @media(max-width:520px){.ts-grid{grid-template-columns:1fr}}
+
+/* ---------- 产品应用(7场景) ---------- */
+.apy-list{display:flex;flex-direction:column;gap:1.4rem}
+.apy-item{
+  display:grid;grid-template-columns:0.85fr 1.15fr;
+  background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  transition:box-shadow .22s,border-color .22s;
+}
+.apy-item:hover{box-shadow:0 16px 38px rgba(10,26,38,.09);border-color:var(--blue)}
+.apy-item--rev{grid-template-columns:1.15fr 0.85fr}
+.apy-item--rev .apy-media{order:2}
+.apy-item--rev .apy-body{order:1}
+.apy-media{overflow:hidden;min-height:250px;position:relative}
+.apy-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s}
+.apy-item:hover .apy-media img{transform:scale(1.04)}
+.apy-body{padding:2.1rem 2.3rem;display:flex;flex-direction:column;justify-content:center}
+.apy-body h3{font-family:var(--display);font-size:1.55rem;font-weight:700;color:var(--ink);margin:0 0 .9rem}
+.apy-body p{font-size:1rem;line-height:1.9;color:var(--ink-70);margin:0 0 1.3rem}
+.apy-prods{border-top:1px solid var(--line);padding-top:1.1rem}
+.apy-prods-t{
+  display:block;font-size:.82rem;font-weight:600;color:var(--steel);
+  letter-spacing:.06em;margin-bottom:.7rem;
+}
+.apy-prods ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem .9rem}
+.apy-prods li{position:relative;padding-left:.9rem;font-size:.94rem}
+.apy-prods li::before{content:"●";position:absolute;left:0;color:var(--blue);font-size:.6rem;top:.42em}
+.apy-prods a{color:var(--blue);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.apy-prods a:hover{border-bottom-color:var(--blue)}
+.apy-prods span{color:var(--steel)}
+@media(max-width:860px){
+  .apy-item,.apy-item--rev{grid-template-columns:1fr}
+  .apy-item--rev .apy-media{order:1}
+  .apy-item--rev .apy-body{order:2}
+  .apy-media{min-height:200px}
+  .apy-body{padding:1.7rem 1.5rem}
+}
