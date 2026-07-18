@@ -638,13 +638,11 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .cul-body{padding:1.7rem 1.6rem 1.9rem;flex:1 1 auto}
 .cul-body h3{
   font-family:var(--display);font-size:1.7rem;font-weight:700;
-  color:var(--ink);margin:0 0 .9rem;letter-spacing:.01em;
+  color:var(--blue-dk);margin:0 0 .9rem;letter-spacing:.01em;
 }
 .cul-body p{
   font-size:1.12rem;line-height:1.9;color:var(--ink-70);margin:0;
 }
-/* 前三条核心精神：标题蓝色强调 */
-.cul-card--hero .cul-body h3{color:var(--blue-dk)}
 /* 第七条横跨整行：图在左，文字在右，更大气 */
 .cul-card--full{grid-column:1 / -1;flex-direction:row}
 .cul-card--full .cul-media{flex:0 0 38%;aspect-ratio:auto}
