@@ -734,3 +734,18 @@ a.pcust:hover .pcust-name{color:var(--blue)}
   .apy-media{min-height:200px}
   .apy-body{padding:1.7rem 1.5rem}
 }
+
+/* ---------- 售后与服务(旧站三块) ---------- */
+.svc-old{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-bottom:2.2rem}
+.svc-old-item{
+  background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.svc-old-item:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(10,26,38,.09);border-color:var(--blue)}
+.svc-old-media{aspect-ratio:550/310;overflow:hidden}
+.svc-old-media img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.svc-old-item:hover .svc-old-media img{transform:scale(1.05)}
+.svc-old-body{padding:1.5rem 1.5rem 1.7rem;flex:1 1 auto}
+.svc-old-body h3{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 0 .7rem}
+.svc-old-body p{font-size:.97rem;line-height:1.85;color:var(--steel);margin:0}
+@media(max-width:900px){.svc-old{grid-template-columns:1fr}}
