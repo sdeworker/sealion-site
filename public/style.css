@@ -749,3 +749,9 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .svc-old-body h3{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 0 .7rem}
 .svc-old-body p{font-size:.97rem;line-height:1.85;color:var(--steel);margin:0}
 @media(max-width:900px){.svc-old{grid-template-columns:1fr}}
+
+/* 案例图可点击放大 */
+.case-link{display:block;cursor:zoom-in}
+.case-link .case-img{overflow:hidden}
+.case-link:hover .case-img img{transform:scale(1.04)}
+.case-img img{transition:transform .4s}
