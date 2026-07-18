@@ -755,3 +755,25 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .case-link .case-img{overflow:hidden}
 .case-link:hover .case-img img{transform:scale(1.04)}
 .case-img img{transition:transform .4s}
+
+/* ---------- 海狮动态：两个子栏目 ---------- */
+.nw-jumps{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.nw-jump{
+  display:inline-flex;align-items:center;font-size:.92rem;color:var(--ink);
+  border:1px solid var(--line);border-radius:999px;padding:.5em 1.1em;
+  text-decoration:none;transition:border-color .18s,background .18s,color .18s;
+}
+.nw-jump:hover{border-color:var(--blue);background:var(--blue-ghost);color:var(--blue)}
+.nw-cat-block{margin-bottom:2.6rem}
+.nw-cat-block:last-child{margin-bottom:0}
+.nw-cat-head{
+  display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;
+  padding-bottom:.9rem;margin-bottom:1.2rem;border-bottom:1px solid var(--line);
+}
+.nw-cat-head h3{font-family:var(--display);font-size:1.45rem;font-weight:700;color:var(--ink);margin:0}
+.nw-cat-head p{font-size:.94rem;color:var(--steel);margin:0;flex:1 1 auto}
+.nw-n{
+  font-family:var(--mono);font-size:.8rem;color:var(--blue);
+  background:var(--blue-ghost);border-radius:999px;padding:.25em .8em;
+}
+@media(max-width:640px){.nw-cat-head p{flex-basis:100%}}
