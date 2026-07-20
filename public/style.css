@@ -777,3 +777,36 @@ a.pcust:hover .pcust-name{color:var(--blue)}
   background:var(--blue-ghost);border-radius:999px;padding:.25em .8em;
 }
 @media(max-width:640px){.nw-cat-head p{flex-basis:100%}}
+
+/* ---------- 新闻卡片可点击 ---------- */
+.nw-body h3 a{color:inherit;text-decoration:none;transition:color .15s}
+.nw-body h3 a:hover{color:var(--blue)}
+.nw-img a{display:block;height:100%}
+.nw-more{
+  display:inline-block;margin-top:.7rem;font-size:.9rem;color:var(--blue);
+  text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s;
+}
+.nw-more:hover{border-bottom-color:var(--blue)}
+
+/* ---------- 新闻详情页 ---------- */
+.nv{padding-top:2.4rem}
+.nv-wrap{max-width:820px}
+.nv-back{
+  display:inline-block;font-size:.92rem;color:var(--steel);text-decoration:none;
+  margin-bottom:1.6rem;transition:color .15s;
+}
+.nv-back:hover{color:var(--blue)}
+.nv-back--btm{margin:2.4rem 0 0}
+.nv-cat{
+  display:inline-block;font-size:.8rem;color:var(--blue);background:var(--blue-ghost);
+  padding:.3em .9em;border-radius:999px;margin-bottom:1rem;
+}
+.nv h1{
+  font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;
+  line-height:1.4;color:var(--ink);margin:0 0 .9rem;
+}
+.nv-meta{font-family:var(--mono);font-size:.88rem;color:var(--steel);padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
+.nv-cover{margin:1.8rem 0}
+.nv-cover img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.nv-body{margin-top:1.8rem}
+.nv-body p{font-size:1.06rem;line-height:2;color:var(--ink-70);margin:0 0 1.2rem}
