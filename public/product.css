@@ -117,3 +117,7 @@
 .ip-cert-link{text-decoration:none;border-bottom:1px dashed var(--blue);transition:background .15s}
 .ip-cert-link:hover{background:var(--blue-ghost)}
 .ip-cert-link code{cursor:zoom-in;color:var(--blue)}
+
+/* 计算公式框（米重换算等） */
+.formula-box{margin:1.4rem 0;padding:1.1rem 1.3rem;background:var(--paper-2);border:1px solid var(--line);border-left:2px solid var(--blue);border-radius:var(--radius);overflow-x:auto}
+.formula-box code{font:500 clamp(.95rem,2.4vw,1.08rem)/1.7 var(--mono);color:var(--ink);white-space:nowrap}

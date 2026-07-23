@@ -165,6 +165,34 @@
 <tr><td>MIXSCAN 48-7-7</td><td>800 + 300 + 300 Kg/h</td><td>404×500×996 / 726 / 726</td></tr></tbody></table></div>
 </div></section>
 
+<section class="section"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Control modes</span><h2>Four control modes</h2>
+  <p class="lead">One system, four ways to hand over control — chosen to suit the line and the process goal. Whichever end the system takes over, the other stays available for the operator to trim by hand, which is what matters most on the floor.</p></div>
+  <div class="grid cols-2 func-grid">
+    <div class="func"><b>Extruder wall-thickness control</b> The system takes over screw speed; haul-off speed stays adjustable. To trim the extruder up or down, adjust the haul-off.</div>
+    <div class="func"><b>Haul-off wall-thickness control</b> The system takes over haul-off speed; screw speed stays adjustable. To trim the haul-off, adjust the extruder.</div>
+    <div class="func"><b>Output control</b> The system takes over screw speed; change the output figure and the line speeds up or slows down accordingly.</div>
+    <div class="func"><b>Dual control</b> Both extruder and haul-off are under system control; changing the output value lets the system accelerate or decelerate on its own.</div>
+  </div>
+  <p class="proof-src">Under wall-thickness control, if the pipe comes out thin or thick, change the target in the gravimetric or spec setting — no need to touch the extruder. The system raises or lowers the screw or haul-off itself.</p>
+</div></section>
+
+<section class="section mist"><div class="wrap narrow">
+  <div class="sh"><span class="eyebrow">Calculation</span><h2>Weight-per-metre calculation &amp; four ways to start</h2></div>
+  <p>Enter outer diameter, wall thickness and material density and the system derives the weight per metre; set OD, density and weight per metre instead and it derives the wall thickness.</p>
+  <div class="formula-box"><code>weight/m = (OD − wall) × wall × 3.14 × density ÷ 1000</code></div>
+  <p>The line can be started four ways, whichever suits the crew: by frequency (Hz), by screw speed, by haul-off speed, or by output. Starting on frequency is usually the clearest right after installation.</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Recipes</span><h2>Recipes, changeover and thickening</h2></div>
+  <div class="grid cols-2 func-grid">
+    <div class="func"><b>Production recipes</b> Once the line is stable, save the current spec as a recipe. Next time you run it, recall the recipe and extruder and haul-off ramp back to the saved speeds within 30 seconds — reaching steady state fast and cutting start-up scrap.</div>
+    <div class="func"><b>Changeover recipes</b> Four further slots store the screw and haul-off speeds used when splicing, so a changeover is one recall instead of a fresh trial by feel.</div>
+    <div class="func"><b>Thickening</b> For pipes that need one thickened end, such as socket ends, set the thickened wall and thickened length and the system switches between thick and thin sections in step with cut length.</div>
+  </div>
+</div></section>
+
 <section class="section mist"><div class="wrap narrow">
   <div class="sh"><span class="eyebrow">ROI</span><h2>Return on investment</h2>
   <p class="lead">The system typically saves 2%–5% of raw material, sometimes more. The figures below assume 2.5% savings at a material price of RMB 9.00/kg.</p></div>
