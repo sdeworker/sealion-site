@@ -78,7 +78,7 @@ class BackToTopContractTest(unittest.TestCase):
         for expected in (
             ".back-to-top{",
             "width:44px;height:44px",
-            "bottom:calc(clamp(1rem,3vw,2rem) + 58px)",
+            "bottom:calc(clamp(1rem,3vw,2rem) + var(--ai-launcher-height,2.6875rem) + .875rem)",
             ".back-to-top.is-visible{",
             "pointer-events:auto",
         ):
@@ -151,7 +151,7 @@ Insert this CSS immediately before the AI assistant section in `public/style.css
 /* ============ BACK TO TOP ============ */
 .back-to-top{
   position:fixed;right:clamp(1rem,3vw,2rem);
-  bottom:calc(clamp(1rem,3vw,2rem) + 58px);z-index:89;
+  bottom:calc(clamp(1rem,3vw,2rem) + var(--ai-launcher-height,2.6875rem) + .875rem);z-index:89;
   width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
   display:grid;place-items:center;background:var(--paper-2);color:var(--ink);
   box-shadow:0 8px 24px -8px rgba(10,26,38,.38);cursor:pointer;
@@ -164,7 +164,7 @@ Insert this CSS immediately before the AI assistant section in `public/style.css
 .back-to-top:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-ghost)}
 ```
 
-The AI launcher bottom edge remains `clamp(1rem,3vw,2rem)`. The new button begins 58 pixels above that edge, so its 44-pixel height leaves the required 14-pixel gap.
+The AI launcher bottom edge remains `clamp(1rem,3vw,2rem)`. JavaScript measures the actual `.ai-launcher` height into `--ai-launcher-height`, and CSS adds a `.875rem` gap. The `2.6875rem` fallback preserves the current 43-pixel launcher height before measurement or when `ResizeObserver` is unavailable.
 
 - [ ] **Step 5: Implement scroll state and reduced-motion behavior**
 

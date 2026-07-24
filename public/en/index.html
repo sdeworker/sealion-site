@@ -65,7 +65,7 @@
   </div>
 </header>
 
-<main>
+<main tabindex="-1">
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
@@ -998,6 +998,12 @@
   </div>
 </footer>
 
+<button class="back-to-top" type="button" data-back-to-top aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+    <path d="M12 19V5m-6 6 6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
 <div class="ai" data-ai data-lang="en"
      data-greeting="Hi — I'm Sealion's technical sales engineer. Tell me what you extrude (pipe, film, cable, compounds…) and what you want to control, and I'll recommend the right systems."
      data-fallback="Thanks! The assistant is being connected. Reach us directly: hotline 4008-4040-80, phone +86-20-22109833, email 2428582102@qq.com — an engineer will follow up."
@@ -1024,6 +1030,7 @@
 </div>
 
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script src="/assets/back-to-top.js" defer></script>
 <script src="/assets/app.js" defer></script>
 <script src="/assets/lightbox.js" defer></script>
 </body>
