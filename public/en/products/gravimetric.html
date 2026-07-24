@@ -207,6 +207,35 @@
   <p class="proof-src">Source: ROI examples in the Sealion cable-gravimetric brochure. Actual savings vary with output, hours, price and saving rate.</p>
 </div></section>
 
+<section class="section"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Alarms</span><h2>Alarm codes &amp; on-line checks</h2>
+  <p class="lead">When the system alarms, a code appears on screen. The table below gives what each code means and the checks line staff can make <strong>without opening the cabinet and without working on live equipment</strong>. If the alarm persists after those checks, contact Sealion service — anything involving measurement inside the cabinet, wiring changes or part replacement is for our engineers.</p></div>
+  <div class="model"><table>
+    <thead><tr><th>Code</th><th>Meaning</th><th>Checks you can make on the line</th></tr></thead>
+    <tbody>
+      <tr><td>00</td><td>Module cannot connect to the PC</td><td>Power the display off and on a few times to see if it recovers; check that the display-to-controller communication cable is firmly seated and undamaged.</td></tr>
+      <tr><td>01</td><td>Hopper starved</td><td>Is the silo empty? Is the drop path blocked or bridging? Is air pressure 0.3–0.4MPa? Does the shut-off mechanism move freely, and is anything propping up the cylinder base?</td></tr>
+      <tr><td>02</td><td>Output fluctuating</td><td>Is the hopper filling and discharging normally? Any disturbance near the weighing point (hopper vibration, blockage, excessive throat temperature)? Watch the silo — is the screw taking material unevenly?</td></tr>
+      <tr><td>03</td><td>Haul-off speed fluctuating</td><td>Is the encoder connector fully seated and the cable undamaged? Is the encoder mounted square and centred? Is the coupling tight? Is the supply healthy?</td></tr>
+      <tr><td>05</td><td>Excessive torque</td><td>The extruder is drawing overload current. Reduce screw speed first, then find the cause — commonly the screw is starved or the melt is too cold.</td></tr>
+      <tr><td>06</td><td>Poor feeding</td><td>Is the silo empty? Is the loader working?</td></tr>
+      <tr><td>07</td><td>Poor link between gravimetric and haul-off modules</td><td>Is the cable between the two modules fully seated and undamaged? Any strong source of electrical interference nearby?</td></tr>
+      <tr><td>09</td><td>Extruder signal low</td><td>Check the extruder control cable is firmly seated and undamaged. If it still alarms, an engineer needs to measure on site.</td></tr>
+      <tr><td>11</td><td>Large deviation between measured and set value</td><td>Look at the haul-off and output curves: if the haul-off curve is abnormal see code 03; if the output curve is abnormal see code 02.</td></tr>
+      <tr><td>12</td><td>Extruder fault</td><td>Has the extruder breaker tripped? Is the extruder start signal on?</td></tr>
+      <tr><td>13</td><td>Haul-off fault</td><td>Has the haul-off breaker tripped? Is the haul-off start signal on?</td></tr>
+      <tr><td>14</td><td>Haul-off signal at maximum</td><td>The haul-off is near the inverter's 50Hz ceiling. Reduce haul-off speed and establish why such a high speed was needed.</td></tr>
+      <tr><td>15</td><td>Measured weight per metre far from setpoint</td><td>Review the haul-off and output curves and work through the checks for codes 02 and 03.</td></tr>
+      <tr><td>17</td><td>Extruder or haul-off control signal exceeds the read signal by 30%</td><td>Raised when overshoot occurs in steady state. Check the curves to see whether the extrusion or the haul-off end is causing it.</td></tr>
+      <tr><td>19</td><td>Abnormal screw speed</td><td>Is the extruder speed curve smooth? If it is, the speed pick-up is the likely cause — check the proximity switch and sensing collar for movement and correct gap. If it is not smooth, check whether output fluctuation is driving the speed.</td></tr>
+      <tr><td>20</td><td>No or very low haul-off speed reading</td><td>Is the encoder wheel turning with the pipe, and is the encoder shaft rotating? Is the encoder cable fully seated? If there is still no reading, an engineer must assess the encoder or module.</td></tr>
+      <tr><td>none</td><td>Hopper value never reaches the set upper limit</td><td>Usually caused by a large change in material density, so a full hopper still falls short of the threshold; output is then neither calculated nor controlled. The hopper thresholds need adjusting — contact service.</td></tr>
+      <tr><td>none</td><td>Hopper stays full and output will not rise</td><td>Confirm valve auto mode is on; confirm air supply is normal (0.3–0.4MPa); watch whether the shut-off device moves freely or is sticking. If it is still wrong, contact service.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="proof-src">Sealion provides lifetime maintenance and a two-year free warranty. Please do not attempt diagnosis that involves live measurement inside the cabinet, wiring changes, or replacing modules and parts — leave those to a Sealion engineer.</p>
+</div></section>
+
 <section class="section prod-foot-cta on-dark">
   <div class="wrap center">
     <h2>Tell an engineer what your line is fighting</h2>

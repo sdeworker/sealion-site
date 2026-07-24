@@ -41,6 +41,7 @@
 .func{background:var(--paper-2);border:1px solid var(--line);border-left:2px solid var(--signal);border-radius:var(--radius);padding:1rem 1.2rem;font-size:var(--step--1);line-height:1.6;color:var(--ink-70)}
 
 /* 技术参数表 */
+.spec{overflow-x:auto}
 .spec table{width:100%;border-collapse:collapse;margin-top:1.6rem;font-size:var(--step--1)}
 .spec td{padding:.75rem 1rem;border-bottom:1px solid var(--line)}
 .spec td:nth-child(odd){font-family:var(--mono);color:var(--steel);white-space:nowrap;width:1%}
