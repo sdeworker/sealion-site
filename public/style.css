@@ -45,7 +45,10 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--body);font-size:var(--step-0);line-height:1.65;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 h1,h2,h3,h4{font-family:var(--display);line-height:1.1;font-weight:600;letter-spacing:-0.01em}
 a{color:inherit;text-decoration:none}
+/* img 带 width/height 属性以防布局跳动；height:auto 保证等比缩放。
+   放在基础规则里（最低优先级），.brand img / .case-img img 等显式高度仍然生效 */
 img,svg{display:block;max-width:100%}
+img{height:auto}
 :lang(zh) body,body:lang(zh){--display:"Noto Sans SC","Space Grotesk",sans-serif;--body:"Noto Sans SC","Inter",sans-serif}
 
 .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
