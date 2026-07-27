@@ -1,0 +1,6 @@
+# 产品中心拆为两个事业部（2026-07）：旧的 /products/* 永久跳到管道事业部
+# 说明：原有 8 个产品页内容本就是管道口径，故整体归入 /pipe/
+/products/                 /pipe/                      301
+/products/:slug            /pipe/:slug                 301
+/en/products/              /en/pipe/                   301
+/en/products/:slug         /en/pipe/:slug              301

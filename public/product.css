@@ -37,7 +37,9 @@
 .flow li b{color:var(--ink);margin-right:.5rem}
 
 /* 主要功能 */
-.func-grid{margin-top:1.8rem}
+/* 功能卡片网格：此前只写了 margin，缺少列定义，导致卡片单列堆叠 */
+.func-grid{margin-top:1.8rem;display:grid;grid-template-columns:repeat(2,1fr);gap:0.9rem}
+@media(max-width:760px){.func-grid{grid-template-columns:1fr}}
 .func{background:var(--paper-2);border:1px solid var(--line);border-left:2px solid var(--signal);border-radius:var(--radius);padding:1rem 1.2rem;font-size:var(--step--1);line-height:1.6;color:var(--ink-70)}
 
 /* 技术参数表 */
