@@ -828,3 +828,14 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .nv-cover img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
 .nv-body{margin-top:1.8rem}
 .nv-body p{font-size:1.06rem;line-height:2;color:var(--ink-70);margin:0 0 1.2rem}
+
+/* ---- 首页事业部分岔（2026 改版）---- */
+.div-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1rem,2.4vw,1.8rem);margin-top:2.2rem}
+.div-card{display:block;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--paper-2);transition:border-color .25s,transform .25s,box-shadow .25s}
+.div-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 10px 32px rgba(10,26,38,.10)}
+.div-card>img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.div-body{padding:clamp(1.1rem,2vw,1.6rem)}
+.div-body h3{font-family:var(--display);font-size:var(--step-2);margin:0 0 .45em}
+.div-body p{color:var(--ink-70);margin:0 0 .7em}
+.div-meta{display:block;font-size:var(--step--1);color:var(--steel);font-family:var(--mono);margin-bottom:1em}
+@media(max-width:760px){.div-grid{grid-template-columns:1fr}}

@@ -58,14 +58,6 @@
   },
   "nav": [
     {
-      "href": "/#about",
-      "label": {
-        "zh": "关于海狮",
-        "en": "About",
-        "ru": "О компании"
-      }
-    },
-    {
       "href": "/pipe/",
       "label": {
         "zh": "管道挤出",
@@ -82,14 +74,6 @@
       }
     },
     {
-      "href": "/#apply-detail",
-      "label": {
-        "zh": "海狮实力",
-        "en": "Capability",
-        "ru": "Возможности"
-      }
-    },
-    {
       "href": "/#apply",
       "label": {
         "zh": "应用行业",
@@ -98,15 +82,31 @@
       }
     },
     {
-      "href": "/#cases",
+      "href": "/cases.html",
       "label": {
-        "zh": "案例展示",
+        "zh": "案例与客户",
         "en": "Cases",
         "ru": "Проекты"
       }
     },
     {
-      "href": "/#news",
+      "href": "/about.html",
+      "label": {
+        "zh": "关于海狮",
+        "en": "About",
+        "ru": "О компании"
+      }
+    },
+    {
+      "href": "/service.html",
+      "label": {
+        "zh": "服务支持",
+        "en": "Service",
+        "ru": "Сервис"
+      }
+    },
+    {
+      "href": "/news.html",
       "label": {
         "zh": "海狮动态",
         "en": "News",
@@ -147,11 +147,27 @@
           }
         },
         {
-          "href": "/#apply",
+          "href": "/cases.html",
           "label": {
-            "zh": "应用行业",
-            "en": "Industries",
-            "ru": "Отрасли"
+            "zh": "案例与客户",
+            "en": "Cases",
+            "ru": "Проекты"
+          }
+        },
+        {
+          "href": "/about.html",
+          "label": {
+            "zh": "关于海狮",
+            "en": "About",
+            "ru": "О компании"
+          }
+        },
+        {
+          "href": "/service.html",
+          "label": {
+            "zh": "服务支持",
+            "en": "Service",
+            "ru": "Сервис"
           }
         },
         {
@@ -160,14 +176,6 @@
             "zh": "产品手册",
             "en": "Manuals",
             "ru": "Руководства"
-          }
-        },
-        {
-          "href": "/#about",
-          "label": {
-            "zh": "关于海狮",
-            "en": "About",
-            "ru": "О компании"
           }
         }
       ]
