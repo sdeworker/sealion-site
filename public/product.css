@@ -124,3 +124,21 @@
 /* 计算公式框（米重换算等） */
 .formula-box{margin:1.4rem 0;padding:1.1rem 1.3rem;background:var(--paper-2);border:1px solid var(--line);border-left:2px solid var(--blue);border-radius:var(--radius);overflow-x:auto}
 .formula-box code{font:500 clamp(.95rem,2.4vw,1.08rem)/1.7 var(--mono);color:var(--ink);white-space:nowrap}
+
+/* ---- 2026 素材：现场图库与视频 ---- */
+.shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,1.4vw,1.1rem);margin-top:1.8rem}
+.shot{margin:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--paper-2)}
+.shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;display:block;transition:transform .35s}
+.shot:hover img{transform:scale(1.03)}
+@media(max-width:900px){.shot-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.shot-grid{grid-template-columns:1fr}}
+
+.vshot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,2vw,1.4rem);margin-top:1.8rem}
+.vshot{margin:0}
+.vshot video{width:100%;height:auto;display:block;border-radius:var(--radius);border:1px solid var(--line);background:#000}
+.vshot figcaption{margin-top:.6rem;font-size:var(--step--1);color:var(--steel)}
+@media(max-width:760px){.vshot-grid{grid-template-columns:1fr}}
+
+/* 线缆页 hero 无图文分栏时，主图单独成块 */
+.prod-hero-media.solo{max-width:420px;margin:0 0 1.6rem}
+.prod-hero-media.solo img{width:100%;height:auto;border-radius:var(--radius)}
