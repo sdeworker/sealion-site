@@ -1,0 +1,102 @@
+{
+  "_说明": "全站俄语译文的唯一词源。改这里 → 重新构建 → 全站生效。conf 字段：high=通用标准译法；med=行业内有多种说法，已选常用的；low=需懂行的人确认。",
+
+  "核心测控": [
+    { "zh": "米重 / 每米重量", "en": "weight per metre", "ru": "масса погонного метра", "conf": "high" },
+    { "zh": "米重控制系统", "en": "gravimetric control system", "ru": "система гравиметрического контроля", "conf": "med", "note": "另一常见说法 система контроля массы погонного метра，更直白但偏长" },
+    { "zh": "闭环控制", "en": "closed-loop control", "ru": "замкнутый контур регулирования", "conf": "high" },
+    { "zh": "PID 控制", "en": "PID control", "ru": "ПИД-регулирование", "conf": "high" },
+    { "zh": "在线检测", "en": "online / in-line measurement", "ru": "контроль в линии", "conf": "high" },
+    { "zh": "远程监控", "en": "remote monitoring", "ru": "удалённый мониторинг", "conf": "high" },
+    { "zh": "测量精度", "en": "measuring accuracy", "ru": "точность измерения", "conf": "high" },
+    { "zh": "校准", "en": "calibration", "ru": "калибровка", "conf": "high" },
+    { "zh": "配方", "en": "recipe", "ru": "рецепт", "conf": "high" },
+    { "zh": "报警", "en": "alarm", "ru": "аварийный сигнал", "conf": "high" }
+  ],
+
+  "产线设备": [
+    { "zh": "挤出", "en": "extrusion", "ru": "экструзия", "conf": "high" },
+    { "zh": "挤出机 / 主机", "en": "extruder", "ru": "экструдер", "conf": "high" },
+    { "zh": "挤出生产线", "en": "extrusion line", "ru": "экструзионная линия", "conf": "high" },
+    { "zh": "螺杆", "en": "screw", "ru": "шнек", "conf": "high" },
+    { "zh": "螺杆转速", "en": "screw speed", "ru": "частота вращения шнека", "conf": "high" },
+    { "zh": "牵引机", "en": "haul-off", "ru": "тянущее устройство", "conf": "high" },
+    { "zh": "牵引速度", "en": "haul-off speed", "ru": "скорость тяги", "conf": "med", "note": "也见 скорость вытяжки" },
+    { "zh": "料斗", "en": "hopper", "ru": "бункер", "conf": "high" },
+    { "zh": "称重传感器", "en": "load cell", "ru": "тензодатчик", "conf": "high" },
+    { "zh": "编码器", "en": "encoder", "ru": "энкодер", "conf": "high" },
+    { "zh": "定径套 / 定径", "en": "calibrator / sizing", "ru": "калибратор", "conf": "high" },
+    { "zh": "真空定径箱", "en": "vacuum calibration tank", "ru": "вакуумная калибровочная ванна", "conf": "high" },
+    { "zh": "冷却水箱", "en": "cooling tank", "ru": "ванна охлаждения", "conf": "high" },
+    { "zh": "切割机", "en": "cutter", "ru": "отрезное устройство", "conf": "med" },
+    { "zh": "变频器", "en": "inverter / VFD", "ru": "частотный преобразователь", "conf": "high" },
+    { "zh": "工控机 / 触摸屏", "en": "industrial PC / touch screen", "ru": "промышленный компьютер с сенсорным экраном", "conf": "high" }
+  ],
+
+  "超声波测厚": [
+    { "zh": "超声波在线测厚", "en": "ultrasonic wall thickness measurement", "ru": "ультразвуковое измерение толщины стенки", "conf": "high" },
+    { "zh": "超声波探头", "en": "ultrasonic probe / transducer", "ru": "ультразвуковой преобразователь", "conf": "med", "note": "口语也用 датчик" },
+    { "zh": "扫描箱", "en": "scanning box", "ru": "сканирующая головка", "conf": "med", "note": "海狮特有部件名，按功能译" },
+    { "zh": "壁厚", "en": "wall thickness", "ru": "толщина стенки", "conf": "high" },
+    { "zh": "外径", "en": "outer diameter", "ru": "наружный диаметр", "conf": "high" },
+    { "zh": "内径", "en": "inner diameter", "ru": "внутренний диаметр", "conf": "high" },
+    { "zh": "偏心度", "en": "eccentricity", "ru": "эксцентриситет", "conf": "high" },
+    { "zh": "椭圆度 / 不圆度", "en": "ovality", "ru": "овальность", "conf": "high" },
+    { "zh": "回波", "en": "echo", "ru": "эхо-сигнал", "conf": "high" },
+    { "zh": "声速", "en": "sound velocity", "ru": "скорость звука", "conf": "high" },
+    { "zh": "耦合水", "en": "coupling water", "ru": "контактная (иммерсионная) среда", "conf": "low", "note": "水浸法通常说 иммерсионный метод，此处指介质水，需确认惯用说法" }
+  ],
+
+  "色母计量": [
+    { "zh": "色母 / 色母粒", "en": "masterbatch", "ru": "суперконцентрат", "conf": "med", "note": "俄语行业内 мастербатч 音译也广泛使用，二选一需统一" },
+    { "zh": "色母计量系统", "en": "masterbatch dosing system", "ru": "система дозирования суперконцентрата", "conf": "med" },
+    { "zh": "失重式计量", "en": "loss-in-weight dosing", "ru": "дозирование по потере веса", "conf": "high" },
+    { "zh": "配比 / 添加比例", "en": "dosing ratio", "ru": "процент дозирования", "conf": "high" },
+    { "zh": "混料", "en": "blending", "ru": "смешивание", "conf": "high" }
+  ],
+
+  "产品与行业": [
+    { "zh": "管材", "en": "pipe", "ru": "труба", "conf": "high" },
+    { "zh": "电缆 / 线缆", "en": "cable", "ru": "кабель", "conf": "high" },
+    { "zh": "护套", "en": "sheath / jacket", "ru": "оболочка кабеля", "conf": "high" },
+    { "zh": "绝缘层", "en": "insulation", "ru": "изоляция", "conf": "high" },
+    { "zh": "PE 给水管", "en": "PE water pipe", "ru": "ПЭ труба водоснабжения", "conf": "high" },
+    { "zh": "PE 燃气管", "en": "PE gas pipe", "ru": "ПЭ газовая труба", "conf": "high" },
+    { "zh": "PPR 管", "en": "PPR pipe", "ru": "ППР труба", "conf": "high" },
+    { "zh": "PVC 管", "en": "PVC pipe", "ru": "ПВХ труба", "conf": "high" },
+    { "zh": "波纹管 / 缠绕管", "en": "corrugated pipe", "ru": "гофрированная труба", "conf": "high" },
+    { "zh": "吹膜 / 流延膜", "en": "blown / cast film", "ru": "рукавная и плоскощелевая плёнка", "conf": "med" },
+    { "zh": "片材板材", "en": "sheet & board", "ru": "лист и плита", "conf": "high" },
+    { "zh": "熔喷布", "en": "meltblown fabric", "ru": "мельтблаун", "conf": "med", "note": "也见 нетканый материал мельтблаун" },
+    { "zh": "医疗导管", "en": "medical catheter", "ru": "медицинский катетер", "conf": "high" }
+  ],
+
+  "生产管理": [
+    { "zh": "产量", "en": "output / throughput", "ru": "производительность", "conf": "high" },
+    { "zh": "合格率", "en": "pass rate / yield", "ru": "доля годной продукции", "conf": "high" },
+    { "zh": "废品", "en": "scrap", "ru": "брак", "conf": "high" },
+    { "zh": "节省原料", "en": "material saving", "ru": "экономия сырья", "conf": "high" },
+    { "zh": "开机", "en": "start-up", "ru": "запуск линии", "conf": "high" },
+    { "zh": "停机", "en": "shutdown", "ru": "останов линии", "conf": "high" },
+    { "zh": "班次", "en": "shift", "ru": "смена", "conf": "high" },
+    { "zh": "追溯", "en": "traceability", "ru": "прослеживаемость", "conf": "high" },
+    { "zh": "质保 / 保修", "en": "warranty", "ru": "гарантия", "conf": "high" },
+    { "zh": "售后服务", "en": "after-sales service", "ru": "сервисное обслуживание", "conf": "high" }
+  ],
+
+  "网站栏目": [
+    { "zh": "管道挤出事业部", "en": "Pipe Extrusion Division", "ru": "Подразделение экструзии труб", "conf": "med" },
+    { "zh": "线缆挤出事业部", "en": "Cable Extrusion Division", "ru": "Подразделение экструзии кабеля", "conf": "med" },
+    { "zh": "产品中心", "en": "Products", "ru": "Продукция", "conf": "high" },
+    { "zh": "应用行业", "en": "Industries", "ru": "Отрасли применения", "conf": "high" },
+    { "zh": "案例展示", "en": "Cases / References", "ru": "Реализованные проекты", "conf": "high" },
+    { "zh": "关于海狮", "en": "About Sealion", "ru": "О компании", "conf": "high" },
+    { "zh": "海狮实力", "en": "Our capability", "ru": "Наши возможности", "conf": "med" },
+    { "zh": "海狮动态", "en": "News", "ru": "Новости", "conf": "high" },
+    { "zh": "联系我们", "en": "Contact", "ru": "Контакты", "conf": "high" },
+    { "zh": "产品手册", "en": "Manuals", "ru": "Руководства", "conf": "high" },
+    { "zh": "服务支持", "en": "Service & support", "ru": "Сервис и поддержка", "conf": "high" },
+    { "zh": "技术参数", "en": "Technical data", "ru": "Технические характеристики", "conf": "high" },
+    { "zh": "获取方案", "en": "Request a solution", "ru": "Запросить решение", "conf": "high" }
+  ]
+}
