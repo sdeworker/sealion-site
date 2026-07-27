@@ -1,0 +1,65 @@
+{
+  "base": "https://www.sealion-tech.com",
+  "ogImage": "/assets/apply/water-pipe.jpg",
+  "languages": ["zh", "en", "ru"],
+  "langRoot": { "zh": "/", "en": "/en/", "ru": "/ru/" },
+  "htmlLang": { "zh": "zh-CN", "en": "en", "ru": "ru" },
+  "hreflang": { "zh": "zh-CN", "en": "en", "ru": "ru" },
+  "ogLocale": { "zh": "zh_CN", "en": "en_US", "ru": "ru_RU" },
+  "langLabel": { "zh": "中文", "en": "EN", "ru": "РУ" },
+
+  "legalName": {
+    "zh": "广州海狮软件科技有限公司",
+    "en": "Guangzhou Sealion Software Technology Co., Ltd.",
+    "ru": "Guangzhou Sealion Software Technology Co., Ltd."
+  },
+  "brand": { "zh": "海狮科技", "en": "Sealion Tech", "ru": "Sealion Tech" },
+  "tagline": {
+    "zh": "塑料挤出的测量与控制。",
+    "en": "Measurement and control for plastics extrusion.",
+    "ru": "Измерение и управление в экструзии пластмасс."
+  },
+
+  "hotline": "4008-4040-80",
+  "hotlineHref": "tel:4008404080",
+  "phone": "+86-20-22109833",
+  "phoneHref": "tel:+862022109833",
+  "email": "2428582102@qq.com",
+  "address": {
+    "zh": "广州市黄埔区联浦街 8 号联东知识城数字谷 U4 栋 9 楼",
+    "en": "9F, Building U4, Digital Valley, Liandong Knowledge City, 8 Lianpu Street, Huangpu District, Guangzhou",
+    "ru": "Гуанчжоу, р-н Хуанпу, ул. Ляньпу 8, Digital Valley, корп. U4, 9 этаж"
+  },
+
+  "nav": [
+    { "href": "/#about",        "label": { "zh": "关于海狮", "en": "About",      "ru": "О компании" } },
+    { "href": "/#products",     "label": { "zh": "产品中心", "en": "Products",   "ru": "Продукция" } },
+    { "href": "/#apply-detail", "label": { "zh": "海狮实力", "en": "Capability", "ru": "Возможности" } },
+    { "href": "/#apply",        "label": { "zh": "应用行业", "en": "Industries", "ru": "Отрасли" } },
+    { "href": "/#cases",        "label": { "zh": "案例展示", "en": "Cases",      "ru": "Проекты" } },
+    { "href": "/#news",         "label": { "zh": "海狮动态", "en": "News",       "ru": "Новости" } },
+    { "href": "/#contact",      "label": { "zh": "联系我们", "en": "Contact",    "ru": "Контакты" } }
+  ],
+
+  "footerCols": [
+    {
+      "title": { "zh": "产品", "en": "Products", "ru": "Продукция" },
+      "links": [
+        { "href": "/#products", "label": { "zh": "产品中心", "en": "Products",  "ru": "Продукция" } },
+        { "href": "/#apply",    "label": { "zh": "应用行业", "en": "Industries","ru": "Отрасли" } },
+        { "href": "/manual/",   "label": { "zh": "产品手册", "en": "Manuals",   "ru": "Руководства" } },
+        { "href": "/#about",    "label": { "zh": "关于海狮", "en": "About",     "ru": "О компании" } }
+      ]
+    }
+  ],
+
+  "ui": {
+    "skip":      { "zh": "跳到主要内容", "en": "Skip to main content", "ru": "Перейти к содержимому" },
+    "menu":      { "zh": "菜单",        "en": "Menu",                 "ru": "Меню" },
+    "mainNav":   { "zh": "主导航",      "en": "Main navigation",      "ru": "Главное меню" },
+    "home":      { "zh": "首页",        "en": "Home",                 "ru": "Главная" },
+    "backToTop": { "zh": "返回顶部",    "en": "Back to top",          "ru": "Наверх" },
+    "contact":   { "zh": "联系",        "en": "Contact",              "ru": "Контакты" },
+    "brandHome": { "zh": "海狮科技 首页","en": "Sealion Tech home",    "ru": "Sealion Tech — главная" }
+  }
+}

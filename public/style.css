@@ -97,18 +97,18 @@ img{height:auto}
 .hotline{font-family:var(--mono);font-size:0.82rem;color:var(--ink);display:inline-flex;align-items:center;gap:0.5em;letter-spacing:0.02em;min-height:38px;padding:0 0.4em;border-radius:var(--radius);transition:color .18s,background .18s}
 .hotline:hover{color:var(--blue);background:var(--blue-ghost)}
 .hotline .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px var(--signal-soft)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
-.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.2s}
-#nav-toggle{display:none}
+/* 汉堡菜单：真 <button> + aria-expanded（可键盘操作），不再用 checkbox 伪装 */
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:0;color:inherit}
+.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.2s;display:block}
 @media(max-width:860px){
   .header-actions .hotline{display:none}
   .burger{display:flex;order:3}
   .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--paper-2);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .28s}
   .nav a{padding:0.9em var(--gutter);border-top:1px solid var(--line)}
-  #nav-toggle:checked ~ .nav{max-height:70vh}
-  #nav-toggle:checked ~ .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  #nav-toggle:checked ~ .burger span:nth-child(2){opacity:0}
-  #nav-toggle:checked ~ .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .burger[aria-expanded="true"] ~ .nav{max-height:70vh}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 }
 
 /* ============ HERO + signature tolerance-band readout ============ */

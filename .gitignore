@@ -1,1 +1,2 @@
-.worktrees/
+build_test/
+node_modules/

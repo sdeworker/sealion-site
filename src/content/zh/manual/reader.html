@@ -1,0 +1,56 @@
+{
+ "title": "翻页阅读 — 海狮科技产品手册",
+ "description": "按原版排版翻页阅读海狮科技产品手册，14 个跨页。",
+ "css": [
+  "product",
+  "manual"
+ ],
+ "type": "page"
+}
+---
+<div class="rd" data-total="14">
+  <div class="rd-bar">
+    <a class="rd-back" href="/manual/">← 手册总览</a>
+    <div class="rd-chips"><button class="rd-chip" data-go="1">01 公司简介</button><button class="rd-chip" data-go="2">02 挤出云远程监控系统</button><button class="rd-chip" data-go="3">03 米重控制系统</button><button class="rd-chip" data-go="6">04 米重色母一体控制系统</button><button class="rd-chip" data-go="8">05 超声波在线测厚系统</button><button class="rd-chip" data-go="11">06 管材质量安全入库系统</button><button class="rd-chip" data-go="12">07 管材在线智能检测系统</button></div>
+    <a class="rd-dl btn btn--ghost" href="/downloads/Sealion-Product-Manual-2025-ZH-EN.pdf" download>下载 PDF</a>
+  </div>
+  <div class="rd-stage">
+    <button class="rd-arrow rd-prev" aria-label="上一页">‹</button>
+    <div class="rd-page"><img id="rd-img" src="/assets/manual/pages/p00.jpg" alt="手册跨页 1" width="1600" height="1087"></div>
+    <button class="rd-arrow rd-next" aria-label="下一页">›</button>
+  </div>
+  <div class="rd-foot">
+    <input class="rd-range" type="range" min="1" max="14" value="1" aria-label="跳转跨页">
+    <span class="rd-count"><b id="rd-cur">1</b> / 14</span>
+    <span class="rd-hint">← → 翻页</span>
+  </div>
+</div>
+<script>
+(function(){
+  var TOTAL=14, cur=1;
+  var img=document.getElementById('rd-img'), lab=document.getElementById('rd-cur');
+  var range=document.querySelector('.rd-range');
+  function pad(n){return (n<10?'0':'')+n;}
+  function show(n){
+    cur=Math.min(TOTAL,Math.max(1,n));
+    img.src='/assets/manual/pages/p'+pad(cur-1)+'.jpg';
+    img.alt='手册跨页 '+cur;
+    lab.textContent=cur; range.value=cur;
+    var u=new URL(location); u.searchParams.set('p',cur); history.replaceState(null,'',u);
+    pre(cur+1); pre(cur-1);
+  }
+  function pre(n){ if(n<1||n>TOTAL) return; var i=new Image(); i.src='/assets/manual/pages/p'+pad(n-1)+'.jpg'; }
+  document.querySelector('.rd-prev').addEventListener('click',function(){show(cur-1);});
+  document.querySelector('.rd-next').addEventListener('click',function(){show(cur+1);});
+  range.addEventListener('input',function(){show(parseInt(this.value,10));});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft') show(cur-1);
+    if(e.key==='ArrowRight') show(cur+1);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-go]'),function(b){
+    b.addEventListener('click',function(){show(parseInt(b.getAttribute('data-go'),10));});
+  });
+  var p=parseInt(new URL(location).searchParams.get('p')||'1',10);
+  show(isNaN(p)?1:p);
+})();
+</script>

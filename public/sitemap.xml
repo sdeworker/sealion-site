@@ -1,661 +1,567 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.sealion-tech.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/"/>
-    <lastmod>2026-07-24</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/cable-sheathing</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/cable-sheathing"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/cable-sheathing"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/cable-sheathing"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/corrugated-pipe</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/corrugated-pipe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/corrugated-pipe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/corrugated-pipe"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/film</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/film"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/film"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/film"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/masterbatch-compounds</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/masterbatch-compounds"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/masterbatch-compounds"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/masterbatch-compounds"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/medical-catheter</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/medical-catheter"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/medical-catheter"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/medical-catheter"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/meltblown</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/meltblown"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/meltblown"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/meltblown"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/pe-gas-pipe</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pe-gas-pipe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pe-gas-pipe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pe-gas-pipe"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/pe-water-pipe</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pe-water-pipe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pe-water-pipe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pe-water-pipe"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/plastic-piping</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/plastic-piping"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/plastic-piping"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/plastic-piping"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/ppr-pipe</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/ppr-pipe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/ppr-pipe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/ppr-pipe"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/pvc-pipe</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pvc-pipe"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pvc-pipe"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pvc-pipe"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/industries/sheet-board</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/sheet-board"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/sheet-board"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/sheet-board"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/ip</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/ip"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/ip"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/ip"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/cloud</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/cloud"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/cloud"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/cloud"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/company</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/company"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/company"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/company"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/gravimetric</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/gravimetric"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/gravimetric"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/gravimetric"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/intelligent-inspection</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/intelligent-inspection"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/intelligent-inspection"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/intelligent-inspection"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/masterbatch</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/masterbatch"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/masterbatch"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/masterbatch"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/quality-storage</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/quality-storage"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/quality-storage"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/quality-storage"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/reader</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/reader"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/reader"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/reader"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/manual/ultrasonic</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/ultrasonic"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/ultrasonic"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/ultrasonic"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/annual-2019</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/annual-2019"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/annual-2019"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/annual-2019"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/award-2025</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/award-2025"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/award-2025"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/award-2025"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/cny-2026</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/cny-2026"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/cny-2026"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/cny-2026"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/expo-2020</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2020"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2020"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2020"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/expo-2025</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2025"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2025"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2025"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/expo-2026</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2026"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2026"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2026"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/expo-31</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-31"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-31"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-31"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/expo-33</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-33"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-33"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-33"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/expo-34</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-34"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-34"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-34"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/gas-2016</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/gas-2016"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/gas-2016"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/gas-2016"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/hightech-2016</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/hightech-2016"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/hightech-2016"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/hightech-2016"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/hightech-2025</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/hightech-2025"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/hightech-2025"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/hightech-2025"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/interview-2020</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/interview-2020"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/interview-2020"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/interview-2020"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/postpone-2020</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/postpone-2020"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/postpone-2020"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/postpone-2020"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/recruit-2025</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/recruit-2025"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/recruit-2025"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/recruit-2025"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/news/training-2026</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/training-2026"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/training-2026"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/training-2026"/>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/cloud-monitoring</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/cloud-monitoring"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/cloud-monitoring"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/cloud-monitoring"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/gravimetric</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/gravimetric"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/gravimetric"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/gravimetric"/>
-    <lastmod>2026-07-24</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/intelligent-inspection</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/intelligent-inspection"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/intelligent-inspection"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/intelligent-inspection"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/masterbatch-weighing</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/masterbatch-weighing"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/masterbatch-weighing"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/masterbatch-weighing"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/masterbatch</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/masterbatch"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/masterbatch"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/masterbatch"/>
-    <lastmod>2026-07-23</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/quality-storage</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/quality-storage"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/quality-storage"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/quality-storage"/>
-    <lastmod>2026-07-24</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/ultrasonic-big</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/ultrasonic-big"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/ultrasonic-big"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/ultrasonic-big"/>
-    <lastmod>2026-07-25</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sealion-tech.com/en/products/ultrasonic-small</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/ultrasonic-small"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/ultrasonic-small"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/ultrasonic-small"/>
-    <lastmod>2026-07-24</lastmod>
-  </url>
-  <url>
     <loc>https://www.sealion-tech.com/</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/"/>
-    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/cable-sheathing</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/cable-sheathing"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/cable-sheathing"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/cable-sheathing"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/cable-sheathing</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/cable-sheathing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/cable-sheathing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/cable-sheathing"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/corrugated-pipe</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/corrugated-pipe"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/corrugated-pipe"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/corrugated-pipe"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/corrugated-pipe</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/corrugated-pipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/corrugated-pipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/corrugated-pipe"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/film</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/film"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/film"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/film"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/film</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/film"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/film"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/film"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/masterbatch-compounds</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/masterbatch-compounds"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/masterbatch-compounds"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/masterbatch-compounds"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/masterbatch-compounds</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/masterbatch-compounds"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/masterbatch-compounds"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/masterbatch-compounds"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/medical-catheter</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/medical-catheter"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/medical-catheter"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/medical-catheter"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/medical-catheter</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/medical-catheter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/medical-catheter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/medical-catheter"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/meltblown</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/meltblown"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/meltblown"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/meltblown"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/meltblown</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/meltblown"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/meltblown"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/meltblown"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/pe-gas-pipe</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pe-gas-pipe"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pe-gas-pipe"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pe-gas-pipe"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/pe-gas-pipe</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pe-gas-pipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pe-gas-pipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pe-gas-pipe"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/pe-water-pipe</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pe-water-pipe"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pe-water-pipe"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pe-water-pipe"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/pe-water-pipe</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pe-water-pipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pe-water-pipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pe-water-pipe"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/plastic-piping</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/plastic-piping"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/plastic-piping"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/plastic-piping"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/plastic-piping</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/plastic-piping"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/plastic-piping"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/plastic-piping"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/ppr-pipe</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/ppr-pipe"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/ppr-pipe"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/ppr-pipe"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/ppr-pipe</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/ppr-pipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/ppr-pipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/ppr-pipe"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/pvc-pipe</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pvc-pipe"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pvc-pipe"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pvc-pipe"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/pvc-pipe</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/pvc-pipe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/pvc-pipe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/pvc-pipe"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/sheet-board</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/sheet-board"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/sheet-board"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/sheet-board"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/sheet-board</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/sheet-board"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/sheet-board"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/sheet-board"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/ip</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/ip"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/ip"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/ip"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/ip</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/ip"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/ip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/ip"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/cloud</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/cloud"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/cloud"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/cloud"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/cloud</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/cloud"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/cloud"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/cloud"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/company</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/company"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/company"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/company"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/company</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/company"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/company"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/company"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/gravimetric</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/gravimetric"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/gravimetric"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/gravimetric"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/gravimetric</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/gravimetric"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/gravimetric"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/gravimetric"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/intelligent-inspection</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/intelligent-inspection"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/intelligent-inspection"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/intelligent-inspection"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/intelligent-inspection</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/intelligent-inspection"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/intelligent-inspection"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/intelligent-inspection"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/masterbatch</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/masterbatch"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/masterbatch"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/masterbatch"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/masterbatch</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/masterbatch"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/masterbatch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/masterbatch"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/quality-storage</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/quality-storage"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/quality-storage"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/quality-storage"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/quality-storage</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/quality-storage"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/quality-storage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/quality-storage"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/reader</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/reader"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/reader"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/reader"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/reader</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/reader"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/reader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/reader"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/manual/ultrasonic</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/ultrasonic"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/ultrasonic"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/ultrasonic"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/manual/ultrasonic</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/manual/ultrasonic"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/manual/ultrasonic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/manual/ultrasonic"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/annual-2019</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/annual-2019"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/annual-2019"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/annual-2019"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/annual-2019</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/annual-2019"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/annual-2019"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/annual-2019"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/award-2025</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/award-2025"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/award-2025"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/award-2025"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/award-2025</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/award-2025"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/award-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/award-2025"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/cny-2026</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/cny-2026"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/cny-2026"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/cny-2026"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/cny-2026</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/cny-2026"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/cny-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/cny-2026"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/expo-2020</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2020"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2020"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2020"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/expo-2020</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2020"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2020"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2020"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/expo-2025</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2025"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2025"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2025"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/expo-2025</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2025"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2025"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/expo-2026</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2026"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2026"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2026"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/expo-2026</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-2026"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-2026"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/expo-31</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-31"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-31"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-31"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/expo-31</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-31"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-31"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-31"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/expo-33</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-33"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-33"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-33"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/expo-33</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-33"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-33"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-33"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/expo-34</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-34"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-34"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-34"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/expo-34</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/expo-34"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/expo-34"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/expo-34"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/gas-2016</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/gas-2016"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/gas-2016"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/gas-2016"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/gas-2016</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/gas-2016"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/gas-2016"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/gas-2016"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/hightech-2016</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/hightech-2016"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/hightech-2016"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/hightech-2016"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/hightech-2016</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/hightech-2016"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/hightech-2016"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/hightech-2016"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/hightech-2025</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/hightech-2025"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/hightech-2025"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/hightech-2025"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/hightech-2025</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/hightech-2025"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/hightech-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/hightech-2025"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/interview-2020</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/interview-2020"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/interview-2020"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/interview-2020"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/interview-2020</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/interview-2020"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/interview-2020"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/interview-2020"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/postpone-2020</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/postpone-2020"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/postpone-2020"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/postpone-2020"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/postpone-2020</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/postpone-2020"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/postpone-2020"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/postpone-2020"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/recruit-2025</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/recruit-2025"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/recruit-2025"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/recruit-2025"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/recruit-2025</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/recruit-2025"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/recruit-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/recruit-2025"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/news/training-2026</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/training-2026"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/training-2026"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/training-2026"/>
-    <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/news/training-2026</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/news/training-2026"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/news/training-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/news/training-2026"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/cloud-monitoring</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/cloud-monitoring"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/cloud-monitoring"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/cloud-monitoring"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/cloud-monitoring</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/cloud-monitoring"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/cloud-monitoring"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/cloud-monitoring"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/gravimetric</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/gravimetric"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/gravimetric"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/gravimetric"/>
-    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/gravimetric</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/gravimetric"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/gravimetric"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/gravimetric"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/intelligent-inspection</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/intelligent-inspection"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/intelligent-inspection"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/intelligent-inspection"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/intelligent-inspection</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/intelligent-inspection"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/intelligent-inspection"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/intelligent-inspection"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/masterbatch-weighing</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/masterbatch-weighing"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/masterbatch-weighing"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/masterbatch-weighing"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/masterbatch-weighing</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/masterbatch-weighing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/masterbatch-weighing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/masterbatch-weighing"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/masterbatch</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/masterbatch"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/masterbatch"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/masterbatch"/>
-    <lastmod>2026-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/masterbatch</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/masterbatch"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/masterbatch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/masterbatch"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/quality-storage</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/quality-storage"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/quality-storage"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/quality-storage"/>
-    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/quality-storage</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/quality-storage"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/quality-storage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/quality-storage"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/ultrasonic-big</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/ultrasonic-big"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/ultrasonic-big"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/ultrasonic-big"/>
-    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/ultrasonic-big</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/ultrasonic-big"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/ultrasonic-big"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/ultrasonic-big"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/products/ultrasonic-small</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/ultrasonic-small"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/ultrasonic-small"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/ultrasonic-small"/>
-    <lastmod>2026-07-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/products/ultrasonic-small</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/products/ultrasonic-small"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/products/ultrasonic-small"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/products/ultrasonic-small"/>
   </url>
 </urlset>
