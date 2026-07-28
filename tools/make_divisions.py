@@ -2,10 +2,10 @@
 """生成两个事业部入口页（中/英），卡片信息取自各产品页自身的元数据"""
 import json, os, re
 
-PIPE = ["gravimetric", "masterbatch", "masterbatch-weighing", "ultrasonic-small",
+PIPE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "ultrasonic-small",
         "cloud-monitoring", "ultrasonic-big", "quality-storage", "intelligent-inspection"]
-CABLE = ["gravimetric", "masterbatch", "masterbatch-weighing", "ultrasonic-small",
-         "cloud-monitoring"]
+CABLE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "laser-caliper",
+         "ultrasonic-small", "cloud-monitoring"]
 
 TEXT = {
     "pipe": {
@@ -15,7 +15,7 @@ TEXT = {
             "eyebrow": "管道挤出事业部",
             "h1": "管道挤出：从下料口到入库口，全程可测可控",
             "lead": "管子出了模具就定型，壁厚偏了、米重超了，回头再看已是几吨料的事。管道挤出事业部把测量放进产线本身——喂料端控米重、机头后测壁厚、下线前查质量，让每一米管都在你设定的范围里走完全程。",
-            "secTitle": "本事业部的 8 套系统",
+            "secTitle": "本事业部的 9 套系统",
             "why": [
                 ("控在源头", "米重系统装在挤出机进料口，用 PID 闭环实时调主机转速与牵引速度，标准条件下控制精度可达 0.3%，节省 2%–5% 原料。"),
                 ("测在机头", "超声波在线测厚在水箱里非接触测量运动中的管材，壁厚、外径、偏心度、椭圆度即时可见，不必等切开才知道。"),
@@ -37,7 +37,7 @@ TEXT = {
             "eyebrow": "Pipe Extrusion Division",
             "h1": "Pipe extrusion: measurable and controllable from the feed throat to the warehouse door",
             "lead": "A pipe is set the moment it leaves the die. By the time an out-of-tolerance wall shows up, it is measured in tonnes of material. This division puts the measurement inside the line itself — weight controlled at the feed, wall measured after the die, quality checked before it is stored.",
-            "secTitle": "The eight systems in this division",
+            "secTitle": "The nine systems in this division",
             "why": [
                 ("Control at the source", "The gravimetric system sits at the extruder feed throat and closes the loop on screw and haul-off speed, holding 0.3% under standard conditions and saving 2%–5% of material."),
                 ("Measure at the die", "Ultrasonic gauging measures moving pipe without contact in the cooling tank — wall, diameter, eccentricity and ovality visible immediately, not after somebody cuts a sample."),
@@ -59,7 +59,7 @@ TEXT = {
             "eyebrow": "Подразделение экструзии труб",
             "h1": "Экструзия труб: измеряемо и управляемо от загрузочной горловины до склада",
             "lead": "Труба принимает форму сразу после фильеры. Когда отклонение стенки становится заметным, оно измеряется уже тоннами сырья. Это подразделение помещает измерение внутрь самой линии: масса контролируется на загрузке, стенка измеряется после фильеры, качество проверяется до склада.",
-            "secTitle": "Восемь систем подразделения",
+            "secTitle": "Девять систем подразделения",
             "why": [
                 ("Контроль у источника", "Гравиметрическая система устанавливается на загрузочной горловине экструдера и замыкает контур по частоте вращения шнека и скорости тяги, удерживая 0,3% в стандартных условиях и экономя 2–5% сырья."),
                 ("Измерение после фильеры", "Ультразвук измеряет движущуюся трубу бесконтактно в ванне охлаждения: стенка, диаметр, эксцентриситет и овальность видны сразу, а не после того, как кто-то отрежет образец."),
@@ -83,7 +83,7 @@ TEXT = {
             "eyebrow": "线缆挤出事业部",
             "h1": "线缆挤出：护套厚一点点，一年就是一笔料钱",
             "lead": "线缆护套和绝缘层没法像管材那样随手切开量。厚了是白送料，薄了是质量事故——差别往往只在零点几毫米之间。线缆挤出事业部用米重与超声波两条线索，把这零点几毫米变成产线上看得见、控得住的数字。",
-            "secTitle": "本事业部的 5 套系统",
+            "secTitle": "本事业部的 7 套系统",
             "why": [
                 ("按米控料", "米重系统实时监测每米重量并闭环调节主机与牵引，把护套厚度稳定在设定值附近，省下的是每一盘都在多送的那点料。"),
                 ("按盘算账", "设定每盘收卷长度与计划盘数，系统自动算出需要领取的物料重量；反过来输入已领料重，也能算出这批料能出多少盘。"),
@@ -104,7 +104,7 @@ TEXT = {
             "eyebrow": "Cable Extrusion Division",
             "h1": "Cable extrusion: a fraction of a millimetre on the sheath is a year's material bill",
             "lead": "You cannot cut open a sheath the way you can sample a pipe. Too thick and you are giving material away; too thin and it is a quality failure — and the difference is often a few tenths of a millimetre. This division turns those tenths into numbers the line can see and hold.",
-            "secTitle": "The five systems in this division",
+            "secTitle": "The seven systems in this division",
             "why": [
                 ("Control by the metre", "The gravimetric system tracks weight per metre live and closes the loop on extruder and haul-off, holding sheath thickness near setpoint — what it saves is the material every drum was quietly carrying."),
                 ("Plan by the drum", "Set wound length per drum and the number of drums and the system works out the material to draw; enter the weight already drawn and it tells you how many drums it will make."),
@@ -125,7 +125,7 @@ TEXT = {
             "eyebrow": "Подразделение экструзии кабеля",
             "h1": "Экструзия кабеля: доля миллиметра на оболочке — это годовой счёт за сырьё",
             "lead": "Оболочку нельзя разрезать так, как отбирают образец трубы. Идёте с запасом — отдаёте сырьё даром; идёте тонко — это уже дефект качества. Разница часто составляет несколько десятых миллиметра. Подразделение превращает эти десятые в цифры, которые линия видит и удерживает.",
-            "secTitle": "Пять систем подразделения",
+            "secTitle": "Семь систем подразделения",
             "why": [
                 ("Контроль по метру", "Гравиметрическая система отслеживает массу погонного метра в реальном времени и замыкает контур по экструдеру и тяге, удерживая толщину оболочки у заданного значения — экономится то сырьё, которое каждый барабан тихо уносил с собой."),
                 ("Расчёт по барабанам", "Задайте длину намотки на барабан и число барабанов — система рассчитает необходимую массу материала; введите уже полученную массу — получите число барабанов."),

@@ -90,11 +90,19 @@
           }
         },
         {
+          "href": "/pipe/multi-dosing.html",
+          "label": {
+            "zh": "多组份混配系统",
+            "en": "Multi-Component Dosing",
+            "ru": "Многокомпонентное дозирование"
+          }
+        },
+        {
           "href": "/pipe/ultrasonic-big.html",
           "label": {
             "zh": "超声波测厚（大管）",
             "en": "Ultrasonic (large pipe)",
-            "ru": "Ультразвук (большой диаметр)"
+            "ru": "Ультразвук (большой Ø)"
           }
         },
         {
@@ -102,7 +110,7 @@
           "label": {
             "zh": "超声波测厚（小管）",
             "en": "Ultrasonic (small bore)",
-            "ru": "Ультразвук (малый диаметр)"
+            "ru": "Ультразвук (малый Ø)"
           }
         },
         {
@@ -164,11 +172,27 @@
           }
         },
         {
+          "href": "/cable/multi-dosing.html",
+          "label": {
+            "zh": "多组份混配系统",
+            "en": "Multi-Component Dosing",
+            "ru": "Многокомпонентное дозирование"
+          }
+        },
+        {
+          "href": "/cable/laser-caliper.html",
+          "label": {
+            "zh": "双轴激光测径仪",
+            "en": "Dual-axis Laser Caliper",
+            "ru": "Двухосевой лазерный измеритель"
+          }
+        },
+        {
           "href": "/cable/ultrasonic-small.html",
           "label": {
             "zh": "超声波测厚（小管）",
             "en": "Ultrasonic (small bore)",
-            "ru": "Ультразвук (малый диаметр)"
+            "ru": "Ультразвук (малый Ø)"
           }
         },
         {
@@ -182,69 +206,43 @@
       ]
     },
     {
-      "href": "/#apply",
-      "label": {
-        "zh": "应用行业",
-        "en": "Industries",
-        "ru": "Отрасли"
-      },
-      "children": [
-        {
-          "href": "/industries/plastic-piping.html",
-          "label": {
-            "zh": "塑料管道",
-            "en": "Plastic piping",
-            "ru": "Пластиковые трубы"
-          }
-        },
-        {
-          "href": "/industries/cable-sheathing.html",
-          "label": {
-            "zh": "电缆护套",
-            "en": "Cable sheathing",
-            "ru": "Кабельная оболочка"
-          }
-        },
-        {
-          "href": "/industries/film.html",
-          "label": {
-            "zh": "薄膜与片材",
-            "en": "Film & sheet",
-            "ru": "Плёнка и лист"
-          }
-        },
-        {
-          "href": "/industries/masterbatch-compounds.html",
-          "label": {
-            "zh": "色母与改性料",
-            "en": "Masterbatch & compounds",
-            "ru": "Суперконцентраты"
-          }
-        }
-      ]
-    },
-    {
       "href": "/about.html#apply-detail",
       "label": {
-        "zh": "产品应用",
-        "en": "Applications",
-        "ru": "Применение"
+        "zh": "海狮实力",
+        "en": "Capability",
+        "ru": "Возможности"
       },
       "children": [
         {
           "href": "/about.html#apply-detail",
           "label": {
-            "zh": "装在什么样的产线上",
-            "en": "On which lines",
-            "ru": "На каких линиях"
+            "zh": "产品应用",
+            "en": "Applications",
+            "ru": "Применение"
           }
         },
         {
           "href": "/about.html#techstr",
           "label": {
             "zh": "技术实力",
-            "en": "Capability",
-            "ru": "Возможности"
+            "en": "Technology",
+            "ru": "Технологии"
+          }
+        },
+        {
+          "href": "/service.html",
+          "label": {
+            "zh": "售后与服务",
+            "en": "After-sales & service",
+            "ru": "Сервис"
+          }
+        },
+        {
+          "href": "/#apply",
+          "label": {
+            "zh": "应用行业",
+            "en": "Industries",
+            "ru": "Отрасли"
           }
         },
         {
@@ -308,32 +306,6 @@
       ]
     },
     {
-      "href": "/service.html",
-      "label": {
-        "zh": "服务支持",
-        "en": "Service",
-        "ru": "Сервис"
-      },
-      "children": [
-        {
-          "href": "/service.html",
-          "label": {
-            "zh": "售后与服务",
-            "en": "After-sales",
-            "ru": "Сервис"
-          }
-        },
-        {
-          "href": "/manual/",
-          "label": {
-            "zh": "产品手册",
-            "en": "Manuals",
-            "ru": "Руководства"
-          }
-        }
-      ]
-    },
-    {
       "href": "/news.html",
       "label": {
         "zh": "海狮动态",
@@ -375,6 +347,14 @@
           }
         },
         {
+          "href": "/about.html#apply-detail",
+          "label": {
+            "zh": "海狮实力",
+            "en": "Capability",
+            "ru": "Возможности"
+          }
+        },
+        {
           "href": "/cases.html",
           "label": {
             "zh": "案例展示",
@@ -393,17 +373,9 @@
         {
           "href": "/service.html",
           "label": {
-            "zh": "服务支持",
+            "zh": "售后与服务",
             "en": "Service",
             "ru": "Сервис"
-          }
-        },
-        {
-          "href": "/manual/",
-          "label": {
-            "zh": "产品手册",
-            "en": "Manuals",
-            "ru": "Руководства"
           }
         }
       ]
