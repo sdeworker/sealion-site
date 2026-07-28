@@ -261,7 +261,41 @@
         "zh": "案例展示",
         "en": "Cases",
         "ru": "Проекты"
-      }
+      },
+      "children": [
+        {
+          "href": "/cases.html#case-127",
+          "label": {
+            "zh": "米重案例",
+            "en": "Gravimetric cases",
+            "ru": "Проекты: гравиметрия"
+          }
+        },
+        {
+          "href": "/cases.html#case-204",
+          "label": {
+            "zh": "米重色母案例",
+            "en": "Masterbatch cases",
+            "ru": "Проекты: суперконцентрат"
+          }
+        },
+        {
+          "href": "/cases.html#case-172",
+          "label": {
+            "zh": "超声波案例",
+            "en": "Ultrasonic cases",
+            "ru": "Проекты: ультразвук"
+          }
+        },
+        {
+          "href": "/cases.html#case-171",
+          "label": {
+            "zh": "视频案例",
+            "en": "Video cases",
+            "ru": "Проекты: видео"
+          }
+        }
+      ]
     },
     {
       "href": "/about.html",

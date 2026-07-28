@@ -7,6 +7,52 @@ import json, os, re, glob
 
 # 通用短语（各页共有）
 COMMON = {
+ "Patents": "Патенты",
+ "Invention": "Изобретение",
+ "Design": "Промышленный образец",
+ "Title": "Наименование",
+ "Type": "Тип",
+ "Pipe quality inspection equipment and method": "Оборудование и способ контроля качества труб",
+ "Pipe diameter/thickness gauge and its measuring method": "Прибор измерения диаметра и толщины трубы и способ измерения",
+ "Calibration method and device for pipe wall thickness measurement": "Способ и устройство калибровки измерения толщины стенки трубы",
+ "Device for measuring pipe length": "Устройство измерения длины трубы",
+ "Pipe inspection equipment": "Оборудование контроля труб",
+ "Pipe quality inspection equipment": "Оборудование контроля качества труб",
+ "Pipe length measuring device": "Устройство измерения длины трубы",
+ "Pipe diameter/thickness gauge": "Прибор измерения диаметра и толщины трубы",
+ "Pipe quality inspection system": "Система контроля качества труб",
+ "Rotating laser diameter/thickness device": "Вращающееся лазерное устройство измерения диаметра и толщины",
+ "Online intelligent pipe inspection equipment": "Оборудование интеллектуального контроля труб в линии",
+ "Rotating laser pipe thickness device": "Вращающееся лазерное устройство измерения толщины трубы",
+ "Manipulator clamping device": "Захватное устройство манипулятора",
+ "Sliding pipe support device": "Скользящее опорное устройство для трубы",
+ "Pipe measuring system": "Система измерения трубы",
+ "Pipe measuring device": "Устройство измерения трубы",
+ "Pipe measuring clamp device": "Зажимное измерительное устройство для трубы",
+ "Pipe thickness/diameter measuring device": "Устройство измерения толщины и диаметра трубы",
+ "OD measurement: the average OD of the off-line pipe is measured, with average upper/lower limits set; an encoder rotates one full turn to compute the accurate OD, at a detection point 300mm from the pipe end, meeting national standards.":
+   "Измерение наружного диаметра: определяется средний диаметр сошедшей с линии трубы при заданных верхнем и нижнем пределах; энкодер совершает полный оборот для точного расчёта, точка измерения — в 300 мм от торца, что соответствует государственным нормам.",
+
+ 'The Sealion online intelligent pipe inspection system is fitted at the end of the extruder and can be installed at the end of any line; pipe moves automatically to the inspection platform for measurement, without affecting any production task.':
+   'Система интеллектуального контроля труб Sealion устанавливается в конце линии — на любой линии; труба автоматически перемещается на измерительную платформу, не мешая производственным задачам.',
+ "It includes laser thickness measurement, encoder diameter measurement, non-roundness detection and qualified-pipe flipping as standard. All test data can be sent to the factory's internal MES system, a production Kanban, or another management system for remote quality monitoring.":
+   'В базовой комплектации: лазерное измерение толщины, измерение диаметра энкодером, контроль некруглости и перекладывание годных труб. Все результаты могут передаваться в заводскую MES, на производственную панель или в другую систему управления для удалённого контроля качества.',
+ "It includes weight detection, laser thickness measurement, encoder diameter measurement, pipe length detection, non-roundness detection and qualified-pipe flipping as standard. All test data can be sent to the factory's internal MES system, a production Kanban, or another management system for remote quality monitoring.":
+   'В базовой комплектации: взвешивание, лазерное измерение толщины, измерение диаметра энкодером, измерение длины трубы, контроль некруглости и перекладывание годных труб. Все результаты могут передаваться в заводскую MES, на производственную панель или в другую систему управления для удалённого контроля качества.',
+ 'OD measurement: the average OD of the off-line pipe is measured, with average upper/lower limits set; an encoder rotates one full turn to compute the accurate OD. The detection point sits 300mm from the pipe end, meeting national measurement standards.':
+   'Измерение наружного диаметра: определяется средний диаметр сошедшей с линии трубы при заданных верхнем и нижнем пределах; энкодер совершает полный оборот для точного расчёта. Точка измерения находится в 300 мм от торца, что соответствует государственным нормам измерений.',
+ 'The Sealion pipe quality and safety storage system is fitted at the end of the extruder and can be installed at the end of any line, using a smooth sliding mechanism to bring the pipe to the testing platform for measurement, without affecting any production task on the line.':
+   'Система приёмочного контроля качества труб Sealion устанавливается в конце линии — на любой линии: труба по плавному скользящему механизму подаётся на измерительную платформу, не мешая производственным задачам.',
+ 'Data storage and collection: all data is saved in real time to Excel in a specified folder; TCP or MQTT ports are opened for uploading to the company MES or a customer-specified port. Data can be exported by order or by date, in Excel or PDF, to a standard USB drive.':
+   'Хранение и сбор данных: все данные в реальном времени сохраняются в Excel в заданную папку; открыты порты TCP или MQTT для передачи в MES предприятия или на указанный заказчиком порт. Выгрузка возможна по заказу или по дате, в Excel или PDF, на обычный USB-накопитель.',
+
+ "The Sealion online intelligent pipe inspection system is fitted at the end of the extruder and can be installed at the end of any line; pipe moves automatically to the inspection platform for measurement, without affecting any production process.":
+   "Система интеллектуального контроля труб Sealion устанавливается в конце экструзионной линии — на любой линии; труба автоматически перемещается на измерительную платформу, не влияя на производственный процесс.",
+ "Thickness measurement: upper/lower wall-thickness limits and real-time wall thickness are set; a patented structure lasers the pipe from inside and out while a servo motor rotates one full turn, computing accurate thickness in every direction and marking the positions of maximum and minimum. The thickness point sits 30–50mm from the pipe end, clear of the cut flash, and the laser does not shine directly on the pipe surface, so colour does not affect the reading.":
+   "Измерение толщины: задаются верхний и нижний пределы и текущее значение толщины стенки; запатентованный узел просвечивает трубу лазером изнутри и снаружи, а серводвигатель делает полный оборот, вычисляя точную толщину по всем направлениям и отмечая места наибольшего и наименьшего значения. Точка измерения находится в 30–50 мм от торца, вне зоны заусенца от реза, а лазер не светит прямо на поверхность трубы, поэтому цвет не влияет на результат.",
+ "Data storage and collection: all data saved in real time as Excel; TCP or MQTT ports open for upload to the company MES or a customer-specified port; export by order or date in Excel or PDF.":
+   "Хранение и сбор данных: все данные сохраняются в реальном времени в Excel; открыты порты TCP или MQTT для передачи в MES предприятия или на указанный заказчиком порт; выгрузка по заказу или по дате в Excel или PDF.",
+
  "Every product is made from different components, and masterbatch has long been mixed by hand — this can make dosing inaccurate and mixing uneven, leaving product quality unstable, and it adds labour cost and intensity. A moment's carelessness from an operator's sense of responsibility may bring the company a significant, irredeemable loss.":
    "Каждое изделие состоит из разных компонентов, а суперконцентрат долго смешивали вручную: дозирование выходит неточным, смешивание неравномерным, качество продукции нестабильным, а трудозатраты растут. Одна оплошность оператора способна обернуться значительными и невосполнимыми потерями.",
  "Every product has a different formulation, and for years masterbatch has been dosed mainly by hand — inaccurate additions and uneven mixing, which leave product quality unstable and add labour cost and needless effort.":
@@ -204,6 +250,63 @@ PAGES = {
   "Online inspection on site": "Контроль в линии на объекте",
   "Inspection sequence": "Последовательность контроля",
   "Your browser cannot play this video.": "Ваш браузер не может воспроизвести это видео.",
+ },
+ "quality-storage": {
+  "Ovality (non-roundness): two sets of lasers measure OD at several points to calculate and display non-roundness.":
+    "Овальность: два лазерных комплекта измеряют наружный диаметр в нескольких точках, вычисляя и отображая некруглость.",
+  "Ellipticity: pipe ovality is calculated from the measured wall thickness and displayed on the interface.":
+    "Эллиптичность: овальность трубы вычисляется по измеренной толщине стенки и выводится на экран.",
+  "Weight: measured with an imported high-precision load cell.": "Масса: измеряется импортным высокоточным тензодатчиком.",
+  "Data display: real-time display of current production quantity, yield, NG count and OK count.":
+    "Отображение данных: текущий объём выпуска, доля годного, число забракованных и годных изделий в реальном времени.",
+  "Deviation alarms: pass/fail alerts from set upper/lower deviations on OD, weight, thickness, length and roundness, with a defective-product alarm and a quantity-reached reminder.":
+    "Сигнализация отклонений: годен/не годен по заданным верхним и нижним пределам наружного диаметра, массы, толщины, длины и круглости, с сигналом о браке и напоминанием о достижении заданного количества.",
+  "Data processing: abnormal data is excluded and not linked to the traceability code.":
+    "Обработка данных: аномальные значения исключаются и не привязываются к коду прослеживаемости.",
+  "Twenty patents cover this system — 3 inventions, 15 utility models and 2 design patents. The wall-thickness measuring arrangement described above is one of them.":
+    "Систему защищают двадцать патентов: 3 изобретения, 15 полезных моделей и 2 промышленных образца. Описанный выше узел измерения толщины стенки — один из них.",
+  "Utility model": "Полезная модель",
+  "Sealion holds 60 patents and software copyrights in total; certificates can be viewed on the":
+    "Всего у Sealion 60 патентов и свидетельств на программы; сертификаты доступны на странице",
+  "IP portfolio": "Интеллектуальная собственность",
+  "Key parts are imported, brand-name components, for build quality and stability.":
+    "Ключевые узлы — импортные комплектующие известных марок, что обеспечивает качество сборки и стабильность.",
+  "Guangzhou Sealion": "Guangzhou Sealion",
+  "Servo motor": "Серводвигатель",
+  "Control cabinet": "Шкаф управления",
+  "Servo drive": "Сервопривод",
+  "Industrial PC / HMI": "Промышленный ПК / панель оператора",
+  "High-precision load cell": "Высокоточный тензодатчик",
+  "Laser displacement sensor": "Лазерный датчик перемещения",
+  "Low-voltage components": "Низковольтная аппаратура",
+  "Power supply": "Источник питания",
+  "Pneumatics": "Пневматика",
+  "Rated voltage": "Номинальное напряжение",
+  "approx. 2kW": "около 2 кВт",
+  "Air supply": "Подача воздуха",
+  "Data storage": "Хранение данных",
+  "Pipe OD range": "Диапазон наружного диаметра трубы",
+  "φ32–400 (banded by line spec)": "φ32–400 (по типоразмеру линии)",
+  "Pipe length": "Длина трубы",
+  "6–12m (on request)": "6–12 м (под заказ)",
+  "Measurable thickness": "Измеряемая толщина",
+  "2–45mm (by pipe spec)": "2–45 мм (по типоразмеру трубы)",
+  "buzzer + flashing light": "звуковой сигнал и проблесковый маячок",
+  "Wall thickness": "Толщина стенки",
+  "display 0.01mm, accuracy ±0.03mm": "индикация 0,01 мм, точность ±0,03 мм",
+  "Outer diameter": "Наружный диаметр",
+  "display 0.01mm, accuracy ±0.05mm": "индикация 0,01 мм, точность ±0,05 мм",
+  "display 0.01kg, accuracy ±0.2%": "индикация 0,01 кг, точность ±0,2%",
+  "display 0.001m, accuracy ±1mm": "индикация 0,001 м, точность ±1 мм",
+  "Operating environment": "Условия эксплуатации",
+  "indoor 5–40℃, IP65, noise &lt;70dBA": "в помещении 5–40 ℃, IP65, шум менее 70 дБА",
+  "main unit, laser head, IPC, signal processor &amp; control cabinet — 1 year each free; free software upgrades":
+    "основной блок, лазерная головка, промышленный ПК, блок обработки сигнала и шкаф управления — по 1 году бесплатно; обновления ПО бесплатны",
+  "End-of-line quality gating and inbound storage on PE water, PE gas and PVC pipe extrusion lines.":
+    "Отбраковка на выходе линии и приёмка на склад для линий ПЭ водоснабжения, ПЭ газоснабжения и ПВХ.",
+  "Inbound inspection on site": "Приёмочный контроль на объекте",
+  "Inbound quality system 2026": "Система приёмочного контроля 2026",
+  "Running on site": "Работа на объекте",
  },
  "cloud-monitoring": {
   "Cloud-Based Extrusion Monitoring System": "Система облачного мониторинга экструзии",

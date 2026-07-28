@@ -7,6 +7,20 @@ PIPE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "u
 CABLE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "laser-caliper",
          "ultrasonic-small", "cloud-monitoring"]
 
+
+PROD_IMG = {
+    "gravimetric": "/assets/2026/core/core-gravimetric.webp",
+    "masterbatch": "/assets/2026/core/core-masterbatch.webp",
+    "masterbatch-weighing": "/assets/2026/core/core-masterbatch-weighing.webp",
+    "multi-dosing": "/assets/2026/core/core-multi-dosing.webp",
+    "laser-caliper": "/assets/2026/core/core-laser-gauge.webp",
+    "ultrasonic-big": "/assets/2026/core/core-ultrasonic.webp",
+    "ultrasonic-small": "/assets/2026/core/core-ultrasonic-2.webp",
+    "quality-storage": "/assets/2026/core/core-quality-storage.webp",
+    "intelligent-inspection": "/assets/2026/core/core-inspection.webp",
+    "cloud-monitoring": "/assets/products2/cloud-monitoring.jpg",
+}
+
 TEXT = {
     "pipe": {
         "zh": {
@@ -168,11 +182,22 @@ def build(div, lang):
     cards = []
     for s in slugs:
         t, d = prod_meta(lang, s, div)
+        img = PROD_IMG.get(s)
+        media = ""
+        if img and os.path.exists("public" + img):
+            from PIL import Image
+            with Image.open("public" + img) as im:
+                iw, ih = im.size
+            media = (f'      <div class="pc-img"><img src="{img}" alt="{t}" '
+                     f'width="{iw}" height="{ih}" loading="lazy"></div>\n')
         cards.append(
-            f'    <a class="pcard" href="{root}{div}/{s}.html">\n'
-            f'      <h3>{t}</h3>\n'
-            f'      <p>{d}</p>\n'
-            f'      <span class="arrow-link">{more_lbl}</span>\n'
+            f'    <a class="pcard pcard--img" href="{root}{div}/{s}.html">\n'
+            f'{media}'
+            f'      <div class="pc-body">\n'
+            f'        <h3>{t}</h3>\n'
+            f'        <p>{d}</p>\n'
+            f'        <span class="arrow-link">{more_lbl}</span>\n'
+            f'      </div>\n'
             f'    </a>')
 
     why = "\n".join(
