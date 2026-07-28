@@ -65,6 +65,27 @@ def git_date(path):
         return None
 
 
+
+def localize(href, lang):
+    """把站内绝对路径按语种加前缀：/pipe/ → /en/pipe/；/#apply → /en/#apply"""
+    if not href.startswith("/"):
+        return href
+    root = SITE["langRoot"][lang]          # "/" | "/en/" | "/ru/"
+    return root + href[1:]                 # 保证只有一个斜杠
+
+
+
+def exists_for(href, lang, avail):
+    """该语种是否真的有这个页面；锚点与外链一律放行"""
+    if not href.startswith("/") or href.startswith("/#"):
+        return True
+    rel = href[1:]
+    if rel.endswith("/"):
+        rel += "index.html"
+    rel = rel.split("#")[0]
+    return rel in avail.get(lang, set())
+
+
 # ---------- 外壳 ----------
 def render_head(lang, rel, meta, alts):
     u = page_url(lang, rel)
@@ -154,11 +175,28 @@ def json_ld(lang, rel, meta):
     return out
 
 
-def render_header(lang, rel, alts):
+def render_header(lang, rel, alts, avail):
     root = SITE["langRoot"][lang]
-    nav = "\n".join(
-        f'      <a href="{root.rstrip("/") + n["href"][1:] if n["href"].startswith("/#") else n["href"]}">{H.escape(t(n["label"], lang))}</a>'
-        for n in SITE["nav"])
+    items = []
+    for n in SITE["nav"]:
+        if not exists_for(n["href"], lang, avail):
+            continue
+        label = H.escape(t(n["label"], lang))
+        href = localize(n["href"], lang)
+        kids = n.get("children")
+        if kids and any(exists_for(c["href"], lang, avail) for c in kids):
+            kids = [c for c in kids if exists_for(c["href"], lang, avail)]
+            sub = "\n".join(
+                f'          <a href="{localize(c["href"], lang)}">{H.escape(t(c["label"], lang))}</a>'
+                for c in kids)
+            items.append(
+                f'      <div class="nav-drop">\n'
+                f'        <a href="{href}">{label}</a>\n'
+                f'        <div class="nav-drop-menu">\n{sub}\n        </div>\n'
+                f'      </div>')
+        else:
+            items.append(f'      <a href="{href}">{label}</a>')
+    nav = "\n".join(items)
     # 语言切换：只列本页真实存在的其它语种
     switch = "\n".join(
         f'      <a class="langlink" href="{page_url(l2, rel)[len(BASE):]}" hreflang="{SITE["hreflang"][l2]}">{H.escape(SITE["langLabel"][l2])}</a>'
@@ -182,13 +220,13 @@ def render_header(lang, rel, alts):
 </header>'''
 
 
-def render_footer(lang):
+def render_footer(lang, avail):
     root = SITE["langRoot"][lang]
     cols = []
     for c in SITE["footerCols"]:
         links = "\n".join(
-            f'        <a href="{root.rstrip("/") + l["href"][1:] if l["href"].startswith("/#") else l["href"]}">{H.escape(t(l["label"], lang))}</a>'
-            for l in c["links"])
+            f'        <a href="{localize(l["href"], lang)}">{H.escape(t(l["label"], lang))}</a>'
+            for l in c["links"] if exists_for(l["href"], lang, avail))
         cols.append(f'      <div class="fcol">\n        <h4>{H.escape(t(c["title"], lang))}</h4>\n{links}\n      </div>')
     contact = (f'      <div class="fcol">\n'
                f'        <h4>{H.escape(t(SITE["ui"]["contact"], lang))}</h4>\n'
@@ -212,10 +250,10 @@ def render_footer(lang):
 </footer>'''
 
 
-def render_page(lang, rel, meta, body, alts):
+def render_page(lang, rel, meta, body, alts, avail):
     head = render_head(lang, rel, meta, alts)
-    header = render_header(lang, rel, alts)
-    footer = render_footer(lang)
+    header = render_header(lang, rel, alts, avail)
+    footer = render_footer(lang, avail)
     skip = t(SITE["ui"]["skip"], lang)
     tail = ['<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
             '<script src="/assets/nav.js" defer></script>']
@@ -256,6 +294,11 @@ def main():
             rel = f[len(f"src/content/{lang}/"):]
             exists.setdefault(rel, []).append(lang)
 
+    avail = {}
+    for lang in LANGS:
+        avail[lang] = {f[len(f"src/content/{lang}/"):]
+                       for f in glob.glob(f"src/content/{lang}/**/*.html", recursive=True)}
+
     n = standalone = 0
     for rel, langs in sorted(exists.items()):
         alts = [l for l in LANGS if l in langs]
@@ -267,7 +310,7 @@ def main():
                 open(out, "w", encoding="utf-8").write(body)
                 standalone += 1
                 continue
-            open(out, "w", encoding="utf-8").write(render_page(lang, rel, meta, body, alts))
+            open(out, "w", encoding="utf-8").write(render_page(lang, rel, meta, body, alts, avail))
             n += 1
 
     # sitemap

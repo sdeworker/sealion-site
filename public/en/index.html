@@ -10,6 +10,7 @@
 <link rel="canonical" href="https://www.sealion-tech.com/en/">
 <link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/">
 <link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/">
+<link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/">
 <link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sealion Tech — Smart Measurement &amp; Control for Plastic Extrusion">
@@ -38,17 +39,71 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="nav" id="site-nav" aria-label="Main navigation">
-      <a href="/pipe/">Pipe</a>
-      <a href="/cable/">Cable</a>
-      <a href="/en#apply">Industries</a>
-      <a href="/cases.html">Cases</a>
-      <a href="/about.html">About</a>
-      <a href="/service.html">Service</a>
-      <a href="/news.html">News</a>
-      <a href="/en#contact">Contact</a>
+      <div class="nav-drop">
+        <a href="/en/pipe/">Pipe</a>
+        <div class="nav-drop-menu">
+          <a href="/en/pipe/gravimetric.html">Gravimetric Control</a>
+          <a href="/en/pipe/masterbatch.html">Masterbatch Control</a>
+          <a href="/en/pipe/masterbatch-weighing.html">Masterbatch Weighing</a>
+          <a href="/en/pipe/ultrasonic-big.html">Ultrasonic (large pipe)</a>
+          <a href="/en/pipe/ultrasonic-small.html">Ultrasonic (small bore)</a>
+          <a href="/en/pipe/quality-storage.html">Inbound Quality</a>
+          <a href="/en/pipe/intelligent-inspection.html">Online Inspection</a>
+          <a href="/en/pipe/cloud-monitoring.html">Cloud Monitoring</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="/en/cable/">Cable</a>
+        <div class="nav-drop-menu">
+          <a href="/en/cable/gravimetric.html">Gravimetric Control</a>
+          <a href="/en/cable/masterbatch.html">Masterbatch Control</a>
+          <a href="/en/cable/masterbatch-weighing.html">Masterbatch Weighing</a>
+          <a href="/en/cable/ultrasonic-small.html">Ultrasonic (small bore)</a>
+          <a href="/en/cable/cloud-monitoring.html">Cloud Monitoring</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="/en/#apply">Industries</a>
+        <div class="nav-drop-menu">
+          <a href="/en/industries/pe-water-pipe.html">PE water pipe</a>
+          <a href="/en/industries/pe-gas-pipe.html">PE gas pipe</a>
+          <a href="/en/industries/ppr-pipe.html">PPR pipe</a>
+          <a href="/en/industries/pvc-pipe.html">PVC pipe</a>
+          <a href="/en/industries/corrugated-pipe.html">Corrugated pipe</a>
+          <a href="/en/industries/cable-sheathing.html">Cable sheathing</a>
+          <a href="/en/industries/medical-catheter.html">Medical catheter</a>
+          <a href="/en/industries/film.html">Blown &amp; cast film</a>
+          <a href="/en/industries/sheet-board.html">Sheet &amp; board</a>
+          <a href="/en/industries/meltblown.html">Meltblown</a>
+          <a href="/en/industries/masterbatch-compounds.html">Masterbatch &amp; compounds</a>
+          <a href="/en/industries/plastic-piping.html">Plastic piping</a>
+        </div>
+      </div>
+      <a href="/en/cases.html">Cases</a>
+      <div class="nav-drop">
+        <a href="/en/about.html">About</a>
+        <div class="nav-drop-menu">
+          <a href="/en/about.html#about">Company</a>
+          <a href="/en/about.html#culture">Culture</a>
+          <a href="/en/about.html#milestones">Milestones</a>
+          <a href="/en/about.html#techstr">Capability</a>
+          <a href="/en/about.html#certs">Certificates</a>
+          <a href="/en/ip.html">IP portfolio</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <a href="/en/service.html">Service</a>
+        <div class="nav-drop-menu">
+          <a href="/en/service.html">After-sales</a>
+          <a href="/en/manual/">Manuals</a>
+        </div>
+      </div>
+      <a href="/en/news.html">News</a>
+      <a href="/en/#contact">Contact</a>
     </nav>
     <div class="header-actions">
       <a class="langlink" href="/" hreflang="zh-CN">中文</a>
+      <a class="langlink" href="/ru/" hreflang="ru">РУ</a>
       <a class="hotline" href="tel:4008404080"><span class="dot"></span>4008-4040-80</a>
     </div>
   </div>
@@ -58,7 +113,7 @@
   <div class="hero-video" aria-hidden="true">
     <video autoplay muted loop playsinline preload="auto"
            poster="/assets/2026/video/company-intro-poster.webp">
-      <source src="/assets/2026/video/company-intro.mp4" type="video/mp4">
+      <source src="/assets/2026/video/company-intro-bg.mp4" type="video/mp4">
     </video>
   </div>
     <div class="wrap hero-grid">
@@ -69,6 +124,10 @@
         <div class="hero-cta">
           <a class="btn btn--primary" href="#products">View products</a>
           <button class="btn btn--onDark" type="button" data-open-ai>Ask our engineer</button>
+        <button class="hero-play" type="button" data-hero-play aria-label="Play the company film">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          <span>Play the company film</span>
+        </button>
         </div>
       </div>
       <div class="readout" role="img" aria-label="Measurement readout: wall thickness in tolerance">
@@ -125,7 +184,7 @@
       </div>
       <div class="grid cols-3 pcard-grid">
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/gravimetric.jpg" alt="Weight-per-meter" loading="lazy" width="579" height="511"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-gravimetric.webp" alt="Weight-per-meter" loading="lazy" width="1279" height="1320"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">01</span><span class="pc-line"></span></div>
           <h3>Gravimetric Control System</h3><span class="pc-en">Weight-per-meter</span>
@@ -134,7 +193,7 @@
         </div>
       </article>
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/masterbatch.jpg" alt="Masterbatch" loading="lazy" width="580" height="506"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-masterbatch.webp" alt="Masterbatch" loading="lazy" width="1280" height="1321"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">02</span><span class="pc-line"></span></div>
           <h3>Gravimetric Masterbatch Control System</h3><span class="pc-en">Masterbatch</span>
@@ -143,7 +202,7 @@
         </div>
       </article>
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/masterbatch-weighing.jpg" alt="Weighing" loading="lazy" width="580" height="506"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-masterbatch-weighing.webp" alt="Weighing" loading="lazy" width="1279" height="1320"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">03</span><span class="pc-line"></span></div>
           <h3>Gravimetric Masterbatch Weighting System</h3><span class="pc-en">Weighing</span>
@@ -152,7 +211,7 @@
         </div>
       </article>
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/ultrasonic-big.jpg" alt="Thickness · Big" loading="lazy" width="580" height="507"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-ultrasonic.webp" alt="Thickness · Big" loading="lazy" width="1279" height="1320"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">04</span><span class="pc-line"></span></div>
           <h3>Ultrasonic Thickness Online (Big Pipe)</h3><span class="pc-en">Thickness · Big</span>
@@ -161,7 +220,7 @@
         </div>
       </article>
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/ultrasonic-small.jpg" alt="Thickness · Small" loading="lazy" width="562" height="491"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-ultrasonic-2.webp" alt="Thickness · Small" loading="lazy" width="1279" height="1320"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">05</span><span class="pc-line"></span></div>
           <h3>Ultrasonic Thickness Online (Small Tube)</h3><span class="pc-en">Thickness · Small</span>
@@ -170,7 +229,7 @@
         </div>
       </article>
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/quality-storage.jpg" alt="Inbound QC" loading="lazy" width="994" height="455"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-quality-storage.webp" alt="Inbound QC" loading="lazy" width="1600" height="899"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">06</span><span class="pc-line"></span></div>
           <h3>Pipe Inbound Quality & Safety System</h3><span class="pc-en">Inbound QC</span>
@@ -179,7 +238,7 @@
         </div>
       </article>
       <article class="pcard pcard--img">
-        <div class="pc-img"><img src="/assets/products2/intelligent-inspection.jpg" alt="Inspection" loading="lazy" width="573" height="486"></div>
+        <div class="pc-img"><img src="/assets/2026/core/core-inspection.webp" alt="Inspection" loading="lazy" width="1600" height="1124"></div>
         <div class="pc-body">
           <div class="pc-top"><span class="pc-idx">07</span><span class="pc-line"></span></div>
           <h3>Online Intelligent Pipe Inspection System</h3><span class="pc-en">Inspection</span>
@@ -508,12 +567,12 @@
     </div>
       <div class="fcol">
         <h4>Products</h4>
-        <a href="/pipe/">Pipe Division</a>
-        <a href="/cable/">Cable Division</a>
-        <a href="/cases.html">Cases</a>
-        <a href="/about.html">About</a>
-        <a href="/service.html">Service</a>
-        <a href="/manual/">Manuals</a>
+        <a href="/en/pipe/">Pipe Division</a>
+        <a href="/en/cable/">Cable Division</a>
+        <a href="/en/cases.html">Cases</a>
+        <a href="/en/about.html">About</a>
+        <a href="/en/service.html">Service</a>
+        <a href="/en/manual/">Manuals</a>
       </div>
       <div class="fcol">
         <h4>Contact</h4>

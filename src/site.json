@@ -63,7 +63,73 @@
         "zh": "管道挤出",
         "en": "Pipe",
         "ru": "Экструзия труб"
-      }
+      },
+      "children": [
+        {
+          "href": "/pipe/gravimetric.html",
+          "label": {
+            "zh": "米重控制系统",
+            "en": "Gravimetric Control",
+            "ru": "Гравиметрический контроль"
+          }
+        },
+        {
+          "href": "/pipe/masterbatch.html",
+          "label": {
+            "zh": "米重色母控制系统",
+            "en": "Masterbatch Control",
+            "ru": "Дозирование суперконцентрата"
+          }
+        },
+        {
+          "href": "/pipe/masterbatch-weighing.html",
+          "label": {
+            "zh": "色母称重版",
+            "en": "Masterbatch Weighing",
+            "ru": "Весовое дозирование"
+          }
+        },
+        {
+          "href": "/pipe/ultrasonic-big.html",
+          "label": {
+            "zh": "超声波测厚（大管）",
+            "en": "Ultrasonic (large pipe)",
+            "ru": "Ультразвук (большой диаметр)"
+          }
+        },
+        {
+          "href": "/pipe/ultrasonic-small.html",
+          "label": {
+            "zh": "超声波测厚（小管）",
+            "en": "Ultrasonic (small bore)",
+            "ru": "Ультразвук (малый диаметр)"
+          }
+        },
+        {
+          "href": "/pipe/quality-storage.html",
+          "label": {
+            "zh": "管材质量安全入库",
+            "en": "Inbound Quality",
+            "ru": "Входной контроль"
+          }
+        },
+        {
+          "href": "/pipe/intelligent-inspection.html",
+          "label": {
+            "zh": "在线智能检测",
+            "en": "Online Inspection",
+            "ru": "Контроль в линии"
+          }
+        },
+        {
+          "href": "/pipe/cloud-monitoring.html",
+          "label": {
+            "zh": "挤出云远程监控",
+            "en": "Cloud Monitoring",
+            "ru": "Облачный мониторинг"
+          }
+        }
+      ]
     },
     {
       "href": "/cable/",
@@ -71,7 +137,49 @@
         "zh": "线缆挤出",
         "en": "Cable",
         "ru": "Экструзия кабеля"
-      }
+      },
+      "children": [
+        {
+          "href": "/cable/gravimetric.html",
+          "label": {
+            "zh": "米重控制系统",
+            "en": "Gravimetric Control",
+            "ru": "Гравиметрический контроль"
+          }
+        },
+        {
+          "href": "/cable/masterbatch.html",
+          "label": {
+            "zh": "米重色母控制系统",
+            "en": "Masterbatch Control",
+            "ru": "Дозирование суперконцентрата"
+          }
+        },
+        {
+          "href": "/cable/masterbatch-weighing.html",
+          "label": {
+            "zh": "色母称重版",
+            "en": "Masterbatch Weighing",
+            "ru": "Весовое дозирование"
+          }
+        },
+        {
+          "href": "/cable/ultrasonic-small.html",
+          "label": {
+            "zh": "超声波测厚（小管）",
+            "en": "Ultrasonic (small bore)",
+            "ru": "Ультразвук (малый диаметр)"
+          }
+        },
+        {
+          "href": "/cable/cloud-monitoring.html",
+          "label": {
+            "zh": "挤出云远程监控",
+            "en": "Cloud Monitoring",
+            "ru": "Облачный мониторинг"
+          }
+        }
+      ]
     },
     {
       "href": "/#apply",
@@ -79,7 +187,105 @@
         "zh": "应用行业",
         "en": "Industries",
         "ru": "Отрасли"
-      }
+      },
+      "children": [
+        {
+          "href": "/industries/pe-water-pipe.html",
+          "label": {
+            "zh": "PE 给水管",
+            "en": "PE water pipe",
+            "ru": "ПЭ водоснабжение"
+          }
+        },
+        {
+          "href": "/industries/pe-gas-pipe.html",
+          "label": {
+            "zh": "PE 燃气管",
+            "en": "PE gas pipe",
+            "ru": "ПЭ газопровод"
+          }
+        },
+        {
+          "href": "/industries/ppr-pipe.html",
+          "label": {
+            "zh": "PPR 管",
+            "en": "PPR pipe",
+            "ru": "ППР труба"
+          }
+        },
+        {
+          "href": "/industries/pvc-pipe.html",
+          "label": {
+            "zh": "PVC 管",
+            "en": "PVC pipe",
+            "ru": "ПВХ труба"
+          }
+        },
+        {
+          "href": "/industries/corrugated-pipe.html",
+          "label": {
+            "zh": "波纹管 / 缠绕管",
+            "en": "Corrugated pipe",
+            "ru": "Гофрированная труба"
+          }
+        },
+        {
+          "href": "/industries/cable-sheathing.html",
+          "label": {
+            "zh": "电缆护套",
+            "en": "Cable sheathing",
+            "ru": "Кабельная оболочка"
+          }
+        },
+        {
+          "href": "/industries/medical-catheter.html",
+          "label": {
+            "zh": "医疗导管",
+            "en": "Medical catheter",
+            "ru": "Медицинский катетер"
+          }
+        },
+        {
+          "href": "/industries/film.html",
+          "label": {
+            "zh": "吹膜 / 流延",
+            "en": "Blown & cast film",
+            "ru": "Плёнка"
+          }
+        },
+        {
+          "href": "/industries/sheet-board.html",
+          "label": {
+            "zh": "片材板材",
+            "en": "Sheet & board",
+            "ru": "Лист и плита"
+          }
+        },
+        {
+          "href": "/industries/meltblown.html",
+          "label": {
+            "zh": "熔喷布",
+            "en": "Meltblown",
+            "ru": "Мельтблаун"
+          }
+        },
+        {
+          "href": "/industries/masterbatch-compounds.html",
+          "label": {
+            "zh": "色母与改性料",
+            "en": "Masterbatch & compounds",
+            "ru": "Суперконцентраты"
+          }
+        },
+        {
+          "href": "/industries/plastic-piping.html",
+          "label": {
+            "zh": "塑料管道",
+            "en": "Plastic piping",
+            "ru": "Пластиковые трубы"
+          }
+        }
+      ]
     },
     {
       "href": "/cases.html",
@@ -95,7 +301,57 @@
         "zh": "关于海狮",
         "en": "About",
         "ru": "О компании"
-      }
+      },
+      "children": [
+        {
+          "href": "/about.html#about",
+          "label": {
+            "zh": "企业简介",
+            "en": "Company",
+            "ru": "О нас"
+          }
+        },
+        {
+          "href": "/about.html#culture",
+          "label": {
+            "zh": "企业文化",
+            "en": "Culture",
+            "ru": "Культура"
+          }
+        },
+        {
+          "href": "/about.html#milestones",
+          "label": {
+            "zh": "发展历程",
+            "en": "Milestones",
+            "ru": "История"
+          }
+        },
+        {
+          "href": "/about.html#techstr",
+          "label": {
+            "zh": "技术实力",
+            "en": "Capability",
+            "ru": "Возможности"
+          }
+        },
+        {
+          "href": "/about.html#certs",
+          "label": {
+            "zh": "资质证书",
+            "en": "Certificates",
+            "ru": "Сертификаты"
+          }
+        },
+        {
+          "href": "/ip.html",
+          "label": {
+            "zh": "知识产权",
+            "en": "IP portfolio",
+            "ru": "Интеллектуальная собственность"
+          }
+        }
+      ]
     },
     {
       "href": "/service.html",
@@ -103,7 +359,25 @@
         "zh": "服务支持",
         "en": "Service",
         "ru": "Сервис"
-      }
+      },
+      "children": [
+        {
+          "href": "/service.html",
+          "label": {
+            "zh": "售后与服务",
+            "en": "After-sales",
+            "ru": "Сервис"
+          }
+        },
+        {
+          "href": "/manual/",
+          "label": {
+            "zh": "产品手册",
+            "en": "Manuals",
+            "ru": "Руководства"
+          }
+        }
+      ]
     },
     {
       "href": "/news.html",

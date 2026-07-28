@@ -48,7 +48,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/cable/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/cable/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/cable/"/>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/en/cable/</loc>
@@ -56,7 +56,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/cable/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/cable/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/cable/"/>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/ru/cable/</loc>
@@ -64,6 +64,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/cable/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/cable/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/cable/"/>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/cable/masterbatch-weighing</loc>
@@ -125,6 +126,7 @@
     <loc>https://www.sealion-tech.com/</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/"/>
     <lastmod>2026-07-28</lastmod>
   </url>
@@ -132,8 +134,16 @@
     <loc>https://www.sealion-tech.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/"/>
     <lastmod>2026-07-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/cable-sheathing</loc>
@@ -731,6 +741,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/pipe/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.sealion-tech.com/ru/pipe/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/pipe/"/>
+    <lastmod>2026-07-28</lastmod>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/pipe/intelligent-inspection</loc>

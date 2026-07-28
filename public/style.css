@@ -856,3 +856,18 @@ a.pcust:hover .pcust-name{color:var(--blue)}
   .hero-video video{display:none}
   .hero-video{background:url("/assets/2026/video/company-intro-poster.webp") center/cover no-repeat}
 }
+
+/* ---- Hero 播放按钮与视频灯箱 ---- */
+.hero-play{display:inline-flex;align-items:center;gap:.55em;margin-top:1.6rem;padding:.7em 1.2em;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.30);color:#fff;
+  border-radius:999px;cursor:pointer;font-size:var(--step--1);transition:background .2s,border-color .2s}
+.hero-play:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.55)}
+.hero-play svg{flex:none}
+.hero-lb{position:fixed;inset:0;z-index:9999;background:rgba(4,12,18,.94);
+  display:flex;align-items:center;justify-content:center;padding:clamp(1rem,4vw,3rem)}
+.hero-lb[hidden]{display:none}
+.hero-lb video{width:min(1200px,100%);height:auto;border-radius:var(--radius);background:#000}
+.hero-lb-close{position:absolute;top:clamp(.8rem,2vw,1.6rem);right:clamp(.8rem,2vw,1.6rem);
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.10);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.hero-lb-close:hover{background:rgba(255,255,255,.2)}
