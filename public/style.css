@@ -839,3 +839,20 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .div-body p{color:var(--ink-70);margin:0 0 .7em}
 .div-meta{display:block;font-size:var(--step--1);color:var(--steel);font-family:var(--mono);margin-bottom:1em}
 @media(max-width:760px){.div-grid{grid-template-columns:1fr}}
+
+/* ---- Hero 背景视频（2026）---- */
+.hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-video video{width:100%;height:100%;object-fit:cover;display:block}
+/* 压暗 + 左侧加深，保证白色标题在任何画面上都读得清 */
+.hero-video::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(10,26,38,.92) 0%,rgba(10,26,38,.78) 45%,rgba(10,26,38,.55) 100%)}
+/* 窄屏只显示封面图，不下载视频，省流量 */
+@media(max-width:760px){
+  .hero-video video{display:none}
+  .hero-video{background:url("/assets/2026/video/company-intro-poster.webp") center/cover no-repeat}
+}
+/* 用户设置了减弱动画：停掉视频，只留封面 */
+@media(prefers-reduced-motion:reduce){
+  .hero-video video{display:none}
+  .hero-video{background:url("/assets/2026/video/company-intro-poster.webp") center/cover no-repeat}
+}
