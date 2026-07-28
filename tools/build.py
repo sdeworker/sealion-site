@@ -86,6 +86,24 @@ def exists_for(href, lang, avail):
     return rel in avail.get(lang, set())
 
 
+
+_ASSET_HASH = {}
+
+
+def ver(path):
+    """给样式/脚本加内容指纹：/style.css → /style.css?v=ab12cd34
+       内容一变指纹就变，浏览器立刻取新版；不变则可长期缓存"""
+    import hashlib
+    if path not in _ASSET_HASH:
+        fp = "public" + path
+        try:
+            h = hashlib.md5(open(fp, "rb").read()).hexdigest()[:8]
+        except OSError:
+            h = ""
+        _ASSET_HASH[path] = f"{path}?v={h}" if h else path
+    return _ASSET_HASH[path]
+
+
 # ---------- 外壳 ----------
 def render_head(lang, rel, meta, alts):
     u = page_url(lang, rel)
@@ -115,9 +133,9 @@ def render_head(lang, rel, meta, alts):
     o.append('<link rel="preconnect" href="https://fonts.googleapis.com">')
     o.append('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
     o.append('<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">')
-    o.append('<link rel="stylesheet" href="/style.css">')
+    o.append(f'<link rel="stylesheet" href="{ver("/style.css")}">')
     for c in meta.get("css", []):
-        o.append(f'<link rel="stylesheet" href="/{c}.css">')
+        o.append(f'<link rel="stylesheet" href="{ver("/" + c + ".css")}">')
     for block in json_ld(lang, rel, meta):
         o.append('<script type="application/ld+json">' +
                  json.dumps(block, ensure_ascii=False, separators=(",", ":")) + "</script>")
@@ -256,9 +274,9 @@ def render_page(lang, rel, meta, body, alts, avail):
     footer = render_footer(lang, avail)
     skip = t(SITE["ui"]["skip"], lang)
     tail = ['<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
-            '<script src="/assets/nav.js" defer></script>']
+            f'<script src="{ver("/assets/nav.js")}" defer></script>']
     for j in meta.get("js", []):
-        tail.append(f'<script src="/assets/{j}.js" defer></script>')
+        tail.append(f'<script src="{ver("/assets/" + j + ".js")}" defer></script>')
     btt = ""
     if meta.get("backToTop"):
         lbl = H.escape(t(SITE["ui"]["backToTop"], lang), quote=True)

@@ -190,43 +190,11 @@
       },
       "children": [
         {
-          "href": "/industries/pe-water-pipe.html",
+          "href": "/industries/plastic-piping.html",
           "label": {
-            "zh": "PE 给水管",
-            "en": "PE water pipe",
-            "ru": "ПЭ водоснабжение"
-          }
-        },
-        {
-          "href": "/industries/pe-gas-pipe.html",
-          "label": {
-            "zh": "PE 燃气管",
-            "en": "PE gas pipe",
-            "ru": "ПЭ газопровод"
-          }
-        },
-        {
-          "href": "/industries/ppr-pipe.html",
-          "label": {
-            "zh": "PPR 管",
-            "en": "PPR pipe",
-            "ru": "ППР труба"
-          }
-        },
-        {
-          "href": "/industries/pvc-pipe.html",
-          "label": {
-            "zh": "PVC 管",
-            "en": "PVC pipe",
-            "ru": "ПВХ труба"
-          }
-        },
-        {
-          "href": "/industries/corrugated-pipe.html",
-          "label": {
-            "zh": "波纹管 / 缠绕管",
-            "en": "Corrugated pipe",
-            "ru": "Гофрированная труба"
+            "zh": "塑料管道",
+            "en": "Plastic piping",
+            "ru": "Пластиковые трубы"
           }
         },
         {
@@ -238,35 +206,11 @@
           }
         },
         {
-          "href": "/industries/medical-catheter.html",
-          "label": {
-            "zh": "医疗导管",
-            "en": "Medical catheter",
-            "ru": "Медицинский катетер"
-          }
-        },
-        {
           "href": "/industries/film.html",
           "label": {
-            "zh": "吹膜 / 流延",
-            "en": "Blown & cast film",
-            "ru": "Плёнка"
-          }
-        },
-        {
-          "href": "/industries/sheet-board.html",
-          "label": {
-            "zh": "片材板材",
-            "en": "Sheet & board",
-            "ru": "Лист и плита"
-          }
-        },
-        {
-          "href": "/industries/meltblown.html",
-          "label": {
-            "zh": "熔喷布",
-            "en": "Meltblown",
-            "ru": "Мельтблаун"
+            "zh": "薄膜与片材",
+            "en": "Film & sheet",
+            "ru": "Плёнка и лист"
           }
         },
         {
@@ -276,13 +220,39 @@
             "en": "Masterbatch & compounds",
             "ru": "Суперконцентраты"
           }
+        }
+      ]
+    },
+    {
+      "href": "/about.html#apply-detail",
+      "label": {
+        "zh": "产品应用",
+        "en": "Applications",
+        "ru": "Применение"
+      },
+      "children": [
+        {
+          "href": "/about.html#apply-detail",
+          "label": {
+            "zh": "装在什么样的产线上",
+            "en": "On which lines",
+            "ru": "На каких линиях"
+          }
         },
         {
-          "href": "/industries/plastic-piping.html",
+          "href": "/about.html#techstr",
           "label": {
-            "zh": "塑料管道",
-            "en": "Plastic piping",
-            "ru": "Пластиковые трубы"
+            "zh": "技术实力",
+            "en": "Capability",
+            "ru": "Возможности"
+          }
+        },
+        {
+          "href": "/manual/",
+          "label": {
+            "zh": "产品手册",
+            "en": "Manuals",
+            "ru": "Руководства"
           }
         }
       ]
@@ -290,7 +260,7 @@
     {
       "href": "/cases.html",
       "label": {
-        "zh": "案例与客户",
+        "zh": "案例展示",
         "en": "Cases",
         "ru": "Проекты"
       }
@@ -312,27 +282,11 @@
           }
         },
         {
-          "href": "/about.html#culture",
-          "label": {
-            "zh": "企业文化",
-            "en": "Culture",
-            "ru": "Культура"
-          }
-        },
-        {
           "href": "/about.html#milestones",
           "label": {
             "zh": "发展历程",
             "en": "Milestones",
             "ru": "История"
-          }
-        },
-        {
-          "href": "/about.html#techstr",
-          "label": {
-            "zh": "技术实力",
-            "en": "Capability",
-            "ru": "Возможности"
           }
         },
         {
@@ -423,7 +377,7 @@
         {
           "href": "/cases.html",
           "label": {
-            "zh": "案例与客户",
+            "zh": "案例展示",
             "en": "Cases",
             "ru": "Проекты"
           }
