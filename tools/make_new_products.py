@@ -55,57 +55,47 @@ def cta(lang, div):
 # ---------------- 多组份混配系统 ----------------
 MULTI = {
  "zh": dict(
-  title="多组份混配系统 Multi-Component Dosing System",
-  desc="海狮多组份配色喂料控制系统：西门子 PLC + 伺服马达 + 定制螺杆，2–4 组份按比例连续在线混配，不停机换料，喂料精度可达 0.5%；称重版采用 PID 闭环与托利多传感器，精度 0.2%–0.5%。",
-  eyebrow="多组份混配", h1="多组份混配系统",
-  lead="按配方把几种原料同时、连续、精准地送进挤出机——而且换料不用停机。系统分体积式与称重式两种，前者靠定制螺杆按转速配比，后者靠称重闭环实时纠偏。",
-  secs=[("体积式：多组份配色喂料控制系统", [
-      ("硬件构成", "全系采用西门子 PLC 中央处理器、伺服马达与定制螺杆，按预设比例混合，由控制系统换算成转速直接驱动精密螺杆挤出色母原料。"),
-      ("不停机换料", "生产不中断即可自由切换色母，保证连续生产，效率显著提高。"),
-      ("喂料精度 0.5%", "比普通喂料机更精密稳定；即使在小于 0.5kg/h 的微小产量下，也能保持稳定的喂料精度。"),
-      ("组份数量", "可添加 2–4 种组份，可按客户要求定制。"),
+  title="高精度多组份混配系统 High-Precision Multi-Component Dosing System",
+  desc="海狮高精度多组份混配系统：失重式计量，每通道独立伺服驱动、独立称重、同步下料，智能闭环算法实时调节下料速度，多组分并行精准配比，配方可存储一键切换、全程可追溯。",
+  eyebrow="高精度多组份混配", h1="多路同步下料，每一路各自称重",
+  lead="采用失重式计量，每个通道配备高精度伺服电机独立驱动，实现多路物料同步送料、通道独立称重。系统实时采集主料、色母粒与颗粒助剂的流量数据，依靠智能闭环算法动态调节伺服下料速度，多组分并行精准配比，保障混配比例持续稳定。",
+  secs=[("产品特点", [
+      ("模块化多通道", "各路独立称重、同步下料，互不干扰。"),
+      ("伺服驱动", "高精度伺服电机驱动，下料响应快、流量线性稳定。"),
+      ("适配颗粒物料", "适配各类颗粒物料，支持多配方存储、一键切换。"),
+      ("全自动计量", "生产数据自动留存、全程可追溯，适配长期连续挤出生产。"),
   ]),
-  ("称重式：多组份称重配色配方喂料控制系统", [
-      ("称重闭环", "基于重量检测的闭环控制，采用 PID 方式，配西门子 PLC、伺服马达与托利多高精度称重传感器。"),
-      ("实时自适应", "持续称量各物料的挤出消耗量，实时采集挤出螺杆转速形成闭环；设定配方比例后，按自适应算法实时调节螺杆转速，全自动达成配方要求。"),
-      ("喂料精度 0.2%–0.5%", "波动范围在 0.3% 以内，喂料稳定可靠；微小产量下同样保持精度。"),
-      ("为什么重要", "高精度配色与配方的连续生产中，各物料能否恒定输出，直接决定产品质量与成本控制。"),
+  ("核心优势", [
+      ("同步送料 + 独立称重", "规避分时下料带来的瞬时配比波动，物料混合更均匀。"),
+      ("伺服优于步进", "对比传统步进电机无抖动，计量精度更高，长期运行不易漂移。"),
+      ("杜绝人工偏差", "配方数据锁定可追溯，有效减少批次色差与物性差异。"),
   ]),
-  ("共同优势", [
-      ("在线连续混配", "减少人工耗时费力，落实智能制造与数字化管理。"),
-      ("数据永久留存", "具备数据的永久记忆及存储功能，生产用料数据上传，可查询任意时间段的用料量。"),
-      ("模块化易清理", "模块化装配结构，拆装方便；采用气动自动清洁料筒内壁，避免残留辅料造成不良产品。"),
-      ("自动混料", "自动混料装置按比例输送，保持混料均匀。"),
-      ("接口与联网", "可同时满足外部信号输入要求，留有数据传送接口便于信息化采集。"),
-      ("远程可选", "可选配远程控制系统，实现远程技术支持与预警售后服务。"),
+  ("产品价值", [
+      ("从源头稳定品质", "稳定管材、线缆、型材成品的色泽与力学性能，降低不良品率，节约原材料损耗。"),
+      ("配料工序标准化", "实现配料工序的自动化标准化管控，提升产线效率与产品一致性，保障稳定量产。"),
   ])],
-  ind="适用行业：塑料薄膜、电线电缆、塑料改性、化工，以及各种多组份精确配比添加的行业。"),
+  ind="应用领域：适用于塑料管材、型材、电线电缆、塑胶板材、软管、薄膜等高分子挤出与注塑行业；满足 PE、PVC、PP、ABS 塑胶颗粒搭配色母粒与各类颗粒助剂的自动化精准混配。"),
  "en": dict(
-  title="Multi-Component Dosing System",
-  desc="Sealion multi-component colour dosing: Siemens PLC, servo motors and custom screws dose 2–4 components continuously to ratio, with colour changes on the run and 0.5% feeding accuracy; the weighing edition closes a PID loop on Mettler-Toledo load cells for 0.2%–0.5%.",
-  eyebrow="Multi-component dosing", h1="Multi-Component Dosing System",
-  lead="Feed several materials into the extruder at once, continuously and to recipe — and change colour without stopping the line. Two editions: volumetric, which meters by screw speed, and gravimetric, which closes a weighing loop and corrects in real time.",
-  secs=[("Volumetric: colour dosing and feeding control", [
-      ("What it is built from", "Siemens PLC, servo motors and custom screws throughout. The controller converts the preset ratio into a screw speed and drives the metering screw directly."),
-      ("Colour change on the run", "Masterbatch can be switched without stopping production, keeping the line continuous and lifting output."),
-      ("0.5% feeding accuracy", "More precise and more stable than a general-purpose feeder, and it holds that accuracy even below 0.5 kg/h."),
-      ("Components", "Two to four components, and the count can be built to order."),
+  title="High-Precision Multi-Component Dosing System",
+  desc="Sealion high-precision multi-component dosing: loss-in-weight metering with an independent servo drive and independent weighing on every channel, closed-loop algorithms trimming feed speed live, formulas stored for one-click changeover and fully traceable.",
+  eyebrow="High-precision multi-component dosing", h1="Every channel feeds together and weighs on its own",
+  lead="Loss-in-weight metering, with a high-precision servo driving each channel independently, so several materials feed simultaneously while each is weighed separately. Flow data from base resin, masterbatch and granular additives is collected in real time, and closed-loop algorithms trim servo feed speed to hold the ratio steady.",
+  secs=[("Product features", [
+      ("Modular multi-channel", "Each channel weighs independently and feeds simultaneously, without interfering with the others."),
+      ("Servo driven", "High-precision servo motors give fast response and a linear, stable flow."),
+      ("Suits granular materials", "Handles granular materials generally, with formula storage and one-click changeover."),
+      ("Fully automatic metering", "Production data is recorded automatically and stays traceable, which suits long continuous extrusion runs."),
   ]),
-  ("Gravimetric: weighing, colour and recipe feeding control", [
-      ("A weighing loop", "Closed-loop control on measured weight using PID, with Siemens PLC, servo motors and Mettler-Toledo load cells."),
-      ("Adaptive in real time", "It weighs what each material actually consumes and reads screw speed to close the loop; once the recipe ratio is set, an adaptive algorithm trims screw speed to hold it automatically."),
-      ("0.2%–0.5% accuracy", "Fluctuation stays within 0.3%, and accuracy holds at very low throughput."),
-      ("Why it matters", "In continuous production to a tight colour or recipe spec, whether each material comes out at a constant rate is what decides quality and cost."),
+  ("Core advantages", [
+      ("Simultaneous feed, separate weighing", "This avoids the instantaneous ratio swings that time-shared feeding produces, so the blend is more uniform."),
+      ("Servo rather than stepper", "No jitter compared with a stepper drive, higher metering precision, and little drift over long runs."),
+      ("No manual batching error", "Locked, traceable formula data reduces batch-to-batch colour and property variation."),
   ]),
-  ("Shared advantages", [
-      ("Continuous in-line blending", "Less manual labour, and a step towards digital production management."),
-      ("Data kept permanently", "Consumption data is stored and uploaded, so material use over any period can be queried."),
-      ("Modular and easy to clean", "Modular assembly for quick strip-down, with pneumatic cleaning of the barrel wall so no additive is left to spoil the next run."),
-      ("Automatic blending", "The blender conveys to ratio and keeps the mix even."),
-      ("Interfaces", "External signal inputs are supported and a data interface is provided for plant systems."),
-      ("Remote option", "An optional remote system enables remote support and early warning."),
+  ("Product value", [
+      ("Quality settled at source", "Colour and mechanical performance of pipe, cable and profile are stabilised from the start, cutting rejects and material waste."),
+      ("Standardised batching", "Batching becomes automatic and standardised, lifting line efficiency and product consistency for steady volume production."),
   ])],
-  ind="Industries: plastic film, wire and cable, plastic modification, chemicals, and any process needing precise multi-component proportioning."),
+  ind="Applications: plastic pipe, profile, wire and cable, plastic sheet, hose and film — extrusion and injection moulding. For automatic precise blending of PE, PVC, PP and ABS granules with masterbatch and granular additives."),
 }
 
 # ---------------- 双轴激光测径仪 ----------------
