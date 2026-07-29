@@ -220,7 +220,7 @@ def build(div, lang):
   </div>
 </div></section>
 
-<section class="section"><div class="wrap">
+<section class="section"><div class="wrap wrap--wide">
   <div class="sh"><h2>{T["secTitle"]}</h2></div>
   <div class="pcard-grid">
 {chr(10).join(cards)}
