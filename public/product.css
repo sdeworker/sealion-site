@@ -146,3 +146,20 @@
 /* 俄语文案更长，对比表在窄屏会撑破版面：允许横向滚动 */
 .compare{overflow-x:auto}
 .compare table{min-width:520px}
+
+/* ---- 售后知识分层折叠（2026 改版）----
+   报警代码等内容面向已装机客户，选型阶段不需要；
+   默认收起而非删除，既不打扰采购者，也不影响站内智能体检索。 */
+.svc-fold{padding-top:0}
+.fold{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper-2);overflow:hidden}
+.fold>summary{cursor:pointer;list-style:none;padding:clamp(1rem,2.2vw,1.4rem) clamp(1.1rem,2.4vw,1.6rem);
+  display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;transition:background .2s}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary:hover{background:var(--paper)}
+.fold>summary::after{content:"＋";margin-left:auto;font-size:1.3em;color:var(--steel);line-height:1}
+.fold[open]>summary::after{content:"−"}
+.fold-t{font-family:var(--display);font-size:var(--step-0);font-weight:600;color:var(--ink)}
+.fold-hint{font-size:var(--step--1);color:var(--steel)}
+.fold-note{margin:0;padding:0 clamp(1.1rem,2.4vw,1.6rem);font-size:var(--step--1);color:var(--steel)}
+.fold .section{padding-top:.6rem}
+.fold summary:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
