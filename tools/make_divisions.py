@@ -8,6 +8,27 @@ CABLE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "
          "ultrasonic-small", "cloud-monitoring"]
 
 
+
+def img_bg(rel):
+    """采样图片四角与四边中点的中位数作为背景色，让留白区与图融为一体"""
+    try:
+        from PIL import Image
+        import statistics as st
+        with Image.open("public" + rel) as im:
+            im = im.convert("RGB")
+            w, h = im.size
+            pts = [(2, 2), (w - 3, 2), (2, h - 3), (w - 3, h - 3),
+                   (w // 2, 2), (w // 2, h - 3), (2, h // 2), (w - 3, h // 2)]
+            cols = [im.getpixel(q) for q in pts]
+            c = tuple(int(st.median([x[i] for x in cols])) for i in range(3))
+            # 纯白底的示意图与影棚照风格不统一，改用站点浅灰蓝，避免刺眼的白块
+            if min(c) > 248:
+                return "#EEF3F7"
+            return "#%02X%02X%02X" % c
+    except Exception:
+        return None
+
+
 PROD_IMG = {
     "gravimetric": "/assets/2026/core/core-gravimetric.webp",
     "masterbatch": "/assets/2026/core/core-masterbatch.webp",
@@ -191,7 +212,9 @@ def build(div, lang):
             # 宽幅或示意图（远离正方形）不做裁切，改为完整放入
             ratio = iw / ih if ih else 1
             fit = " pc-img--fit" if (ratio > 1.12 or ratio < 0.89) else ""
-            media = (f'      <div class="pc-img{fit}"><img src="{img}" alt="{t}" '
+            bg = img_bg(img) if fit else None
+            style = f' style="background:{bg}"' if bg else ""
+            media = (f'      <div class="pc-img{fit}"{style}><img src="{img}" alt="{t}" '
                      f'width="{iw}" height="{ih}" loading="lazy"></div>\n')
         cards.append(
             f'    <a class="pcard pcard--img" href="{root}{div}/{s}.html">\n'
