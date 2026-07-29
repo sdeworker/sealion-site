@@ -142,3 +142,7 @@
 /* 线缆页 hero 无图文分栏时，主图单独成块 */
 .prod-hero-media.solo{max-width:420px;margin:0 0 1.6rem}
 .prod-hero-media.solo img{width:100%;height:auto;border-radius:var(--radius)}
+
+/* 俄语文案更长，对比表在窄屏会撑破版面：允许横向滚动 */
+.compare{overflow-x:auto}
+.compare table{min-width:520px}
