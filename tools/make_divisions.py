@@ -188,7 +188,10 @@ def build(div, lang):
             from PIL import Image
             with Image.open("public" + img) as im:
                 iw, ih = im.size
-            media = (f'      <div class="pc-img"><img src="{img}" alt="{t}" '
+            # 宽幅或示意图（远离正方形）不做裁切，改为完整放入
+            ratio = iw / ih if ih else 1
+            fit = " pc-img--fit" if (ratio > 1.12 or ratio < 0.89) else ""
+            media = (f'      <div class="pc-img{fit}"><img src="{img}" alt="{t}" '
                      f'width="{iw}" height="{ih}" loading="lazy"></div>\n')
         cards.append(
             f'    <a class="pcard pcard--img" href="{root}{div}/{s}.html">\n'

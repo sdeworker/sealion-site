@@ -311,6 +311,9 @@ a.c-v:hover{color:var(--blue)}
 .pcard--img:hover,.pcard--img:focus-within{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,26,38,.14)}
 .pcard--img .pc-img{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--paper-2)}
 .pcard--img .pc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+/* 宽幅照片与示意图不能按方形裁切，否则主体被切掉：改为完整放入并留出呼吸位 */
+.pcard--img .pc-img--fit{background:#fff}
+.pcard--img .pc-img--fit img{object-fit:contain;padding:7% 7% 22%;background:#fff}
 .pcard--img:hover .pc-img img,.pcard--img:focus-within .pc-img img{transform:scale(1.06)}
 .pcard--img .pc-body{position:absolute;left:0;right:0;bottom:0;padding:clamp(1rem,2.2vw,1.5rem);color:#fff;background:linear-gradient(to top,rgba(7,29,43,.94) 0%,rgba(7,29,43,.80) 42%,rgba(7,29,43,0) 100%);display:flex;flex-direction:column;gap:.5rem;flex:none}
 .pcard--img .pc-body h3{color:#fff;font-size:var(--step-2);line-height:1.22;margin:0;text-shadow:0 1px 14px rgba(0,0,0,.4)}
