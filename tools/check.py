@@ -237,6 +237,33 @@ def check_render():
         srv.terminate()
 
 
+# ---------- 12. 脚本钩子 ----------
+# 缘由：2026-07-30 发现首页 4 个「问技术工程师」按钮点了完全没反应。
+# app.js 是 IIFE，第 5-6 行 querySelector('[data-ai]') 取不到就 return，
+# 而给 [data-open-ai] 绑 click 的代码在第 30 行——组件根节点被移除后，
+# 按钮永远拿不到事件处理器。HTML 正常、CSS 正常、控制台无报错，只有功能是死的。
+# 这类"静默失效"必须由闸门拦，不能靠人点。
+JS_HOOKS = [
+    # (页面里出现这个触发器, 就必须同页存在这个组件根节点, 说明)
+    ("data-open-ai", "data-ai", "咨询按钮没有对应的咨询组件"),
+    ("data-lightbox", "data-lightbox", "灯箱触发器"),
+    ("data-back-to-top", "data-back-to-top", "回顶按钮"),
+]
+
+
+def check_js_hooks():
+    for f in PAGES:
+        s = open(f, encoding="utf-8").read()
+        for trigger, need, desc in JS_HOOKS:
+            if trigger in s and need not in s:
+                fail("脚本钩子", f"{f}：{desc}——有 {trigger} 但缺 {need}，交互会静默失效")
+    # 反向：加载了 app.js 却没有组件，说明是一次没收尾的移除
+    for f in PAGES:
+        s = open(f, encoding="utf-8").read()
+        if "assets/app.js" in s and "data-ai" not in s:
+            fail("脚本钩子", f"{f} 加载了 app.js 但页面没有 [data-ai]，脚本会空跑")
+
+
 def main():
     print("发布前自检 —— public/ 共", len(PAGES), "页\n")
     checks = [
@@ -245,6 +272,7 @@ def main():
         ("受控内容越界", check_leak), ("占位符", check_placeholder),
         ("三语一致性", check_i18n), ("SEO 资产", check_seo),
         ("图片属性", check_images), ("部署体积", check_size),
+        ("脚本钩子", check_js_hooks),
     ]
     if not QUICK:
         checks.append(("渲染实测", check_render))

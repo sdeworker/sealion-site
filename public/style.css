@@ -222,7 +222,7 @@ a.c-v:hover{color:var(--blue)}
 /* ============ BACK TO TOP ============ */
 .back-to-top{
   position:fixed;right:clamp(1rem,3vw,2rem);
-  bottom:calc(clamp(1rem,3vw,2rem) + var(--ai-launcher-height,2.6875rem) + .875rem);z-index:89;
+  bottom:clamp(1rem,3vw,2rem);z-index:89;
   width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
   display:grid;place-items:center;background:var(--paper-2);color:var(--ink);
   box-shadow:0 8px 24px -8px rgba(10,26,38,.38);cursor:pointer;
@@ -233,44 +233,6 @@ a.c-v:hover{color:var(--blue)}
 .back-to-top svg{width:20px;height:20px}
 .back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none}
 .back-to-top:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-ghost)}
-
-/* ============ AI ASSISTANT WIDGET ============ */
-.ai{position:fixed;right:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,2rem);z-index:90}
-.ai-launcher{display:inline-flex;align-items:center;gap:0.6em;padding:0.8em 1.15em;border-radius:999px;border:1px solid var(--blue);background:var(--ink);color:#fff;cursor:pointer;box-shadow:0 12px 30px -8px rgba(10,26,38,0.55);font-family:var(--mono);font-size:0.82rem;letter-spacing:0.02em;transition:transform .18s,box-shadow .2s}
-.ai-launcher:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(10,26,38,0.65)}
-.ail-icon{color:var(--signal);display:inline-flex}
-.ail-dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px var(--signal-soft)}
-.ai-panel{position:absolute;right:0;bottom:calc(100% + 0.8rem);width:min(380px,calc(100vw - 2rem));height:min(560px,calc(100vh - 6rem));background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 30px 70px -20px rgba(10,26,38,0.5);display:flex;flex-direction:column;overflow:hidden;transform:translateY(10px) scale(0.98);opacity:0;transform-origin:bottom right;transition:opacity .2s,transform .22s}
-/* the `hidden` attribute must win over display:flex, or the invisible panel
-   keeps sitting on the page and swallowing clicks in a 380x560 region */
-.ai-panel[hidden]{display:none}
-.ai-panel:not(.open){pointer-events:none}
-.ai-panel.open{pointer-events:auto}
-.ai-panel.open{transform:none;opacity:1}
-.aip-head{display:flex;align-items:center;justify-content:space-between;gap:0.6rem;padding:0.9rem 1rem;background:var(--ink);color:#fff}
-.aip-id{display:flex;align-items:center;gap:0.65rem}
-.aip-id strong{display:block;font-family:var(--display);font-size:0.95rem}
-.aip-sub{display:block;font-size:0.72rem;color:var(--steel-dk);margin-top:1px;max-width:26ch}
-.aip-close{background:none;border:none;color:var(--steel-dk);font-size:1rem;cursor:pointer;padding:0.2em 0.4em}
-.aip-close:hover{color:#fff}
-.aip-log{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:0.7rem;background:var(--paper)}
-.msg{display:flex}
-.msg--user{justify-content:flex-end}
-.bubble{max-width:82%;padding:0.6em 0.85em;border-radius:var(--radius-lg);font-size:0.9rem;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
-.msg--bot .bubble{background:var(--paper-2);border:1px solid var(--line);border-bottom-left-radius:4px;color:var(--ink)}
-.msg--user .bubble{background:var(--blue);color:#fff;border-bottom-right-radius:4px;font-weight:500}
-.bubble.typing{display:inline-flex;gap:4px;align-items:center}
-.bubble.typing .dot{width:6px;height:6px;border-radius:50%;background:var(--steel);animation:bounce 1.2s infinite}
-.bubble.typing .dot:nth-child(2){animation-delay:.15s}
-.bubble.typing .dot:nth-child(3){animation-delay:.3s}
-.aip-form{display:flex;gap:0.5rem;padding:0.7rem;border-top:1px solid var(--line);background:var(--paper-2)}
-.aip-form textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:var(--radius-lg);padding:0.6em 0.75em;font-family:var(--body);font-size:0.9rem;line-height:1.4;color:var(--ink);max-height:120px}
-.aip-form textarea:focus{outline:none;border-color:var(--blue)}
-.aip-send{flex-shrink:0;width:40px;border:none;border-radius:var(--radius-lg);background:var(--ink);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
-.aip-send:hover{background:var(--blue)}
-.aip-disc{font-size:0.66rem;color:var(--steel);text-align:center;padding:0 0.9rem 0.7rem;background:var(--paper-2)}
-@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
-@media(max-width:480px){.ail-text{display:none}}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
