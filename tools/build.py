@@ -132,7 +132,7 @@ def render_head(lang, rel, meta, alts):
     o.append('<link rel="icon" href="/assets/favicon.ico">')
     o.append('<link rel="preconnect" href="https://fonts.googleapis.com">')
     o.append('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
-    o.append('<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">')
+    o.append('<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">')
     o.append(f'<link rel="stylesheet" href="{ver("/style.css")}">')
     for c in meta.get("css", []):
         o.append(f'<link rel="stylesheet" href="{ver("/" + c + ".css")}">')

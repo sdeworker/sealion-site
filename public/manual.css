@@ -70,13 +70,13 @@
 .m-topic h4.model-sub{margin:1.4rem 0 0.6rem;font-size:0.95rem;color:var(--ink)}
 
 .m-nav{display:flex;justify-content:space-between;gap:1rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid var(--line)}
-.m-pn{font-family:var(--mono);font-size:0.84rem;color:var(--blue);padding:0.6em 0;min-height:38px;display:inline-flex;align-items:center}
+.m-pn{font-family:var(--mono);font-size:0.84rem;color:var(--blue);padding:0.6em 0;min-height:44px;display:inline-flex;align-items:center}
 .m-pn:hover{color:var(--blue-dk)}
 
 /* ---- flip reader ---- */
 .rd{background:var(--ink);min-height:calc(100vh - 68px);display:flex;flex-direction:column}
 .rd-bar{display:flex;align-items:center;gap:1rem;padding:0.8rem clamp(1rem,3vw,2rem);border-bottom:1px solid var(--line-dk);flex-wrap:wrap}
-.rd-back{font-family:var(--mono);font-size:0.82rem;color:var(--steel-dk);min-height:38px;display:inline-flex;align-items:center;padding:0 0.3em}
+.rd-back{font-family:var(--mono);font-size:0.82rem;color:var(--steel-dk);min-height:44px;display:inline-flex;align-items:center;padding:0 0.3em}
 .rd-back:hover{color:#fff}
 .rd-chips{display:flex;gap:0.4rem;flex:1;overflow-x:auto;padding:0.2rem 0}
 .rd-chip{font-family:var(--mono);font-size:0.72rem;white-space:nowrap;color:#CBD9E1;background:transparent;border:1px solid var(--line-dk);border-radius:999px;padding:0.5em 0.8em;cursor:pointer;min-height:34px;transition:all .16s}
