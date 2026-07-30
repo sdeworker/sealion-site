@@ -5,7 +5,7 @@
 
 /* ---- hub ---- */
 .m-hero{padding-block:clamp(2.6rem,6vw,4.2rem);background:radial-gradient(100% 90% at 88% 0%,#123A54 0%,transparent 55%),var(--ink)}
-.m-hero h1{font-size:var(--step-3);margin:0.9rem 0 1.1rem;max-width:18ch}
+.m-hero h1{font-size:var(--step-5);margin:0.9rem 0 1.1rem;max-width:18ch}
 .m-hero .lead{max-width:64ch;color:var(--steel-dk)}
 
 .mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.5vw,1.6rem)}
@@ -31,7 +31,7 @@
 
 /* ---- chapter long-read ---- */
 .m-head{padding-block:clamp(2.4rem,5vw,3.6rem);background:radial-gradient(100% 90% at 88% 0%,#123A54 0%,transparent 55%),var(--ink)}
-.m-head h1{font-size:var(--step-3);margin:0.8rem 0 1rem;max-width:20ch}
+.m-head h1{font-size:var(--step-5);margin:0.8rem 0 1rem;max-width:20ch}
 .m-head .lead{max-width:62ch;color:var(--steel-dk)}
 .m-actions{display:flex;gap:0.8rem;margin-top:1.6rem;flex-wrap:wrap}
 

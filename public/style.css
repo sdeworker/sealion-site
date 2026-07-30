@@ -30,23 +30,47 @@
   --body:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;
 
-  --step--1:clamp(0.8rem,0.76rem + 0.2vw,0.9rem);
-  --step-0:clamp(1rem,0.95rem + 0.25vw,1.075rem);
-  --step-1:clamp(1.2rem,1.1rem + 0.5vw,1.4rem);
-  --step-2:clamp(1.25rem,1.15rem + 0.7vw,1.75rem);
-  --step-3:clamp(1.75rem,1.5rem + 1.2vw,2.5rem);
-  --step-4:clamp(2.25rem,1.75rem + 2.6vw,3.75rem);
+  /* 字阶：以正文 16px 为基准、公比 1.25 的等比链 —— 16 / 20 / 25 / 31 / 39 / 49。
+     Hero 不入链（它是广告位不是章节），单独取 58px。
+     为什么必须等比：改版前实测 60/39.4/27.4/22.4/17.2，相邻比 1.52/1.44/1.24/1.30，
+     在 H3 那一档断了——H2 到 H3 是个大台阶，H3 到卡片标题却几乎分不出来。
+     桌面值按 1280px 视口，手机值按 390px。 */
+  --step--1:clamp(0.8rem,0.76rem + 0.2vw,0.9rem);        /* 12.8–14.4  表格与说明 */
+  --step-0:1rem;                                          /* 16    正文，一行正好 28px */
+  --step-1:clamp(1.125rem,1.05rem + 0.35vw,1.25rem);      /* 18–20 导语、卡片标题、正文 h3 */
+  --step-2:clamp(1.25rem,1.15rem + 0.7vw,1.5625rem);      /* 20–25 小节标题、正文 h2 */
+  --step-3:clamp(1.5rem,1.305rem + 0.8vw,1.9375rem);      /* 24–31 预留：第五批把产品页
+                                                              22 个 h2 降级为 5–6 章之后，
+                                                              正文 h2 升到这一档 */
+  --step-4:clamp(1.75rem,1.5rem + 1.2vw,2.4375rem);       /* 28–39 区块横幅 .sh h2 */
+  --step-5:clamp(2rem,1.7rem + 1.6vw,3.0625rem);          /* 32–49 内页 H1 */
+  --step-hero:clamp(2.25rem,1.75rem + 2.6vw,3.625rem);    /* 36–58 Hero，独立不入链 */
 
   --radius:6px; --radius-lg:10px;
   --wrap:1160px; --gutter:clamp(1.1rem,4vw,2.5rem);
-  --sp:clamp(3.5rem,8vw,6.5rem);
+  /* 基线网格：正文 16px × 行高 1.75 = 一行 28px，这是全站纵向的唯一单位。
+     纵向留白只准取它的整数倍——用 clamp 做流体留白会落在非整数倍上，
+     所以这里改成按断点跳档，保证每个视口都精确对齐。 */
+  --baseline:1.75rem;                    /* 28px */
+  --sp-1:var(--baseline);                /* 28   组件内 */
+  --sp-2:calc(var(--baseline) * 2);      /* 56   子模块 */
+  --sp-3:calc(var(--baseline) * 3);      /* 84   章节 */
+  --sp-4:calc(var(--baseline) * 4);      /* 112  大分区 */
+  --sp:var(--sp-2);                      /* 章节留白：手机 56，≥768px 跳到 84 */
 }
 
 *,*::before,*::after{box-sizing:border-box}
 *{margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--body);font-size:var(--step-0);line-height:1.65;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:var(--body);font-size:var(--step-0);line-height:1.75;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+@media(min-width:768px){:root{--sp:var(--sp-3)}}
 h1,h2,h3,h4{font-family:var(--display);line-height:1.25;font-weight:600;letter-spacing:0}
+/* 正文里的裸标题此前没有任何 font-size 规则，一直吃浏览器默认的 em 倍数
+   （h2=1.5em、h3=1.17em），也就是跟着正文字号浮动、不在字阶里。
+   收进 token，让它们和带 class 的标题走同一条比例链。 */
+h2{font-size:var(--step-2)}
+h3{font-size:var(--step-1)}
+h4{font-size:var(--step-0)}
 h1{line-height:1.12}h2{line-height:1.2}h3{line-height:1.35}h4{line-height:1.4}
 /* 负字距是拉丁排印习惯（补大写字母间的空档）；汉字方块本就贴满字身框，再收就是往一起挤。只给拉丁语种加回去。 */
 :lang(en) h1,:lang(en) h2,:lang(en) h3,:lang(en) h4{letter-spacing:-0.01em}
@@ -63,7 +87,7 @@ img{height:auto}
 .section{padding-block:var(--sp)}
 .eyebrow{font-family:var(--body);font-size:var(--step--1);letter-spacing:0.08em;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:0.6em}
 .eyebrow::before{content:"";width:1.4rem;height:1px;background:var(--blue)}
-.lead{font-size:var(--step-1);color:var(--ink-70);max-width:60ch}
+.lead{font-size:var(--step-1);line-height:1.4;color:var(--ink-70);max-width:60ch}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 /* buttons */
@@ -126,7 +150,7 @@ img{height:auto}
   radial-gradient(120% 80% at 85% -10%,#123A54 0%,transparent 55%),
   radial-gradient(90% 90% at 5% 110%,#0C2A40 0%,transparent 50%),var(--ink)}
 .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-block:clamp(3.5rem,9vw,7rem);position:relative;z-index:2}
-.hero-copy h1{font-size:var(--step-4);letter-spacing:0;margin:1.1rem 0 1.4rem;max-width:15ch;color:#fff}
+.hero-copy h1{font-size:var(--step-hero);letter-spacing:0;margin:1.1rem 0 1.4rem;max-width:15ch;color:#fff}
 .hero-copy .lead{max-width:48ch;color:var(--steel-dk)}
 .hero-cta{display:flex;gap:0.9rem;margin-top:2.2rem;flex-wrap:wrap}
 .hero-lines{position:absolute;inset:0;z-index:1;opacity:0.5;background-image:linear-gradient(var(--line-dk) 1px,transparent 1px),linear-gradient(90deg,var(--line-dk) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(80% 60% at 70% 40%,#000 0%,transparent 75%)}
@@ -158,7 +182,7 @@ img{height:auto}
 
 /* ============ ABOUT ============ */
 .sh{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:clamp(2rem,5vw,3.2rem)}
-.sh h2{font-size:var(--step-3);max-width:22ch}
+.sh h2{font-size:var(--step-4);max-width:22ch}
 .about .lead{margin-top:0.2rem}
 .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,3vw,2rem);margin-top:2.5rem}
 .cap{border-top:2px solid var(--blue);padding-top:1rem}
@@ -233,6 +257,11 @@ a.c-v:hover{color:var(--blue)}
 .back-to-top svg{width:20px;height:20px}
 .back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none}
 .back-to-top:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-ghost)}
+
+/* 开发期基线自检：在 <body> 上加 class="debug-baseline" 铺一张 28px 网格，
+   用来目视确认正文、标题与段间距是否都落在同一条基线上。默认不生效。 */
+body.debug-baseline{background-image:repeating-linear-gradient(
+  to bottom,rgba(0,97,188,.14) 0 1px,transparent 1px var(--baseline))}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
@@ -348,7 +377,7 @@ a,button,label[for],summary{cursor:pointer}
 /* ============ INDUSTRY PAGES (level 2) ============ */
 .ind-hero{padding-block:clamp(2.5rem,6vw,4rem);background:radial-gradient(100% 90% at 88% 0%,#123A54 0%,transparent 55%),var(--ink)}
 .ind-hero .crumb{margin-bottom:1.4rem}
-.ind-hero h1{font-size:var(--step-3);margin:0.9rem 0 1.1rem;max-width:20ch}
+.ind-hero h1{font-size:var(--step-5);margin:0.9rem 0 1.1rem;max-width:20ch}
 .ind-hero .lead{max-width:60ch;color:var(--steel-dk)}
 .ind-note{margin-top:1.4rem;padding:0.9em 1.1em;border-left:2px solid var(--blue);background:var(--blue-ghost);color:var(--ink-70);font-size:0.93rem;border-radius:0 var(--radius) var(--radius) 0}
 /* industry tags are links now - real hit areas, hover feedback */
@@ -519,7 +548,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 
 /* ============ IP PORTFOLIO PAGE ============ */
 .ip-hero{padding-block:clamp(2.4rem,5vw,3.8rem);background:radial-gradient(100% 90% at 88% 0%,#123A54 0%,transparent 55%),var(--ink)}
-.ip-hero h1{font-size:var(--step-3);margin:0.9rem 0 1rem;max-width:20ch}
+.ip-hero h1{font-size:var(--step-5);margin:0.9rem 0 1rem;max-width:20ch}
 .ip-hero .lead{max-width:60ch;color:var(--steel-dk)}
 .ip-stats{display:grid;grid-template-columns:repeat(4,auto);gap:clamp(1.4rem,4vw,3rem);justify-content:start;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line-dk)}
 .ips{display:flex;flex-direction:column;gap:0.3rem}
