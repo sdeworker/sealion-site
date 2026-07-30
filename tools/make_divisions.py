@@ -9,30 +9,6 @@ CABLE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "
 
 
 
-def img_bg(rel):
-    """采样图片顶边与底边的颜色，返回同向渐变。
-       图片背景本身是渐变，若用单色填充留白区，交界处会出现一条明显的接缝。"""
-    try:
-        from PIL import Image
-        import statistics as st
-        with Image.open("public" + rel) as im:
-            im = im.convert("RGB")
-            w, h = im.size
-            step = max(1, w // 40)
-
-            def row(y):
-                px = [im.getpixel((x, y)) for x in range(2, w - 2, step)]
-                return tuple(int(st.median([q[i] for q in px])) for i in range(3))
-
-            top, bot = row(2), row(h - 3)
-            # 纯白示意图与影棚照风格不一，改用站点浅灰蓝
-            if min(top) > 248 and min(bot) > 248:
-                return "#EEF3F7", "#EEF3F7"
-            return ("#%02X%02X%02X" % top), ("#%02X%02X%02X" % bot)
-    except Exception:
-        return None, None
-
-
 PROD_IMG = {
     "gravimetric": "/assets/2026/core/core-gravimetric.webp",
     "masterbatch": "/assets/2026/core/core-masterbatch.webp",
@@ -216,14 +192,10 @@ def build(div, lang):
             # 宽幅或示意图（远离正方形）不做裁切，改为完整放入
             ratio = iw / ih if ih else 1
             fit = " pc-img--fit" if (ratio > 1.12 or ratio < 0.89) else ""
-            top_c, bot_c = img_bg(img) if fit else (None, None)
-            # 纯白示意图不做虚化填充（糊成一片反而脏），用站点浅色
-            if top_c == "#EEF3F7":
-                style = ' style="background:#EEF3F7"'
-            elif top_c:
-                style = f" style=\"--pc-bg:url('{img}')\""
-            else:
-                style = ""
+            # 留白区一律用同一张图放大虚化填充，与照片浑然一体。
+            # 纯白示意图虚化后本身即为白，与图自身的白底无缝；此前对纯白图改用
+            # 纯色 #EEF3F7，反而在白图与浅灰蓝底之间留下一道可见的矩形接缝。
+            style = f" style=\"--pc-bg:url('{img}')\"" if fit else ""
             media = (f'      <div class="pc-img{fit}"{style}><img src="{img}" alt="{t}" '
                      f'width="{iw}" height="{ih}" loading="lazy"></div>\n')
         cards.append(
