@@ -465,6 +465,16 @@
       "zh": "服务热线",
       "en": "Hotline",
       "ru": "Горячая линия"
+    },
+    "language": {
+      "zh": "语言",
+      "en": "Language",
+      "ru": "Язык"
     }
+  },
+  "langName": {
+    "zh": "中文",
+    "en": "English",
+    "ru": "Русский"
   }
 }

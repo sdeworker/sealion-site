@@ -135,8 +135,21 @@ body.home .site-header.is-solid .burger span{background:var(--ink)}
 .topbar-right{display:flex;align-items:center;gap:1.25rem}
 .topbar .hotline{color:#fff;min-height:40px}
 .topbar .hotline .dot{background:var(--signal)}
-.topbar .langlink{border-color:rgba(255,255,255,.42);color:#fff;min-height:32px}
-.topbar .langlink:hover{background:rgba(255,255,255,.16);border-color:#fff}
+/* 语言栏目：外观与其他导航项一致，只多一个小箭头 */
+.nav-lang{margin-left:.35rem}
+/* 语言在导航最右端，子菜单必须右对齐，否则会顶出视口 */
+.nav-lang .nav-drop-menu{left:auto;right:0;min-width:9.5rem}
+.nav-lang-btn{display:inline-flex;align-items:center;gap:.45em;background:none;border:0;
+  cursor:pointer;font-family:inherit;font-size:1.25rem;color:var(--ink-70);
+  padding:.55em .62em;border-radius:var(--radius);transition:color .15s,background .15s}
+.nav-lang-btn::after{content:"";width:.42em;height:.42em;border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-.12em);transition:transform .2s}
+.nav-lang-btn:hover,.nav-lang:focus-within .nav-lang-btn{color:var(--blue)}
+.nav-lang:hover .nav-lang-btn::after,.nav-lang:focus-within .nav-lang-btn::after{
+  transform:rotate(225deg) translateY(-.12em)}
+.nav-drop-menu a[aria-current]{color:var(--blue);font-weight:600}
+body.home .site-header:not(.is-solid) .nav-lang-btn{color:rgba(255,255,255,.92)}
+body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 @media(max-width:760px){.topbar .welcome{display:none}.topbar-in{justify-content:flex-end}}
 /* logo 右侧的一句话，直接说清是做什么的 */
 .slogan{font-size:1.0625rem;color:var(--steel);border-left:1px solid var(--line);
@@ -319,20 +332,22 @@ body.home .readout{display:none}
 
 /* 播放键：画面正中一枚圆键 + 一行说明。视频 hero 的通行做法，
    压在图上不挡主体，也顺带告诉访客"这是一段可以看的片子"。 */
-body.home .hero-play{flex-direction:column;gap:1rem;margin:0;min-height:0;
-  color:rgba(255,255,255,.94);letter-spacing:0.06em}
-body.home .hero-play::before{content:"";width:104px;height:104px;border-radius:50%;
-  border:2px solid rgba(255,255,255,.72);background:rgba(255,255,255,.12);
-  backdrop-filter:blur(3px);
-  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%23fff'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:56% 50%;background-size:38px 38px;
-  transition:transform .25s,background-color .25s,border-color .25s}
+body.home .hero-play{flex-direction:column;gap:1.1rem;margin:0;min-height:0;
+  color:#fff;letter-spacing:0.04em;font-size:1.0625rem;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+/* 细环 + 正三角。不用毛玻璃——它在明亮照片上会糊成一团灰。 */
+body.home .hero-play::before{content:"";width:92px;height:92px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.92);background:rgba(10,26,38,.30);
+  box-shadow:0 6px 28px rgba(0,0,0,.30);
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='38' viewBox='0 0 34 38'%3E%3Cpath d='M2 1.6 32 19 2 36.4Z' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:calc(50% + 3px) 50%;background-size:26px 29px;
+  transition:transform .25s,background-color .25s}
 body.home .hero-play:hover{text-decoration:none}
-body.home .hero-play:hover::before{transform:scale(1.06);
-  background-color:rgba(255,255,255,.22);border-color:#fff}
+body.home .hero-play:hover::before{transform:scale(1.07);background-color:rgba(10,26,38,.52);
+  border-color:#fff}
+body.home .hero-play:focus-visible::before{outline:3px solid var(--signal);outline-offset:4px}
 body.home .hero-play svg{display:none}
 @media(prefers-reduced-motion:reduce){body.home .hero-play::before{transition:none}}
-@media(max-width:760px){body.home .hero-play::before{width:76px;height:76px;background-size:28px 28px}}
+@media(max-width:760px){body.home .hero-play::before{width:72px;height:72px;background-size:21px 23px}}
 /* ===== 试排结束 ===== */
 
 /* a11y + motion */

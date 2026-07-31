@@ -237,16 +237,28 @@ def render_header(lang, rel, alts, avail):
             items.append(f'      <a href="{href}"{cur1(n)}>{label}</a>')
     nav = "\n".join(items)
     # 语言切换：只列本页真实存在的其它语种
-    switch = "\n".join(
-        f'      <a class="langlink" href="{page_url(l2, rel)[len(BASE):]}" hreflang="{SITE["hreflang"][l2]}">{H.escape(SITE["langLabel"][l2])}</a>'
-        for l2 in alts if l2 != lang)
+    # 语言做成导航里的一个栏目：当前语言 + 下拉，列出全称。
+    lang_items = []
+    for l2 in alts:
+        url = page_url(l2, rel)[len(BASE):]
+        mark = ' aria-current="true"' if l2 == lang else ""
+        lang_items.append(
+            f'          <a href="{url}" hreflang="{SITE["hreflang"][l2]}"{mark}>'
+            f'{H.escape(SITE["langName"][l2])}</a>')
+    switch = (
+        '      <div class="nav-drop nav-lang">\n'
+        f'        <button type="button" class="nav-lang-btn" aria-haspopup="true" aria-expanded="false">'
+        f'{H.escape(SITE["langName"][lang])}</button>\n'
+        '        <div class="nav-drop-menu">\n'
+        + "\n".join(lang_items) + "\n"
+        '        </div>\n'
+        '      </div>')
     return f'''<header class="site-header" data-header>
   <div class="topbar">
     <div class="wrap topbar-in">
       <span class="welcome">{H.escape(t(SITE["ui"]["welcome"], lang))}</span>
       <div class="topbar-right">
         <a class="hotline" href="{SITE["hotlineHref"]}"><span class="dot"></span>{H.escape(t(SITE["ui"]["hotlineLabel"], lang))}：{SITE["hotline"]}</a>
-{switch}
       </div>
     </div>
   </div>
@@ -260,6 +272,7 @@ def render_header(lang, rel, alts, avail):
     </button>
     <nav class="nav" id="site-nav" aria-label="{H.escape(t(SITE["ui"]["mainNav"], lang), quote=True)}">
 {nav}
+{switch}
     </nav>
   </div>
 </header>'''
