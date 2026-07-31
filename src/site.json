@@ -353,7 +353,25 @@
         "zh": "海狮动态",
         "en": "News",
         "ru": "Новости"
-      }
+      },
+      "children": [
+        {
+          "label": {
+            "zh": "公司新闻",
+            "en": "Company news",
+            "ru": "Новости компании"
+          },
+          "href": "/news/company.html"
+        },
+        {
+          "label": {
+            "zh": "展会新闻",
+            "en": "Exhibitions",
+            "ru": "Выставки"
+          },
+          "href": "/news/exhibition.html"
+        }
+      ]
     },
     {
       "href": "/contact.html",
