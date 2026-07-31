@@ -256,7 +256,7 @@
       ]
     },
     {
-      "href": "/about.html#apply-detail",
+      "href": "/strength.html",
       "label": {
         "zh": "海狮实力",
         "en": "Capability",
@@ -264,7 +264,7 @@
       },
       "children": [
         {
-          "href": "/about.html#apply-detail",
+          "href": "/applications.html",
           "label": {
             "zh": "产品应用",
             "en": "Applications",
@@ -288,7 +288,7 @@
           }
         },
         {
-          "href": "/#apply",
+          "href": "/industries/",
           "label": {
             "zh": "应用行业",
             "en": "Industries",

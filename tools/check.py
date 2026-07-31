@@ -337,6 +337,15 @@ def check_js_hooks():
             fail("脚本钩子", f"{f} 加载了 app.js 但页面没有 [data-ai]，脚本会空跑")
 
 
+def check_h1():
+    """每页必须有 h1。今天发现 about / cases / news / service 一直没有——
+       拆栏目时新页也漏了，说明这条只能靠闸门守，不能靠人记。"""
+    for f in PAGES:
+        s = open(f, encoding="utf-8").read()
+        if "<h1" not in s:
+            fail("结构", f"{f} 没有 h1")
+
+
 def main():
     print("发布前自检 —— public/ 共", len(PAGES), "页\n")
     checks = [
@@ -346,6 +355,7 @@ def main():
         ("三语一致性", check_i18n), ("SEO 资产", check_seo),
         ("图片属性", check_images), ("部署体积", check_size),
         ("脚本钩子", check_js_hooks),
+        ("页面结构", check_h1),
     ]
     if not QUICK:
         checks.append(("渲染实测", check_render))

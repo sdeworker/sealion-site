@@ -32,6 +32,7 @@
     <loc>https://www.sealion-tech.com/about/culture</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/about/culture"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/about/culture"/>
+    <lastmod>2026-07-31</lastmod>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/about/milestones</loc>
@@ -46,6 +47,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/about/milestones"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/about/milestones"/>
     <lastmod>2026-07-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/applications</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/applications"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/applications"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/cable/cloud-monitoring</loc>
@@ -298,6 +304,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/film"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/film"/>
     <lastmod>2026-07-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/industries/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/"/>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/industries/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/industries/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/industries/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/industries/"/>
   </url>
   <url>
     <loc>https://www.sealion-tech.com/industries/masterbatch-compounds</loc>
@@ -1048,8 +1066,21 @@
     <lastmod>2026-07-29</lastmod>
   </url>
   <url>
+    <loc>https://www.sealion-tech.com/strength</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/strength"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/strength"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/strength"/>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/strength</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/strength"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/strength"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/strength"/>
+  </url>
+  <url>
     <loc>https://www.sealion-tech.com/technology</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/technology"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/technology"/>
+    <lastmod>2026-07-31</lastmod>
   </url>
 </urlset>
