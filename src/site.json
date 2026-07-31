@@ -314,7 +314,7 @@
       },
       "children": [
         {
-          "href": "/cases.html#case-127",
+          "href": "/cases/gravimetric.html",
           "label": {
             "zh": "米重案例",
             "en": "Gravimetric cases",
@@ -322,7 +322,7 @@
           }
         },
         {
-          "href": "/cases.html#case-204",
+          "href": "/cases/masterbatch.html",
           "label": {
             "zh": "米重色母案例",
             "en": "Masterbatch cases",
@@ -330,7 +330,7 @@
           }
         },
         {
-          "href": "/cases.html#case-172",
+          "href": "/cases/ultrasonic.html",
           "label": {
             "zh": "超声波案例",
             "en": "Ultrasonic cases",
@@ -338,7 +338,7 @@
           }
         },
         {
-          "href": "/cases.html#case-171",
+          "href": "/cases/video.html",
           "label": {
             "zh": "视频案例",
             "en": "Video cases",
@@ -356,7 +356,7 @@
       }
     },
     {
-      "href": "/#contact",
+      "href": "/contact.html",
       "label": {
         "zh": "联系我们",
         "en": "Contact",
