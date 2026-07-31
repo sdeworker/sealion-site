@@ -290,8 +290,6 @@ def render_footer(lang, avail):
     contact = (f'      <div class="fcol">\n'
                f'        <h4>{H.escape(t(SITE["ui"]["contact"], lang))}</h4>\n'
                f'        <a href="{SITE["hotlineHref"]}">{SITE["hotline"]}</a>\n'
-               f'        <a href="{SITE["phoneHref"]}">{SITE["phone"]}</a>\n'
-               f'        <a href="mailto:{SITE["email"]}">{SITE["email"]}</a>\n'
                f'      </div>')
     return f'''<footer class="site-footer">
   <div class="wrap foot-grid">
