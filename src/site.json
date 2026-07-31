@@ -82,6 +82,14 @@
           }
         },
         {
+          "label": {
+            "zh": "企业文化",
+            "en": "Culture",
+            "ru": "Культура"
+          },
+          "href": "/about/culture.html"
+        },
+        {
           "href": "/about/certs.html",
           "label": {
             "zh": "资质证书",
@@ -264,7 +272,7 @@
           }
         },
         {
-          "href": "/about.html#techstr",
+          "href": "/technology.html",
           "label": {
             "zh": "技术实力",
             "en": "Technology",

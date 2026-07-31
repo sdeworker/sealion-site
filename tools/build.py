@@ -352,13 +352,19 @@ def render_header(lang, rel, alts, avail):
             marked[0] = True
         return v
 
+    def _has(href):
+        rp = href.split("#")[0].lstrip("/")
+        if rp.endswith("/"):
+            rp += "index.html"
+        return (not rp) or os.path.exists(os.path.join(ROOT, "src", "content", lang, rp))
+
     items = []
     for n in SITE["nav"]:
         if not exists_for(n["href"], lang, avail):
             continue
         label = H.escape(t(n["label"], lang))
         href = localize(n["href"], lang)
-        kids = n.get("children")
+        kids = [c for c in (n.get("children") or []) if _has(c["href"])] or None
         if kids and any(exists_for(c["href"], lang, avail) for c in kids):
             kids = [c for c in kids if exists_for(c["href"], lang, avail)]
             sub = "\n".join(

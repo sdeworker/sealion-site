@@ -210,7 +210,7 @@ body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 .hero-copy h1{font-size:var(--step-hero);letter-spacing:0;margin:1.1rem 0 1.4rem;max-width:15ch;color:#fff}
 .hero-copy .lead{max-width:48ch;color:var(--steel-dk)}
 .hero-cta{display:flex;gap:0.9rem;margin-top:2.2rem;flex-wrap:wrap}
-.hero-lines{position:absolute;inset:0;z-index:1;opacity:0.5;background-image:linear-gradient(var(--line-dk) 1px,transparent 1px),linear-gradient(90deg,var(--line-dk) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(80% 60% at 70% 40%,#000 0%,transparent 75%)}
+.hero-lines{position:absolute;inset:0;z-index:1;opacity:0.12;background-image:linear-gradient(var(--line-dk) 1px,transparent 1px),linear-gradient(90deg,var(--line-dk) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(80% 60% at 70% 40%,#000 0%,transparent 75%)}
 
 .readout{background:linear-gradient(180deg,var(--panel) 0%,#0A2233 100%);border:1px solid var(--line-dk);border-radius:var(--radius-lg);padding:clamp(1.2rem,3vw,1.8rem);box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);position:relative;z-index:2}
 .readout-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.6rem}
