@@ -58,6 +58,48 @@
   },
   "nav": [
     {
+      "href": "/about.html",
+      "label": {
+        "zh": "关于海狮",
+        "en": "About",
+        "ru": "О компании"
+      },
+      "children": [
+        {
+          "href": "/about.html#about",
+          "label": {
+            "zh": "企业简介",
+            "en": "Company",
+            "ru": "О нас"
+          }
+        },
+        {
+          "href": "/about.html#milestones",
+          "label": {
+            "zh": "发展历程",
+            "en": "Milestones",
+            "ru": "История"
+          }
+        },
+        {
+          "href": "/about.html#certs",
+          "label": {
+            "zh": "资质证书",
+            "en": "Certificates",
+            "ru": "Сертификаты"
+          }
+        },
+        {
+          "href": "/ip.html",
+          "label": {
+            "zh": "知识产权",
+            "en": "IP portfolio",
+            "ru": "Интеллектуальная собственность"
+          }
+        }
+      ]
+    },
+    {
       "href": "/pipe/",
       "label": {
         "zh": "管道挤出",
@@ -293,48 +335,6 @@
             "zh": "视频案例",
             "en": "Video cases",
             "ru": "Проекты: видео"
-          }
-        }
-      ]
-    },
-    {
-      "href": "/about.html",
-      "label": {
-        "zh": "关于海狮",
-        "en": "About",
-        "ru": "О компании"
-      },
-      "children": [
-        {
-          "href": "/about.html#about",
-          "label": {
-            "zh": "企业简介",
-            "en": "Company",
-            "ru": "О нас"
-          }
-        },
-        {
-          "href": "/about.html#milestones",
-          "label": {
-            "zh": "发展历程",
-            "en": "Milestones",
-            "ru": "История"
-          }
-        },
-        {
-          "href": "/about.html#certs",
-          "label": {
-            "zh": "资质证书",
-            "en": "Certificates",
-            "ru": "Сертификаты"
-          }
-        },
-        {
-          "href": "/ip.html",
-          "label": {
-            "zh": "知识产权",
-            "en": "IP portfolio",
-            "ru": "Интеллектуальная собственность"
           }
         }
       ]
