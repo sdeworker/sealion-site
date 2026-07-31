@@ -300,6 +300,15 @@ body.debug-baseline{background-image:repeating-linear-gradient(
 .readout{max-width:400px;margin-left:auto}
 @media(max-width:900px){.readout{max-width:none;margin-left:0}}
 
+/* ===== 试排：首屏只留大图，文字与仪表卡暂时挪开 =====
+   删掉这一整块即可完全还原。h1 与导语保留在 DOM 里（只是视觉隐藏），
+   所以 SEO 与读屏软件不受影响，页面仍有 h1。 */
+body.home .hero-grid{grid-template-columns:1fr}
+body.home .hero-copy{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+body.home .readout{display:none}
+/* ===== 试排结束 ===== */
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}
