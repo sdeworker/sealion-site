@@ -113,8 +113,15 @@ img{height:auto}
 /* 首页：头部压在 Hero 大图上，图从屏幕最顶端开始；滚过 60px 变实底 */
 body.home .site-header{background:transparent;backdrop-filter:none;border-bottom-color:transparent}
 body.home .site-header .topbar{background:rgba(10,26,38,.34)}
-body.home .site-header .nav a{color:rgba(255,255,255,.92)}
-body.home .site-header .nav a:hover{color:#fff;background:rgba(255,255,255,.14)}
+body.home .site-header .nav > a,
+body.home .site-header .nav-drop > a,
+body.home .site-header .nav-drop > button{color:rgba(255,255,255,.92)}
+/* 子菜单是白底浮层，链接必须保持深色，否则白字白底看不见 */
+body.home .site-header .nav-drop-menu a{color:var(--ink-70)}
+body.home .site-header .nav-drop-menu a[aria-current]{color:var(--blue)}
+body.home .site-header .nav > a:hover,
+body.home .site-header .nav-drop > a:hover{color:#fff;background:rgba(255,255,255,.14)}
+body.home .site-header .nav-drop-menu a:hover{color:var(--blue);background:var(--mist)}
 body.home .site-header .slogan{color:rgba(255,255,255,.80);border-left-color:rgba(255,255,255,.28)}
 body.home .site-header .burger span{background:#fff}
 body.home .hero{margin-top:calc(-1 * var(--header-h,128px))}
@@ -136,7 +143,10 @@ body.home .site-header.is-solid .burger span{background:var(--ink)}
 .topbar .hotline{color:#fff;min-height:40px}
 .topbar .hotline .dot{background:var(--signal)}
 /* 语言栏目：外观与其他导航项一致，只多一个小箭头 */
-.nav-lang{margin-left:.35rem}
+.nav-lang{margin-left:1.1rem;padding-left:1.1rem;position:relative}
+.nav-lang::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:1px;height:1.15em;background:var(--line)}
+body.home .site-header:not(.is-solid) .nav-lang::before{background:rgba(255,255,255,.34)}
 /* 语言在导航最右端，子菜单必须右对齐，否则会顶出视口 */
 .nav-lang .nav-drop-menu{left:auto;right:0;min-width:9.5rem}
 .nav-lang-btn{display:inline-flex;align-items:center;gap:.45em;background:none;border:0;
