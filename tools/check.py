@@ -196,6 +196,68 @@ def check_size():
 
 
 # ---------- 11. 渲染实测 ----------
+# 在渲染实测里顺带做的两项文字体检。缘由：
+#  · 白字白底——首页透明头部那条规则把下拉面板里的链接也刷成白色，
+#    面板是白底，于是整个语言菜单打开是空的；HTML 与 CSS 都"正常"，肉眼才看得出。
+#  · 小字漏网——两轮批量放大用的正则要求 font-size 有前导零，写成 .9rem 的
+#    16 处和写死 10/11px 的 3 处全部躲过去了。
+# 所以这两项都量渲染后的计算样式，不靠正则、不靠人眼。
+TEXT_PROBE = r"""() => {
+  const out = {small: [], faint: []};
+  const lum = (c) => {
+    const f = (v) => { v /= 255; return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4); };
+    return 0.2126*f(c[0]) + 0.7152*f(c[1]) + 0.0722*f(c[2]);
+  };
+  const parse = (s) => {
+    const m = s.match(/rgba?\(([^)]+)\)/); if (!m) return null;
+    const p = m[1].split(',').map(x => parseFloat(x));
+    return {rgb: [p[0], p[1], p[2]], a: p.length > 3 ? p[3] : 1};
+  };
+  const over = (fg, bg) => fg.rgb.map((v, i) => v*fg.a + bg[i]*(1-fg.a));
+  // 背景取"这一点上真正压在文字底下的东西"：沿命中栈往下走，
+  // 碰到图片/视频/背景图就判定为影像底——影像上的对比度算不出来，跳过不误报。
+  const bgAt = (el, x, y) => {
+    const stack = document.elementsFromPoint(x, y);
+    const i = stack.indexOf(el);
+    for (const n of (i >= 0 ? stack.slice(i) : [el])) {
+      const cs = getComputedStyle(n);
+      if (cs.backgroundImage && cs.backgroundImage !== 'none') return null;
+      if (n.tagName === 'IMG' || n.tagName === 'VIDEO' || n.tagName === 'CANVAS' || n.tagName === 'SVG') return null;
+      const c = parse(cs.backgroundColor);
+      if (c && c.a > 0.55) return over(c, [255,255,255]);
+    }
+    return [255, 255, 255];
+  };
+  document.querySelectorAll('body *').forEach(el => {
+    const txt = [...el.childNodes].filter(n => n.nodeType === 3)
+      .map(n => n.textContent.trim()).join('');
+    if (txt.length < 2) return;
+    const r = el.getBoundingClientRect();
+    if (r.width < 4 || r.height < 4) return;
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    const cs = getComputedStyle(el);
+    if (cs.visibility === 'hidden' || cs.display === 'none' || parseFloat(cs.opacity) < 0.15) return;
+    const key = (el.className && typeof el.className === 'string'
+      ? '.' + el.className.trim().split(/\s+/)[0] : el.tagName);
+    const size = parseFloat(cs.fontSize);
+    if (size < 14) out.small.push(key + ' ' + size.toFixed(1) + 'px「' + txt.slice(0, 12) + '」');
+    // 描边字、渐变字另有着色方式，对比度算不准，跳过
+    if (parseFloat(cs.webkitTextStrokeWidth || 0) > 0) return;
+    if (cs.webkitBackgroundClip === 'text' || cs.backgroundClip === 'text') return;
+    const bg = bgAt(el, Math.min(r.left + 6, innerWidth - 2), Math.min(r.top + r.height/2, innerHeight - 2));
+    if (!bg) return;
+    const fg = parse(cs.color); if (!fg) return;
+    const f = over(fg, bg);
+    const l1 = lum(f), l2 = lum(bg);
+    const ratio = (Math.max(l1,l2)+0.05) / (Math.min(l1,l2)+0.05);
+    if (ratio < 1.5) out.faint.push(key + ' 对比度 ' + ratio.toFixed(2) + '「' + txt.slice(0, 12) + '」');
+  });
+  out.small = [...new Set(out.small)].slice(0, 6);
+  out.faint = [...new Set(out.faint)].slice(0, 6);
+  return out;
+}"""
+
+
 def check_render():
     try:
         from playwright.sync_api import sync_playwright
@@ -227,6 +289,17 @@ def check_render():
                             return c.position+'|'+c.opacity}""")
                         if st != "none" and not st.startswith("absolute"):
                             fail("渲染", f"{u} 导航下拉未正确定位（{st}），样式可能丢失")
+
+                        # 下拉面板要展开着量，否则白字白底藏在 opacity:0 里量不到
+                        pg.evaluate("""()=>{const s=document.createElement('style');
+                            s.textContent='.nav-drop-menu{opacity:1!important;visibility:visible!important;'
+                              +'pointer-events:auto!important;transform:none!important}';
+                            document.head.appendChild(s);}""")
+                        probe = pg.evaluate(TEXT_PROBE)
+                        for it in probe["small"]:
+                            fail("字号", f"{u} {it} —— 低于 14px 下限")
+                        for it in probe["faint"]:
+                            fail("对比度", f"{u} {it} —— 低于 1.5，可能是同色压同色")
                         broken = pg.evaluate("""()=>[...document.querySelectorAll('img')]
                             .filter(i=>i.getAttribute('src')&&i.complete&&i.naturalWidth===0).length""")
                         if broken:
