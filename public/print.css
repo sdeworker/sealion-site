@@ -1,0 +1,45 @@
+/* 打印与内部转发
+   客户把页面打出来带进采购会或技术评审，导航、视频、浮动按钮都是噪音；
+   折叠起来的参数表必须展开，表格不能跨页截断，页脚要留下网址与日期。 */
+@media print {
+  :root { --wrap: 100%; }
+  html, body { background: #fff !important; color: #000 !important; font-size: 11.5pt; }
+
+  /* 屏幕上的功能件，纸上没有意义 */
+  .site-header, .topbar, .nav, .burger, .site-footer nav, .back-to-top,
+  .hero-video, video, .hero-play, .ai-launcher, .langlink, .nav-lang,
+  .lightbox, .hero-lb, .m-toc, .skip-link, .hero-lines { display: none !important; }
+
+  /* 深色区反白，避免整页吃墨 */
+  .on-dark, .hero, .section--dark, .readout, .calc-out, .prod-foot-cta {
+    background: #fff !important; color: #000 !important; box-shadow: none !important;
+  }
+  .on-dark *, .hero *, .readout *, .calc-out * { color: #000 !important; }
+
+  /* 折叠内容一律展开——纸上没有"点开" */
+  details { display: block !important; }
+  details > summary { font-weight: 600; list-style: none; }
+  details:not([open]) > *:not(summary) { display: revert !important; }
+  [hidden] { display: revert !important; }
+  .is-collapsed, .collapsed { max-height: none !important; overflow: visible !important; }
+
+  /* 分页 */
+  h1, h2, h3, h4 { break-after: avoid-page; page-break-after: avoid; }
+  table, figure, .pcard, .c-card, .apy-item, .calc-grid { break-inside: avoid; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  tr { break-inside: avoid; }
+
+  /* 版面 */
+  .wrap { max-width: 100% !important; padding-inline: 0 !important; }
+  .section { padding-block: 12pt !important; }
+  a { color: #000 !important; text-decoration: none !important; }
+  /* 正文里的外链把地址打出来，纸上才追得到 */
+  .prose a[href^="http"]::after, .apy-body a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+  img { max-width: 100% !important; }
+
+  /* 出处：网址 + 打印日期，由 print.js 填 */
+  .print-stamp { display: block !important; margin-top: 14pt; padding-top: 6pt;
+    border-top: 1pt solid #999; font-size: 9pt; color: #333; }
+}
+.print-stamp { display: none; }

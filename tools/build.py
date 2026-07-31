@@ -133,7 +133,8 @@ def render_head(lang, rel, meta, alts):
     o.append('<link rel="preconnect" href="https://fonts.googleapis.com">')
     o.append('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>')
     o.append('<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">')
-    o.append(f'<link rel="stylesheet" href="{ver("/style.css")}">')
+    o.append(f'<link rel="stylesheet" href="{ver("/style.css")}">'
+             f'<link rel="stylesheet" href="{ver("/print.css")}" media="print">')
     for c in meta.get("css", []):
         o.append(f'<link rel="stylesheet" href="{ver("/" + c + ".css")}">')
     for block in json_ld(lang, rel, meta):
@@ -313,8 +314,11 @@ def render_page(lang, rel, meta, body, alts, avail):
     header = render_header(lang, rel, alts, avail)
     footer = render_footer(lang, avail)
     skip = t(SITE["ui"]["skip"], lang)
+    print_stamp = '<p class="print-stamp" data-print-stamp></p>'
     bodycls = "home" if meta.get("type") == "home" else ""
-    tail = ['<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
+    tail = [print_stamp,
+            f'<script src="{ver("/assets/print.js")}" defer></script>',
+            '<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
             f'<script src="{ver("/assets/nav.js")}" defer></script>']
     if meta.get("type") == "home":
         tail.append(f'<script src="{ver("/assets/header-scroll.js")}" defer></script>')
