@@ -383,7 +383,7 @@ body.home .hero-play svg{display:none}
 .svc:hover::before{width:100%}
 .svc-idx{
   font-family:var(--mono,"IBM Plex Mono",monospace);
-  font-size:11px;letter-spacing:.16em;color:var(--blue);
+  font-size:14px;letter-spacing:.16em;color:var(--blue);
   display:block;padding-bottom:12px;
 }
 .svc h3{font-size:19px;line-height:1.4;margin:0 0 10px}
@@ -720,7 +720,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{
   opacity:1;visibility:visible;transform:translateY(0);
 }
-.nav-drop-menu a{padding:.55em .7em!important;font-size:.9rem!important;border-radius:var(--radius);white-space:nowrap}
+.nav-drop-menu a{padding:.5em .75em!important;font-size:1.25rem!important;border-radius:var(--radius);white-space:nowrap}
 
 /* ---------- 证书灯箱 ---------- */
 .cert-link{display:block;cursor:zoom-in;position:relative}
@@ -804,7 +804,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .ts-hero-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .ts-hero-body{padding:2.4rem 2.6rem;display:flex;flex-direction:column;justify-content:center}
 .ts-tag{
-  display:inline-block;align-self:flex-start;font-family:var(--mono);font-size:.78rem;
+  display:inline-block;align-self:flex-start;font-family:var(--mono);font-size:0.9937rem;
   color:var(--blue);background:var(--blue-ghost);padding:.35em .9em;border-radius:999px;margin-bottom:1rem;letter-spacing:.05em;
 }
 .ts-hero-body h3{font-family:var(--display);font-size:1.7rem;font-weight:700;color:var(--ink);margin:0 0 1rem;line-height:1.35}
@@ -820,9 +820,9 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .ts-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .ts-card:hover .ts-card-media img{transform:scale(1.05)}
 .ts-card-body{padding:1.5rem 1.4rem 1.7rem;flex:1 1 auto}
-.ts-n{font-family:var(--mono);font-size:.85rem;color:var(--blue);letter-spacing:.08em}
+.ts-n{font-family:var(--mono);font-size:1.0829rem;color:var(--blue);letter-spacing:.08em}
 .ts-card h3{font-family:var(--display);font-size:1.28rem;font-weight:700;color:var(--ink);margin:.5rem 0 .7rem}
-.ts-card p{font-size:.96rem;line-height:1.8;color:var(--steel);margin:0}
+.ts-card p{font-size:1.1875rem;line-height:1.8;color:var(--steel);margin:0}
 @media(max-width:1000px){.ts-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){
   .ts-hero{grid-template-columns:1fr}
@@ -849,12 +849,12 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .apy-body p{font-size:1rem;line-height:1.9;color:var(--ink-70);margin:0 0 1.3rem}
 .apy-prods{border-top:1px solid var(--line);padding-top:1.1rem}
 .apy-prods-t{
-  display:block;font-size:.82rem;font-weight:600;color:var(--steel);
+  display:block;font-size:1.0447rem;font-weight:600;color:var(--steel);
   letter-spacing:.06em;margin-bottom:.7rem;
 }
 .apy-prods ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem .9rem}
-.apy-prods li{position:relative;padding-left:.9rem;font-size:.94rem}
-.apy-prods li::before{content:"●";position:absolute;left:0;color:var(--blue);font-size:.6rem;top:.42em}
+.apy-prods li{position:relative;padding-left:.9rem;font-size:1.1875rem}
+.apy-prods li::before{content:"●";position:absolute;left:0;color:var(--blue);font-size:0.875rem;top:.42em}
 .apy-prods a{color:var(--blue);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 .apy-prods a:hover{border-bottom-color:var(--blue)}
 .apy-prods span{color:var(--steel)}
@@ -878,7 +878,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .svc-old-item:hover .svc-old-media img{transform:scale(1.05)}
 .svc-old-body{padding:1.5rem 1.5rem 1.7rem;flex:1 1 auto}
 .svc-old-body h3{font-family:var(--display);font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 0 .7rem}
-.svc-old-body p{font-size:.97rem;line-height:1.85;color:var(--steel);margin:0}
+.svc-old-body p{font-size:1.1875rem;line-height:1.85;color:var(--steel);margin:0}
 @media(max-width:900px){.svc-old{grid-template-columns:1fr}}
 
 /* 案例图可点击放大 */
@@ -890,7 +890,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 /* ---------- 海狮动态：两个子栏目 ---------- */
 .nw-jumps{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .nw-jump{
-  display:inline-flex;align-items:center;font-size:.92rem;color:var(--ink);
+  display:inline-flex;align-items:center;font-size:1.1721rem;color:var(--ink);
   border:1px solid var(--line);border-radius:999px;padding:.5em 1.1em;
   text-decoration:none;transition:border-color .18s,background .18s,color .18s;
 }
@@ -902,9 +902,9 @@ a.pcust:hover .pcust-name{color:var(--blue)}
   padding-bottom:.9rem;margin-bottom:1.2rem;border-bottom:1px solid var(--line);
 }
 .nw-cat-head h3{font-family:var(--display);font-size:1.45rem;font-weight:700;color:var(--ink);margin:0}
-.nw-cat-head p{font-size:.94rem;color:var(--steel);margin:0;flex:1 1 auto}
+.nw-cat-head p{font-size:1.1875rem;color:var(--steel);margin:0;flex:1 1 auto}
 .nw-n{
-  font-family:var(--mono);font-size:.8rem;color:var(--blue);
+  font-family:var(--mono);font-size:1.0192rem;color:var(--blue);
   background:var(--blue-ghost);border-radius:999px;padding:.25em .8em;
 }
 @media(max-width:640px){.nw-cat-head p{flex-basis:100%}}
@@ -914,7 +914,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .nw-body h3 a:hover{color:var(--blue)}
 .nw-img a{display:block;height:100%}
 .nw-more{
-  display:inline-block;margin-top:.7rem;font-size:.9rem;color:var(--blue);
+  display:inline-block;margin-top:.7rem;font-size:1.1466rem;color:var(--blue);
   text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s;
 }
 .nw-more:hover{border-bottom-color:var(--blue)}
@@ -923,20 +923,20 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .nv{padding-top:2.4rem}
 .nv-wrap{max-width:820px}
 .nv-back{
-  display:inline-block;font-size:.92rem;color:var(--steel);text-decoration:none;
+  display:inline-block;font-size:1.1721rem;color:var(--steel);text-decoration:none;
   margin-bottom:1.6rem;transition:color .15s;
 }
 .nv-back:hover{color:var(--blue)}
 .nv-back--btm{margin:2.4rem 0 0}
 .nv-cat{
-  display:inline-block;font-size:.8rem;color:var(--blue);background:var(--blue-ghost);
+  display:inline-block;font-size:1.0192rem;color:var(--blue);background:var(--blue-ghost);
   padding:.3em .9em;border-radius:999px;margin-bottom:1rem;
 }
 .nv h1{
   font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;
   line-height:1.4;color:var(--ink);margin:0 0 .9rem;
 }
-.nv-meta{font-family:var(--mono);font-size:.88rem;color:var(--steel);padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
+.nv-meta{font-family:var(--mono);font-size:1.1211rem;color:var(--steel);padding-bottom:1.4rem;border-bottom:1px solid var(--line)}
 .nv-cover{margin:1.8rem 0}
 .nv-cover img{width:100%;height:auto;border-radius:var(--radius-lg);border:1px solid var(--line)}
 .nv-body{margin-top:1.8rem}
