@@ -15,6 +15,30 @@
     <lastmod>2026-07-30</lastmod>
   </url>
   <url>
+    <loc>https://www.sealion-tech.com/about/certs</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/about/certs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/about/certs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/about/certs"/>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/about/certs</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/about/certs"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/about/certs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/about/certs"/>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/about/milestones</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/about/milestones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/about/milestones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/about/milestones"/>
+  </url>
+  <url>
+    <loc>https://www.sealion-tech.com/en/about/milestones</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/about/milestones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/about/milestones"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sealion-tech.com/about/milestones"/>
+  </url>
+  <url>
     <loc>https://www.sealion-tech.com/cable/cloud-monitoring</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.sealion-tech.com/cable/cloud-monitoring"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.sealion-tech.com/en/cable/cloud-monitoring"/>

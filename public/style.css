@@ -391,6 +391,16 @@ body.home .hero-play svg{display:none}
 .pcard--img .pc-en{display:block;margin-top:.15rem;font-size:1.04em;letter-spacing:.01em;
   color:rgba(255,255,255,.78)}
 
+.subnav{margin-block:var(--sp-2)}
+.subnav h2{font-size:var(--step-2);margin-bottom:var(--sp-1)}
+.subnav-l{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.subnav-l a{display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+  padding:1rem 1.15rem;border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:var(--paper-2);color:var(--ink);font-weight:500;
+  transition:border-color .18s,transform .18s}
+.subnav-l a::after{content:"→";color:var(--blue)}
+.subnav-l a:hover{border-color:var(--blue);transform:translateY(-2px)}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}

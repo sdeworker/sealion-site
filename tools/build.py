@@ -229,6 +229,18 @@ def crumb_for(rel, lang, meta):
     parts = rel.split("/")
     label = None
     parent = None
+    # 页面自己在元数据里声明了归属，就按它来——拆栏目时新页只要写 crumb + parent
+    if meta.get("crumb"):
+        label = meta["crumb"]
+        pa = meta.get("parent")
+        if pa:
+            href = pa["href"]
+            if lang != "zh" and not href.startswith(f"/{lang}/"):
+                href = f"/{lang}" + href
+            parent = (href, pa["label"])
+        mid = f'<a href="{parent[0]}">{H.escape(parent[1])}</a> / ' if parent else ""
+        return (f'<nav class="crumb wrap"><a href="{root}">{H.escape(home)}</a> / '
+                f'{mid}<span>{H.escape(label)}</span></nav>')
     if parts[0] == "news" and len(parts) > 1:
         parent = (f"{root}news.html", t(SITE["ui"]["newsSection"], lang)
                   if "newsSection" in SITE["ui"] else {"zh": "海狮动态", "en": "News", "ru": "Новости"}[lang])
@@ -277,6 +289,44 @@ def news_updown(rel, lang):
                f'<a href="{root}cable/">{H.escape(L[5])}</a>'
                f'<a href="{root}news.html">{H.escape(L[2])}</a></div>')
     return "\n".join(out)
+
+
+def section_children(rel, lang):
+    """栏目页末尾列出它的子栏目。
+
+    栏目拆成独立页面之后，子页只能从导航下拉进；栏目页本身反而成了死胡同。
+    这里按 site.json 的层级自动补一组入口，以后再拆栏目不用重复写。
+    """
+    root = SITE["langRoot"][lang]
+    here = root.rstrip("/") + "/" + rel.lstrip("/")
+    here = here.replace("/index.html", "/")
+    for n in SITE["nav"]:
+        kids = n.get("children", [])
+        if not kids:
+            continue
+        base = n["href"].split("#")[0]
+        base = root.rstrip("/") + base if lang != "zh" else base
+        if base.rstrip("/") != here.rstrip("/"):
+            continue
+        # 只列这个语种真实存在的子页——俄语只做了 16 页，照单全列会造死链
+        def exists(href):
+            rp = href.split("#")[0].lstrip("/")
+            if rp.endswith("/"):
+                rp += "index.html"
+            return os.path.exists(os.path.join(ROOT, "src", "content", lang, rp))
+        kids = [c for c in kids if exists(c["href"])]
+        if not kids:
+            return ""
+        L = {"zh": "本栏目", "en": "In this section", "ru": "В этом разделе"}[lang]
+        out = [f'<nav class="subnav wrap" aria-label="{H.escape(L)}"><h2>{H.escape(L)}</h2><div class="subnav-l">']
+        for c in kids:
+            href = c["href"]
+            if lang != "zh" and href.startswith("/") and not href.startswith(f"/{lang}/"):
+                href = f"/{lang}" + href
+            out.append(f'  <a href="{href}">{H.escape(t(c["label"], lang))}</a>')
+        out.append("</div></nav>")
+        return "\n".join(out)
+    return ""
 
 
 def render_header(lang, rel, alts, avail):
@@ -401,6 +451,7 @@ def render_page(lang, rel, meta, body, alts, avail):
     bodycls = "home" if meta.get("type") == "home" else ""
     crumb = "" if 'class="crumb"' in body else crumb_for(rel, lang, meta)
     updown = news_updown(rel, lang) if "news/" in ("/" + rel) and rel.count("news/") else ""
+    updown = updown or ("" if 'class="pcard-grid"' in body else section_children(rel, lang))
     tail = [print_stamp,
             f'<script src="{ver("/assets/print.js")}" defer></script>',
             '<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
