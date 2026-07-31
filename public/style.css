@@ -300,13 +300,39 @@ body.debug-baseline{background-image:repeating-linear-gradient(
 .readout{max-width:400px;margin-left:auto}
 @media(max-width:900px){.readout{max-width:none;margin-left:0}}
 
-/* ===== 试排：首屏只留大图，文字与仪表卡暂时挪开 =====
-   删掉这一整块即可完全还原。h1 与导语保留在 DOM 里（只是视觉隐藏），
+/* ===== 试排：首屏只留大图 + 居中播放键，文字与仪表卡暂时挪开 =====
+   删掉这一整块即可完全还原。标题、导语、CTA 保留在 DOM 里（只是视觉隐藏），
    所以 SEO 与读屏软件不受影响，页面仍有 h1。 */
 body.home .hero-grid{grid-template-columns:1fr}
-body.home .hero-copy{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
-  overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+body.home .hero-copy{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center}
+body.home .hero-copy > .eyebrow,
+body.home .hero-copy > h1,
+body.home .hero-copy > .lead,
+body.home .hero-cta > a{position:absolute;width:1px;height:1px;padding:0;
+  margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+/* 播放键就在 .hero-cta 里，所以只隐藏这一层的两个链接，别把整层裁掉 */
+body.home .hero-cta{display:flex;justify-content:center;width:100%}
 body.home .readout{display:none}
+/* 装饰网格层原本会吃掉点击，播放键点不动 */
+.hero-lines{pointer-events:none}
+
+/* 播放键：画面正中一枚圆键 + 一行说明。视频 hero 的通行做法，
+   压在图上不挡主体，也顺带告诉访客"这是一段可以看的片子"。 */
+body.home .hero-play{flex-direction:column;gap:1rem;margin:0;min-height:0;
+  color:rgba(255,255,255,.94);letter-spacing:0.06em}
+body.home .hero-play::before{content:"";width:104px;height:104px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.72);background:rgba(255,255,255,.12);
+  backdrop-filter:blur(3px);
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:56% 50%;background-size:38px 38px;
+  transition:transform .25s,background-color .25s,border-color .25s}
+body.home .hero-play:hover{text-decoration:none}
+body.home .hero-play:hover::before{transform:scale(1.06);
+  background-color:rgba(255,255,255,.22);border-color:#fff}
+body.home .hero-play svg{display:none}
+@media(prefers-reduced-motion:reduce){body.home .hero-play::before{transition:none}}
+@media(max-width:760px){body.home .hero-play::before{width:76px;height:76px;background-size:28px 28px}}
 /* ===== 试排结束 ===== */
 
 /* a11y + motion */
