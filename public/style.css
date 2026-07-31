@@ -110,8 +110,42 @@ img{height:auto}
 .on-dark .lead{color:var(--steel-dk)}
 
 /* header */
-.site-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+/* 首页：头部压在 Hero 大图上，图从屏幕最顶端开始；滚过 60px 变实底 */
+body.home .site-header{background:transparent;backdrop-filter:none;border-bottom-color:transparent}
+body.home .site-header .topbar{background:rgba(10,26,38,.34)}
+body.home .site-header .nav a{color:rgba(255,255,255,.92)}
+body.home .site-header .nav a:hover{color:#fff;background:rgba(255,255,255,.14)}
+body.home .site-header .slogan{color:rgba(255,255,255,.80);border-left-color:rgba(255,255,255,.28)}
+body.home .site-header .burger span{background:#fff}
+body.home .hero{margin-top:calc(-1 * var(--header-h,128px))}
+body.home .hero-grid{padding-top:calc(var(--header-h,128px) + 1rem)}
+body.home .site-header.is-solid{background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(10px);border-bottom-color:var(--line)}
+body.home .site-header.is-solid .topbar{background:var(--blue)}
+body.home .site-header.is-solid .nav a{color:var(--ink-70)}
+body.home .site-header.is-solid .nav a[aria-current]{color:var(--blue)}
+body.home .site-header.is-solid .slogan{color:var(--steel);border-left-color:var(--line)}
+body.home .site-header.is-solid .burger span{background:var(--ink)}
+.site-header{position:sticky;top:0;z-index:50;transition:background .25s,border-color .25s;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:1.75rem;min-height:88px}
+/* ============ 顶部信息条（学旧站：欢迎语 + 热线 + 语言） ============ */
+.topbar{background:var(--blue);color:#fff}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:40px}
+.welcome{font-size:0.9375rem;color:rgba(255,255,255,.92)}
+.topbar-right{display:flex;align-items:center;gap:1.25rem}
+.topbar .hotline{color:#fff;min-height:40px}
+.topbar .hotline .dot{background:var(--signal)}
+.topbar .langlink{border-color:rgba(255,255,255,.42);color:#fff;min-height:32px}
+.topbar .langlink:hover{background:rgba(255,255,255,.16);border-color:#fff}
+@media(max-width:760px){.topbar .welcome{display:none}.topbar-in{justify-content:flex-end}}
+/* logo 右侧的一句话，直接说清是做什么的 */
+.slogan{font-size:1.0625rem;color:var(--steel);border-left:1px solid var(--line);
+  padding-left:1.25rem;margin-right:auto;white-space:nowrap}
+@media(max-width:1100px){.slogan{display:none}}
+/* 当前栏目：蓝字 + 下方短横 */
+.nav a[aria-current]{color:var(--blue);font-weight:600;position:relative}
+.nav a[aria-current]::after{content:"";position:absolute;left:0.62em;right:0.62em;bottom:0.55em;
+  height:2px;background:var(--blue);border-radius:2px}
 .brand{display:inline-flex;align-items:center;gap:0.65rem;margin-right:auto}
 .brand img{height:60px;width:auto}
 .brand-text{display:flex;flex-direction:column;line-height:1}
@@ -146,10 +180,10 @@ img{height:auto}
 }
 
 /* ============ HERO + signature tolerance-band readout ============ */
-.hero{position:relative;overflow:hidden;min-height:calc(100svh - 76px);display:flex;align-items:center;background:
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;background:
   radial-gradient(120% 80% at 85% -10%,#123A54 0%,transparent 55%),
   radial-gradient(90% 90% at 5% 110%,#0C2A40 0%,transparent 50%),var(--ink)}
-.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-block:clamp(3rem,7vw,5.5rem);width:100%;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.7fr 0.68fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-block:clamp(3rem,7vw,5.5rem);width:100%;position:relative;z-index:2}
 .hero-copy h1{font-size:var(--step-hero);letter-spacing:0;margin:1.1rem 0 1.4rem;max-width:15ch;color:#fff}
 .hero-copy .lead{max-width:48ch;color:var(--steel-dk)}
 .hero-cta{display:flex;gap:0.9rem;margin-top:2.2rem;flex-wrap:wrap}
@@ -262,6 +296,9 @@ a.c-v:hover{color:var(--blue)}
    用来目视确认正文、标题与段间距是否都落在同一条基线上。默认不生效。 */
 body.debug-baseline{background-image:repeating-linear-gradient(
   to bottom,rgba(0,97,188,.14) 0 1px,transparent 1px var(--baseline))}
+
+.readout{max-width:400px;margin-left:auto}
+@media(max-width:900px){.readout{max-width:none;margin-left:0}}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}

@@ -195,6 +195,27 @@ def json_ld(lang, rel, meta):
 
 def render_header(lang, rel, alts, avail):
     root = SITE["langRoot"][lang]
+    here = "/" + rel if not rel.startswith("/") else rel
+
+    def cur(n):
+        """本页就在这个栏目下时给它 aria-current，导航才有'我在哪'的提示。"""
+        paths = [n["href"]] + [c["href"] for c in n.get("children", [])]
+        for h in paths:
+            base = h.split("#")[0]
+            if base and base != "/" and here.startswith(base.rstrip("/") or "/"):
+                return ' aria-current="page"'
+        return ""
+
+    marked = [False]
+
+    def cur1(n):
+        if marked[0]:
+            return ""
+        v = cur(n)
+        if v:
+            marked[0] = True
+        return v
+
     items = []
     for n in SITE["nav"]:
         if not exists_for(n["href"], lang, avail):
@@ -209,31 +230,37 @@ def render_header(lang, rel, alts, avail):
                 for c in kids)
             items.append(
                 f'      <div class="nav-drop">\n'
-                f'        <a href="{href}">{label}</a>\n'
+                f'        <a href="{href}"{cur1(n)}>{label}</a>\n'
                 f'        <div class="nav-drop-menu">\n{sub}\n        </div>\n'
                 f'      </div>')
         else:
-            items.append(f'      <a href="{href}">{label}</a>')
+            items.append(f'      <a href="{href}"{cur1(n)}>{label}</a>')
     nav = "\n".join(items)
     # 语言切换：只列本页真实存在的其它语种
     switch = "\n".join(
         f'      <a class="langlink" href="{page_url(l2, rel)[len(BASE):]}" hreflang="{SITE["hreflang"][l2]}">{H.escape(SITE["langLabel"][l2])}</a>'
         for l2 in alts if l2 != lang)
-    return f'''<header class="site-header">
+    return f'''<header class="site-header" data-header>
+  <div class="topbar">
+    <div class="wrap topbar-in">
+      <span class="welcome">{H.escape(t(SITE["ui"]["welcome"], lang))}</span>
+      <div class="topbar-right">
+        <a class="hotline" href="{SITE["hotlineHref"]}"><span class="dot"></span>{H.escape(t(SITE["ui"]["hotlineLabel"], lang))}：{SITE["hotline"]}</a>
+{switch}
+      </div>
+    </div>
+  </div>
   <div class="wrap bar">
     <a class="brand" href="{root}" aria-label="{H.escape(t(SITE["ui"]["brandHome"], lang), quote=True)}">
-      <img src="/assets/logo.png" alt="{H.escape(t(SITE["brand"], lang), quote=True)}" width="199" height="63">
+      <img src="/assets/logo.png" alt="{H.escape(t(SITE["brand"], lang), quote=True)}" width="597" height="189">
     </a>
+    <span class="slogan">{H.escape(t(SITE["ui"]["slogan"], lang))}</span>
     <button class="burger" type="button" aria-label="{H.escape(t(SITE["ui"]["menu"], lang), quote=True)}" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav" id="site-nav" aria-label="{H.escape(t(SITE["ui"]["mainNav"], lang), quote=True)}">
 {nav}
     </nav>
-    <div class="header-actions">
-{switch}
-      <a class="hotline" href="{SITE["hotlineHref"]}"><span class="dot"></span>{SITE["hotline"]}</a>
-    </div>
   </div>
 </header>'''
 
@@ -273,8 +300,11 @@ def render_page(lang, rel, meta, body, alts, avail):
     header = render_header(lang, rel, alts, avail)
     footer = render_footer(lang, avail)
     skip = t(SITE["ui"]["skip"], lang)
+    bodycls = "home" if meta.get("type") == "home" else ""
     tail = ['<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
             f'<script src="{ver("/assets/nav.js")}" defer></script>']
+    if meta.get("type") == "home":
+        tail.append(f'<script src="{ver("/assets/header-scroll.js")}" defer></script>')
     for j in meta.get("js", []):
         tail.append(f'<script src="{ver("/assets/" + j + ".js")}" defer></script>')
     btt = ""
@@ -289,7 +319,7 @@ def render_page(lang, rel, meta, body, alts, avail):
 <head>
 {WARN}{head}
 </head>
-<body>
+<body class="{bodycls}">
 <a href="#main" class="sr-only">{H.escape(skip)}</a>
 {header}
 <main id="main">

@@ -450,6 +450,21 @@
       "zh": "海狮科技 首页",
       "en": "Sealion Tech home",
       "ru": "Sealion Tech — главная"
+    },
+    "welcome": {
+      "zh": "您好，欢迎进入广州海狮软件科技有限公司",
+      "en": "Welcome to Guangzhou Sealion Software Technology",
+      "ru": "Добро пожаловать в Guangzhou Sealion Software Technology"
+    },
+    "slogan": {
+      "zh": "挤出行业一体化解决方案",
+      "en": "Integrated solutions for plastics extrusion",
+      "ru": "Комплексные решения для экструзии"
+    },
+    "hotlineLabel": {
+      "zh": "服务热线",
+      "en": "Hotline",
+      "ru": "Горячая линия"
     }
   }
 }

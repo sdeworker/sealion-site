@@ -24,18 +24,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=ba0976fa">
+<link rel="stylesheet" href="/style.css?v=2fe48554">
 <link rel="stylesheet" href="/product.css?v=d3e84328">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Guangzhou Sealion Software Technology Co., Ltd.","alternateName":"Sealion Tech","url":"https://www.sealion-tech.com/ru/","logo":"https://www.sealion-tech.com/assets/logo.png","address":{"@type":"PostalAddress","streetAddress":"Гуанчжоу, р-н Хуанпу, ул. Ляньпу 8, Digital Valley, корп. U4, 9 этаж","addressCountry":"CN"},"contactPoint":[{"@type":"ContactPoint","telephone":"+86-020-22109833","contactType":"sales","availableLanguage":["zh-CN","en","ru"]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sealion Tech","url":"https://www.sealion-tech.com/ru/","inLanguage":"ru"}</script>
 </head>
-<body>
+<body class="home">
 <a href="#main" class="sr-only">Перейти к содержимому</a>
-<header class="site-header">
+<header class="site-header" data-header>
+  <div class="topbar">
+    <div class="wrap topbar-in">
+      <span class="welcome">Добро пожаловать в Guangzhou Sealion Software Technology</span>
+      <div class="topbar-right">
+        <a class="hotline" href="tel:4008404080"><span class="dot"></span>Горячая линия：4008-4040-80</a>
+      <a class="langlink" href="/" hreflang="zh-CN">中文</a>
+      <a class="langlink" href="/en/" hreflang="en">EN</a>
+      </div>
+    </div>
+  </div>
   <div class="wrap bar">
     <a class="brand" href="/ru/" aria-label="Sealion Tech — главная">
-      <img src="/assets/logo.png" alt="Sealion Tech" width="199" height="63">
+      <img src="/assets/logo.png" alt="Sealion Tech" width="597" height="189">
     </a>
+    <span class="slogan">Комплексные решения для экструзии</span>
     <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
@@ -65,11 +76,6 @@
       </div>
       <a href="/ru/#contact">Контакты</a>
     </nav>
-    <div class="header-actions">
-      <a class="langlink" href="/" hreflang="zh-CN">中文</a>
-      <a class="langlink" href="/en/" hreflang="en">EN</a>
-      <a class="hotline" href="tel:4008404080"><span class="dot"></span>4008-4040-80</a>
-    </div>
   </div>
 </header>
 <main id="main">
@@ -269,6 +275,7 @@
 
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="/assets/nav.js?v=1bed07ca" defer></script>
+<script src="/assets/header-scroll.js?v=4c1f1762" defer></script>
 <script src="/assets/hero-video.js?v=c46adb25" defer></script>
 </body>
 </html>
