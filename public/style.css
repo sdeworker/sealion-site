@@ -371,6 +371,26 @@ body.home .hero-play svg{display:none}
 .calc-state{margin:.6rem 0 .9rem;font-size:1rem;line-height:1.5;color:var(--steel-dk)}
 .calc-state--warn{color:var(--signal)}
 
+/* 新闻详情的上下篇与去处：读完不能只有一条"返回列表" */
+.artnav{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;
+  margin-block:var(--sp-2) var(--sp-1)}
+.artnav-i{display:flex;flex-direction:column;gap:.35rem;padding:1rem 1.15rem;
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--paper-2);
+  transition:border-color .18s,transform .18s}
+.artnav-i:hover{border-color:var(--blue);transform:translateY(-2px)}
+.artnav-i span{font-size:0.9375rem;color:var(--steel)}
+.artnav-i b{font-weight:600;color:var(--ink);line-height:1.4}
+.artnav-i--next{text-align:right}
+.artmore{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-bottom:var(--sp-2);
+  padding-top:var(--sp-1);border-top:1px solid var(--line)}
+.artmore span{color:var(--steel)}
+.artmore a{color:var(--blue);border-bottom:1px solid transparent}
+.artmore a:hover{border-bottom-color:var(--blue)}
+/* 卡片英文名单独一档：汉字占满字身框，拉丁小写只占 x-height，
+   同号并排时英文必然显小，这里补回去 */
+.pcard--img .pc-en{display:block;margin-top:.15rem;font-size:1.04em;letter-spacing:.01em;
+  color:rgba(255,255,255,.78)}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}

@@ -194,6 +194,91 @@ def json_ld(lang, rel, meta):
     return out
 
 
+# ---------- 面包屑与新闻上下篇 ----------
+# 缘由：135 页有 BreadcrumbList 结构化数据（给搜索引擎看），页面上真正
+# 看得见的面包屑只有 95 页。缺的 40 页里，32 页是新闻详情——而新闻恰恰
+# 是自然流量的第一落点，访客从搜索结果直接落进来，页面上没有任何东西
+# 告诉他这是哪个网站的哪一层，读完也只有"返回列表"一条出路。
+import re as _re
+
+_NEWS_ORDER = {}
+
+
+def news_order(lang):
+    """从新闻列表页解析出文章顺序与标题，列表页的排序就是权威顺序。"""
+    if lang in _NEWS_ORDER:
+        return _NEWS_ORDER[lang]
+    path = os.path.join(ROOT, "src", "content", lang, "news.html")
+    items = []
+    if os.path.exists(path):
+        txt = io.open(path, encoding="utf-8").read() if "io" in dir() else open(path, encoding="utf-8").read()
+        seen = set()
+        for m in _re.finditer(r'<h3><a href="([^"]+)">(.*?)</a></h3>', txt, _re.S):
+            href, title = m.group(1), _re.sub(r"<[^>]+>", "", m.group(2)).strip()
+            if href not in seen:
+                seen.add(href)
+                items.append((href, title))
+    _NEWS_ORDER[lang] = items
+    return items
+
+
+def crumb_for(rel, lang, meta):
+    """给没有手写面包屑的页面补一条。产品页等已有的不动。"""
+    root = SITE["langRoot"][lang]
+    home = t(SITE["ui"]["home"], lang) if "home" in SITE["ui"] else {"zh": "首页", "en": "Home", "ru": "Главная"}[lang]
+    parts = rel.split("/")
+    label = None
+    parent = None
+    if parts[0] == "news" and len(parts) > 1:
+        parent = (f"{root}news.html", t(SITE["ui"]["newsSection"], lang)
+                  if "newsSection" in SITE["ui"] else {"zh": "海狮动态", "en": "News", "ru": "Новости"}[lang])
+        label = meta.get("crumb") or _re.sub(r"\s*[—|]\s*.*$", "", meta.get("title", "")).strip()
+    elif parts[0] in ("pipe", "cable") and parts[-1] == "index.html":
+        label = {"pipe": {"zh": "管道挤出事业部", "en": "Pipe Extrusion", "ru": "Экструзия труб"},
+                 "cable": {"zh": "线缆挤出事业部", "en": "Cable Extrusion", "ru": "Экструзия кабеля"}}[parts[0]][lang]
+    elif parts[0] == "manual":
+        parent = (f"{root}manual/", {"zh": "产品手册", "en": "Manual", "ru": "Руководство"}[lang])
+        label = meta.get("crumb") or _re.sub(r"\s*[—|]\s*.*$", "", meta.get("title", "")).strip()
+        if parts[-1] == "index.html":
+            parent, label = None, {"zh": "产品手册", "en": "Manual", "ru": "Руководство"}[lang]
+    if not label:
+        return ""
+    mid = f'<a href="{parent[0]}">{H.escape(parent[1])}</a> / ' if parent else ""
+    return (f'<nav class="crumb wrap"><a href="{root}">{H.escape(home)}</a> / '
+            f'{mid}<span>{H.escape(label)}</span></nav>')
+
+
+def news_updown(rel, lang):
+    """上一篇 / 下一篇 / 回列表，外加两个事业部的去处——读完不能是死胡同。"""
+    items = news_order(lang)
+    if not items:
+        return ""
+    root = SITE["langRoot"][lang]
+    # rel 是语种内的相对路径，列表页里的 href 是本地化全路径，这里补上语种前缀
+    here = root.rstrip("/") + "/" + rel.lstrip("/")
+    idx = next((i for i, (h, _) in enumerate(items) if h.rstrip("/") == here.rstrip("/")), None)
+    if idx is None:
+        return ""
+    L = {"zh": ("上一篇", "下一篇", "全部动态", "看看我们的产品", "管道挤出", "线缆挤出"),
+         "en": ("Previous", "Next", "All news", "Browse our systems", "Pipe extrusion", "Cable extrusion"),
+         "ru": ("Предыдущая", "Следующая", "Все новости", "Наши системы", "Экструзия труб", "Экструзия кабеля")}[lang]
+    out = ['<nav class="artnav wrap" aria-label="' + H.escape(L[2]) + '">']
+    if idx > 0:
+        h, ti = items[idx - 1]
+        out.append(f'  <a class="artnav-i artnav-i--prev" href="{h}">'
+                   f'<span>{L[0]}</span><b>{H.escape(ti)}</b></a>')
+    if idx < len(items) - 1:
+        h, ti = items[idx + 1]
+        out.append(f'  <a class="artnav-i artnav-i--next" href="{h}">'
+                   f'<span>{L[1]}</span><b>{H.escape(ti)}</b></a>')
+    out.append('</nav>')
+    out.append(f'<div class="artmore wrap"><span>{H.escape(L[3])}</span>'
+               f'<a href="{root}pipe/">{H.escape(L[4])}</a>'
+               f'<a href="{root}cable/">{H.escape(L[5])}</a>'
+               f'<a href="{root}news.html">{H.escape(L[2])}</a></div>')
+    return "\n".join(out)
+
+
 def render_header(lang, rel, alts, avail):
     root = SITE["langRoot"][lang]
     here = "/" + rel if not rel.startswith("/") else rel
@@ -314,6 +399,8 @@ def render_page(lang, rel, meta, body, alts, avail):
     skip = t(SITE["ui"]["skip"], lang)
     print_stamp = '<p class="print-stamp" data-print-stamp></p>'
     bodycls = "home" if meta.get("type") == "home" else ""
+    crumb = "" if 'class="crumb"' in body else crumb_for(rel, lang, meta)
+    updown = news_updown(rel, lang) if "news/" in ("/" + rel) and rel.count("news/") else ""
     tail = [print_stamp,
             f'<script src="{ver("/assets/print.js")}" defer></script>',
             '<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
@@ -338,7 +425,9 @@ def render_page(lang, rel, meta, body, alts, avail):
 <a href="#main" class="sr-only">{H.escape(skip)}</a>
 {header}
 <main id="main">
+{crumb}
 {body}
+{updown}
 </main>
 {footer}
 {btt}

@@ -9,6 +9,23 @@ CABLE = ["gravimetric", "masterbatch", "masterbatch-weighing", "multi-dosing", "
 
 
 
+def split_title(text):
+    """把"米重控制系统 Gravimetric Control System"拆成中文与英文两截。
+
+    此前两种语言压在同一个 h3 里、同号同重，信息层级塌了一层；而且汉字
+    字面几乎占满字身框、拉丁小写只占 x-height 那一段，同号并排时英文
+    必然显得小一号。拆开之后英文单独一档，可以补回去。
+    找第一个拉丁字母，它前面是中文、从它开始是英文。
+    """
+    for i, ch in enumerate(text):
+        if "a" <= ch.lower() <= "z":
+            zh, en = text[:i].strip(), text[i:].strip()
+            if zh and en:
+                return zh, en
+            break
+    return text.strip(), ""
+
+
 PROD_IMG = {
     "gravimetric": "/assets/2026/core/core-gravimetric.webp",
     "masterbatch": "/assets/2026/core/core-masterbatch.webp",
@@ -202,7 +219,10 @@ def build(div, lang):
             f'    <a class="pcard pcard--img" href="{root}{div}/{s}.html">\n'
             f'{media}'
             f'      <div class="pc-body">\n'
-            f'        <h3>{t}</h3>\n'
+            f'        <h3>{split_title(t)[0]}</h3>\n'
+            + (f'        <span class="pc-en">{split_title(t)[1]}</span>\n'
+               if split_title(t)[1] else '')
+            +
             f'        <p>{d}</p>\n'
             f'        <span class="arrow-link">{more_lbl}</span>\n'
             f'      </div>\n'
