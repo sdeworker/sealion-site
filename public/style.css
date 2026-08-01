@@ -401,6 +401,28 @@ body.home .hero-play svg{display:none}
 .subnav-l a::after{content:"→";color:var(--blue)}
 .subnav-l a:hover{border-color:var(--blue);transform:translateY(-2px)}
 
+/* 数字证据条：第一屏之后立刻用数字说话。
+   每个数字都链到它的依据页——页面上出现量化主张就得能点进去核。 */
+.stats{padding-block:var(--sp-2);background:var(--ink);color:#fff}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.stat{display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:.75rem .5rem;
+  border-radius:var(--radius-lg);color:#fff;text-align:center;transition:background .2s}
+.stat:hover{background:rgba(255,255,255,.08)}
+.stat-n{font-family:var(--mono);font-size:clamp(2rem,1.5rem+1.6vw,3rem);font-weight:600;
+  line-height:1.1;color:var(--signal);font-variant-numeric:tabular-nums}
+.stat-u{font-size:.42em;margin-left:.15em;color:rgba(255,255,255,.72)}
+.stat-l{font-size:1.0625rem;color:rgba(255,255,255,.82)}
+@media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+
+/* 需求确认：在给方案之前，先把客户此刻的处境说出来 */
+.need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:var(--sp-1)}
+.need-i{padding:1.35rem 1.5rem;border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:var(--paper-2);border-left:3px solid var(--signal)}
+.need-i b{display:block;margin-bottom:.5rem;color:var(--ink);font-size:var(--step-1)}
+.need-i p{color:var(--ink-70);margin:0}
+.need-cta{margin-top:var(--sp-1)}
+@media(max-width:860px){.need-grid{grid-template-columns:1fr}}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}
