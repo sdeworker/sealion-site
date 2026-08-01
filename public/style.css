@@ -134,7 +134,7 @@ body.home .site-header.is-solid .nav a[aria-current]{color:var(--blue)}
 body.home .site-header.is-solid .slogan{color:var(--steel);border-left-color:var(--line)}
 body.home .site-header.is-solid .burger span{background:var(--ink)}
 .site-header{position:sticky;top:0;z-index:50;transition:background .25s,border-color .25s;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:1.75rem;min-height:96px}
+.bar{display:flex;align-items:center;gap:1.25rem;min-height:96px}
 /* ============ 顶部信息条（学旧站：欢迎语 + 热线 + 语言） ============ */
 .topbar{background:var(--blue);color:#fff}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:40px}
@@ -149,7 +149,7 @@ body.home .site-header.is-solid .burger span{background:var(--ink)}
 body.home .site-header:not(.is-solid) .nav-lang::before{background:rgba(255,255,255,.34)}
 /* 语言在导航最右端，子菜单必须右对齐，否则会顶出视口 */
 .nav-lang .nav-drop-menu{left:auto;right:0;min-width:9.5rem}
-.nav-lang-btn{display:inline-flex;align-items:center;gap:.45em;background:none;border:0;
+.nav-lang-btn{display:inline-flex;align-items:center;white-space:nowrap;gap:.45em;background:none;border:0;
   cursor:pointer;font-family:inherit;font-size:1.25rem;color:var(--ink-70);
   padding:.55em .62em;border-radius:var(--radius);transition:color .15s,background .15s}
 .nav-lang-btn::after{content:"";width:.42em;height:.42em;border-right:2px solid currentColor;
@@ -164,7 +164,7 @@ body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 /* logo 右侧的一句话，直接说清是做什么的 */
 .slogan{font-size:1.0625rem;color:var(--steel);border-left:1px solid var(--line);
   padding-left:1.25rem;margin-right:auto;white-space:nowrap}
-@media(max-width:1100px){.slogan{display:none}}
+@media(max-width:1560px){.slogan{display:none}}
 /* 当前栏目：蓝字 + 下方短横 */
 .nav a[aria-current]{color:var(--blue);font-weight:600;position:relative}
 .nav a[aria-current]::after{content:"";position:absolute;left:0.62em;right:0.62em;bottom:0.55em;
@@ -175,7 +175,7 @@ body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 .brand-text strong{font-family:var(--display);font-size:1.28rem;letter-spacing:-0.02em;color:var(--ink)}
 .brand-sub{font-family:var(--mono);font-size:0.8775rem;letter-spacing:0.26em;color:var(--blue);margin-top:3px}
 .nav{display:flex;gap:clamp(0.1rem,0.6vw,0.5rem)}
-.nav a{display:inline-flex;align-items:center;font-size:1.25rem;color:var(--ink-70);padding:1.05em 0.62em;border-radius:var(--radius);transition:color .18s,background .18s}
+.nav a{display:inline-flex;align-items:center;white-space:nowrap;font-size:1.25rem;color:var(--ink-70);padding:1.05em 0.62em;border-radius:var(--radius);transition:color .18s,background .18s}
 .nav a:hover{color:var(--ink);background:var(--blue-ghost)}
 .header-actions{display:flex;align-items:center;gap:0.9rem}
 /* hit areas: the visible box IS the clickable box, and it meets the 44px-ish
