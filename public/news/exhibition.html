@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<script>document.documentElement.className+=" js";</script>
 <head>
 <!-- 本文件由 tools/build.py 从 src/ 生成，请勿直接编辑。
      改内容 → src/content/<语种>/...；改导航页脚 → src/site.json -->
@@ -23,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=e927a799"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
+<link rel="stylesheet" href="/style.css?v=f9e662df"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
 <link rel="stylesheet" href="/product.css?v=c1d1a5c6">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.sealion-tech.com/"},{"@type":"ListItem","position":2,"name":"海狮动态","item":"https://www.sealion-tech.com/news"},{"@type":"ListItem","position":3,"name":"展会新闻","item":"https://www.sealion-tech.com/news/exhibition"}]}</script>
 </head>
@@ -123,7 +124,7 @@
 </header>
 <main id="main" tabindex="-1">
 <nav class="crumb wrap"><a href="/">首页</a> / <a href="/news.html">海狮动态</a> / <span>展会新闻</span></nav>
-  <section class="section news">
+  <section data-reveal class="section news">
     <div class="wrap">
 <div class="nw-cat-block" id="news-expo">
         <div class="nw-cat-head"><h1>展会新闻</h1><p>历届 CHINAPLAS 与国内塑料展的参展记录。</p><span class="nw-n">7</span></div>
@@ -205,6 +206,7 @@
   </svg>
 </button>
 <p class="print-stamp" data-print-stamp></p>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 <script src="/assets/print.js?v=e1e15fdc" defer></script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="/assets/nav.js?v=1bed07ca" defer></script>

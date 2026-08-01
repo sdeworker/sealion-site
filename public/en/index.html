@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>document.documentElement.className+=" js";</script>
 <head>
 <!-- 本文件由 tools/build.py 从 src/ 生成，请勿直接编辑。
      改内容 → src/content/<语种>/...；改导航页脚 → src/site.json -->
@@ -24,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=e927a799"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
+<link rel="stylesheet" href="/style.css?v=f9e662df"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Guangzhou Sealion Software Technology Co., Ltd.","alternateName":"Sealion Tech","url":"https://www.sealion-tech.com/en/","logo":"https://www.sealion-tech.com/assets/logo.png","address":{"@type":"PostalAddress","streetAddress":"9F, Building U4, Digital Valley, Liandong Knowledge City, 8 Lianpu Street, Huangpu District, Guangzhou","addressCountry":"CN"},"contactPoint":[{"@type":"ContactPoint","telephone":"+86-4008-4040-80","contactType":"sales","availableLanguage":["zh-CN","en","ru"]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sealion Tech","url":"https://www.sealion-tech.com/en/","inLanguage":"en"}</script>
 </head>
@@ -162,16 +163,16 @@
     <div class="hero-lines" aria-hidden="true"></div>
   </section>
 
-  <section class="section stats" id="stats" aria-label="Four numbers you can check">
+  <section data-reveal class="section stats" id="stats" aria-label="Four numbers you can check">
     <div class="wrap"><div class="stats-row">
-      <a class="stat" href="/en/about.html"><b class="stat-n">18+<span class="stat-u">yrs</span></b><span class="stat-l">in the industry</span></a>
-      <a class="stat" href="/en/ip.html"><b class="stat-n">60<span class="stat-u"></span></b><span class="stat-l">patents &amp; copyrights</span></a>
-      <a class="stat" href="/en/about/partners.html"><b class="stat-n">18<span class="stat-u"></span></b><span class="stat-l">long-term customers</span></a>
-      <a class="stat" href="/en/cases.html"><b class="stat-n">26<span class="stat-u"></span></b><span class="stat-l">site records</span></a>
+      <a class="stat" href="/en/about.html"><b class="stat-n"><span data-count="18" data-suffix="+">0</span><span class="stat-u">yrs</span></b><span class="stat-l">in the industry</span></a>
+      <a class="stat" href="/en/ip.html"><b class="stat-n"><span data-count="60">0</span><span class="stat-u"></span></b><span class="stat-l">patents &amp; copyrights</span></a>
+      <a class="stat" href="/en/about/partners.html"><b class="stat-n"><span data-count="18">0</span><span class="stat-u"></span></b><span class="stat-l">long-term customers</span></a>
+      <a class="stat" href="/en/cases.html"><b class="stat-n"><span data-count="26">0</span><span class="stat-u"></span></b><span class="stat-l">site records</span></a>
     </div></div>
   </section>
 
-  <section class="section need" id="need">
+  <section data-reveal class="section need" id="need">
     <div class="wrap">
       <div class="sh">
         <span class="eyebrow">Start with your line</span>
@@ -187,7 +188,7 @@
     </div>
   </section>
 
-<section class="section divisions" id="divisions"><div class="wrap">
+<section data-reveal class="section divisions" id="divisions"><div class="wrap">
   <div class="sh">
     <span class="eyebrow">Start here</span>
     <h2>Is your line running pipe, or cable?</h2>
@@ -215,7 +216,7 @@
   </div>
 </div></section>
 
-<section class="section products" id="products">
+<section data-reveal class="section products" id="products">
     <div class="wrap wrap--wide">
       <div class="sh">
         <span class="eyebrow">Products</span>
@@ -303,7 +304,7 @@
 
   <!-- CALC -->
 
-<section class="section calc" id="calc">
+<section data-reveal class="section calc" id="calc">
     <div class="wrap">
       <div class="sh">
         <span class="eyebrow">Run the numbers</span>
@@ -399,6 +400,7 @@
   </svg>
 </button>
 <p class="print-stamp" data-print-stamp></p>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 <script src="/assets/print.js?v=e1e15fdc" defer></script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="/assets/nav.js?v=1bed07ca" defer></script>

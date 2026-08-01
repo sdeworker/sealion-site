@@ -462,6 +462,7 @@ def render_page(lang, rel, meta, body, alts, avail):
     updown = news_updown(rel, lang) if "news/" in ("/" + rel) and rel.count("news/") else ""
     updown = updown or ("" if 'class="pcard-grid"' in body else section_children(rel, lang))
     tail = [print_stamp,
+            f'<script src="{ver("/assets/motion.js")}" defer></script>',
             f'<script src="{ver("/assets/print.js")}" defer></script>',
             '<script>document.getElementById(\'yr\').textContent=new Date().getFullYear();</script>',
             f'<script src="{ver("/assets/nav.js")}" defer></script>']
@@ -478,6 +479,7 @@ def render_page(lang, rel, meta, body, alts, avail):
                f'  </svg>\n</button>')
     return f'''<!DOCTYPE html>
 <html lang="{SITE["htmlLang"][lang]}">
+<script>document.documentElement.className+=" js";</script>
 <head>
 {WARN}{head}
 </head>

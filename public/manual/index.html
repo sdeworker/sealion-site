@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<script>document.documentElement.className+=" js";</script>
 <head>
 <!-- 本文件由 tools/build.py 从 src/ 生成，请勿直接编辑。
      改内容 → src/content/<语种>/...；改导航页脚 → src/site.json -->
@@ -23,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=e927a799"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
+<link rel="stylesheet" href="/style.css?v=f9e662df"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
 <link rel="stylesheet" href="/product.css?v=c1d1a5c6">
 <link rel="stylesheet" href="/manual.css?v=8b51f0a1">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.sealion-tech.com/"},{"@type":"ListItem","position":2,"name":"海狮科技产品手册（中英对照）— 在线阅读、翻页、下载","item":"https://www.sealion-tech.com/manual"}]}</script>
@@ -124,7 +125,7 @@
 </header>
 <main id="main" tabindex="-1">
 
-<section class="section m-hero on-dark">
+<section data-reveal class="section m-hero on-dark">
   <div class="wrap">
     <nav class="crumb"><a href="/">首页</a> / <span>产品手册</span></nav>
     <span class="eyebrow">产品手册 2025</span>
@@ -133,7 +134,7 @@
   </div>
 </section>
 
-<section class="section"><div class="wrap">
+<section data-reveal class="section"><div class="wrap">
   <div class="sh"><span class="eyebrow">三种读法</span><h2>挑一种顺手的</h2></div>
   <div class="mode-grid"><div class="mode">
         <span class="mode-n">01</span>
@@ -153,7 +154,7 @@
       </div></div>
 </div></section>
 
-<section class="section mist"><div class="wrap">
+<section data-reveal class="section mist"><div class="wrap">
   <div class="sh"><span class="eyebrow">目录</span><h2>七章，三十四个主题</h2>
   <p class="lead">每个主题都有自己的地址，可以直接分享给同事，也可以直接喂给技术智能体。</p></div>
   <div class="mch-grid"><article class="mch">
@@ -230,6 +231,7 @@
 </footer>
 
 <p class="print-stamp" data-print-stamp></p>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 <script src="/assets/print.js?v=e1e15fdc" defer></script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="/assets/nav.js?v=1bed07ca" defer></script>

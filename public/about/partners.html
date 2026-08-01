@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<script>document.documentElement.className+=" js";</script>
 <head>
 <!-- 本文件由 tools/build.py 从 src/ 生成，请勿直接编辑。
      改内容 → src/content/<语种>/...；改导航页脚 → src/site.json -->
@@ -23,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=e927a799"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
+<link rel="stylesheet" href="/style.css?v=f9e662df"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.sealion-tech.com/"},{"@type":"ListItem","position":2,"name":"about","item":"https://www.sealion-tech.com/about"},{"@type":"ListItem","position":3,"name":"合作客户","item":"https://www.sealion-tech.com/about/partners"}]}</script>
 </head>
 <body class="">
@@ -129,7 +130,7 @@
         <h1>他们的产线上，装着海狮</h1>
         <p class="lead">18 家客户的部分名录——从管道到电缆，从改性料到检测。点开可以直达官网。</p>
       </div>
-      <div class="pcust-grid">
+      <div class="pcust-marquee" data-marquee><div class="pcust-track">
         <a class="pcust" href="https://namsok.chinapipe.net/" target="_blank" rel="noopener nofollow" title="南塑建材塑胶制品（深圳）有限公司（品牌：南塑皇冠 NamSok An Crown）">
           <span class="pcust-logo"><img src="/assets/partners/namsok.jpg" alt="南塑皇冠" loading="lazy" width="320" height="180"></span>
           <span class="pcust-body">
@@ -239,7 +240,7 @@
           </span>
         </a>
       </div>
-    </div>
+    </div></div>
   </section>
 
 
@@ -278,9 +279,11 @@
   </svg>
 </button>
 <p class="print-stamp" data-print-stamp></p>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 <script src="/assets/print.js?v=e1e15fdc" defer></script>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 <script src="/assets/nav.js?v=1bed07ca" defer></script>
 <script src="/assets/back-to-top.js?v=6fe84c7e" defer></script>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 </body>
 </html>
