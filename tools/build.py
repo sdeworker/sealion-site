@@ -406,7 +406,7 @@ def render_header(lang, rel, alts, avail):
   </div>
   <div class="wrap bar">
     <a class="brand" href="{root}" aria-label="{H.escape(t(SITE["ui"]["brandHome"], lang), quote=True)}">
-      <img src="/assets/logo.png" alt="{H.escape(t(SITE["brand"], lang), quote=True)}" width="597" height="189">
+      <img src="{ver("/assets/logo.png")}" alt="{H.escape(t(SITE["brand"], lang), quote=True)}" width="611" height="203">
     </a>
     <span class="slogan">{H.escape(t(SITE["ui"]["slogan"], lang))}</span>
     <button class="burger" type="button" aria-label="{H.escape(t(SITE["ui"]["menu"], lang), quote=True)}" aria-expanded="false" aria-controls="site-nav">
@@ -481,7 +481,7 @@ def render_page(lang, rel, meta, body, alts, avail):
 <body class="{bodycls}">
 <a href="#main" class="sr-only">{H.escape(skip)}</a>
 {header}
-<main id="main">
+<main id="main" tabindex="-1">
 {crumb}
 {body}
 {updown}

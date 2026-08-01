@@ -303,7 +303,7 @@ a.c-v:hover{color:var(--blue)}
 /* ============ BACK TO TOP ============ */
 .back-to-top{
   position:fixed;right:clamp(1rem,3vw,2rem);
-  bottom:clamp(1rem,3vw,2rem);z-index:89;
+  bottom:calc(clamp(1rem,3vw,2rem) + var(--ai-launcher-height,2.6875rem) + .875rem);z-index:89;
   width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
   display:grid;place-items:center;background:var(--paper-2);color:var(--ink);
   box-shadow:0 8px 24px -8px rgba(10,26,38,.38);cursor:pointer;

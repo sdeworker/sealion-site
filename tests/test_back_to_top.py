@@ -13,8 +13,11 @@ class BackToTopContractTest(unittest.TestCase):
         self.assertIn('data-back-to-top', html)
         self.assertIn(f'aria-label="{label}"', html)
         self.assertIn(f'title="{label}"', html)
-        self.assertIn('src="/assets/back-to-top.js" defer', html)
-        self.assertIn('<main tabindex="-1">', html)
+        self.assertRegex(
+            html,
+            r'src="/assets/back-to-top\.js(?:\?v=[0-9a-f]{8})?" defer',
+        )
+        self.assertRegex(html, r'<main\b[^>]*\btabindex="-1"[^>]*>')
 
     def test_chinese_homepage_contract(self):
         self.assert_localized_page("public/index.html", "返回顶部")
