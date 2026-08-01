@@ -124,8 +124,8 @@ body.home .site-header .nav-drop > a:hover{color:#fff;background:rgba(255,255,25
 body.home .site-header .nav-drop-menu a:hover{color:var(--blue);background:var(--mist)}
 body.home .site-header .slogan{color:rgba(255,255,255,.80);border-left-color:rgba(255,255,255,.28)}
 body.home .site-header .burger span{background:#fff}
-body.home .hero{margin-top:calc(-1 * var(--header-h,128px))}
-body.home .hero-grid{padding-top:calc(var(--header-h,128px) + 1rem)}
+body.home .hero{margin-top:calc(-1 * var(--header-h,136px))}
+body.home .hero-grid{padding-top:calc(var(--header-h,136px) + 1rem)}
 body.home .site-header.is-solid{background:color-mix(in srgb,var(--paper) 94%,transparent);
   backdrop-filter:blur(10px);border-bottom-color:var(--line)}
 body.home .site-header.is-solid .topbar{background:var(--blue)}
@@ -134,7 +134,7 @@ body.home .site-header.is-solid .nav a[aria-current]{color:var(--blue)}
 body.home .site-header.is-solid .slogan{color:var(--steel);border-left-color:var(--line)}
 body.home .site-header.is-solid .burger span{background:var(--ink)}
 .site-header{position:sticky;top:0;z-index:50;transition:background .25s,border-color .25s;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:1.75rem;min-height:88px}
+.bar{display:flex;align-items:center;gap:1.75rem;min-height:96px}
 /* ============ 顶部信息条（学旧站：欢迎语 + 热线 + 语言） ============ */
 .topbar{background:var(--blue);color:#fff}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:40px}
@@ -170,7 +170,7 @@ body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 .nav a[aria-current]::after{content:"";position:absolute;left:0.62em;right:0.62em;bottom:0.55em;
   height:2px;background:var(--blue);border-radius:2px}
 .brand{display:inline-flex;align-items:center;gap:0.65rem;margin-right:auto}
-.brand img{height:60px;width:auto}
+.brand img{height:72px;width:auto}
 .brand-text{display:flex;flex-direction:column;line-height:1}
 .brand-text strong{font-family:var(--display);font-size:1.28rem;letter-spacing:-0.02em;color:var(--ink)}
 .brand-sub{font-family:var(--mono);font-size:0.8775rem;letter-spacing:0.26em;color:var(--blue);margin-top:3px}
@@ -401,18 +401,20 @@ body.home .hero-play svg{display:none}
 .subnav-l a::after{content:"→";color:var(--blue)}
 .subnav-l a:hover{border-color:var(--blue);transform:translateY(-2px)}
 
-/* 数字证据条：第一屏之后立刻用数字说话。
-   每个数字都链到它的依据页——页面上出现量化主张就得能点进去核。 */
-.stats{padding-block:var(--sp-2);background:var(--ink);color:#fff}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.stat{display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:.75rem .5rem;
-  border-radius:var(--radius-lg);color:#fff;text-align:center;transition:background .2s}
-.stat:hover{background:rgba(255,255,255,.08)}
-.stat-n{font-family:var(--mono);font-size:clamp(2rem,1.5rem+1.6vw,3rem);font-weight:600;
-  line-height:1.1;color:var(--signal);font-variant-numeric:tabular-nums}
-.stat-u{font-size:.42em;margin-left:.15em;color:rgba(255,255,255,.72)}
-.stat-l{font-size:1.0625rem;color:rgba(255,255,255,.82)}
-@media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+/* 数字证据条：对标沃思的做法——浅底、标签在上、数字给足尺寸、上下留白舍得给。
+   之前那版数字只有 19px：clamp(2rem,1.5rem+1.6vw,3rem) 的加号两侧没留空格，
+   CSS 里 calc/clamp 的 + 必须有空白，整条声明因此作废、字号退回继承值。 */
+.stats{padding-block:var(--sp-3);background:var(--paper-2)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2vw,2.5rem)}
+.stat{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1rem .5rem;
+  border-radius:var(--radius-lg);color:var(--ink);text-align:center;transition:background .2s}
+.stat:hover{background:var(--mist)}
+.stat-l{order:1;font-size:clamp(1.0625rem,0.95rem + 0.5vw,1.375rem);color:var(--steel);
+  letter-spacing:.02em}
+.stat-n{order:2;font-family:var(--mono);font-weight:600;line-height:1;color:var(--blue);
+  font-size:clamp(2.75rem,1.6rem + 3.4vw,5rem);font-variant-numeric:tabular-nums}
+.stat-u{font-size:.34em;margin-left:.12em;color:var(--steel-dk);font-weight:500}
+@media(max-width:860px){.stats-row{grid-template-columns:repeat(2,1fr);row-gap:2rem}}
 
 /* 需求确认：在给方案之前，先把客户此刻的处境说出来 */
 .need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:var(--sp-1)}
