@@ -97,7 +97,10 @@ def ver(path):
     if path not in _ASSET_HASH:
         fp = "public" + path
         try:
-            h = hashlib.md5(open(fp, "rb").read()).hexdigest()[:8]
+            data = open(fp, "rb").read()
+            if os.path.splitext(path)[1].lower() in {".css", ".js", ".json", ".html", ".xml"}:
+                data = data.replace(b"\r\n", b"\n")
+            h = hashlib.md5(data).hexdigest()[:8]
         except OSError:
             h = ""
         _ASSET_HASH[path] = f"{path}?v={h}" if h else path

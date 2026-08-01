@@ -12,6 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 LOGO = ROOT / "public/assets/logo.png"
 
 
+def digest(path, normalize_text=False):
+    data = path.read_bytes()
+    if normalize_text:
+        data = data.replace(b"\r\n", b"\n")
+    return hashlib.md5(data).hexdigest()[:8]
+
+
 def decode_rgba_png(path):
     data = path.read_bytes()
     if data[:8] != b"\x89PNG\r\n\x1a\n":
@@ -95,7 +102,8 @@ class LogoAssetContractTest(unittest.TestCase):
         self.assertGreaterEqual(opaque / total, 0.85)
 
     def test_generated_header_versions_the_immutable_logo_asset(self):
-        digest = hashlib.md5(LOGO.read_bytes()).hexdigest()[:8]
+        logo_digest = digest(LOGO)
+        css_digest = digest(ROOT / "public/style.css", normalize_text=True)
         width, height, _ = decode_rgba_png(LOGO)
         with tempfile.TemporaryDirectory() as output:
             subprocess.run(
@@ -107,13 +115,14 @@ class LogoAssetContractTest(unittest.TestCase):
             )
             homepage = (Path(output) / "index.html").read_text(encoding="utf-8")
 
-        self.assertIn(f'<img src="/assets/logo.png?v={digest}"', homepage)
+        self.assertIn(f'<img src="/assets/logo.png?v={logo_digest}"', homepage)
         self.assertIn(f'width="{width}" height="{height}"', homepage)
+        self.assertIn(f'href="/style.css?v={css_digest}"', homepage)
 
     def test_published_pages_use_current_header_asset_fingerprints(self):
-        logo_ref = f'/assets/logo.png?v={hashlib.md5(LOGO.read_bytes()).hexdigest()[:8]}'
+        logo_ref = f'/assets/logo.png?v={digest(LOGO)}'
         css = ROOT / "public/style.css"
-        css_ref = f'/style.css?v={hashlib.md5(css.read_bytes()).hexdigest()[:8]}'
+        css_ref = f'/style.css?v={digest(css, normalize_text=True)}'
         stale = []
 
         for page in (ROOT / "public").rglob("*.html"):
