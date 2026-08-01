@@ -135,6 +135,7 @@ body.home .site-header.is-solid .slogan{color:var(--steel);border-left-color:var
 body.home .site-header.is-solid .burger span{background:var(--ink)}
 .site-header{position:sticky;top:0;z-index:50;transition:background .25s,border-color .25s;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:1.25rem;min-height:96px}
+.site-header .bar{max-width:1760px}
 /* ============ 顶部信息条（学旧站：欢迎语 + 热线 + 语言） ============ */
 .topbar{background:var(--blue);color:#fff}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:40px}
@@ -163,18 +164,18 @@ body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 @media(max-width:760px){.topbar .welcome{display:none}.topbar-in{justify-content:flex-end}}
 /* logo 右侧的一句话，直接说清是做什么的 */
 .slogan{font-size:1.0625rem;color:var(--steel);border-left:1px solid var(--line);
-  padding-left:1.25rem;margin-right:auto;white-space:nowrap}
+  padding-left:1.25rem;margin-right:0;white-space:nowrap;flex:0 0 auto}
 @media(max-width:1560px){.slogan{display:none}}
 /* 当前栏目：蓝字 + 下方短横 */
 .nav a[aria-current]{color:var(--blue);font-weight:600;position:relative}
 .nav a[aria-current]::after{content:"";position:absolute;left:0.62em;right:0.62em;bottom:0.55em;
   height:2px;background:var(--blue);border-radius:2px}
-.brand{display:inline-flex;align-items:center;gap:0.65rem;margin-right:auto}
-.brand img{height:72px;width:auto}
+.brand{display:inline-flex;align-items:center;gap:0.65rem;margin-right:0;flex:0 0 auto}
+.brand img{height:72px;width:auto;max-width:none}
 .brand-text{display:flex;flex-direction:column;line-height:1}
 .brand-text strong{font-family:var(--display);font-size:1.28rem;letter-spacing:-0.02em;color:var(--ink)}
 .brand-sub{font-family:var(--mono);font-size:0.8775rem;letter-spacing:0.26em;color:var(--blue);margin-top:3px}
-.nav{display:flex;gap:clamp(0.1rem,0.6vw,0.5rem)}
+.nav{display:flex;gap:clamp(0.1rem,0.6vw,0.5rem);margin-left:auto;flex:0 0 auto}
 .nav a{display:inline-flex;align-items:center;white-space:nowrap;font-size:1.25rem;color:var(--ink-70);padding:1.05em 0.62em;border-radius:var(--radius);transition:color .18s,background .18s}
 .nav a:hover{color:var(--ink);background:var(--blue-ghost)}
 .header-actions{display:flex;align-items:center;gap:0.9rem}
@@ -187,11 +188,10 @@ body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 .hotline:hover{color:var(--blue);background:var(--blue-ghost)}
 .hotline .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px var(--signal-soft)}
 /* 汉堡菜单：真 <button> + aria-expanded（可键盘操作），不再用 checkbox 伪装 */
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:0;color:inherit}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:0;color:inherit;margin-left:auto}
 .burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.2s;display:block}
-/* 英文导航文字更长、英文页带两个语言切换：861–1024px 区间页眉会撑破，
-   故热线与汉堡菜单都提前到 1024px（热线在页脚与联系区仍可达） */
-@media(max-width:1024px){
+/* 中文一级导航最宽；1320px 以下改用汉堡菜单，避免压缩品牌与栏目。 */
+@media(max-width:1320px){
   .header-actions .hotline{display:none}
   .burger{display:flex;order:3}
   .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--paper-2);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .28s}
