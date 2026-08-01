@@ -104,6 +104,14 @@
             "en": "IP portfolio",
             "ru": "Интеллектуальная собственность"
           }
+        },
+        {
+          "label": {
+            "zh": "合作客户",
+            "en": "Customers",
+            "ru": "Клиенты"
+          },
+          "href": "/about/partners.html"
         }
       ]
     },
