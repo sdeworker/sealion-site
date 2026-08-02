@@ -453,9 +453,9 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
 .pcloud-l--far .pcloud-i{--depth:.62;opacity:.42;filter:saturate(.55) blur(.4px)}
 .pcloud-l--mid .pcloud-i{--depth:.82;opacity:.72;filter:saturate(.8)}
 .pcloud-l--near .pcloud-i{--depth:1;opacity:1}
-.pcloud-l--far.is-running .pcloud-t{animation:cloud-f var(--dur,64s) linear infinite}
-.pcloud-l--mid.is-running .pcloud-t{animation:cloud-r var(--dur,43s) linear infinite}
-.pcloud-l--near.is-running .pcloud-t{animation:cloud-f var(--dur,31s) linear infinite}
+.pcloud-l--far.is-running .pcloud-t{animation:cloud-f var(--dur,32s) linear infinite}
+.pcloud-l--mid.is-running .pcloud-t{animation:cloud-r var(--dur,22s) linear infinite}
+.pcloud-l--near.is-running .pcloud-t{animation:cloud-f var(--dur,16s) linear infinite}
 .pcloud:hover .pcloud-t,.pcloud:focus-within .pcloud-t{animation-play-state:paused}
 @keyframes cloud-f{to{transform:translateX(-100%)}}
 @keyframes cloud-r{from{transform:translateX(-100%)}to{transform:none}}
