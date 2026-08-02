@@ -398,10 +398,11 @@ body.home .hero-play svg{display:none}
 @media(max-width:860px){.stats-row{grid-template-columns:repeat(2,1fr);row-gap:2rem}}
 
 /* 需求确认：在给方案之前，先把客户此刻的处境说出来 */
+#need{background:var(--mist)}
 .need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:var(--sp-1)}
 .need-i{padding:1.35rem 1.5rem;border:1px solid var(--line);border-radius:var(--radius-lg);
-  background:var(--paper-2);border-left:3px solid var(--signal)}
-.need-i b{display:block;margin-bottom:.5rem;color:var(--ink);font-size:var(--step-1)}
+  background:var(--paper-2);border-left:3px solid var(--copper-lt)}
+.need-i b{display:block;margin-bottom:.5rem;color:var(--copper);font-size:var(--step-1)}
 .need-i p{color:var(--ink-70);margin:0}
 .need-cta{margin-top:var(--sp-1)}
 @media(max-width:860px){.need-grid{grid-template-columns:1fr}}
@@ -525,33 +526,20 @@ section.calc-sec{background:var(--ink);color:#fff;border-block-color:rgba(255,25
 .endcta-note a{color:var(--blue);border-bottom:1px solid transparent}
 .endcta-note a:hover{border-bottom-color:var(--blue)}
 
-/* Hero：图文分离。左边整块实景，右边纯色块承载文字，界限分明——
-   文字压在照片上永远要跟画面抢，而且我们的商标边缘有残缺，
-   这种做法正好不必让它融进画面。 */
-body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0}
-body.home .hero-grid{display:grid;grid-template-columns:1fr;padding:0;width:100%;
-  min-height:calc(100svh - var(--header-h,136px))}
-body.home .hero-split{display:grid;grid-template-columns:1.25fr .75fr;width:100%;
-  min-height:calc(100svh - var(--header-h,136px))}
-body.home .hero-figure{position:relative;overflow:hidden;background:var(--ink)}
-body.home .hero-figure .hero-video,
-body.home .hero-figure video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-body.home .hero-panel{background:var(--ink);color:#fff;display:flex;flex-direction:column;
-  justify-content:center;padding:clamp(2.5rem,4vw,4.5rem) clamp(2rem,3.5vw,3.75rem)}
-body.home .hero-panel .eyebrow{color:var(--signal)}
-body.home .hero-panel h1{color:#fff;margin-block:.6rem 1rem}
-body.home .hero-panel .lead{color:rgba(255,255,255,.84);max-width:34ch}
-body.home .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:var(--sp-1)}
-@media(max-width:1000px){
-  body.home .hero-split{grid-template-columns:1fr;min-height:0}
-  body.home .hero-figure{min-height:58svh}
-  body.home .hero-panel{padding:var(--sp-2) var(--gutter)}
-}
-/* 图文分离之后，播放键回到画面里，不再压着文字 */
-body.home .hero-figure .hero-play{position:absolute;left:50%;top:50%;
-  transform:translate(-50%,-50%);z-index:3}
-body.home .hero-figure .hero-play:hover{transform:translate(-50%,-50%)}
-body.home .hero-figure .hero-play:hover::before{transform:scale(1.07)}
+/* Hero：整屏实景 + 居中播放键。右侧文字板撤掉——它把画面切掉了三分之一，
+   而首屏该说的话由紧随其后的数字条与问题段接手。
+   标题与导语留在 DOM 里做视觉隐藏，页面仍有 h1。 */
+body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
+  padding:0;display:block;position:relative}
+.hero-figure--full{position:relative;width:100%;
+  min-height:calc(100svh - var(--header-h,136px));overflow:hidden;background:var(--ink)}
+.hero-figure--full video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-figure--full .hero-lines{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero-figure--full .hero-play{position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);z-index:3;flex-direction:column;gap:1.1rem;
+  margin:0;min-height:0;color:#fff}
+.hero-figure--full .hero-play:hover{transform:translate(-50%,-50%)}
+.hero-figure--full .hero-play:hover::before{transform:scale(1.07)}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
