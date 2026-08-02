@@ -56,22 +56,21 @@
     }
   }
 
-  /* ---------- 3. 客户 logo 横向滚动 ---------- */
-  var marquee = document.querySelector('[data-marquee]');
-  if (marquee) {
-    var track = marquee.firstElementChild;
-    if (track && !reduce && marquee.children.length === 1) {
-      // 复制一份接在后面，位移到 -50% 时画面与起点完全相同，于是无缝
-      var clone = track.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      // 复制出来的链接不该被键盘走到，否则同一个客户会被读两遍
-      var links = clone.querySelectorAll('a');
-      for (var n = 0; n < links.length; n++) links[n].setAttribute('tabindex', '-1');
-      marquee.appendChild(clone);
-      marquee.classList.add('is-running');
-      // 按内容宽度定速，保证快慢与条目多少无关
-      var w = track.scrollWidth;
-      marquee.style.setProperty('--marquee-dur', Math.max(24, Math.round(w / 110)) + 's');
+  /* ---------- 3. 客户 logo 多轨滚动 ----------
+     相邻轨道方向相反、速度不同——单向一条太"机械"，
+     反向交错才有"在流动"的感觉。每条轨道各自复制一份接在后面。 */
+  var lanes = document.querySelectorAll('[data-marquee-lanes] .pcust-lane');
+  if (lanes.length && !reduce) {
+    for (var q = 0; q < lanes.length; q++) {
+      var lane = lanes[q], track = lane.firstElementChild;
+      if (!track || lane.children.length !== 1) continue;
+      var copy = track.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      var ls = copy.querySelectorAll('a');
+      for (var r = 0; r < ls.length; r++) ls[r].setAttribute('tabindex', '-1');
+      lane.appendChild(copy);
+      lane.classList.add('is-running');
     }
   }
+
 })();
