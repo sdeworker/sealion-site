@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=f9e662df"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
+<link rel="stylesheet" href="/style.css?v=659f6e75"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Guangzhou Sealion Software Technology Co., Ltd.","alternateName":"Sealion Tech","url":"https://www.sealion-tech.com/en/","logo":"https://www.sealion-tech.com/assets/logo.png","address":{"@type":"PostalAddress","streetAddress":"9F, Building U4, Digital Valley, Liandong Knowledge City, 8 Lianpu Street, Huangpu District, Guangzhou","addressCountry":"CN"},"contactPoint":[{"@type":"ContactPoint","telephone":"+86-4008-4040-80","contactType":"sales","availableLanguage":["zh-CN","en","ru"]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sealion Tech","url":"https://www.sealion-tech.com/en/","inLanguage":"en"}</script>
 </head>
@@ -163,16 +163,35 @@
     <div class="hero-lines" aria-hidden="true"></div>
   </section>
 
-  <section data-reveal class="section stats" id="stats" aria-label="Four numbers you can check">
-    <div class="wrap"><div class="stats-row">
-      <a class="stat" href="/en/about.html"><b class="stat-n"><span data-count="18" data-suffix="+">0</span><span class="stat-u">yrs</span></b><span class="stat-l">in the industry</span></a>
-      <a class="stat" href="/en/ip.html"><b class="stat-n"><span data-count="60">0</span><span class="stat-u"></span></b><span class="stat-l">patents &amp; copyrights</span></a>
-      <a class="stat" href="/en/about/partners.html"><b class="stat-n"><span data-count="18">0</span><span class="stat-u"></span></b><span class="stat-l">long-term customers</span></a>
-      <a class="stat" href="/en/cases.html"><b class="stat-n"><span data-count="26">0</span><span class="stat-u"></span></b><span class="stat-l">site records</span></a>
-    </div></div>
-  </section>
+      <!-- PARTNERS -->
 
-  <section data-reveal class="section need" id="need">
+  <!-- CALC -->
+
+  <script>
+  (function(){
+    var ids=['out','price','hours'];
+    function n(id){var v=parseFloat(document.getElementById('c-'+id).value);return isFinite(v)&&v>0?v:0;}
+    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
+    function calc(){
+      var kg=n('out')*n('hours');           // kg per year
+      var cost=kg*n('price');
+      var lo=cost*0.02, hi=cost*0.05;
+      document.getElementById('c-lo').textContent=kg?fmt(lo):'—';
+      document.getElementById('c-hi').textContent=kg?fmt(hi):'—';
+      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'—';
+      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'—';
+    }
+    ids.forEach(function(i){
+      var el=document.getElementById('c-'+i);
+      el.addEventListener('input',calc); el.addEventListener('change',calc);
+    });
+    calc();
+  })();
+  </script>
+
+  <!-- CASES -->
+
+<section data-reveal class="section need" id="need">
     <div class="wrap">
       <div class="sh">
         <span class="eyebrow">Start with your line</span>
@@ -186,6 +205,15 @@
       </div>
       <p class="need-cta"><a class="arrow-link" href="#calc">What your line loses to this in a year — three numbers will tell you &rarr;</a></p>
     </div>
+  </section>
+
+<section data-reveal class="section stats" id="stats" aria-label="Four numbers you can check">
+    <div class="wrap"><div class="stats-row">
+      <a class="stat" href="/en/about.html"><b class="stat-n"><span data-count="18" data-suffix="+">0</span><span class="stat-u">yrs</span></b><span class="stat-l">in the industry</span></a>
+      <a class="stat" href="/en/ip.html"><b class="stat-n"><span data-count="60">0</span><span class="stat-u"></span></b><span class="stat-l">patents &amp; copyrights</span></a>
+      <a class="stat" href="/en/about/partners.html"><b class="stat-n"><span data-count="18">0</span><span class="stat-u"></span></b><span class="stat-l">long-term customers</span></a>
+      <a class="stat" href="/en/cases.html"><b class="stat-n"><span data-count="26">0</span><span class="stat-u"></span></b><span class="stat-l">site records</span></a>
+    </div></div>
   </section>
 
 <section data-reveal class="section divisions" id="divisions"><div class="wrap">
@@ -300,11 +328,7 @@
     </div>
   </section>
 
-  <!-- PARTNERS -->
-
-  <!-- CALC -->
-
-<section data-reveal class="section calc" id="calc">
+<section data-reveal class="section calc calc-sec" id="calc">
     <div class="wrap">
       <div class="sh">
         <span class="eyebrow">Run the numbers</span>
@@ -342,29 +366,77 @@
       <p class="calc-note">Basis: Sealion Product Manual, Gravimetric Control System — Main function: "Solve the problem of meter weight deviation and waste material — can save 2%–5% raw material." This is arithmetic only; it excludes savings from start-up scrap, material changeover and screen-pack blockage. Real figures depend on your line — ask an engineer to run it properly.</p>
     </div>
   </section>
-  <script>
-  (function(){
-    var ids=['out','price','hours'];
-    function n(id){var v=parseFloat(document.getElementById('c-'+id).value);return isFinite(v)&&v>0?v:0;}
-    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
-    function calc(){
-      var kg=n('out')*n('hours');           // kg per year
-      var cost=kg*n('price');
-      var lo=cost*0.02, hi=cost*0.05;
-      document.getElementById('c-lo').textContent=kg?fmt(lo):'—';
-      document.getElementById('c-hi').textContent=kg?fmt(hi):'—';
-      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'—';
-      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'—';
-    }
-    ids.forEach(function(i){
-      var el=document.getElementById('c-'+i);
-      el.addEventListener('input',calc); el.addEventListener('change',calc);
-    });
-    calc();
-  })();
-  </script>
+  <section data-reveal class="section proof-band">
+    <div class="wrap">
+      <div class="pb-grid">
+        <figure class="pb-media">
+          <img src="/assets/cases/sealion-gravimetric-coextrusion-hd.jpg"
+               alt="Gravimetric control on a three-layer coextrusion line" loading="lazy" width="1200" height="800">
+          <figcaption>Gravimetric control on a coextrusion line, photographed on site</figcaption>
+        </figure>
+        <div class="pb-body">
+          <span class="eyebrow">On working lines</span>
+          <h2>Not a machine on a stand</h2>
+          <p class="lead">Twenty-six site records, six of them with footage of the line running.
+            The equipment is in a customer's workshop with the shift's own figures on the screen.</p>
+          <ul class="pb-list">
+            <li><b>18</b> long-term customers, from pipe and cable to compounds and inspection</li>
+            <li><b>60</b> patents and copyrights, all held by Sealion</li>
+            <li><b>2%&ndash;5%</b> material saved &mdash; a range measured on customers' lines</li>
+          </ul>
+          <p class="pb-cta">
+            <a class="btn btn--primary" href="/en/cases.html">See the site records</a>
+            <a class="arrow-link" href="/en/about/partners.html">Who runs Sealion &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- CASES -->
+  <section data-reveal class="section people on-dark">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">Commissioning is the start</span>
+        <h2>There are people behind the equipment</h2>
+        <p class="lead">A system stays on the line for years. Over those years the material
+          changes, the shift changes, the process changes &mdash; what has to stay is someone
+          who answers the phone, comes to the site, and can dial in and look.</p>
+      </div>
+      <div class="ppl-grid">
+        <figure class="ppl-i ppl-i--wide">
+          <img src="/assets/service/onsite.jpg" alt="Engineers commissioning on site"
+               loading="lazy" width="550" height="310">
+          <figcaption><b>Installation and commissioning</b> on the line, through to good product &mdash; not shipped and forgotten</figcaption>
+        </figure>
+        <figure class="ppl-i">
+          <img src="/assets/service/training.jpg" alt="Operator training"
+               loading="lazy" width="550" height="310">
+          <figcaption><b>Operator training</b> handing the machine to people who can run it</figcaption>
+        </figure>
+        <figure class="ppl-i">
+          <img src="/assets/service/team.jpg" alt="Service team"
+               loading="lazy" width="550" height="310">
+          <figcaption><b>Service and spares</b> older models still have parts</figcaption>
+        </figure>
+      </div>
+      <p class="ppl-cta"><a class="arrow-link" href="/en/service.html">How service is arranged &rarr;</a></p>
+    </div>
+  </section>
+
+  <section data-reveal class="section endcta">
+    <div class="wrap narrow">
+      <span class="eyebrow">Next</span>
+      <h2>Send us four numbers</h2>
+      <p class="lead">Diameter, material, output and line speed. With those four an engineer can
+        propose a configuration for your line, and say which points still need confirming on site.</p>
+      <p class="endcta-act">
+        <a class="btn btn--primary" href="mailto:2428582102@qq.com?subject=Line%20parameter%20enquiry">Send the four numbers</a>
+        <a class="btn" href="tel:+8640084040800">Call 4008-4040-80</a>
+      </p>
+      <p class="endcta-note">Or start with the <a href="/en/manual/">product manual</a>,
+        or pick by <a href="/en/industries/">industry</a>.</p>
+    </div>
+  </section>
 
 
 
@@ -408,5 +480,6 @@
 <script src="/assets/lightbox.js?v=f59dab8b" defer></script>
 <script src="/assets/back-to-top.js?v=6fe84c7e" defer></script>
 <script src="/assets/hero-video.js?v=c46adb25" defer></script>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 </body>
 </html>

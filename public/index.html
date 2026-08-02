@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=f9e662df"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
+<link rel="stylesheet" href="/style.css?v=659f6e75"><link rel="stylesheet" href="/print.css?v=973d605f" media="print">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"广州海狮软件科技有限公司","alternateName":"海狮科技","url":"https://www.sealion-tech.com/","logo":"https://www.sealion-tech.com/assets/logo.png","address":{"@type":"PostalAddress","streetAddress":"广州市黄埔区联浦街 8 号联东知识城数字谷 U4 栋 9 楼","addressCountry":"CN"},"contactPoint":[{"@type":"ContactPoint","telephone":"+86-4008-4040-80","contactType":"sales","availableLanguage":["zh-CN","en","ru"]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"海狮科技","url":"https://www.sealion-tech.com/","inLanguage":"zh-CN"}</script>
 </head>
@@ -166,16 +166,54 @@
 
   <!-- ABOUT -->
 
-  <section data-reveal class="section stats" id="stats" aria-label="可核对的四个数字">
-    <div class="wrap"><div class="stats-row">
-      <a class="stat" href="/about.html"><b class="stat-n"><span data-count="18" data-suffix="+">0</span><span class="stat-u">年</span></b><span class="stat-l">行业经验</span></a>
-      <a class="stat" href="/ip.html"><b class="stat-n"><span data-count="60">0</span><span class="stat-u">项</span></b><span class="stat-l">知识产权</span></a>
-      <a class="stat" href="/about/partners.html"><b class="stat-n"><span data-count="18">0</span><span class="stat-u">家</span></b><span class="stat-l">长期合作客户</span></a>
-      <a class="stat" href="/cases.html"><b class="stat-n"><span data-count="26">0</span><span class="stat-u">组</span></b><span class="stat-l">现场记录</span></a>
-    </div></div>
-  </section>
+      <!-- PRODUCT APPLICATION -->
 
-  <section data-reveal class="section need" id="need">
+  <!-- TECH STRENGTH -->
+
+  <script>
+  (function(){
+    var ids=['out','price','hours'];
+    var LIMIT={out:20000,price:200,hours:8760};   // 明显越界的上限，用于提醒而非阻断
+    function raw(id){return document.getElementById('c-'+id).value.trim();}
+    function n(id){var v=parseFloat(raw(id));return isFinite(v)&&v>0?v:0;}
+    function state(){
+      var el=document.getElementById('c-state'); if(!el) return;
+      var empty=['out','price','hours'].filter(function(k){return raw(k)==='';});
+      var bad=['out','price','hours'].filter(function(k){var v=parseFloat(raw(k));
+        return raw(k)!=='' && (!isFinite(v)||v<=0);});
+      var over=['out','price','hours'].filter(function(k){return n(k)>LIMIT[k];});
+      var L={out:'挤出量',price:'原料单价',hours:'年运行小时'};
+      var msg='', cls='calc-state';
+      if(bad.length){msg='「'+bad.map(function(k){return L[k]}).join('、')+'」请填大于 0 的数字。';cls+=' calc-state--warn';}
+      else if(empty.length){msg='还差「'+empty.map(function(k){return L[k]}).join('、')+'」没填。';}
+      else if(over.length){msg='「'+over.map(function(k){return L[k]}).join('、')+'」看起来偏离常见区间，结果仍按你填的数字算。';cls+=' calc-state--warn';}
+      else {msg='按 2% 与 5% 两档估算；只算主料，不含安装、培训与停机损失。';}
+      el.textContent=msg; el.className=cls;
+    }
+    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
+    function calc(){
+      var kg=n('out')*n('hours');           // kg per year
+      var cost=kg*n('price');
+      var lo=cost*0.02, hi=cost*0.05;
+      document.getElementById('c-lo').textContent=kg?fmt(lo):'—';
+      document.getElementById('c-hi').textContent=kg?fmt(hi):'—';
+      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'—';
+      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'—';
+      state();
+    }
+    ids.forEach(function(i){
+      var el=document.getElementById('c-'+i);
+      el.addEventListener('input',calc); el.addEventListener('change',calc);
+    });
+    calc();
+  })();
+  </script>
+
+  <!-- PARTNERS -->
+
+  <!-- CASES -->
+
+<section data-reveal class="section need" id="need">
     <div class="wrap">
       <div class="sh">
         <span class="eyebrow">先看你的产线</span>
@@ -189,6 +227,15 @@
       </div>
       <p class="need-cta"><a class="arrow-link" href="#calc">你的产线一年在这上面漏多少，填三个数就知道 &rarr;</a></p>
     </div>
+  </section>
+
+<section data-reveal class="section stats" id="stats" aria-label="可核对的四个数字">
+    <div class="wrap"><div class="stats-row">
+      <a class="stat" href="/about.html"><b class="stat-n"><span data-count="18" data-suffix="+">0</span><span class="stat-u">年</span></b><span class="stat-l">行业经验</span></a>
+      <a class="stat" href="/ip.html"><b class="stat-n"><span data-count="60">0</span><span class="stat-u">项</span></b><span class="stat-l">知识产权</span></a>
+      <a class="stat" href="/about/partners.html"><b class="stat-n"><span data-count="18">0</span><span class="stat-u">家</span></b><span class="stat-l">长期合作客户</span></a>
+      <a class="stat" href="/cases.html"><b class="stat-n"><span data-count="26">0</span><span class="stat-u">组</span></b><span class="stat-l">现场记录</span></a>
+    </div></div>
   </section>
 
 <section data-reveal class="section divisions" id="divisions"><div class="wrap">
@@ -303,11 +350,7 @@
     </div>
   </section>
 
-  <!-- PRODUCT APPLICATION -->
-
-  <!-- TECH STRENGTH -->
-
-<section data-reveal class="section calc" id="calc">
+<section data-reveal class="section calc calc-sec" id="calc">
     <div class="wrap">
       <div class="sh">
         <span class="eyebrow">算一笔账</span>
@@ -346,48 +389,76 @@
       <p class="calc-note"><b>假设条件</b>：按 2% 与 5% 两档估算；只算主料，不含安装、培训与停机损失；原料按到厂价计；年运行小时按你填的数字直接相乘。<br>测算依据：《海狮科技产品手册》米重控制系统 · 主要功能——「解决生产过程中米重偏差浪费原料的问题，为您节省 2%–5% 原料」。本测算只做算术，不含开机废料、换料废管、过滤网堵塞等额外节省；实际数字以现场工况为准，欢迎让工程师按你的产线算一遍。</p>
     </div>
   </section>
-  <script>
-  (function(){
-    var ids=['out','price','hours'];
-    var LIMIT={out:20000,price:200,hours:8760};   // 明显越界的上限，用于提醒而非阻断
-    function raw(id){return document.getElementById('c-'+id).value.trim();}
-    function n(id){var v=parseFloat(raw(id));return isFinite(v)&&v>0?v:0;}
-    function state(){
-      var el=document.getElementById('c-state'); if(!el) return;
-      var empty=['out','price','hours'].filter(function(k){return raw(k)==='';});
-      var bad=['out','price','hours'].filter(function(k){var v=parseFloat(raw(k));
-        return raw(k)!=='' && (!isFinite(v)||v<=0);});
-      var over=['out','price','hours'].filter(function(k){return n(k)>LIMIT[k];});
-      var L={out:'挤出量',price:'原料单价',hours:'年运行小时'};
-      var msg='', cls='calc-state';
-      if(bad.length){msg='「'+bad.map(function(k){return L[k]}).join('、')+'」请填大于 0 的数字。';cls+=' calc-state--warn';}
-      else if(empty.length){msg='还差「'+empty.map(function(k){return L[k]}).join('、')+'」没填。';}
-      else if(over.length){msg='「'+over.map(function(k){return L[k]}).join('、')+'」看起来偏离常见区间，结果仍按你填的数字算。';cls+=' calc-state--warn';}
-      else {msg='按 2% 与 5% 两档估算；只算主料，不含安装、培训与停机损失。';}
-      el.textContent=msg; el.className=cls;
-    }
-    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
-    function calc(){
-      var kg=n('out')*n('hours');           // kg per year
-      var cost=kg*n('price');
-      var lo=cost*0.02, hi=cost*0.05;
-      document.getElementById('c-lo').textContent=kg?fmt(lo):'—';
-      document.getElementById('c-hi').textContent=kg?fmt(hi):'—';
-      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'—';
-      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'—';
-      state();
-    }
-    ids.forEach(function(i){
-      var el=document.getElementById('c-'+i);
-      el.addEventListener('input',calc); el.addEventListener('change',calc);
-    });
-    calc();
-  })();
-  </script>
+  <section data-reveal class="section proof-band">
+    <div class="wrap">
+      <div class="pb-grid">
+        <figure class="pb-media">
+          <img src="/assets/cases/sealion-gravimetric-coextrusion-hd.jpg"
+               alt="三共挤米重控制系统装在客户产线上" loading="lazy" width="1200" height="800">
+          <figcaption>三共挤产线上的米重控制系统 · 客户车间实拍</figcaption>
+        </figure>
+        <div class="pb-body">
+          <span class="eyebrow">装在真实产线上</span>
+          <h2>不是展台上的样机</h2>
+          <p class="lead">26 组现场记录，6 组带产线运行视频。机器在客户车间里跑着，
+            报警灯亮着，屏幕上是当班的实时数据。</p>
+          <ul class="pb-list">
+            <li><b>18 家</b>长期合作客户，从管道到电缆、从改性料到检测</li>
+            <li><b>60 项</b>知识产权，权利人都是海狮自己</li>
+            <li><b>2%–5%</b>原料节省，这是客户产线上算出来的区间</li>
+          </ul>
+          <p class="pb-cta">
+            <a class="btn btn--primary" href="/cases.html">看现场记录</a>
+            <a class="arrow-link" href="/about/partners.html">他们的产线上装着海狮 &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- PARTNERS -->
+  <section data-reveal class="section people on-dark">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">装上线，才是开始</span>
+        <h2>设备背后是一队人</h2>
+        <p class="lead">系统装在产线上会跑很多年。这些年里换过料、换过班、换过工艺，
+          真正要一直在的是能接电话、能到现场、能远程接上来看一眼的人。</p>
+      </div>
+      <div class="ppl-grid">
+        <figure class="ppl-i ppl-i--wide">
+          <img src="/assets/service/onsite.jpg" alt="工程师在客户现场安装调试"
+               loading="lazy" width="550" height="310">
+          <figcaption><b>现场安装与调试</b>到产线上装、调、试到出合格品，不是发货了事</figcaption>
+        </figure>
+        <figure class="ppl-i">
+          <img src="/assets/service/training.jpg" alt="操作与维护培训"
+               loading="lazy" width="550" height="310">
+          <figcaption><b>操作与维护培训</b>把机器交给会用的人</figcaption>
+        </figure>
+        <figure class="ppl-i">
+          <img src="/assets/service/team.jpg" alt="售后服务团队"
+               loading="lazy" width="550" height="310">
+          <figcaption><b>售后与备件</b>老机型同样有件可换</figcaption>
+        </figure>
+      </div>
+      <p class="ppl-cta"><a class="arrow-link" href="/service.html">售后与服务怎么安排 &rarr;</a></p>
+    </div>
+  </section>
 
-  <!-- CASES -->
+  <section data-reveal class="section endcta">
+    <div class="wrap narrow">
+      <span class="eyebrow">下一步</span>
+      <h2>把四个数发给我们</h2>
+      <p class="lead">口径、材料、产量、线速——这四项定了，工程师就能按你的产线给出配置建议，
+        以及还需要现场确认哪几项。</p>
+      <p class="endcta-act">
+        <a class="btn btn--primary" href="mailto:2428582102@qq.com?subject=%E4%BA%A7%E7%BA%BF%E5%8F%82%E6%95%B0%E5%92%A8%E8%AF%A2">发四个数给工程师</a>
+        <a class="btn" href="tel:+8640084040800">打 4008-4040-80</a>
+      </p>
+      <p class="endcta-note">也可以先看 <a href="/manual/">产品手册</a>，
+        或按行业挑：<a href="/industries/">十二个应用行业</a>。</p>
+    </div>
+  </section>
 
 
 
@@ -431,5 +502,6 @@
 <script src="/assets/lightbox.js?v=f59dab8b" defer></script>
 <script src="/assets/back-to-top.js?v=6fe84c7e" defer></script>
 <script src="/assets/hero-video.js?v=c46adb25" defer></script>
+<script src="/assets/motion.js?v=389b3344" defer></script>
 </body>
 </html>
