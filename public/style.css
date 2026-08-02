@@ -434,36 +434,54 @@ html.js [data-reveal]{opacity:0;transform:translateY(18px);
   transition:opacity .5s ease-out,transform .5s ease-out}
 html.js [data-reveal].is-in{opacity:1;transform:none}
 
-/* 客户 logo 多轨滚动：三条轨道，相邻方向相反、速度不同。
-   单向一条太机械；反向交错才像"在流动"。
-   只留品牌图标——客户名本来就印在 logo 里，再排一行文字是重复。 */
-.pcust-lanes{display:flex;flex-direction:column;gap:1rem}
-.pcust-lane{display:flex;gap:1rem;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.pcust-lane .pcust-track{display:flex;gap:1rem;flex:0 0 auto}
-.pcust-lane--fwd.is-running .pcust-track{
-  animation:lane-fwd var(--lane-dur,46s) linear infinite}
-.pcust-lane--rev.is-running .pcust-track{
-  animation:lane-rev var(--lane-dur,38s) linear infinite}
-.pcust-lanes:hover .pcust-track,
-.pcust-lanes:focus-within .pcust-track{animation-play-state:paused}
-@keyframes lane-fwd{to{transform:translateX(calc(-100% - 1rem))}}
-@keyframes lane-rev{from{transform:translateX(calc(-100% - 1rem))}to{transform:none}}
+/* 客户 logo 漂浮云：一片有纵深的云，不是几条传送带。
+   参考视频里三段的速度是 9 / 15 / 1 px每秒——差这么多不是"三行速度不同"，
+   是景深：近的大、清晰、快，远的小、淡、几乎不动。
+   浅底，logo 直接浮在雾里，不加卡片框。 */
+.partners--light{background:linear-gradient(180deg,#F7FAFC 0%,#EEF3F7 55%,#E7EEF4 100%)}
+.partners--light .sh h1,.partners--light .sh h2{color:var(--ink)}
+.partners--light .lead{color:var(--ink-70)}
+.pcloud{position:relative;height:clamp(19rem,26vw,25rem);margin-top:var(--sp-1);
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pcloud-l{position:absolute;inset:0;display:flex}
+.pcloud-t{display:flex;flex:0 0 auto;position:relative;width:max-content}
+.pcloud-i{position:relative;top:var(--y,30%);margin-right:var(--gap,4rem);
+  transform:scale(var(--sc,1));transform-origin:center}
+/* 三层景深：越远越小、越淡、越慢 */
+.pcloud-l--far .pcloud-i{--depth:.62;opacity:.42;filter:saturate(.55) blur(.4px)}
+.pcloud-l--mid .pcloud-i{--depth:.82;opacity:.72;filter:saturate(.8)}
+.pcloud-l--near .pcloud-i{--depth:1;opacity:1}
+.pcloud-l--far.is-running .pcloud-t{animation:cloud-f var(--dur,128s) linear infinite}
+.pcloud-l--mid.is-running .pcloud-t{animation:cloud-r var(--dur,86s) linear infinite}
+.pcloud-l--near.is-running .pcloud-t{animation:cloud-f var(--dur,62s) linear infinite}
+.pcloud:hover .pcloud-t,.pcloud:focus-within .pcloud-t{animation-play-state:paused}
+@keyframes cloud-f{to{transform:translateX(-100%)}}
+@keyframes cloud-r{from{transform:translateX(-100%)}to{transform:none}}
 
-/* 只有图标的卡片：等高、居中、白底，logo 本身留出呼吸 */
-.pcust--logo{flex:0 0 auto;width:clamp(9.5rem,13vw,12rem);height:5.25rem;
-  display:flex;align-items:center;justify-content:center;padding:.7rem 1rem;
-  background:#fff;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,.10);
+/* logo 本身：白色浮片，深度决定尺寸 */
+.pcloud .pcust{display:flex;align-items:center;justify-content:center;
+  width:calc(clamp(8.5rem,11vw,10.5rem) * var(--depth,1));
+  height:calc(4.6rem * var(--depth,1));
+  padding:calc(.7rem * var(--depth,1));background:#fff;border-radius:var(--radius-lg);
+  box-shadow:0 calc(10px * var(--depth,1)) calc(30px * var(--depth,1)) rgba(10,26,38,.10);
   transition:transform .25s,box-shadow .25s}
-.pcust--logo:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.28)}
-.pcust--logo .pcust-logo{display:block;width:100%;height:100%}
-.pcust--logo img{width:100%;height:100%;object-fit:contain}
+.pcloud .pcust:hover{transform:translateY(-4px);
+  box-shadow:0 18px 42px rgba(10,26,38,.20);z-index:3}
+.pcloud .pcust-logo{display:block;width:100%;height:100%}
+.pcloud .pcust img{width:100%;height:100%;object-fit:contain}
+.pcloud-l--near{z-index:3}.pcloud-l--mid{z-index:2}.pcloud-l--far{z-index:1}
 
 @media(prefers-reduced-motion:reduce){
-  .pcust-lane{overflow:visible;mask-image:none;-webkit-mask-image:none;flex-wrap:wrap}
-  .pcust-lane .pcust-track{flex-wrap:wrap;animation:none}
+  .pcloud{height:auto;overflow:visible;mask-image:none;-webkit-mask-image:none;
+    display:flex;flex-wrap:wrap;gap:1rem}
+  .pcloud-l{position:static;display:contents}
+  .pcloud-t{flex-wrap:wrap;gap:1rem;width:auto;animation:none}
+  .pcloud-i{top:0;margin-right:0;transform:none}
+  .pcloud-l--far .pcloud-i,.pcloud-l--mid .pcloud-i{opacity:1;filter:none;--depth:1}
 }
+@media(max-width:760px){.pcloud{height:16rem}}
 
 /* 卡片图轻微缩放：之前只有卡片位移，图本身是死的 */
 .pcard--img .pc-img img{transition:transform .45s cubic-bezier(.2,.6,.2,1)}

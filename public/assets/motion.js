@@ -56,20 +56,20 @@
     }
   }
 
-  /* ---------- 3. 客户 logo 多轨滚动 ----------
-     相邻轨道方向相反、速度不同——单向一条太"机械"，
-     反向交错才有"在流动"的感觉。每条轨道各自复制一份接在后面。 */
-  var lanes = document.querySelectorAll('[data-marquee-lanes] .pcust-lane');
-  if (lanes.length && !reduce) {
-    for (var q = 0; q < lanes.length; q++) {
-      var lane = lanes[q], track = lane.firstElementChild;
-      if (!track || lane.children.length !== 1) continue;
+  /* ---------- 3. 客户 logo 漂浮云 ----------
+     不是几条传送带，是一片有纵深的云：远层小而淡、走得慢，
+     近层大而清晰、走得快，相邻层方向相反。速度差就是景深。 */
+  var layers = document.querySelectorAll('[data-cloud] .pcloud-l');
+  if (layers.length && !reduce) {
+    for (var q = 0; q < layers.length; q++) {
+      var L = layers[q], track = L.firstElementChild;
+      if (!track || L.children.length !== 1) continue;
       var copy = track.cloneNode(true);
       copy.setAttribute('aria-hidden', 'true');
       var ls = copy.querySelectorAll('a');
       for (var r = 0; r < ls.length; r++) ls[r].setAttribute('tabindex', '-1');
-      lane.appendChild(copy);
-      lane.classList.add('is-running');
+      L.appendChild(copy);
+      L.classList.add('is-running');
     }
   }
 
