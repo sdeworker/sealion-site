@@ -80,7 +80,8 @@ def exists_for(href, lang, avail):
     if not href.startswith("/") or href.startswith("/#"):
         return True
     rel = href[1:]
-    if rel.endswith("/"):
+    if rel == "" or rel.endswith("/"):
+        # href="/" 时 rel 是空串，endswith("/") 不成立——首页会被判定为不存在
         rel += "index.html"
     rel = rel.split("#")[0]
     return rel in avail.get(lang, set())
@@ -341,7 +342,13 @@ def render_header(lang, rel, alts, avail):
         paths = [n["href"]] + [c["href"] for c in n.get("children", [])]
         for h in paths:
             base = h.split("#")[0]
-            if base and base != "/" and here.startswith(base.rstrip("/") or "/"):
+            if base == "/":
+                # 首页只在真正是首页时高亮——前缀匹配会命中所有页。
+                # 这里的 here 是语种内的相对路径，首页就是 /index.html
+                if here.rstrip("/") in ("", "/index.html"):
+                    return ' aria-current="page"'
+                continue
+            if base and here.startswith(base.rstrip("/") or "/"):
                 return ' aria-current="page"'
         return ""
 

@@ -58,6 +58,14 @@
   },
   "nav": [
     {
+      "label": {
+        "zh": "首页",
+        "en": "Home",
+        "ru": "Главная"
+      },
+      "href": "/"
+    },
+    {
       "href": "/about.html",
       "label": {
         "zh": "关于海狮",
