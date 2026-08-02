@@ -434,17 +434,19 @@ html.js [data-reveal]{opacity:0;transform:translateY(18px);
   transition:opacity .5s ease-out,transform .5s ease-out}
 html.js [data-reveal].is-in{opacity:1;transform:none}
 
-/* 客户 logo 横向滚动：轨道复制一份接在后面，位移到 -50% 时
-   画面与起点完全相同，于是接缝看不出来。 */
-.pcust-marquee{overflow:hidden;position:relative;
+/* 客户 logo 横向滚动：轨道复制一份接在后面。
+   容器必须是 flex——它默认是 block，两条轨道就上下摞成两行，
+   而不是首尾相接横着排。位移量是"自身宽度 + 一个间距"，
+   于是第二条正好落到第一条的起点上，接缝看不出来。 */
+.pcust-marquee{display:flex;gap:1.25rem;overflow:hidden;position:relative;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.pcust-track{display:flex;gap:1.25rem;width:max-content}
+.pcust-track{display:flex;gap:1.25rem;flex:0 0 auto}
 .pcust-marquee.is-running .pcust-track{animation:pcust-run var(--marquee-dur,40s) linear infinite}
 .pcust-marquee:hover .pcust-track,
 .pcust-marquee:focus-within .pcust-track{animation-play-state:paused}
 .pcust-marquee .pcust{flex:0 0 auto;width:clamp(15rem,20vw,17.5rem)}
-@keyframes pcust-run{to{transform:translateX(-50%)}}
+@keyframes pcust-run{to{transform:translateX(calc(-100% - 1.25rem))}}
 
 /* 卡片图轻微缩放：之前只有卡片位移，图本身是死的 */
 .pcard--img .pc-img img{transition:transform .45s cubic-bezier(.2,.6,.2,1)}
