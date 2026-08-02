@@ -441,7 +441,7 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
 .partners--light{background:linear-gradient(180deg,#F7FAFC 0%,#EEF3F7 55%,#E7EEF4 100%)}
 .partners--light .sh h1,.partners--light .sh h2{color:var(--ink)}
 .partners--light .lead{color:var(--ink-70)}
-.pcloud{position:relative;height:clamp(19rem,26vw,25rem);margin-top:var(--sp-1);
+.pcloud{position:relative;height:clamp(30rem,42vw,42rem);margin-top:var(--sp-1);
   overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -453,18 +453,18 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
 .pcloud-l--far .pcloud-i{--depth:.62;opacity:.42;filter:saturate(.55) blur(.4px)}
 .pcloud-l--mid .pcloud-i{--depth:.82;opacity:.72;filter:saturate(.8)}
 .pcloud-l--near .pcloud-i{--depth:1;opacity:1}
-.pcloud-l--far.is-running .pcloud-t{animation:cloud-f var(--dur,128s) linear infinite}
-.pcloud-l--mid.is-running .pcloud-t{animation:cloud-r var(--dur,86s) linear infinite}
-.pcloud-l--near.is-running .pcloud-t{animation:cloud-f var(--dur,62s) linear infinite}
+.pcloud-l--far.is-running .pcloud-t{animation:cloud-f var(--dur,64s) linear infinite}
+.pcloud-l--mid.is-running .pcloud-t{animation:cloud-r var(--dur,43s) linear infinite}
+.pcloud-l--near.is-running .pcloud-t{animation:cloud-f var(--dur,31s) linear infinite}
 .pcloud:hover .pcloud-t,.pcloud:focus-within .pcloud-t{animation-play-state:paused}
 @keyframes cloud-f{to{transform:translateX(-100%)}}
 @keyframes cloud-r{from{transform:translateX(-100%)}to{transform:none}}
 
 /* logo 本身：白色浮片，深度决定尺寸 */
 .pcloud .pcust{display:flex;align-items:center;justify-content:center;
-  width:calc(clamp(8.5rem,11vw,10.5rem) * var(--depth,1));
-  height:calc(4.6rem * var(--depth,1));
-  padding:calc(.7rem * var(--depth,1));background:#fff;border-radius:var(--radius-lg);
+  width:calc(clamp(17rem,22vw,21rem) * var(--depth,1));
+  height:calc(9.2rem * var(--depth,1));
+  padding:calc(1.2rem * var(--depth,1));background:#fff;border-radius:var(--radius-lg);
   box-shadow:0 calc(10px * var(--depth,1)) calc(30px * var(--depth,1)) rgba(10,26,38,.10);
   transition:transform .25s,box-shadow .25s}
 .pcloud .pcust:hover{transform:translateY(-4px);
@@ -481,7 +481,7 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
   .pcloud-i{top:0;margin-right:0;transform:none}
   .pcloud-l--far .pcloud-i,.pcloud-l--mid .pcloud-i{opacity:1;filter:none;--depth:1}
 }
-@media(max-width:760px){.pcloud{height:16rem}}
+@media(max-width:760px){.pcloud{height:24rem}}
 
 /* 卡片图轻微缩放：之前只有卡片位移，图本身是死的 */
 .pcard--img .pc-img img{transition:transform .45s cubic-bezier(.2,.6,.2,1)}
