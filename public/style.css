@@ -13,12 +13,15 @@
   --blue-dk:#00478A;
   --blue-ghost:rgba(0,97,188,0.10);
   --signal:#FFB020;       /* amber — measurement / in-spec LED (only) */
-  --signal-dk:#8F5D00;    /* 深琥珀：图表第二线与数据表数值。对白 5.62:1，同色相族，不再引入第二个暖色 */
+  --signal-dk:#8F5D00;
+  --copper:#8A5326;      /* 铜：第二强调。对暖白 6.02，可作正文级；
+                            与品牌蓝形成冷暖对，而不是又一个蓝 */
+  --copper-lt:#B0703A;    /* 深琥珀：图表第二线与数据表数值。对白 5.62:1，同色相族，不再引入第二个暖色 */
   --signal-soft:rgba(255,176,32,0.16);
-  --paper:#F3F6F8;
-  --paper-2:#FFFFFF;
-  --mist:#EEF2F6;
-  --line:#D8E0E7;
+  --paper:#FBFAF8;
+  --paper-2:#FFFDFA;
+  --mist:#F2EFEA;
+  --line:#DED8CF;
   --line-dk:#1E3B4F;
   --steel:#5E7180;
   --steel-dk:#8DA2B1;
@@ -110,29 +113,10 @@ img{height:auto}
 .on-dark .lead{color:var(--steel-dk)}
 
 /* header */
-/* 首页：头部压在 Hero 大图上，图从屏幕最顶端开始；滚过 60px 变实底 */
-body.home .site-header{background:transparent;backdrop-filter:none;border-bottom-color:transparent}
-body.home .site-header .topbar{background:rgba(10,26,38,.34)}
-body.home .site-header .nav > a,
-body.home .site-header .nav-drop > a,
-body.home .site-header .nav-drop > button{color:rgba(255,255,255,.92)}
-/* 子菜单是白底浮层，链接必须保持深色，否则白字白底看不见 */
-body.home .site-header .nav-drop-menu a{color:var(--ink-70)}
-body.home .site-header .nav-drop-menu a[aria-current]{color:var(--blue)}
-body.home .site-header .nav > a:hover,
-body.home .site-header .nav-drop > a:hover{color:#fff;background:rgba(255,255,255,.14)}
-body.home .site-header .nav-drop-menu a:hover{color:var(--blue);background:var(--mist)}
-body.home .site-header .slogan{color:rgba(255,255,255,.80);border-left-color:rgba(255,255,255,.28)}
-body.home .site-header .burger span{background:#fff}
-body.home .hero{margin-top:calc(-1 * var(--header-h,136px))}
-body.home .hero-grid{padding-top:calc(var(--header-h,136px) + 1rem)}
-body.home .site-header.is-solid{background:color-mix(in srgb,var(--paper) 94%,transparent);
-  backdrop-filter:blur(10px);border-bottom-color:var(--line)}
-body.home .site-header.is-solid .topbar{background:var(--blue)}
-body.home .site-header.is-solid .nav a{color:var(--ink-70)}
-body.home .site-header.is-solid .nav a[aria-current]{color:var(--blue)}
-body.home .site-header.is-solid .slogan{color:var(--steel);border-left-color:var(--line)}
-body.home .site-header.is-solid .burger span{background:var(--ink)}
+/* 首页头部与内页一致：实底。
+   Hero 改成图文分离之后，照片不再垫在头部下面，透明头部会变成白字压白底；
+   而且参考站（INOEX）本来就是白色实底条 —— logo 与画面分开，
+   商标边缘的残缺也就不必再去跟照片较劲。 */
 .site-header{position:sticky;top:0;z-index:50;transition:background .25s,border-color .25s;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;gap:1.25rem;min-height:96px}
 .site-header .bar{max-width:1760px}
@@ -147,7 +131,6 @@ body.home .site-header.is-solid .burger span{background:var(--ink)}
 .nav-lang{margin-left:1.1rem;padding-left:1.1rem;position:relative}
 .nav-lang::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
   width:1px;height:1.15em;background:var(--line)}
-body.home .site-header:not(.is-solid) .nav-lang::before{background:rgba(255,255,255,.34)}
 /* 语言在导航最右端，子菜单必须右对齐，否则会顶出视口 */
 .nav-lang .nav-drop-menu{left:auto;right:0;min-width:9.5rem}
 .nav-lang-btn{display:inline-flex;align-items:center;white-space:nowrap;gap:.45em;background:none;border:0;
@@ -159,8 +142,6 @@ body.home .site-header:not(.is-solid) .nav-lang::before{background:rgba(255,255,
 .nav-lang:hover .nav-lang-btn::after,.nav-lang:focus-within .nav-lang-btn::after{
   transform:rotate(225deg) translateY(-.12em)}
 .nav-drop-menu a[aria-current]{color:var(--blue);font-weight:600}
-body.home .site-header:not(.is-solid) .nav-lang-btn{color:rgba(255,255,255,.92)}
-body.home .site-header:not(.is-solid) .nav-lang-btn:hover{color:#fff}
 @media(max-width:760px){.topbar .welcome{display:none}.topbar-in{justify-content:flex-end}}
 /* logo 右侧的一句话，直接说清是做什么的 */
 .slogan{font-size:1.0625rem;color:var(--steel);border-left:1px solid var(--line);
@@ -543,6 +524,34 @@ section.calc-sec{background:var(--ink);color:#fff;border-block-color:rgba(255,25
 .endcta-note{margin-top:1rem;color:var(--steel)}
 .endcta-note a{color:var(--blue);border-bottom:1px solid transparent}
 .endcta-note a:hover{border-bottom-color:var(--blue)}
+
+/* Hero：图文分离。左边整块实景，右边纯色块承载文字，界限分明——
+   文字压在照片上永远要跟画面抢，而且我们的商标边缘有残缺，
+   这种做法正好不必让它融进画面。 */
+body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0}
+body.home .hero-grid{display:grid;grid-template-columns:1fr;padding:0;width:100%;
+  min-height:calc(100svh - var(--header-h,136px))}
+body.home .hero-split{display:grid;grid-template-columns:1.25fr .75fr;width:100%;
+  min-height:calc(100svh - var(--header-h,136px))}
+body.home .hero-figure{position:relative;overflow:hidden;background:var(--ink)}
+body.home .hero-figure .hero-video,
+body.home .hero-figure video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body.home .hero-panel{background:var(--ink);color:#fff;display:flex;flex-direction:column;
+  justify-content:center;padding:clamp(2.5rem,4vw,4.5rem) clamp(2rem,3.5vw,3.75rem)}
+body.home .hero-panel .eyebrow{color:var(--signal)}
+body.home .hero-panel h1{color:#fff;margin-block:.6rem 1rem}
+body.home .hero-panel .lead{color:rgba(255,255,255,.84);max-width:34ch}
+body.home .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:var(--sp-1)}
+@media(max-width:1000px){
+  body.home .hero-split{grid-template-columns:1fr;min-height:0}
+  body.home .hero-figure{min-height:58svh}
+  body.home .hero-panel{padding:var(--sp-2) var(--gutter)}
+}
+/* 图文分离之后，播放键回到画面里，不再压着文字 */
+body.home .hero-figure .hero-play{position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);z-index:3}
+body.home .hero-figure .hero-play:hover{transform:translate(-50%,-50%)}
+body.home .hero-figure .hero-play:hover::before{transform:scale(1.07)}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
