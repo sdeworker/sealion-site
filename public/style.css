@@ -777,6 +777,41 @@ html.js .tl-i.is-in{opacity:1;transform:none}
   position:absolute;right:1rem;top:1rem;z-index:6;padding:.35em .8em;border-radius:999px;
   background:rgba(10,26,38,.82);color:#fff;font-size:1rem;pointer-events:none}
 
+/* 首页行业卡：图为主，名称压在图上，一句话都不要——
+   行业名本身就是那句话。参考站首页也是这么排的。 */
+.icard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.icard{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;
+  border-radius:var(--radius-lg);background:var(--ink);
+  box-shadow:0 10px 28px rgba(10,26,38,.10);transition:transform .25s,box-shadow .25s}
+.icard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,26,38,.20)}
+.ic-img{position:absolute;inset:0}
+.ic-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.6,.2,1)}
+.icard:hover .ic-img img{transform:scale(1.06)}
+.icard::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(10,26,38,.82))}
+.ic-name{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1.1rem;
+  color:#fff;font-size:var(--step-1);font-weight:600;line-height:1.3}
+.ind-more{margin-top:var(--sp-1);text-align:center}
+@media(max-width:1100px){.icard-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.icard-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* 首页产品区：这里是入口不是说明书，四列紧凑卡，一句话带过。
+   完整说明在各自的产品页里。 */
+section .pcard-grid--home{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.pcard-grid--home .pcard{display:flex;flex-direction:column}
+.pcard-grid--home .pcard--img .pc-img{aspect-ratio:4/3}
+.pcard-grid--home .pc-img img{width:100%;height:100%;object-fit:cover}
+.pcard-grid--home .pc-body{padding:1rem 1.1rem 1.2rem}
+.pcard-grid--home .pc-top{display:none}
+.pcard-grid--home h3{font-size:var(--step-1);margin-bottom:.4rem}
+.pcard-grid--home .pc-sum{font-size:1rem;line-height:1.5;color:var(--ink-70);margin-bottom:.6rem}
+.pcard-grid--home .arrow-link{font-size:1rem}
+@media(max-width:1100px){section .pcard-grid--home{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){section .pcard-grid--home{grid-template-columns:repeat(2,1fr)}}
+
+/* 明暗交替：行业节紧跟深色的事业部节，改浅底 */
+.industries-home{background:var(--paper)}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}
