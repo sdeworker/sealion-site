@@ -438,7 +438,13 @@ html.js [data-reveal].is-in{opacity:1;transform:none}
 .pcloud-l--far.is-running .pcloud-t{animation:cloud-f var(--dur,32s) linear infinite}
 .pcloud-l--mid.is-running .pcloud-t{animation:cloud-r var(--dur,22s) linear infinite}
 .pcloud-l--near.is-running .pcloud-t{animation:cloud-f var(--dur,16s) linear infinite}
-.pcloud:hover .pcloud-t,.pcloud:focus-within .pcloud-t{animation-play-state:paused}
+.pcloud:focus-within .pcloud-t,
+.pcloud.is-paused .pcloud-t{animation-play-state:paused}
+/* 暂停时给个提示，不然看不出是停住了还是卡了 */
+.pcloud{cursor:pointer}
+.pcloud.is-paused::after{content:"已暂停 · 点击继续";position:absolute;right:1rem;top:1rem;
+  z-index:6;padding:.35em .8em;border-radius:999px;background:rgba(10,26,38,.82);
+  color:#fff;font-size:1rem;pointer-events:none}
 @keyframes cloud-f{to{transform:translateX(-100%)}}
 @keyframes cloud-r{from{transform:translateX(-100%)}to{transform:none}}
 
@@ -563,7 +569,7 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
     /* 沥青 */
     linear-gradient(180deg,#3C4A55,#2A353E 55%,#222C34);
   box-shadow:inset 0 2px 6px rgba(0,0,0,.25),0 10px 26px rgba(10,26,38,.18)}
-.tl-i{position:relative;width:clamp(11rem,14vw,14rem);flex:0 0 auto;text-align:center}
+.tl-i{position:relative;width:clamp(17rem,26vw,26rem);flex:0 0 auto;text-align:center}
 .tl-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid var(--blue);
   z-index:2;transition:transform .2s,background .2s}
@@ -761,10 +767,15 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 
 /* 每条事件前的圆点——参考站红框标出的就是这个，
    没有它，多条事件挤在一起分不出是几条。 */
-.tl-e li{position:relative;padding-left:1.1rem;text-align:left}
+.tl-e li{position:relative;padding-left:1.1rem;text-align:left;white-space:nowrap}
 .tl-b{position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;
   background:var(--blue)}
 .tl-i--top .tl-e,.tl-i--bot .tl-e{padding-inline:.4rem}
+
+.tl{cursor:pointer}
+.tl-stage.is-paused::after,.tl.is-paused::after{content:"已暂停 · 点击继续";
+  position:absolute;right:1rem;top:1rem;z-index:6;padding:.35em .8em;border-radius:999px;
+  background:rgba(10,26,38,.82);color:#fff;font-size:1rem;pointer-events:none}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}

@@ -59,6 +59,14 @@
   /* ---------- 3. 客户 logo 漂浮云 ----------
      不是几条传送带，是一片有纵深的云：远层小而淡、走得慢，
      近层大而清晰、走得快，相邻层方向相反。速度差就是景深。 */
+  var cloud = document.querySelector('[data-cloud]');
+  if (cloud && !reduce) {
+    // 点一下暂停全部三层，再点继续；鼠标路过不影响
+    cloud.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;      // 点在 logo 上是要去客户官网
+      cloud.classList.toggle('is-paused');
+    });
+  }
   var layers = document.querySelectorAll('[data-cloud] .pcloud-l');
   if (layers.length && !reduce) {
     for (var q = 0; q < layers.length; q++) {
@@ -134,12 +142,13 @@
         }
         requestAnimationFrame(step);
       };
-      var hold = function () { paused = true; };
-      var go = function () { paused = false; };
-      tl.addEventListener('mouseenter', hold);
-      tl.addEventListener('mouseleave', go);
-      tl.addEventListener('focusin', hold);
-      tl.addEventListener('touchstart', hold, { passive: true });
+      // 悬停不停——鼠标只是路过；点一下才暂停，再点继续。
+      // 键盘聚焦仍然要停，否则用 Tab 走到某个链接时它会跑掉。
+      tl.addEventListener('click', function () {
+        paused = !paused;
+        tl.classList.toggle('is-paused', paused);
+      });
+      tl.addEventListener('focusin', function () { paused = true; tl.classList.add('is-paused'); });
       requestAnimationFrame(step);
     }
 
