@@ -111,19 +111,26 @@
         clearTimeout(tl._t); tl._t = setTimeout(sync, 90);
       }, { passive: true });
     }
-    // 自动滚动：默认一直向前走，到头折返；鼠标进来、聚焦或点年份就停
+    // 自动滚动：一直向前，到头无缝接回 2008，形成闭环。
+    // 做法和客户轮播一样——把整条轨道复制一份接在后面，
+    // 滚过第一条的宽度就把 scrollLeft 减掉那个宽度，画面完全相同，看不出接缝。
     if (!reduce) {
-      var dir = 1, paused = false, last = null;
+      var track = tl.querySelector('.tl-track');
+      var loopW = 0;
+      if (track && tl.querySelectorAll('.tl-track').length === 1) {
+        var dup = track.cloneNode(true);
+        dup.setAttribute('aria-hidden', 'true');
+        dup.querySelectorAll('a,button').forEach(function (e) { e.setAttribute('tabindex', '-1'); });
+        track.parentNode.appendChild(dup);
+      }
+      var paused = false, last = null;
       var step = function (ts) {
         if (last === null) last = ts;
         var dt = Math.min(64, ts - last); last = ts;
         if (!paused) {
-          var max = tl.scrollWidth - tl.clientWidth;
-          if (max > 4) {
-            tl.scrollLeft += dir * (55 * dt / 1000);   // 约 55px/秒
-            if (tl.scrollLeft >= max - 1) dir = -1;
-            else if (tl.scrollLeft <= 1) dir = 1;
-          }
+          if (!loopW) loopW = track ? track.scrollWidth : 0;
+          tl.scrollLeft += 55 * dt / 1000;            // 约 55px/秒
+          if (loopW && tl.scrollLeft >= loopW) tl.scrollLeft -= loopW;
         }
         requestAnimationFrame(step);
       };
@@ -133,8 +140,6 @@
       tl.addEventListener('mouseleave', go);
       tl.addEventListener('focusin', hold);
       tl.addEventListener('touchstart', hold, { passive: true });
-      if (nav) nav.addEventListener('mouseenter', hold);
-      if (nav) nav.addEventListener('mouseleave', go);
       requestAnimationFrame(step);
     }
 

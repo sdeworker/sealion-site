@@ -545,7 +545,7 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
    竖排列表把十七年拉成很长一段；横轴同样的信息量占的纵向空间小得多，
    而且读起来是一条线不是一串段落。 */
 .timeline-sec{background:var(--mist)}
-.tl{margin-top:var(--sp-2);overflow-x:auto;overflow-y:hidden;padding-bottom:1rem;
+.tl{margin-top:var(--sp-2);display:flex;overflow-x:auto;overflow-y:hidden;padding-bottom:1rem;
   scrollbar-width:thin}
 .tl-track{position:relative;display:flex;align-items:center;gap:0;
   width:max-content;padding-block:clamp(11rem,16vw,14rem)}
@@ -713,9 +713,14 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 .tl-i:hover .tl-dot{background:var(--signal);width:3px;opacity:1}
 /* 轴上再点一个小实心，标出位置 */
 .tl-i--top::after,.tl-i--bot::after{content:"";position:absolute;left:50%;
-  transform:translateX(-50%);width:11px;height:11px;border-radius:50%;
-  background:var(--signal);border:2px solid #fff;z-index:3;
-  box-shadow:0 2px 6px rgba(0,0,0,.3)}
+  transform:translateX(-50%);width:16px;height:16px;border-radius:50%;
+  background:#fff;border:3px solid var(--ink);z-index:3;
+  box-shadow:0 0 0 3px rgba(255,255,255,.9),0 2px 8px rgba(0,0,0,.35)}
+/* 环心那一点 */
+.tl-i--top .tl-dot::after,.tl-i--bot .tl-dot::after{content:"";position:absolute;
+  left:50%;width:6px;height:6px;border-radius:50%;background:var(--ink);z-index:4}
+.tl-i--top .tl-dot::after{bottom:-13px;transform:translateX(-50%)}
+.tl-i--bot .tl-dot::after{top:-13px;transform:translateX(-50%)}
 .tl-i--top::after{top:calc(50% - 37px);margin-top:-6px}
 .tl-i--bot::after{top:calc(50% + 37px);margin-top:-6px}
 .tl-i:hover::after{background:#fff;transform:translateX(-50%) scale(1.25)}
@@ -751,6 +756,13 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 .tl-plane::before{content:"";position:absolute;right:62%;top:54%;
   width:clamp(5rem,9vw,9rem);height:3px;transform:translateY(-50%);
   background:linear-gradient(270deg,rgba(0,97,188,.55),transparent);border-radius:2px}
+
+/* 每条事件前的圆点——参考站红框标出的就是这个，
+   没有它，多条事件挤在一起分不出是几条。 */
+.tl-e li{position:relative;padding-left:1.1rem;text-align:left}
+.tl-b{position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;
+  background:var(--blue)}
+.tl-i--top .tl-e,.tl-i--bot .tl-e{padding-inline:.4rem}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
