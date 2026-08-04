@@ -434,29 +434,56 @@ def render_header(lang, rel, alts, avail):
 
 
 def render_footer(lang, avail):
+    """页脚：上层一句话 + 联系按钮，下层按主导航分栏。
+
+    分栏直接从 SITE["nav"] 生成——导航改了页脚自动跟上，
+    不必维护第二份链接表（此前 footerCols 就是第二份，一直在漂）。
+    """
     root = SITE["langRoot"][lang]
+    L = {
+        "zh": ("了解更多产品信息", "咨询其他", "联系我们", "服务热线", "地址"),
+        "en": ("More about our systems", "Ask us anything", "Contact us", "Hotline", "Address"),
+        "ru": ("Подробнее о системах", "Задать вопрос", "Свяжитесь с нами", "Горячая линия", "Адрес"),
+    }[lang]
+
     cols = []
-    for c in SITE["footerCols"]:
+    # 页脚只列三栏主栏目 + 一栏联系；七栏全列会挤成一片小字，
+    # 参考站也是四栏。每栏最多六项，超出的留给导航。
+    for n in [x for x in SITE["nav"] if x.get("children")][:3]:
+        kids = [c for c in n.get("children", []) if exists_for(c["href"], lang, avail)][:6]
+        if not kids:
+            continue
         links = "\n".join(
-            f'        <a href="{localize(l["href"], lang)}">{H.escape(t(l["label"], lang))}</a>'
-            for l in c["links"] if exists_for(l["href"], lang, avail))
-        cols.append(f'      <div class="fcol">\n        <h4>{H.escape(t(c["title"], lang))}</h4>\n{links}\n      </div>')
-    contact = (f'      <div class="fcol">\n'
-               f'        <h4>{H.escape(t(SITE["ui"]["contact"], lang))}</h4>\n'
-               f'        <a href="{SITE["hotlineHref"]}">{SITE["hotline"]}</a>\n'
-               f'      </div>')
+            f'          <a href="{localize(c["href"], lang)}">{H.escape(t(c["label"], lang))}</a>'
+            for c in kids)
+        cols.append(
+            f'        <div class="fcol">\n'
+            f'          <h4><a href="{localize(n["href"], lang)}">{H.escape(t(n["label"], lang))}</a></h4>\n'
+            f'{links}\n        </div>')
+
+    contact_href = localize("/contact.html", lang) if exists_for("/contact.html", lang, avail) else SITE["hotlineHref"]
+    addr = t(SITE.get("address", {"zh": "", "en": "", "ru": ""}), lang)
     return f'''<footer class="site-footer">
-  <div class="wrap foot-grid">
-    <div class="foot-brand">
-      <strong>{H.escape(t(SITE["brand"], lang))}</strong>
-      <span>{H.escape(t(SITE["legalName"], lang))}</span>
-      <p class="fb-tag">{H.escape(t(SITE["tagline"], lang))}</p>
+  <div class="foot-cta">
+    <div class="wrap foot-cta-in">
+      <p>{H.escape(L[0])}<br>{H.escape(L[1])}</p>
+      <a class="btn btn--primary" href="{contact_href}">{H.escape(L[2])}</a>
     </div>
-{chr(10).join(cols)}
-{contact}
   </div>
-  <div class="wrap foot-btm">
-    <span>© <span id="yr"></span> {H.escape(t(SITE["legalName"], lang))}</span>
+  <div class="wrap foot-cols">
+{chr(10).join(cols)}
+        <div class="fcol fcol--contact">
+          <h4>{H.escape(L[2])}</h4>
+          <a href="{SITE["hotlineHref"]}">{SITE["hotline"]}</a>
+          <a href="mailto:{SITE.get("email", "2428582102@qq.com")}">{SITE.get("email", "2428582102@qq.com")}</a>
+          {'<span class="fc-addr">' + H.escape(addr) + '</span>' if addr else ''}
+        </div>
+  </div>
+  <div class="foot-btm">
+    <div class="wrap foot-btm-in">
+      <span>© <span id="yr"></span> {H.escape(t(SITE["legalName"], lang))}</span>
+      <span class="fb-icp">{SITE.get("icp", "")}</span>
+    </div>
   </div>
 </footer>'''
 
