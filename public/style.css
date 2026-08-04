@@ -712,6 +712,29 @@ html.js .tl-i.is-in{opacity:1;transform:none}
   .nav-drop-menu a{font-size:var(--step-0)!important;white-space:normal;word-break:break-word}
 }
 
+/* 时间轴的"生命性"：一架飞机停在可视区中央，年份从它下面掠过。
+   参考站用一辆小车在公路上跑，同一个道理——让轴不只是一条线，
+   而是有人在上面走过这些年。 */
+.tl-stage{position:relative}
+.tl-plane{position:absolute;left:50%;top:50%;transform:translate(-50%,-58%);
+  z-index:4;color:var(--blue);pointer-events:none;
+  filter:drop-shadow(0 6px 14px rgba(10,26,38,.22))}
+.tl-plane svg{display:block;width:clamp(4.5rem,6vw,6.5rem);height:auto}
+@media(prefers-reduced-motion:no-preference){
+  .tl-plane{animation:tl-bob 3.2s ease-in-out infinite}
+}
+@keyframes tl-bob{
+  0%,100%{transform:translate(-50%,-58%) rotate(0deg)}
+  50%{transform:translate(-50%,-64%) rotate(-2.5deg)}
+}
+/* 航迹：轴上叠一条虚线，像航线 */
+.tl-track::after{content:"";position:absolute;left:0;right:0;top:50%;height:0;
+  border-top:2px dashed rgba(0,97,188,.30);transform:translateY(-1px)}
+/* 飞机尾迹：从机身向左拖出一段渐隐的光 */
+.tl-plane::before{content:"";position:absolute;right:60%;top:52%;
+  width:clamp(5rem,9vw,9rem);height:3px;transform:translateY(-50%);
+  background:linear-gradient(270deg,rgba(0,97,188,.55),transparent);border-radius:2px}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}
