@@ -500,7 +500,7 @@ def render_page(lang, rel, meta, body, alts, avail):
     bodycls = "home" if meta.get("type") == "home" else ""
     crumb = "" if 'class="crumb"' in body else crumb_for(rel, lang, meta)
     updown = news_updown(rel, lang) if "news/" in ("/" + rel) and rel.count("news/") else ""
-    updown = updown or ("" if 'class="pcard-grid"' in body else section_children(rel, lang))
+    updown = updown or ""   # 页尾「本栏目」撤掉——它把导航里的东西又列一遍，反而分散重点
     tail = [print_stamp,
             f'<script src="{ver("/assets/motion.js")}" defer></script>',
             f'<script src="{ver("/assets/print.js")}" defer></script>',

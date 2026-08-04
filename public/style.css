@@ -390,9 +390,9 @@ body.home .hero-play svg{display:none}
 .stat{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1rem .5rem;
   border-radius:var(--radius-lg);color:var(--ink);text-align:center;transition:background .2s}
 .stat:hover{background:var(--mist)}
-.stat-l{order:1;font-size:clamp(1.0625rem,0.95rem + 0.5vw,1.375rem);color:var(--steel);
-  letter-spacing:.02em}
-.stat-n{order:2;font-family:var(--mono);font-weight:600;line-height:1;color:var(--blue);
+.stat-l{order:2;font-size:clamp(1.5rem,1.25rem + 1vw,2.125rem);color:var(--ink);
+  letter-spacing:.02em;font-weight:600}
+.stat-n{order:3;font-family:var(--mono);font-weight:600;line-height:1;color:var(--blue);
   font-size:clamp(2.75rem,1.6rem + 3.4vw,5rem);font-variant-numeric:tabular-nums}
 .stat-u{font-size:.34em;margin-left:.12em;color:var(--steel-dk);font-weight:500}
 @media(max-width:860px){.stats-row{grid-template-columns:repeat(2,1fr);row-gap:2rem}}
@@ -796,7 +796,9 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 @media(max-width:760px){.icard-grid{grid-template-columns:repeat(2,1fr)}}
 
 /* 首页产品区：这里是入口不是说明书，四列紧凑卡，一句话带过。
-   完整说明在各自的产品页里。 */
+   完整说明在各自的产品页里。
+   图片改为完整放入（contain）而不是裁切（cover）——产品渲染图是竖长比例，
+   按 4:3 裁会把机器上下切掉；名称与说明移到图下方，不再压在图上。 */
 section .pcard-grid--home{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
 .pcard-grid--home .pcard{display:flex;flex-direction:column}
 .pcard-grid--home .pcard--img .pc-img{aspect-ratio:4/3}
@@ -811,6 +813,29 @@ section .pcard-grid--home{display:grid;grid-template-columns:repeat(4,1fr);gap:1
 
 /* 明暗交替：行业节紧跟深色的事业部节，改浅底 */
 .industries-home{background:var(--paper)}
+
+/* 数字条：标签在上、图标在标签左边、数字在下。参考站就是这个次序。 */
+.stat{flex-direction:column}
+.stat-ico{order:1;display:inline-flex;align-items:center;justify-content:center;
+  color:var(--blue);margin-bottom:.15rem}
+.stat-ico svg{width:clamp(2rem,2.4vw,2.4rem);height:auto}
+.stat-l{display:inline-flex;align-items:center;gap:.5rem}
+@media(max-width:760px){.stat-l{font-size:1.25rem}}
+
+/* 首页产品卡：图完整显示，文字在下 */
+section .pcard-grid--home .pcard--img{background:var(--paper-2);display:flex;flex-direction:column}
+section .pcard-grid--home .pcard--img .pc-img{position:relative;aspect-ratio:4/3;
+  background:linear-gradient(180deg,#FFFFFF,#F1EEE9)}
+section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:6% 8%}
+section .pcard-grid--home .pcard--img .pc-body{position:static;background:none;
+  color:var(--ink);padding:.9rem 1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+section .pcard-grid--home .pcard--img .pc-body h3{color:var(--ink);text-shadow:none;
+  font-size:var(--step-1);margin-bottom:.35rem}
+section .pcard-grid--home .pcard--img .pc-sum{max-height:none;opacity:1;transform:none;
+  color:var(--ink-70);font-size:1rem;line-height:1.5;margin-bottom:.5rem}
+section .pcard-grid--home .pcard--img .arrow-link{max-height:none;opacity:1;transform:none;
+  color:var(--blue);margin-top:auto;font-size:1rem}
+section .pcard-grid--home .pcard--img:hover .pc-img img{transform:scale(1.04)}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
