@@ -799,17 +799,17 @@ html.js .tl-i.is-in{opacity:1;transform:none}
    完整说明在各自的产品页里。
    图片改为完整放入（contain）而不是裁切（cover）——产品渲染图是竖长比例，
    按 4:3 裁会把机器上下切掉；名称与说明移到图下方，不再压在图上。 */
-section .pcard-grid--home{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.pcard-grid--home .pcard{display:flex;flex-direction:column}
-.pcard-grid--home .pcard--img .pc-img{aspect-ratio:4/3}
-.pcard-grid--home .pc-img img{width:100%;height:100%;object-fit:cover}
-.pcard-grid--home .pc-body{padding:1rem 1.1rem 1.2rem}
-.pcard-grid--home .pc-top{display:none}
-.pcard-grid--home h3{font-size:var(--step-1);margin-bottom:.4rem}
-.pcard-grid--home .pc-sum{font-size:1rem;line-height:1.5;color:var(--ink-70);margin-bottom:.6rem}
-.pcard-grid--home .arrow-link{font-size:1rem}
-@media(max-width:1100px){section .pcard-grid--home{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:760px){section .pcard-grid--home{grid-template-columns:repeat(2,1fr)}}
+section .pcard-grid--home{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,1.6vw,1.5rem)}
+
+
+
+
+
+
+
+
+@media(max-width:1100px){section .pcard-grid--home{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){section .pcard-grid--home{grid-template-columns:1fr}}
 
 /* 明暗交替：行业节紧跟深色的事业部节，改浅底 */
 .industries-home{background:var(--paper)}
@@ -822,20 +822,12 @@ section .pcard-grid--home{display:grid;grid-template-columns:repeat(4,1fr);gap:1
 .stat-l{display:inline-flex;align-items:center;gap:.5rem}
 @media(max-width:760px){.stat-l{font-size:1.25rem}}
 
-/* 首页产品卡：图完整显示，文字在下 */
-section .pcard-grid--home .pcard--img{background:var(--paper-2);display:flex;flex-direction:column}
-section .pcard-grid--home .pcard--img .pc-img{position:relative;aspect-ratio:4/3;
-  background:linear-gradient(180deg,#FFFFFF,#F1EEE9)}
-section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:6% 8%}
-section .pcard-grid--home .pcard--img .pc-body{position:static;background:none;
-  color:var(--ink);padding:.9rem 1rem 1.1rem;flex:1;display:flex;flex-direction:column}
-section .pcard-grid--home .pcard--img .pc-body h3{color:var(--ink);text-shadow:none;
-  font-size:var(--step-1);margin-bottom:.35rem}
-section .pcard-grid--home .pcard--img .pc-sum{max-height:none;opacity:1;transform:none;
-  color:var(--ink-70);font-size:1rem;line-height:1.5;margin-bottom:.5rem}
-section .pcard-grid--home .pcard--img .arrow-link{max-height:none;opacity:1;transform:none;
-  color:var(--blue);margin-top:auto;font-size:1rem}
-section .pcard-grid--home .pcard--img:hover .pc-img img{transform:scale(1.04)}
+/* 首页产品卡：保持原样式——图铺满卡、名称与说明压在图下方的渐变上。
+   只解决"产品被裁掉"这一件事：渲染图近正方形，卡片按 4:3 裁会切掉机器上下，
+   改成完整放入（contain），并在底部留出文字带的高度，机器不会被文字压住。 */
+section .pcard-grid--home .pcard--img .pc-img{aspect-ratio:1/1;
+  background:linear-gradient(180deg,#FFFFFF,#F3F0EB)}
+section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 4% 20%}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
