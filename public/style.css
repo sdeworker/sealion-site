@@ -88,7 +88,7 @@ img{height:auto}
 /* 图像类区块用宽容器：文字仍走 1160px 保证可读，图片走更宽以求气势 */
 .wrap--wide{max-width:min(95vw,1900px)}
 .section{padding-block:var(--sp)}
-.eyebrow{font-family:var(--body);font-size:var(--step-1);font-weight:600;letter-spacing:0.08em;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:0.6em}
+.eyebrow{font-family:var(--body);font-size:var(--step-5);font-weight:600;letter-spacing:0.08em;color:var(--blue);font-weight:500;display:inline-flex;align-items:center;gap:0.6em}
 .eyebrow::before{content:"";width:1.4rem;height:1px;background:var(--blue)}
 .lead{font-size:var(--step-1);line-height:1.4;color:var(--ink-70);max-width:60ch}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
@@ -548,7 +548,7 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
 .tl{margin-top:var(--sp-2);overflow-x:auto;overflow-y:hidden;padding-bottom:1rem;
   scrollbar-width:thin}
 .tl-track{position:relative;display:flex;align-items:center;gap:0;
-  width:max-content;padding-block:clamp(9rem,14vw,12rem)}
+  width:max-content;padding-block:clamp(11rem,16vw,14rem)}
 .tl-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;
   background:linear-gradient(90deg,var(--line),var(--blue) 12%,var(--blue) 88%,var(--line))}
 .tl-i{position:relative;width:clamp(11rem,14vw,14rem);flex:0 0 auto;text-align:center}
@@ -564,10 +564,10 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
   transform:translateX(-50%);width:100%}
 .tl-e li{font-size:1rem;line-height:1.45;color:var(--ink-70);margin-bottom:.4rem}
 /* 上下交错：奇数在轴上方，偶数在轴下方 */
-.tl-i--top .tl-y{top:calc(50% - 3.1rem)}
-.tl-i--top .tl-e{bottom:calc(50% + 4.4rem)}
-.tl-i--bot .tl-y{top:calc(50% + 1.6rem)}
-.tl-i--bot .tl-e{top:calc(50% + 4.4rem)}
+.tl-i--top .tl-y{top:calc(50% - 5.4rem)}
+.tl-i--top .tl-e{bottom:calc(50% + 6.7rem)}
+.tl-i--bot .tl-y{top:calc(50% + 3.9rem)}
+.tl-i--bot .tl-e{top:calc(50% + 6.7rem)}
 @media(max-width:760px){
   .tl-track{padding-block:clamp(7rem,26vw,9rem)}
   .tl-i{width:12rem}
@@ -656,22 +656,61 @@ html.js .tl-i.is-in{opacity:1;transform:none}
   padding-block:var(--sp-3);flex-wrap:wrap}
 .foot-cta p{margin:0;font-family:var(--display);font-weight:600;line-height:1.35;
   font-size:var(--step-4);color:var(--ink)}
-.foot-cols{display:grid;grid-template-columns:repeat(4,1fr);
+.foot-cols{display:grid;grid-template-columns:repeat(5,1fr);
   gap:clamp(1.5rem,3vw,3rem);padding-block:var(--sp-3) var(--sp-2)}
 .fcol{display:flex;flex-direction:column;gap:.75rem}
-.fcol h4{margin:0 0 .35rem;font-size:var(--step-1);color:var(--ink)}
+.fcol h4{margin:0 0 .6rem;font-size:var(--step-3);color:var(--ink)}
 .fcol h4 a{color:inherit}
 .fcol h4 a:hover{color:var(--blue)}
-.fcol a{color:var(--steel);font-size:1.0625rem;transition:color .15s}
+.fcol a{color:var(--steel);font-size:var(--step-1);transition:color .15s}
 .fcol a:hover{color:var(--blue)}
-.fc-addr{color:var(--steel);font-size:1rem;line-height:1.5}
+.fc-addr{color:var(--steel);font-size:var(--step-0);line-height:1.55}
 .foot-btm{border-top:1px solid var(--line);background:var(--paper)}
 .foot-btm-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;
-  padding-block:1.25rem;color:var(--steel);font-size:1rem}
+  padding-block:1.5rem;color:var(--steel);font-size:var(--step-0)}
 .site-footer{background:var(--paper);color:var(--ink)}
+@media(max-width:1100px){.foot-cols{grid-template-columns:repeat(3,1fr);row-gap:2.5rem}}
 @media(max-width:760px){
   .foot-cta p{font-size:var(--step-2)}
-  .foot-cols{grid-template-columns:repeat(2,1fr);row-gap:2rem}}
+  .foot-cols{grid-template-columns:repeat(2,1fr);row-gap:2rem}
+  .fcol h4,.fcol a{font-size:var(--step-0)}}
+@media(max-width:520px){.foot-cols{grid-template-columns:1fr;row-gap:1.75rem}}
+/* 俄语词长，页脚窄栏里必须允许断词，否则单个词就撑破视口 */
+.fcol h4,.fcol a{overflow-wrap:anywhere}
+
+/* 每节的名字（发展历程／资质荣誉／合作客户）是这一节真正的标题，
+   参考站就是把它做成居中的大字加一条短下划线。整块居中。 */
+.sh{text-align:center}
+.sh .eyebrow{display:block;color:var(--blue);letter-spacing:.02em;margin-bottom:.35rem;
+  position:relative;padding-bottom:.8rem}
+.sh .eyebrow::before{display:none}   /* 去掉左侧那道短横，居中之后它是歪的 */
+.sh .eyebrow::after{content:"";position:absolute;left:50%;transform:translateX(-50%);
+  bottom:0;width:3.5rem;height:3px;background:var(--blue);border-radius:2px}
+.sh h2{margin-top:var(--sp-1)}
+.sh .lead{margin-inline:auto}
+
+/* ── 时间轴：把"点"换成从轴伸出的一条线，比一个小圆点显眼得多 ── */
+.tl-dot{width:2px;height:4.6rem;border-radius:0;background:var(--blue);border:0;
+  left:50%;top:auto;transform:translateX(-50%);opacity:.55}
+.tl-i--top .tl-dot{bottom:50%}
+.tl-i--bot .tl-dot{top:50%}
+.tl-i:hover .tl-dot{background:var(--signal);width:3px;opacity:1}
+/* 轴上再点一个小实心，标出位置 */
+.tl-i::after{content:"";position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;
+  background:var(--blue);z-index:2}
+.tl-i:hover::after{background:var(--signal)}
+
+/* 年份按钮条与滚动条都去掉——它自己会滚，不需要这两样 */
+.tl-nav{display:none}
+.tl{scrollbar-width:none;-ms-overflow-style:none}
+.tl::-webkit-scrollbar{display:none}
+
+/* 窄屏：展开的子菜单项按容器宽度换行，英文长名不再撑破视口 */
+@media(max-width:900px){
+  .nav-drop-menu{width:100%;min-width:0}
+  .nav-drop-menu a{font-size:var(--step-0)!important;white-space:normal;word-break:break-word}
+}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
@@ -1033,7 +1072,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{
   opacity:1;visibility:visible;transform:translateY(0);
 }
-.nav-drop-menu a{padding:.5em .75em!important;font-size:1.25rem!important;border-radius:var(--radius);white-space:nowrap}
+.nav-drop-menu a{padding:.5em .75em!important;font-size:1.25rem!important;white-space:normal;border-radius:var(--radius);white-space:nowrap}
 
 /* ---------- 证书灯箱 ---------- */
 .cert-link{display:block;cursor:zoom-in;position:relative}

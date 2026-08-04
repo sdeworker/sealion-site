@@ -447,9 +447,12 @@ def render_footer(lang, avail):
     }[lang]
 
     cols = []
-    # 页脚只列三栏主栏目 + 一栏联系；七栏全列会挤成一片小字，
-    # 参考站也是四栏。每栏最多六项，超出的留给导航。
-    for n in [x for x in SITE["nav"] if x.get("children")][:3]:
+    # 页脚列四栏主栏目 + 一栏联系。每栏最多六项，超出的留给导航。
+    # 前三栏按导航顺序，第四栏固定放动态——页脚要能通到新闻，
+    # 而海狮实力与案例展示留在主导航里，避免五六栏挤成小字。
+    _kid = [x for x in SITE["nav"] if x.get("children")]
+    _news = [x for x in _kid if x["label"]["zh"] == "海狮动态"]
+    for n in _kid[:3] + _news:
         kids = [c for c in n.get("children", []) if exists_for(c["href"], lang, avail)][:6]
         if not kids:
             continue
