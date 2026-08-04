@@ -308,6 +308,9 @@ def section_children(rel, lang):
         kids = n.get("children", [])
         if not kids:
             continue
+        kids = [c for c in kids if "#" not in c["href"]]
+        if len(kids) < 2:
+            continue   # 子项多为本页锚点，页尾再列一遍是重复
         base = n["href"].split("#")[0]
         base = root.rstrip("/") + base if lang != "zh" else base
         if base.rstrip("/") != here.rstrip("/"):

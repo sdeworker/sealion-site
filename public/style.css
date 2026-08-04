@@ -580,6 +580,51 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
 .intro-sec p{margin-bottom:var(--sp-1);color:var(--ink-70)}
 .intro-sec .lead{color:var(--ink)}
 
+/* 关于页横幅：整幅实景 + 压在图上的标题。参考站就是这么开场的，
+   一整块居中文字没有气势，横幅有。 */
+.about-banner{position:relative;min-height:clamp(20rem,32vw,30rem);overflow:hidden;
+  background:var(--ink);display:flex;align-items:flex-end}
+.about-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:.55}
+.about-banner::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,26,38,.35) 0%,rgba(10,26,38,.86) 100%)}
+.about-banner-in{position:relative;z-index:2;padding-block:var(--sp-2)}
+.about-banner .eyebrow{color:var(--signal)}
+.about-banner h1{color:#fff;margin-top:.4rem}
+
+/* 简介：图文并排，不是一整块文字 */
+.ab-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.75rem,3.5vw,3.5rem);
+  align-items:start}
+.ab-copy p{color:var(--ink-70);margin-bottom:var(--sp-1)}
+.ab-copy .lead{color:var(--ink)}
+.ab-fig{margin:0;border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:0 24px 60px rgba(10,26,38,.16)}
+.ab-fig img{display:block;width:100%;height:auto}
+.ab-fig figcaption{padding:.85rem 1.1rem;background:var(--ink);color:rgba(255,255,255,.82);
+  font-size:1rem}
+.ab-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+  margin-top:var(--sp-2);padding-top:var(--sp-1);border-top:1px solid var(--line)}
+.ab-s{text-align:center}
+.ab-s b{display:block;font-family:var(--mono);font-weight:600;color:var(--blue);
+  font-size:clamp(2rem,1.4rem + 1.8vw,3rem);line-height:1.1}
+.ab-s span{color:var(--steel);font-size:1.0625rem}
+@media(max-width:900px){.ab-grid{grid-template-columns:1fr}
+  .ab-stats{grid-template-columns:repeat(2,1fr);row-gap:1.5rem}}
+
+/* 时间轴：年份可点，点了滑过去；进入视口时逐条浮现 */
+.tl-nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:var(--sp-1)}
+.tl-y-btn{font-family:var(--mono);font-size:1.0625rem;padding:.35em .8em;
+  border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--steel);
+  cursor:pointer;transition:all .2s}
+.tl-y-btn:hover{border-color:var(--blue);color:var(--blue)}
+.tl-y-btn.is-on{background:var(--blue);border-color:var(--blue);color:#fff}
+html.js .tl-i{opacity:0;transform:translateY(14px);
+  transition:opacity .45s ease-out,transform .45s ease-out}
+html.js .tl-i.is-in{opacity:1;transform:none}
+.tl-i--bot.is-in{transition-delay:.12s}
+@media(prefers-reduced-motion:reduce){
+  html.js .tl-i{opacity:1;transform:none;transition:none}}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}

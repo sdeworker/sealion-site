@@ -73,4 +73,57 @@
     }
   }
 
+
+  /* ---------- 4. 时间轴：年份可点 + 逐条浮现 ---------- */
+  var tl = document.querySelector('[data-timeline]');
+  if (tl) {
+    var items = [].slice.call(tl.querySelectorAll('.tl-i'));
+    var nav = tl.querySelector('[data-tl-nav]');
+    // 年份按钮：点了把那一年滑到视野中间
+    if (nav && items.length) {
+      nav.removeAttribute('aria-hidden');
+      items.forEach(function (it, i) {
+        var y = it.querySelector('.tl-y');
+        if (!y) return;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tl-y-btn' + (i === 0 ? ' is-on' : '');
+        btn.textContent = y.textContent;
+        btn.addEventListener('click', function () {
+          var left = it.offsetLeft - (tl.clientWidth - it.offsetWidth) / 2;
+          tl.scrollTo({ left: left, behavior: reduce ? 'auto' : 'smooth' });
+          nav.querySelectorAll('.tl-y-btn').forEach(function (b) { b.classList.remove('is-on'); });
+          btn.classList.add('is-on');
+        });
+        nav.appendChild(btn);
+      });
+      // 横向滚动时同步高亮当前年份
+      var sync = function () {
+        var mid = tl.scrollLeft + tl.clientWidth / 2, best = 0, dist = 1e9;
+        items.forEach(function (it, i) {
+          var d = Math.abs(it.offsetLeft + it.offsetWidth / 2 - mid);
+          if (d < dist) { dist = d; best = i; }
+        });
+        var bs = nav.querySelectorAll('.tl-y-btn');
+        for (var i = 0; i < bs.length; i++) bs[i].classList.toggle('is-on', i === best);
+      };
+      tl.addEventListener('scroll', function () {
+        clearTimeout(tl._t); tl._t = setTimeout(sync, 90);
+      }, { passive: true });
+    }
+    // 逐条浮现
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (it) { it.classList.add('is-in'); });
+    } else {
+      var io2 = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-in');
+          io2.unobserve(e.target);
+        });
+      }, { root: tl, threshold: 0.25 });
+      items.forEach(function (it) { io2.observe(it); });
+    }
+  }
+
 })();
