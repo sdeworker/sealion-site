@@ -111,6 +111,33 @@
         clearTimeout(tl._t); tl._t = setTimeout(sync, 90);
       }, { passive: true });
     }
+    // 自动滚动：默认一直向前走，到头折返；鼠标进来、聚焦或点年份就停
+    if (!reduce) {
+      var dir = 1, paused = false, last = null;
+      var step = function (ts) {
+        if (last === null) last = ts;
+        var dt = Math.min(64, ts - last); last = ts;
+        if (!paused) {
+          var max = tl.scrollWidth - tl.clientWidth;
+          if (max > 4) {
+            tl.scrollLeft += dir * (55 * dt / 1000);   // 约 55px/秒
+            if (tl.scrollLeft >= max - 1) dir = -1;
+            else if (tl.scrollLeft <= 1) dir = 1;
+          }
+        }
+        requestAnimationFrame(step);
+      };
+      var hold = function () { paused = true; };
+      var go = function () { paused = false; };
+      tl.addEventListener('mouseenter', hold);
+      tl.addEventListener('mouseleave', go);
+      tl.addEventListener('focusin', hold);
+      tl.addEventListener('touchstart', hold, { passive: true });
+      if (nav) nav.addEventListener('mouseenter', hold);
+      if (nav) nav.addEventListener('mouseleave', go);
+      requestAnimationFrame(step);
+    }
+
     // 逐条浮现
     if (reduce || !('IntersectionObserver' in window)) {
       items.forEach(function (it) { it.classList.add('is-in'); });

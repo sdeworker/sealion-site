@@ -625,6 +625,23 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   html.js .tl-i{opacity:1;transform:none;transition:none}}
 
+/* 各节标题统一到同一档。此前 .sh h2 是 39px，而新写的 .ab-copy h2
+   没有规则、掉到裸 h2 的 28px，同一页里两种节标题大小不一。 */
+.sh h2,.ab-copy h2,.intro-sec h2{font-size:var(--step-4)}
+.sh h3,.sh h1{font-size:var(--step-4)}
+
+/* 企业简介：照参考站的做法收干净——标题居中带一条短下划线，
+   正文一栏读完，配图在右。去掉重复的眉题与四个数字之后不再杂乱。 */
+.intro-sec .ab-copy h2{margin-bottom:var(--sp-1)}
+.ab-grid--plain{grid-template-columns:1.15fr .85fr}
+.ab-grid--plain .ab-copy h2{position:relative;padding-bottom:.55rem}
+.ab-grid--plain .ab-copy h2::after{content:"";position:absolute;left:0;bottom:0;
+  width:3.5rem;height:3px;background:var(--blue);border-radius:2px}
+.ab-copy p{max-width:46ch}
+
+/* 时间轴：默认自动向前滚，鼠标进来或点了年份就停 */
+.tl{scroll-behavior:auto}   /* 自动滚动逐帧改 scrollLeft，smooth 会和它打架 */
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}
