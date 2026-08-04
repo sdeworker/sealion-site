@@ -4,54 +4,125 @@
  "css": [
   "product"
  ],
- "type": "page"
+ "type": "page",
+ "js": [
+  "back-to-top",
+  "motion"
+ ],
+ "backToTop": true
 }
 ---
-<section class="section prod-hero"><div class="wrap">
-  <nav class="crumb"><a href="/en/">Back to home</a></nav>
-</div></section>
-<section data-reveal class="section about" id="about">
+  <section data-reveal class="section intro-sec" id="about">
+    <div class="wrap narrow">
+      <span class="eyebrow">About Sealion</span>
+      <h1>An industrial control company in extrusion</h1>
+      <p class="lead">Founded in 2008, Guangzhou Sealion Software Technology develops, builds and sells its own systems. They run on lines making plastic pipe, wire and cable, medical catheter, film and sheet, masterbatch and compounds. The chain is in house — hardware EDA, DSP firmware, ARM and host software, electrical control, PLC programming and mechanical design.</p>
+      <p>Sixty patents and copyrights, all held by Sealion. ISO9001, IP management certification and CE marking, with National High-Tech Enterprise status awarded four times.</p>
+      <p>The first gravimetric control system was built in 2009 and the first ultrasonic wall-thickness gauge in 2010; everything since has grown out of those two. Selection, commissioning, operator training and spares follow the system onto the line.</p>
+    </div>
+  </section>
+
+  <section data-reveal class="section timeline-sec" id="milestones">
     <div class="wrap">
-      <div class="sh">
-        <span class="eyebrow">About Sealion</span>
-        <h1>An industrial-control company for extrusion</h1>
-        <p class="lead">Founded in 2008, Guangzhou Sealion Software Technology Co., Ltd. is a national high-tech enterprise integrating R&D, manufacturing and sales of industrial control systems. Our work spans hardware EDA, low-level DSP, ARM and host software, electrical-control design, PLC programming and mechanical design — from core algorithms to full-line solutions.</p>
-      </div>
-      <div class="cap-grid">
-        <div class="cap"><span class="cap-idx">01</span><h3>Hardware R&D</h3><p>EDA circuit design · low-level DSP</p></div>
-        <div class="cap"><span class="cap-idx">02</span><h3>Software &amp; control</h3><p>ARM &amp; host software · PLC</p></div>
-        <div class="cap"><span class="cap-idx">03</span><h3>Electrical control</h3><p>Control-system design &amp; integration</p></div>
-        <div class="cap"><span class="cap-idx">04</span><h3>Mechanical</h3><p>Structural &amp; mechanical design</p></div>
-      </div>
-      <div class="rnd">
-        <span class="eyebrow">Three pillars of R&amp;D</span>
-        <div class="rnd-grid">
-          <div class="rnd-i"><span class="rnd-n">01</span><h3>In-house development</h3><p>Hardware EDA, low-level DSP, ARM and host software, electrical control, mechanical design — we walk the whole chain ourselves rather than integrating other people's boxes.</p></div>
-          <div class="rnd-i"><span class="rnd-n">02</span><h3>Core technology held</h3><p>60 intellectual property registrations, all held by Sealion. The scanning box's auto-tracking probe and the laser diameter device each carry a patent number you can look up.</p></div>
-          <div class="rnd-i"><span class="rnd-n">03</span><h3>Low-level algorithms</h3><p>PID closed loops, adaptive ratio control, DSP echo capture and noise-immune filtering. Whether a reading is right comes down to the algorithm, not a bought-in module.</p></div>
+      <div class="sh"><span class="eyebrow">Milestones</span>
+        <h2>It started with one gravimetric system</h2><p class="lead">Everything since 2008 has grown out of gravimetric control and thickness gauging.</p></div>
+      <div class="tl" data-timeline>
+        <div class="tl-track">
+          <div class="tl-i tl-i--top"><b class="tl-y">2008</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Company founded</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2009</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>First gravimetric control system</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2010</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>First ultrasonic wall-thickness gauge</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2012</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Moved to Guangzhou Science City</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2013</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>R&D centre established</li><li>Offices in East, Southwest and North China</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2014</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Machining workshop established</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2015</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Software enterprise certification</li><li>Technology Innovation Little Giant</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2016</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>National High-Tech Enterprise, first award</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2017</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>ISO9001 certification</li><li>IP management system certification</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2018</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Two systems named Guangdong High-Tech Products</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2019</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>National High-Tech Enterprise, second award</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2020</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Cloud monitoring system released</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2021</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Quality and storage system released</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2022</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Specialised and Innovative Enterprise</li></ul></div>
+          <div class="tl-i tl-i--top"><b class="tl-y">2023</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>Storage system named a Guangdong Premium High-Tech Product</li></ul></div>
+          <div class="tl-i tl-i--bot"><b class="tl-y">2025</b><span class="tl-dot" aria-hidden="true"></span><ul class="tl-e"><li>National High-Tech Enterprise, fourth award</li><li>Sixty patents and copyrights</li></ul></div>
         </div>
       </div>
-
-      <div class="quals">
-        <span class="qual qual--stat">18+ years in the industry</span>
-        <span class="qual qual--stat">60 IP registrations</span>
-        <span class="qual">National High-Tech Enterprise (2016)</span>
-        <span class="qual">“Little Giant” Specialised &amp; Innovative Enterprise</span>
-        <span class="qual">Sci-Tech “Little Giant” Enterprise</span>
-        <span class="qual">Gazelle Enterprise</span>
-        <span class="qual">ISO9001-2015 Quality Management System Certification</span>
-        <span class="qual">IP Management System Certification</span>
-        <span class="qual">CE Certification</span>
-        <span class="qual">High-Tech Cultivation Programme</span>
-        <span class="qual">China Gas Association · S&amp;T Committee (invited)</span>
+    </div>
+  </section>
+<section data-reveal class="section certs" id="certs">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">The certificates</span>
+        <h1>Not a number — the documents</h1>
+        <p class="lead">60 intellectual property registrations, plus CE, system certification, and honors. These 16 are the originals — patents and copyrights trace to a registration number, honors show their validity period. Ask an engineer for the full list.</p>
       </div>
-      <div class="patents">
-        <div class="pat-head"><span class="eyebrow">Core patents</span>
-          <p class="pat-sub">Of the 60 IP registrations, these invention patents bear most directly on extrusion measurement &amp; control:</p></div>
-        <ul class="pat-list"><li><span class="pat-ico" aria-hidden="true"></span>Low-cost visual inspection of surface defects on small-diameter pipe</li><li><span class="pat-ico" aria-hidden="true"></span>Pipe quality inspection equipment and method</li><li><span class="pat-ico" aria-hidden="true"></span>Pipe diameter & thickness gauge and its measuring method</li><li><span class="pat-ico" aria-hidden="true"></span>Calibration method and device for pipe wall-thickness measurement</li></ul>
-        <ul class="pat-nums"><li><code class="pat-no">ZL202121445714.5</code><span>Scanning box auto-tracking ultrasonic probe</span></li><li><code class="pat-no">202420005454.7</code><span>Laser diameter device (0.01mm display accuracy)</span></li></ul>
-        <a class="arrow-link ip-all" href="/en/ip.html">See all 60 IP registrations →</a>
+      <div class="cert-grid">
+        <figure class="cert">
+          <span class="cert-kind">Invention patent</span>
+          <a href="/assets/certs/ip-01.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Low-cost visual inspection of surface defects on small-diameter pipe"><img src="/assets/certs/ip-01.jpg" alt="Low-cost visual inspection of surface defects on small-diameter pipe" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Low-cost visual inspection of surface defects on small-diameter pipe</span><code class="cert-no">ZL201811243056.4</code></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Invention patent</span>
+          <a href="/assets/certs/ip-02.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Pipe diameter & thickness gauge and its measuring method"><img src="/assets/certs/ip-02.jpg" alt="Pipe diameter & thickness gauge and its measuring method" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Pipe diameter & thickness gauge and its measuring method</span><code class="cert-no">ZL202110063828.1</code></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Invention patent</span>
+          <a href="/assets/certs/ip-03.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Calibration method and device for pipe wall-thickness measurement"><img src="/assets/certs/ip-03.jpg" alt="Calibration method and device for pipe wall-thickness measurement" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Calibration method and device for pipe wall-thickness measurement</span><code class="cert-no">ZL202110297987.8</code></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-04.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Ultrasonic Online Thickness System V2.0"><img src="/assets/certs/ip-04.jpg" alt="Ultrasonic Online Thickness System V2.0" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Ultrasonic Online Thickness System V2.0</span><code class="cert-no">2017SR391172</code><span class="cert-dt">2017-07-21</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-05.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Pipe Inbound Quality & Safety System V1.0"><img src="/assets/certs/ip-05.jpg" alt="Pipe Inbound Quality & Safety System V1.0" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Pipe Inbound Quality & Safety System V1.0</span><code class="cert-no">2021SR0460877</code><span class="cert-dt">2021-03-29</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-06.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Plastic Extrusion Production Monitoring System V2.00"><img src="/assets/certs/ip-06.jpg" alt="Plastic Extrusion Production Monitoring System V2.00" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Plastic Extrusion Production Monitoring System V2.00</span><code class="cert-no">2018SR745163</code><span class="cert-dt">2018-09-13</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-07.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Sealion Gravimetric Control System V5.22"><img src="/assets/certs/ip-07.jpg" alt="Sealion Gravimetric Control System V5.22" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Sealion Gravimetric Control System V5.22</span><code class="cert-no">2023SR1565942</code><span class="cert-dt">2023-12-05</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-08.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Ultrasonic Online Thickness System V3.07"><img src="/assets/certs/ip-08.jpg" alt="Ultrasonic Online Thickness System V3.07" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Ultrasonic Online Thickness System V3.07</span><code class="cert-no">2023SR1566169</code><span class="cert-dt">2023-12-05</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-09.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Online Intelligent Pipe Inspection System V1.0"><img src="/assets/certs/ip-09.jpg" alt="Online Intelligent Pipe Inspection System V1.0" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Online Intelligent Pipe Inspection System V1.0</span><code class="cert-no">2025SR2455861</code><span class="cert-dt">2025-12-22</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-10.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Pipe Inbound Quality & Safety System V1.1"><img src="/assets/certs/ip-10.jpg" alt="Pipe Inbound Quality & Safety System V1.1" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Pipe Inbound Quality & Safety System V1.1</span><code class="cert-no">2025SR2441886</code><span class="cert-dt">2025-12-18</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Software copyright</span>
+          <a href="/assets/certs/ip-11.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Sealion Volumetric Masterbatch Feeding System V1.0"><img src="/assets/certs/ip-11.jpg" alt="Sealion Volumetric Masterbatch Feeding System V1.0" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Sealion Volumetric Masterbatch Feeding System V1.0</span><code class="cert-no">2025SR2459820</code><span class="cert-dt">2025-12-22</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">CE certificate</span>
+          <a href="/assets/certs/ce-gravimetric.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Gravimetric Control System"><img src="/assets/certs/ce-gravimetric.jpg" alt="Gravimetric Control System" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Gravimetric Control System</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">CE certificate</span>
+          <a href="/assets/certs/ce-ultrasonic.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Ultrasonic Online Thickness System"><img src="/assets/certs/ce-ultrasonic.jpg" alt="Ultrasonic Online Thickness System" loading="lazy" width="600" height="800"></a>
+          <figcaption><span class="cert-t">Ultrasonic Online Thickness System</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Business licence</span>
+          <a href="/assets/certs/license.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Guangzhou Sea-lion Software Technology Co., Ltd."><img src="/assets/certs/license.jpg" alt="Guangzhou Sea-lion Software Technology Co., Ltd." loading="lazy" width="700" height="465"></a>
+          <figcaption><span class="cert-t">Guangzhou Sea-lion Software Technology Co., Ltd.</span></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Qualification</span>
+          <a href="/assets/certs/innovative-sme.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: Innovative SME"><img src="/assets/certs/innovative-sme.jpg" alt="Innovative SME" loading="lazy" width="800" height="532"></a>
+          <figcaption><span class="cert-t">Innovative SME</span><code class="cert-no">Valid 2022.12–2025.12</code></figcaption>
+        </figure><figure class="cert">
+          <span class="cert-kind">Qualification</span>
+          <a href="/assets/certs/aaa-credit.jpg" class="cert-link" data-lightbox="certs" aria-label="Enlarge: AAA Credit Enterprise"><img src="/assets/certs/aaa-credit.jpg" alt="AAA Credit Enterprise" loading="lazy" width="800" height="532"></a>
+          <figcaption><span class="cert-t">AAA Credit Enterprise</span><code class="cert-no">Valid 2024.09–2027.09</code></figcaption>
+        </figure>
       </div>
+      <a class="arrow-link certs-all" href="/en/ip.html">The full list of 60 IP registrations →</a>
     </div>
   </section>
 
@@ -98,5 +169,45 @@
 
 
 
-  <!-- CERTS -->
 
+
+<section class="section partners partners--light" id="partners">
+    <div class="wrap">
+      <div class="sh">
+        <span class="eyebrow">Customers</span>
+        <h1>Sealion is on their lines</h1>
+        <p class="lead">A partial list of 18 customers — from pipe to cable, compounds to inspection. Each logo links to their site.</p>
+      </div>
+                  <div class="pcloud" data-cloud>
+        <div class="pcloud-l pcloud-l--far pcloud-l--fwd" style="--dur:32s">
+          <div class="pcloud-t">
+            <span class="pcloud-i" style="--y:71%;--sc:1.0;--gap:7rem"><a class="pcust" href="https://namsok.chinapipe.net/" target="_blank" rel="noopener nofollow" title="南塑建材塑胶制品（深圳）有限公司（品牌：南塑皇冠 NamSok An Crown）"> <span class="pcust-logo"><img src="/assets/partners/namsok.jpg" alt="南塑皇冠" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:61%;--sc:0.95;--gap:3rem"><a class="pcust" href="https://www.fareastcable.com" target="_blank" rel="noopener nofollow" title="远东电缆有限公司"> <span class="pcust-logo"><img src="/assets/partners/fareast.jpg" alt="远东电缆" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:19%;--sc:1.0;--gap:4rem"><a class="pcust" href="https://www.lesso.com" target="_blank" rel="noopener nofollow" title="联塑集团控股有限公司（LESSO 联塑）"> <span class="pcust-logo"><img src="/assets/partners/lesso.jpg" alt="联塑" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:47%;--sc:0.92;--gap:9rem"><a class="pcust" href="https://www.hygoldcup.com.cn" target="_blank" rel="noopener nofollow" title="金杯电工衡阳电缆有限公司"> <span class="pcust-logo"><img src="/assets/partners/goldcup.jpg" alt="金杯电工衡阳电缆" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:57%;--sc:0.89;--gap:3rem"><a class="pcust" href="http://www.wenyuanpipe.com" target="_blank" rel="noopener nofollow" title="山东文远环保科技股份有限公司"> <span class="pcust-logo"><img src="/assets/partners/wenyuan.jpg" alt="山东文远环保" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:44%;--sc:0.96;--gap:7rem"><a class="pcust" href="https://www.goody.com.cn" target="_blank" rel="noopener nofollow" title="顾地科技股份有限公司"> <span class="pcust-logo"><img src="/assets/partners/goody.jpg" alt="顾地科技" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:67%;--sc:1.02;--gap:9rem"><a class="pcust" href="https://www.ip1689.com/index.php?homepage=gracepm" target="_blank" rel="noopener nofollow" title="格雷斯机械（Grace Machinery）"> <span class="pcust-logo"><img src="/assets/partners/grace.jpg" alt="格雷斯机械" loading="lazy" width="320" height="180"></span> </span></a></span>
+          </div>
+        </div>
+        <div class="pcloud-l pcloud-l--mid pcloud-l--rev" style="--dur:22s">
+          <div class="pcloud-t">
+            <span class="pcloud-i" style="--y:12%;--sc:1.08;--gap:6rem"><a class="pcust" href="http://www.panyucable.com" target="_blank" rel="noopener nofollow" title="番禺电缆集团有限公司"> <span class="pcust-logo"><img src="/assets/partners/panyu.jpg" alt="番禺电缆" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:64%;--sc:1.05;--gap:3rem"><a class="pcust" href="http://www.beier-machinery.com" target="_blank" rel="noopener nofollow" title="贝尔机械（BEIER）"> <span class="pcust-logo"><img src="/assets/partners/beier.jpg" alt="贝尔机械" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:11%;--sc:1.06;--gap:6rem"><a class="pcust" href="http://www.lingnancable.com" target="_blank" rel="noopener nofollow" title="岭南电缆股份有限公司（LINGNAN CABLE）"> <span class="pcust-logo"><img src="/assets/partners/lingnan.jpg" alt="岭南电缆" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:61%;--sc:0.95;--gap:8rem"><a class="pcust" href="https://www.xiongsu.cn" target="_blank" rel="noopener nofollow" title="广东雄塑科技发展有限公司"> <span class="pcust-logo"><img src="/assets/partners/xiongsu.jpg" alt="广东雄塑科技" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:48%;--sc:0.89;--gap:9rem"><a class="pcust" href="http://www.chuanhuan.com" target="_blank" rel="noopener nofollow" title="四川川环科技股份有限公司"> <span class="pcust-logo"><img src="/assets/partners/chuanhuan.jpg" alt="四川川环" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:49%;--sc:0.92;--gap:3rem"><a class="pcust" href="http://www.upp-pipe.com" target="_blank" rel="noopener nofollow" title="青岛优派普管业有限公司"> <span class="pcust-logo"><img src="/assets/partners/upp.jpg" alt="青岛优派普" loading="lazy" width="320" height="180"></span> </span></a></span>
+          </div>
+        </div>
+        <div class="pcloud-l pcloud-l--near pcloud-l--fwd" style="--dur:16s">
+          <div class="pcloud-t">
+            <span class="pcloud-i" style="--y:67%;--sc:0.89;--gap:6rem"><a class="pcust" href="https://www.tbea.com" target="_blank" rel="noopener nofollow" title="特变电工股份有限公司（TBEA）"> <span class="pcust-logo"><img src="/assets/partners/tbea.jpg" alt="特变电工" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:20%;--sc:1.06;--gap:8rem"><a class="pcust" href="http://www.yada-group.com" target="_blank" rel="noopener nofollow" title="亚大集团有限公司"> <span class="pcust-logo"><img src="/assets/partners/yada.jpg" alt="亚大集团" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:54%;--sc:1.1;--gap:9rem"><a class="pcust" href="http://www.tengyuansuye.com" target="_blank" rel="noopener nofollow" title="山东腾远塑业有限公司"> <span class="pcust-logo"><img src="/assets/partners/tengyuan.jpg" alt="山东腾远塑业" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:14%;--sc:0.92;--gap:8rem"><a class="pcust" href="http://www.fjhj.cn" target="_blank" rel="noopener nofollow" title="福建恒杰塑业新材料有限公司"> <span class="pcust-logo"><img src="/assets/partners/fjhj.jpg" alt="福建恒杰" loading="lazy" width="320" height="180"></span> </span></a></span>
+            <span class="pcloud-i" style="--y:74%;--sc:0.95;--gap:4rem"><a class="pcust" href="http://www.senpu.com/" target="_blank" rel="noopener nofollow" title="四川森普管材股份有限公司"> <span class="pcust-logo"><img src="/assets/partners/senpu.jpg" alt="森普管材" loading="lazy" width="320" height="180"></span> </span></a></span>
+          </div>
+        </div>
+      </div></div>
+  </section>

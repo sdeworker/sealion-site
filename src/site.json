@@ -74,20 +74,20 @@
       },
       "children": [
         {
-          "href": "/about.html",
           "label": {
             "zh": "企业简介",
             "en": "Company",
-            "ru": "О нас"
-          }
+            "ru": "О компании"
+          },
+          "href": "/about.html#about"
         },
         {
-          "href": "/about/milestones.html",
           "label": {
             "zh": "发展历程",
             "en": "Milestones",
             "ru": "История"
-          }
+          },
+          "href": "/about.html#milestones"
         },
         {
           "label": {
@@ -95,23 +95,15 @@
             "en": "Culture",
             "ru": "Культура"
           },
-          "href": "/about/culture.html"
+          "href": "/about.html#culture"
         },
         {
-          "href": "/about/certs.html",
           "label": {
-            "zh": "资质证书",
-            "en": "Certificates",
+            "zh": "资质荣誉",
+            "en": "Certifications",
             "ru": "Сертификаты"
-          }
-        },
-        {
-          "href": "/ip.html",
-          "label": {
-            "zh": "知识产权",
-            "en": "IP portfolio",
-            "ru": "Интеллектуальная собственность"
-          }
+          },
+          "href": "/about.html#certs"
         },
         {
           "label": {
@@ -119,7 +111,15 @@
             "en": "Customers",
             "ru": "Клиенты"
           },
-          "href": "/about/partners.html"
+          "href": "/about.html#partners"
+        },
+        {
+          "label": {
+            "zh": "知识产权",
+            "en": "Patents",
+            "ru": "Патенты"
+          },
+          "href": "/ip.html"
         }
       ]
     },
