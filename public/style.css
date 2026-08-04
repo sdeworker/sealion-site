@@ -219,7 +219,7 @@ img{height:auto}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.readout{max-width:520px}}
 
 /* ============ ABOUT ============ */
-.sh{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:clamp(2rem,5vw,3.2rem)}
+.sh{display:flex;flex-direction:column;align-items:center;gap:0.9rem;margin-bottom:clamp(2rem,5vw,3.2rem)}
 .sh h2{font-size:var(--step-4);max-width:22ch}
 .about .lead{margin-top:0.2rem}
 .cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,3vw,2rem);margin-top:2.5rem}
@@ -702,8 +702,10 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 .sh .eyebrow::before{display:none}   /* 去掉左侧那道短横，居中之后它是歪的 */
 .sh .eyebrow::after{content:"";position:absolute;left:50%;transform:translateX(-50%);
   bottom:0;width:3.5rem;height:3px;background:var(--blue);border-radius:2px}
-.sh h2{margin-top:var(--sp-1);text-align:center}
-.sh .lead{margin-inline:auto;text-align:center;max-width:64rem}
+.sh h2{margin-top:var(--sp-1);text-align:center;max-width:none;margin-inline:auto}
+/* 导语按内容宽度收缩，一句话放得下就不折成两行 */
+.sh .lead{width:fit-content;max-width:100%}
+.sh .lead{margin-inline:auto;text-align:center}
 
 /* ── 时间轴：把"点"换成从轴伸出的一条线，比一个小圆点显眼得多 ── */
 .tl-dot{width:2px;height:3.2rem;border-radius:0;background:var(--blue);border:0;
