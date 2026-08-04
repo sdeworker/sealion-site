@@ -269,16 +269,16 @@ a.c-v:hover{color:var(--blue)}
 @media(max-width:760px){.contact-grid{grid-template-columns:1fr}}
 
 /* ============ FOOTER ============ */
-.site-footer{background:var(--panel-2);color:#DCE7EE;border-top:1px solid var(--line-dk)}
+
 .foot{display:grid;grid-template-columns:1.3fr 1.7fr;gap:clamp(2rem,5vw,4rem);padding-block:clamp(3rem,6vw,4.5rem) 2.5rem}
-.foot-brand strong{font-family:var(--display);font-size:1.2rem;color:#fff;display:block}
-.foot-brand .fb-legal{font-size:1.045rem;color:var(--steel-dk);margin-top:6px;max-width:34ch}
-.foot-brand .fb-tag{margin-top:1.1rem;color:var(--steel-dk);font-size:1.0856rem;max-width:34ch}
+
+
+
 .foot-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .fcol h4{font-family:var(--mono);font-size:0.9176rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.7rem}
-.fcol a,.fcol span{display:block;color:#CDDAE2;font-size:1.062rem;margin-bottom:0.5rem}
-.fcol a:hover{color:#fff}
-.foot-base{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.4rem;border-top:1px solid var(--line-dk);font-family:var(--mono);font-size:0.9558rem;color:var(--steel-dk);flex-wrap:wrap}
+
+
+
 @media(max-width:760px){.foot{grid-template-columns:1fr}}
 
 /* ============ BACK TO TOP ============ */
@@ -549,8 +549,20 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
   scrollbar-width:thin}
 .tl-track{position:relative;display:flex;align-items:center;gap:0;
   width:max-content;padding-block:clamp(11rem,16vw,14rem)}
-.tl-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;
-  background:linear-gradient(90deg,var(--line),var(--blue) 12%,var(--blue) 88%,var(--line))}
+/* 跑道：深灰沥青带 + 两侧白边 + 中间断续白线。
+   一条 2px 的蓝线太单薄，跑道才撑得住上面那架飞机。 */
+.tl-track::before{content:"";position:absolute;left:0;right:0;top:50%;height:74px;
+  transform:translateY(-50%);border-radius:2px;
+  background:
+    /* 中线：断续白条 */
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.92) 0 48px,transparent 48px 96px) center center/100% 5px no-repeat,
+    /* 两侧边线 */
+    linear-gradient(180deg,rgba(255,255,255,.72) 0 3px,transparent 3px) top/100% 100% no-repeat,
+    linear-gradient(0deg,rgba(255,255,255,.72) 0 3px,transparent 3px) bottom/100% 100% no-repeat,
+    /* 沥青 */
+    linear-gradient(180deg,#3C4A55,#2A353E 55%,#222C34);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.25),0 10px 26px rgba(10,26,38,.18)}
 .tl-i{position:relative;width:clamp(11rem,14vw,14rem);flex:0 0 auto;text-align:center}
 .tl-dot{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:13px;height:13px;border-radius:50%;background:#fff;border:3px solid var(--blue);
@@ -564,10 +576,10 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
   transform:translateX(-50%);width:100%}
 .tl-e li{font-size:1rem;line-height:1.45;color:var(--ink-70);margin-bottom:.4rem}
 /* 上下交错：奇数在轴上方，偶数在轴下方 */
-.tl-i--top .tl-y{top:calc(50% - 5.4rem)}
-.tl-i--top .tl-e{bottom:calc(50% + 6.7rem)}
-.tl-i--bot .tl-y{top:calc(50% + 3.9rem)}
-.tl-i--bot .tl-e{top:calc(50% + 6.7rem)}
+.tl-i--top .tl-y{top:calc(50% - 7.2rem)}
+.tl-i--top .tl-e{bottom:calc(50% + 8.5rem)}
+.tl-i--bot .tl-y{top:calc(50% + 5.7rem)}
+.tl-i--bot .tl-e{top:calc(50% + 8.5rem)}
 @media(max-width:760px){
   .tl-track{padding-block:clamp(7rem,26vw,9rem)}
   .tl-i{width:12rem}
@@ -662,9 +674,10 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 .fcol h4{margin:0 0 .6rem;font-size:var(--step-3);color:var(--ink)}
 .fcol h4 a{color:inherit}
 .fcol h4 a:hover{color:var(--blue)}
-.fcol a{color:var(--steel);font-size:var(--step-1);transition:color .15s}
+.fcol a{display:block;padding:.15em 0;min-height:26px;color:var(--steel);
+  font-size:var(--step-1);transition:color .15s}
 .fcol a:hover{color:var(--blue)}
-.fc-addr{color:var(--steel);font-size:var(--step-0);line-height:1.55}
+.fc-addr{color:var(--steel);font-size:var(--step-0);line-height:1.6}
 .foot-btm{border-top:1px solid var(--line);background:var(--paper)}
 .foot-btm-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;
   padding-block:1.5rem;color:var(--steel);font-size:var(--step-0)}
@@ -676,7 +689,10 @@ html.js .tl-i.is-in{opacity:1;transform:none}
   .fcol h4,.fcol a{font-size:var(--step-0)}}
 @media(max-width:520px){.foot-cols{grid-template-columns:1fr;row-gap:1.75rem}}
 /* 俄语词长，页脚窄栏里必须允许断词，否则单个词就撑破视口 */
-.fcol h4,.fcol a{overflow-wrap:anywhere}
+.fcol h4{overflow-wrap:anywhere}
+/* 链接按词断，邮箱与型号名不从中间劈开 */
+.fcol a{overflow-wrap:break-word;word-break:keep-all}
+.fcol a[href^="mailto"]{overflow-wrap:anywhere;font-size:var(--step-0)}
 
 /* 每节的名字（发展历程／资质荣誉／合作客户）是这一节真正的标题，
    参考站就是把它做成居中的大字加一条短下划线。整块居中。 */
@@ -686,20 +702,23 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 .sh .eyebrow::before{display:none}   /* 去掉左侧那道短横，居中之后它是歪的 */
 .sh .eyebrow::after{content:"";position:absolute;left:50%;transform:translateX(-50%);
   bottom:0;width:3.5rem;height:3px;background:var(--blue);border-radius:2px}
-.sh h2{margin-top:var(--sp-1)}
-.sh .lead{margin-inline:auto}
+.sh h2{margin-top:var(--sp-1);text-align:center}
+.sh .lead{margin-inline:auto;text-align:center;max-width:64rem}
 
 /* ── 时间轴：把"点"换成从轴伸出的一条线，比一个小圆点显眼得多 ── */
-.tl-dot{width:2px;height:4.6rem;border-radius:0;background:var(--blue);border:0;
+.tl-dot{width:2px;height:3.2rem;border-radius:0;background:var(--blue);border:0;
   left:50%;top:auto;transform:translateX(-50%);opacity:.55}
-.tl-i--top .tl-dot{bottom:50%}
-.tl-i--bot .tl-dot{top:50%}
+.tl-i--top .tl-dot{bottom:calc(50% + 37px)}
+.tl-i--bot .tl-dot{top:calc(50% + 37px)}
 .tl-i:hover .tl-dot{background:var(--signal);width:3px;opacity:1}
 /* 轴上再点一个小实心，标出位置 */
-.tl-i::after{content:"";position:absolute;left:50%;top:50%;
-  transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;
-  background:var(--blue);z-index:2}
-.tl-i:hover::after{background:var(--signal)}
+.tl-i--top::after,.tl-i--bot::after{content:"";position:absolute;left:50%;
+  transform:translateX(-50%);width:11px;height:11px;border-radius:50%;
+  background:var(--signal);border:2px solid #fff;z-index:3;
+  box-shadow:0 2px 6px rgba(0,0,0,.3)}
+.tl-i--top::after{top:calc(50% - 37px);margin-top:-6px}
+.tl-i--bot::after{top:calc(50% + 37px);margin-top:-6px}
+.tl-i:hover::after{background:#fff;transform:translateX(-50%) scale(1.25)}
 
 /* 年份按钮条与滚动条都去掉——它自己会滚，不需要这两样 */
 .tl-nav{display:none}
@@ -716,7 +735,7 @@ html.js .tl-i.is-in{opacity:1;transform:none}
    参考站用一辆小车在公路上跑，同一个道理——让轴不只是一条线，
    而是有人在上面走过这些年。 */
 .tl-stage{position:relative}
-.tl-plane{position:absolute;left:50%;top:50%;transform:translate(-50%,-58%);
+.tl-plane{position:absolute;left:50%;top:50%;transform:translate(-50%,-142%);
   z-index:4;color:var(--blue);pointer-events:none;
   filter:drop-shadow(0 6px 14px rgba(10,26,38,.22))}
 .tl-plane svg{display:block;width:clamp(4.5rem,6vw,6.5rem);height:auto}
@@ -724,14 +743,12 @@ html.js .tl-i.is-in{opacity:1;transform:none}
   .tl-plane{animation:tl-bob 3.2s ease-in-out infinite}
 }
 @keyframes tl-bob{
-  0%,100%{transform:translate(-50%,-58%) rotate(0deg)}
-  50%{transform:translate(-50%,-64%) rotate(-2.5deg)}
+  0%,100%{transform:translate(-50%,-142%) rotate(0deg)}
+  50%{transform:translate(-50%,-152%) rotate(-2.5deg)}
 }
-/* 航迹：轴上叠一条虚线，像航线 */
-.tl-track::after{content:"";position:absolute;left:0;right:0;top:50%;height:0;
-  border-top:2px dashed rgba(0,97,188,.30);transform:translateY(-1px)}
+
 /* 飞机尾迹：从机身向左拖出一段渐隐的光 */
-.tl-plane::before{content:"";position:absolute;right:60%;top:52%;
+.tl-plane::before{content:"";position:absolute;right:62%;top:54%;
   width:clamp(5rem,9vw,9rem);height:3px;transform:translateY(-50%);
   background:linear-gradient(270deg,rgba(0,97,188,.55),transparent);border-radius:2px}
 
@@ -840,7 +857,7 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 .burger:hover{background:var(--blue-ghost)}
 
 /* footer + contact links: touchable rows */
-.fcol a{padding:0.15em 0;min-height:26px;display:inline-flex;align-items:center}
+
 a.c-v{padding:0.1em 0;min-height:26px;display:inline-flex;align-items:center}
 
 /* every interactive element shows the hand cursor */
@@ -871,7 +888,7 @@ a,button,label[for],summary{cursor:pointer}
 .on-dark .crumb,.on-dark .crumb a{color:var(--steel-dk)}
 .on-dark .crumb a:hover{color:#fff}
 .on-dark .arrow-link{color:var(--blue-lift)}
-.site-footer .fcol h4{color:var(--blue-lift)}
+
 
 /* ============ CORE PATENTS ============ */
 .patents{margin-top:2.4rem;padding-top:2rem;border-top:1px solid var(--line)}
