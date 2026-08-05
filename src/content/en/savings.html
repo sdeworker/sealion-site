@@ -1,0 +1,104 @@
+{
+ "title": "Savings calculator — Sealion Technology",
+ "description": "The manual says gravimetric control saves 2%\u20135% of raw material. Three numbers will tell you what that is worth on your line in a year.",
+ "css": [],
+ "type": "page",
+ "crumb": "Savings calculator",
+ "parent": {
+  "href": "/strength.html",
+  "label": "Capability"
+ }
+}
+---
+<section data-reveal class="section ind-hero on-dark">
+  <div class="wrap">
+    <nav class="crumb"><a href="/en/">Home</a> / <a href="/en/strength.html">Capability</a> / <span>Savings calculator</span></nav>
+    <span class="eyebrow">Run the numbers</span>
+    <h1>What gravimetric control pays back in a year</h1>
+    <p class="lead">The manual says it saves 2%–5% of raw material. Three numbers will tell you what that sentence is worth on your line.</p>
+  </div>
+</section>
+
+<section data-reveal class="section calc calc-sec" id="calc">
+    <div class="wrap">
+      <div class="calc-grid">
+        <div class="calc-inputs"><label class="calc-f">
+          <span class="calc-l">Output</span>
+          <span class="calc-in"><input type="number" id="c-out" value="500" min="0" step="any"><span class="calc-u">kg/h</span></span>
+          <span class="calc-h">Extruder throughput</span>
+        </label><label class="calc-f">
+          <span class="calc-l">Material price</span>
+          <span class="calc-in"><input type="number" id="c-price" value="9" min="0" step="any"><span class="calc-u">CNY/kg</span></span>
+          <span class="calc-h">Delivered price of PE / PVC etc.</span>
+        </label><label class="calc-f">
+          <span class="calc-l">Running hours / year</span>
+          <span class="calc-in"><input type="number" id="c-hours" value="6000" min="0" step="any"><span class="calc-u">h</span></span>
+          <span class="calc-h">About 6000 on two shifts</span>
+        </label></div>
+        <div class="calc-out">
+          <div class="calc-r">
+            <span class="calc-rl">At 2% (conservative)</span>
+            <span class="calc-rn"><b id="c-lo">—</b> <i>CNY / year</i></span>
+            <span class="calc-rt"><b id="c-lot">—</b> tonnes / year</span>
+          </div>
+          <div class="calc-r calc-r--hi">
+            <span class="calc-rl">At 5%</span>
+            <span class="calc-rn"><b id="c-hi">—</b> <i>CNY / year</i></span>
+            <span class="calc-rt"><b id="c-hit">—</b> tonnes / year</span>
+          </div>
+          <a class="btn btn--primary calc-cta" href="/en/contact.html">Have an engineer run it on my line</a>
+        </div>
+      </div>
+      <p class="calc-note">Basis: Sealion Product Manual, Gravimetric Control System — Main function: "Solve the problem of meter weight deviation and waste material — can save 2%–5% raw material." This is arithmetic only; it excludes savings from start-up scrap, material changeover and screen-pack blockage. Real figures depend on your line — ask an engineer to run it properly.</p>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var ids=['out','price','hours'];
+    var LIMIT={out:20000,price:200,hours:8760};   // sanity ceilings: warn, don't block
+    function raw(id){return document.getElementById('c-'+id).value.trim();}
+    function n(id){var v=parseFloat(raw(id));return isFinite(v)&&v>0?v:0;}
+    function state(){
+      var el=document.getElementById('c-state'); if(!el) return;
+      var empty=ids.filter(function(k){return raw(k)==='';});
+      var bad=ids.filter(function(k){var v=parseFloat(raw(k));
+        return raw(k)!=='' && (!isFinite(v)||v<=0);});
+      var over=ids.filter(function(k){return n(k)>LIMIT[k];});
+      var L={out:'Output',price:'Material price',hours:'Running hours per year'};
+      var msg='', cls='calc-state';
+      if(bad.length){msg='Enter a number greater than 0 for '+bad.map(function(k){return L[k]}).join(', ')+'.';cls+=' calc-state--warn';}
+      else if(empty.length){msg='Still missing: '+empty.map(function(k){return L[k]}).join(', ')+'.';}
+      else if(over.length){msg=over.map(function(k){return L[k]}).join(', ')+' looks outside the usual range \u2014 the result still uses the number you entered.';cls+=' calc-state--warn';}
+      else {msg='Estimated at 2% and 5%; main resin only, excluding installation, training and downtime.';}
+      el.textContent=msg; el.className=cls;
+    }
+    function fmt(x){return x>=10000?Math.round(x).toLocaleString():x.toFixed(0);}
+    function calc(){
+      var kg=n('out')*n('hours');           // kg per year
+      var cost=kg*n('price');
+      var lo=cost*0.02, hi=cost*0.05;
+      document.getElementById('c-lo').textContent=kg?fmt(lo):'\u2014';
+      document.getElementById('c-hi').textContent=kg?fmt(hi):'\u2014';
+      document.getElementById('c-lot').textContent=kg?(kg*0.02/1000).toFixed(1):'\u2014';
+      document.getElementById('c-hit').textContent=kg?(kg*0.05/1000).toFixed(1):'\u2014';
+      state();
+    }
+    ids.forEach(function(i){
+      var el=document.getElementById('c-'+i);
+      el.addEventListener('input',calc); el.addEventListener('change',calc);
+    });
+    calc();
+  })();
+  </script>
+
+<section data-reveal class="section prod-foot-cta on-dark">
+  <div class="wrap center">
+    <h2>Have an engineer run it against your line</h2>
+    <p class="lead">Those three numbers are arithmetic. What you actually save depends on formulation, diameter, scrap rate and changeover frequency — tell us about the line and we will work it out on site.</p>
+    <div class="prod-cta center">
+      <a class="btn btn--primary" href="/en/contact.html">Get a proposal &amp; quote</a>
+      <a class="btn btn--ghost" href="/en/pipe/gravimetric.html">See the Gravimetric Control System</a>
+      <a class="btn btn--onDark dl-inline" href="/en/manual/">Read the manual</a>
+    </div>
+  </div>
+</section>

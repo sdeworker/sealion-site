@@ -312,6 +312,14 @@
           }
         },
         {
+          "href": "/savings.html",
+          "label": {
+            "zh": "省料测算",
+            "en": "Savings calculator",
+            "ru": "Расчёт экономии"
+          }
+        },
+        {
           "href": "/manual/",
           "label": {
             "zh": "产品手册",
