@@ -11,6 +11,7 @@
   --panel-2:#143349;
   --blue:#0061BC;         /* brand blue — sampled from the logo */
   --blue-dk:#00478A;
+  --blue-tx:#00478A;     /* 文字用蓝：#0061BC 对暖白只有 5.86，这个 8.46 */
   --blue-ghost:rgba(0,97,188,0.10);
   --signal:#FFB020;       /* amber — measurement / in-spec LED (only) */
   --signal-dk:#8F5D00;
@@ -23,9 +24,9 @@
   --mist:#F2EFEA;
   --line:#DED8CF;
   --line-dk:#1E3B4F;
-  --steel:#5E7180;
+  --steel:#3F5261;      /* 次要文字。原 #5E7180 对暖白只有 4.85，偏浅；现 7.77 */
   --steel-dk:#8DA2B1;
-  --ink-70:#2B4457;
+  --ink-70:#23394A;     /* 正文。9.74 → 11.47 */
 
   /* 三语站不引拉丁展示字体：汉字用不了它，双语标题会两套字形并排。
      层级靠字号与字重拉开，仪表感由 --mono 的数值与刻度承担。 */
@@ -97,13 +98,13 @@ img{height:auto}
 .btn{--bg:var(--ink);--fg:#fff;--bd:var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:0.55em;font-family:var(--body);font-size:1.1875rem;font-weight:500;letter-spacing:0.02em;line-height:1.2;min-height:56px;padding:0 1.6em;border-radius:var(--radius);background:var(--bg);color:var(--fg);border:1px solid var(--bd);cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s;text-transform:uppercase}
 .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(10,26,38,0.18)}
 .btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
-.btn--primary{--bg:var(--blue);--fg:#fff;--bd:var(--blue);font-weight:600}
+.btn--primary{--bg:var(--blue-tx);--fg:#fff;--bd:var(--blue-tx);font-weight:600}
 .btn--primary:hover{--bg:var(--blue-dk)}
 .btn--ghost{--bg:transparent;--fg:var(--ink);--bd:var(--line)}
 .btn--ghost:hover{--bd:var(--blue)}
 .btn--onDark{--bg:transparent;--fg:#fff;--bd:var(--line-dk)}
 .btn--onDark:hover{--bd:var(--blue)}
-.arrow-link{font-family:var(--body);font-size:var(--step--1);letter-spacing:0.03em;color:var(--blue);display:inline-flex;gap:.4em;align-items:center;text-transform:uppercase}
+.arrow-link{font-family:var(--body);font-size:var(--step-0);letter-spacing:0.03em;color:var(--blue-tx);display:inline-flex;gap:.4em;align-items:center;text-transform:uppercase}
 .arrow-link::after{content:"→";transition:transform .15s}
 .arrow-link:hover::after{transform:translateX(3px)}
 
@@ -392,9 +393,9 @@ body.home .hero-play svg{display:none}
 .stat:hover{background:var(--mist)}
 .stat-l{order:2;font-size:clamp(1.5rem,1.25rem + 1vw,2.125rem);color:var(--ink);
   letter-spacing:.02em;font-weight:600}
-.stat-n{order:3;font-family:var(--mono);font-weight:600;line-height:1;color:var(--blue);
+.stat-n{order:3;color:var(--blue-tx);font-family:var(--mono);font-weight:600;line-height:1;color:var(--blue);
   font-size:clamp(2.75rem,1.6rem + 3.4vw,5rem);font-variant-numeric:tabular-nums}
-.stat-u{font-size:.34em;margin-left:.12em;color:var(--steel-dk);font-weight:500}
+.stat-u{font-size:.34em;margin-left:.12em;color:var(--steel);font-weight:500}
 @media(max-width:860px){.stats-row{grid-template-columns:repeat(2,1fr);row-gap:2rem}}
 
 /* 需求确认：在给方案之前，先把客户此刻的处境说出来 */
@@ -577,7 +578,7 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
   border-color:var(--signal)}
 .tl-y{position:absolute;left:50%;transform:translateX(-50%);
   font-family:var(--mono);font-size:clamp(1.3rem,1.1rem + .7vw,1.75rem);font-weight:600;
-  color:var(--blue);line-height:1}
+  color:var(--blue-tx);line-height:1}
 .tl-e{list-style:none;margin:0;padding:0 .6rem;position:absolute;left:50%;
   transform:translateX(-50%);width:100%}
 .tl-e li{font-size:1rem;line-height:1.45;color:var(--ink-70);margin-bottom:.4rem}
@@ -691,7 +692,7 @@ html.js .tl-i.is-in{opacity:1;transform:none}
 /* 每节的名字（发展历程／资质荣誉／合作客户）是这一节真正的标题，
    参考站就是把它做成居中的大字加一条短下划线。整块居中。 */
 .sh{text-align:center}
-.sh .eyebrow{display:block;color:var(--blue);letter-spacing:.02em;margin-bottom:.35rem;
+.sh .eyebrow{display:block;color:var(--blue-tx);letter-spacing:.02em;margin-bottom:.35rem;
   position:relative;padding-bottom:.8rem}
 .sh .eyebrow::before{display:none}   /* 去掉左侧那道短横，居中之后它是歪的 */
 .sh .eyebrow::after{content:"";position:absolute;left:50%;transform:translateX(-50%);
@@ -841,14 +842,14 @@ section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 
   padding:clamp(1.6rem,3vw,2.4rem)}
 .cc-body{padding:clamp(1.6rem,3vw,2.4rem);text-align:center;flex:1;
   display:flex;flex-direction:column;align-items:center}
-.cc-body h2{font-size:var(--step-2);margin-bottom:.8rem;color:var(--ink)}
-.cc-big{font-size:var(--step-3);color:var(--blue);font-weight:600;margin-bottom:1.2rem;
+.cc-body h2{font-size:var(--step-3);margin-bottom:.9rem;color:var(--ink)}
+.cc-big{font-size:var(--step-4);color:var(--blue-tx);font-weight:600;margin-bottom:1.2rem;
   font-family:var(--mono);letter-spacing:.01em}
-.cc-row{margin-bottom:.9rem;line-height:1.6}
-.cc-row span{display:block;color:var(--steel);font-size:1rem;margin-bottom:.15rem}
-.cc-row a{color:var(--ink);font-size:var(--step-0)}
+.cc-row{margin-bottom:1.15rem;line-height:1.6}
+.cc-row span{display:block;color:var(--steel);font-size:var(--step-0);margin-bottom:.25rem}
+.cc-row a{color:var(--ink);font-size:var(--step-2);font-weight:500}
 .cc-row a:hover{color:var(--blue)}
-.cc-row p{margin:0;color:var(--ink-70);font-size:var(--step-0)}
+.cc-row p{margin:0;color:var(--ink-70);font-size:var(--step-1);line-height:1.65}
 .cc-act{margin-top:auto;padding-top:1rem}
 @media(max-width:900px){.cc-grid{grid-template-columns:1fr}}
 
