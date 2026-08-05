@@ -829,6 +829,16 @@ section .pcard-grid--home .pcard--img .pc-img{aspect-ratio:1/1;
   background:linear-gradient(180deg,#FFFFFF,#F3F0EB)}
 section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 4% 20%}
 
+/* 栏目封面：一整幅实景，栏目名压在正中。参考站每个一级栏目都是这样开场的。 */
+.sec-banner{position:relative;min-height:clamp(17rem,26vw,24rem);overflow:hidden;
+  background:var(--ink);display:flex;align-items:center;justify-content:center}
+.sec-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+.sec-banner::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,26,38,.42),rgba(10,26,38,.62))}
+.sec-banner-in{position:relative;z-index:2;text-align:center;padding-inline:var(--gutter)}
+.sec-banner h1{color:#fff;margin:0;font-size:clamp(2.25rem,1.6rem + 2.6vw,3.75rem);
+  letter-spacing:.04em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.needle{left:50%!important}}

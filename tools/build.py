@@ -498,7 +498,9 @@ def render_page(lang, rel, meta, body, alts, avail):
     skip = t(SITE["ui"]["skip"], lang)
     print_stamp = '<p class="print-stamp" data-print-stamp></p>'
     bodycls = "home" if meta.get("type") == "home" else ""
-    crumb = "" if 'class="crumb"' in body else crumb_for(rel, lang, meta)
+    # 有封面横幅的栏目页不再生成面包屑——横幅已经写着栏目名，
+    # 再来一条"首页 / 栏目名"是同一句话说两遍
+    crumb = "" if ('class="crumb"' in body or 'sec-banner' in body) else crumb_for(rel, lang, meta)
     updown = news_updown(rel, lang) if "news/" in ("/" + rel) and rel.count("news/") else ""
     updown = updown or ""   # 页尾「本栏目」撤掉——它把导航里的东西又列一遍，反而分散重点
     tail = [print_stamp,
