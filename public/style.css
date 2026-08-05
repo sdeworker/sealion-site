@@ -11,7 +11,8 @@
   --panel-2:#143349;
   --blue:#0061BC;         /* brand blue — sampled from the logo */
   --blue-dk:#00478A;
-  --blue-tx:#00478A;     /* 文字用蓝：#0061BC 对暖白只有 5.86，这个 8.46 */
+  --blue-tx:#0061BC;     /* 文字用蓝＝品牌蓝。改成 #00478A 后眉题、链接、数字、
+                            按钮全发闷，而这些都是大字，5.86 够用（大字门槛 3.0） */
   --blue-ghost:rgba(0,97,188,0.10);
   --signal:#FFB020;       /* amber — measurement / in-spec LED (only) */
   --signal-dk:#8F5D00;
@@ -21,8 +22,8 @@
   --signal-soft:rgba(255,176,32,0.16);
   --paper:#FBFAF8;
   --paper-2:#FFFFFF;    /* 最亮的一档：纯白 */
-  --mist:#EAE3D8;       /* 暖灰。明度 77%——比 #F2EFEA 看得出分界（1.222），
-                            又比 #E2DACE 亮一档，不压抑 */
+  --mist:#EFE9E0;       /* 暖灰。明度 82%——原 #F2EFEA 是 87%、与纸面差 1.099 分不出，
+                            这一档 1.160，看得出分界又不压抑 */
   --line:#DED8CF;
   --line-dk:#1E3B4F;
   --steel:#45596A;      /* 次要文字。原 #5E7180 只有 4.85 太浅；这一档 6.97 */
