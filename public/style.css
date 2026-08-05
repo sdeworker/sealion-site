@@ -598,18 +598,6 @@ body.home .hero{min-height:calc(100svh - var(--header-h,136px));margin-top:0;
 .intro-sec p{margin-bottom:var(--sp-1);color:var(--ink-70)}
 .intro-sec .lead{color:var(--ink)}
 
-/* 关于页横幅：整幅实景 + 压在图上的标题。参考站就是这么开场的，
-   一整块居中文字没有气势，横幅有。 */
-.about-banner{position:relative;min-height:clamp(20rem,32vw,30rem);overflow:hidden;
-  background:var(--ink);display:flex;align-items:flex-end}
-.about-banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  opacity:.55}
-.about-banner::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(10,26,38,.35) 0%,rgba(10,26,38,.86) 100%)}
-.about-banner-in{position:relative;z-index:2;padding-block:var(--sp-2)}
-.about-banner .eyebrow{color:var(--signal)}
-.about-banner h1{color:#fff;margin-top:.4rem}
-
 /* 简介：图文并排，不是一整块文字 */
 .ab-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.75rem,3.5vw,3.5rem);
   align-items:start}
@@ -843,6 +831,26 @@ section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 
   font-family:var(--display);font-weight:600;letter-spacing:.02em;line-height:1.1;
   font-size:clamp(2.5rem,1.4rem + 4.4vw,5.5rem)}
 @media(max-width:760px){.sb-en{font-size:clamp(1.75rem,7vw,2.75rem)}}
+
+/* 联系我们：三张卡并排，卡顶是品牌蓝的图标条，卡身是浅底。
+   参考站就是这个形态——电话、地址、扫码各占一张，一眼看完不用读段落。 */
+.cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.75rem)}
+.cc{display:flex;flex-direction:column;border-radius:var(--radius-lg);overflow:hidden;
+  background:var(--mist);box-shadow:0 10px 30px rgba(10,26,38,.08)}
+.cc-head{background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;
+  padding:clamp(1.6rem,3vw,2.4rem)}
+.cc-body{padding:clamp(1.6rem,3vw,2.4rem);text-align:center;flex:1;
+  display:flex;flex-direction:column;align-items:center}
+.cc-body h2{font-size:var(--step-2);margin-bottom:.8rem;color:var(--ink)}
+.cc-big{font-size:var(--step-3);color:var(--blue);font-weight:600;margin-bottom:1.2rem;
+  font-family:var(--mono);letter-spacing:.01em}
+.cc-row{margin-bottom:.9rem;line-height:1.6}
+.cc-row span{display:block;color:var(--steel);font-size:1rem;margin-bottom:.15rem}
+.cc-row a{color:var(--ink);font-size:var(--step-0)}
+.cc-row a:hover{color:var(--blue)}
+.cc-row p{margin:0;color:var(--ink-70);font-size:var(--step-0)}
+.cc-act{margin-top:auto;padding-top:1rem}
+@media(max-width:900px){.cc-grid{grid-template-columns:1fr}}
 
 /* a11y + motion */
 :where(a,button):focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
