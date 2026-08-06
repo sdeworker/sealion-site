@@ -1511,4 +1511,21 @@ a.pcust:hover .pcust-name{color:var(--blue)}
    与上方通栏的横幅对不上；居中成栏才是一体的。产品页的 h1 型 hero 不适用。
    放 style.css 而非 product.css：海狮实力页不加载 product.css。 */
 .prod-hero--intro{text-align:center}
-.prod-hero--intro .lead{margin-inline:auto}
+/* 标题与导语原本贴在一起（h2 底边＝导语顶边，间距 0），挤成一坨。 */
+.prod-hero--intro h2{margin-bottom:.75rem}
+/* 60ch 的导语常常排成「两行满＋一行三五个字」。放宽到 68ch 再交给 balance，
+   同样的字数收成两行，且两行等长。 */
+.prod-hero--intro .lead{margin-inline:auto;max-width:min(68ch,100%)}
+
+/* =========================================================================
+   排版收口（2026-08-05）：全站扫过一遍，36 处文字块的末行只剩不到三成宽度，
+   读起来就是「话说完了又硬拖出一行」。
+   标题与导语用 balance 把行数内的字均分；正文段落用 pretty，只管掉末行孤字，
+   不重排整段。两者都是浏览器原生排版，无 JS、无额外 DOM。
+   ========================================================================= */
+h1,h2,h3,h4{text-wrap:balance}
+/* 短块（导语、功能卡、联系卡、动态摘要）一律 balance：实测米重页 46 张功能卡，
+   pretty 只把末行过短的从 14 张降到 14 张里剩 14，balance 降到 1 张。
+   长正文仍用 pretty——balance 在超过六行的块上浏览器本来就不生效。 */
+.lead,.sh h2,.func,.func b,.nw-body p,.cc-body p,.cc-row p{text-wrap:balance}
+p,.body-p{text-wrap:pretty}
