@@ -901,19 +901,20 @@ section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 
 @media(max-width:1180px){.pcard-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:860px){.pcard-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.pcard-grid{grid-template-columns:1fr}}
-/* 卡片变小之后，压在图上的名称要相应收一档，否则四个字就占满一行 */
-.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body{padding:clamp(.8rem,1.4vw,1.1rem)}
-.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body h3{font-size:var(--step-0)}
-/* 英文副名在 305px 的卡上会折成两行、爬到图上盖住主体，收小并去掉字距。
-   颜色也要改：第252行 `.pcard:lang(zh) .pc-en` 的品牌蓝特异度压过了第378行的
-   白色，压在深色遮罩上一直是蓝字，小卡上几乎读不出来。 */
-.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-en{font-size:.82em;letter-spacing:0;line-height:1.25;
-  color:rgba(255,255,255,.75)}
-/* 遮罩原来只在最底部才不透明，而标题坐在遮罩块的顶端——两列大卡时正好压在
-   图片的深色部分上，看不出问题；收成四列后，挤出云、入库、智能检测这三张
-   浅底图的卡片标题直接消失在白底上。把遮罩的实心段一路提到文字区顶部。 */
-.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body{background:linear-gradient(to top,
-  rgba(7,29,43,.97) 0%,rgba(7,29,43,.95) 84%,rgba(7,29,43,0) 100%)}
+/* 名牌从图上挪下来：原来 .pc-body 是绝对定位压在图片下缘、靠深色渐变提可读性，
+   代价是产品被盖掉一截，而这一栏正是让人看产品的。改成图在上、名牌在下的两段式，
+   谁也不挡谁。悬停才弹出的那段说明与「了解详情」在这里一并收起——四列小卡上
+   它们只会把名字顶掉，详情本来就在产品页里。首页那一栏保持原样。 */
+.pcard-grid:not(.pcard-grid--home) .pcard--img{display:flex;flex-direction:column}
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-img{flex:none}
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body{position:static;flex:1;
+  background:var(--ink);padding:.85rem 1rem 1rem;gap:.2rem;justify-content:flex-start}
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body h3{font-size:var(--step-0);text-shadow:none}
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-en{font-size:.82em;letter-spacing:0;line-height:1.3;
+  color:rgba(255,255,255,.72)}
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-sum,
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body>p,
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body .arrow-link{display:none}
 
 /* ---- 产品卡（2026 改版）：大图 + 名称压左下 + 悬停出细节 ----
    参考沃思/INOEX：图片是主角，名字常显，说明按需出现。
