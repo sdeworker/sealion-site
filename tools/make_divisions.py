@@ -39,6 +39,29 @@ PROD_IMG = {
     "cloud-monitoring": "/assets/products2/cloud-monitoring.jpg",
 }
 
+# 事业部首页的栏目横幅。其它栏目页（关于海狮/海狮实力/产品应用/技术实力/
+# 售后服务/应用行业/产品手册/案例/动态/联系）都带 sec-banner，只有两个事业部
+# 首页从来没有，一进来就是白底文字。这里把它们补齐。
+# 副标题沿用全站惯例：中文页配英文，英文/俄文页配中文。
+BANNER = {
+    "pipe": {
+        "img": "/assets/2026/gravimetric/pipe-5layer-1.webp",
+        "w": 1600, "h": 1200,
+        "alt": {"zh": "管道挤出生产现场", "en": "Pipe extrusion workshop",
+                "ru": "Цех экструзии труб"},
+        "sub": {"zh": "Pipe Extrusion Division", "en": "管道挤出事业部",
+                "ru": "管道挤出事业部"},
+    },
+    "cable": {
+        "img": "/assets/2026/industry/cable-2.webp",
+        "w": 1600, "h": 935,
+        "alt": {"zh": "电线电缆护套与绝缘层", "en": "Cable sheathing and insulation",
+                "ru": "Оболочка и изоляция кабеля"},
+        "sub": {"zh": "Cable Extrusion Division", "en": "线缆挤出事业部",
+                "ru": "线缆挤出事业部"},
+    },
+}
+
 TEXT = {
     "pipe": {
         "zh": {
@@ -234,10 +257,16 @@ def build(div, lang):
         f'      <a class="ind-tag" href="{root}industries/{slug}.html"><i></i>{label}</a>'
         for slug, label in T["industries"])
 
-    body = f'''<section class="section prod-hero">
+    B = BANNER[div]
+
+    body = f'''<section class="sec-banner">
+  <img src="{B["img"]}" alt="{B["alt"][lang]}" width="{B["w"]}" height="{B["h"]}" fetchpriority="high">
+  <div class="sec-banner-in"><h1>{T["eyebrow"]}</h1><span class="sb-en" aria-hidden="true">{B["sub"][lang]}</span></div>
+</section>
+
+<section class="section prod-hero">
   <div class="wrap">
-    <span class="eyebrow">{T["eyebrow"]}</span>
-    <h1>{T["h1"]}</h1>
+    <h2>{T["h1"]}</h2>
     <p class="lead">{T["lead"]}</p>
   </div>
 </section>
