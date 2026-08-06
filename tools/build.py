@@ -250,8 +250,10 @@ def crumb_for(rel, lang, meta):
                   if "newsSection" in SITE["ui"] else {"zh": "海狮动态", "en": "News", "ru": "Новости"}[lang])
         label = meta.get("crumb") or _re.sub(r"\s*[—|]\s*.*$", "", meta.get("title", "")).strip()
     elif parts[0] in ("pipe", "cable") and parts[-1] == "index.html":
-        label = {"pipe": {"zh": "管道挤出事业部", "en": "Pipe Extrusion", "ru": "Экструзия труб"},
-                 "cable": {"zh": "线缆挤出事业部", "en": "Cable Extrusion", "ru": "Экструзия кабеля"}}[parts[0]][lang]
+        # 事业部首页不给面包屑：这里只会生成「首页 / 管道挤出事业部」，第二段
+        # 就是本页，H1 和导航高亮已经说了两遍，第三遍没有信息。栏目层的
+        # about/strength 等页同样不带面包屑，去掉才是一致的。
+        return ""
     elif parts[0] == "manual":
         parent = (f"{root}manual/", {"zh": "产品手册", "en": "Manual", "ru": "Руководство"}[lang])
         label = meta.get("crumb") or _re.sub(r"\s*[—|]\s*.*$", "", meta.get("title", "")).strip()
