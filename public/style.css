@@ -894,9 +894,26 @@ section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 
 
 /* ---------- 产品卡带图版 ---------- */
 /* 产品网格：3 列，规整对齐 */
-.pcard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,2vw,1.75rem)}
-@media(max-width:900px){.pcard-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.pcard-grid{grid-template-columns:1fr}}
+/* 事业部与行业页的产品网格：两列时每张卡 630×630，九张就是 3262px 高，
+   一屏只看得到一张半。对标沃思的四列小图，收到四列——卡片 310px 见方，
+   九张三行约 1000px，一屏基本看全。 */
+.pcard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,1.6vw,1.4rem)}
+@media(max-width:1180px){.pcard-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){.pcard-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pcard-grid{grid-template-columns:1fr}}
+/* 卡片变小之后，压在图上的名称要相应收一档，否则四个字就占满一行 */
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body{padding:clamp(.8rem,1.4vw,1.1rem)}
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body h3{font-size:var(--step-0)}
+/* 英文副名在 305px 的卡上会折成两行、爬到图上盖住主体，收小并去掉字距。
+   颜色也要改：第252行 `.pcard:lang(zh) .pc-en` 的品牌蓝特异度压过了第378行的
+   白色，压在深色遮罩上一直是蓝字，小卡上几乎读不出来。 */
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-en{font-size:.82em;letter-spacing:0;line-height:1.25;
+  color:rgba(255,255,255,.75)}
+/* 遮罩原来只在最底部才不透明，而标题坐在遮罩块的顶端——两列大卡时正好压在
+   图片的深色部分上，看不出问题；收成四列后，挤出云、入库、智能检测这三张
+   浅底图的卡片标题直接消失在白底上。把遮罩的实心段一路提到文字区顶部。 */
+.pcard-grid:not(.pcard-grid--home) .pcard--img .pc-body{background:linear-gradient(to top,
+  rgba(7,29,43,.97) 0%,rgba(7,29,43,.95) 84%,rgba(7,29,43,0) 100%)}
 
 /* ---- 产品卡（2026 改版）：大图 + 名称压左下 + 悬停出细节 ----
    参考沃思/INOEX：图片是主角，名字常显，说明按需出现。
@@ -909,7 +926,11 @@ section .pcard-grid--home .pcard--img .pc-img img{object-fit:contain;padding:3% 
 /* 背景色由生成器按图片自身采样后内联写入，此处不写死颜色 */
 .pcard--img .pc-img--fit img{object-fit:contain;padding:3% 3% 20%;background:transparent}
 .pcard--img:hover .pc-img img,.pcard--img:focus-within .pc-img img{transform:scale(1.06)}
-.pcard--img .pc-body{position:absolute;left:0;right:0;bottom:0;padding:clamp(1rem,2.2vw,1.5rem);color:#fff;background:linear-gradient(to top,rgba(7,29,43,.94) 0%,rgba(7,29,43,.80) 42%,rgba(7,29,43,0) 100%);display:flex;flex-direction:column;gap:.5rem;flex:none}
+/* z-index:2 是必需的：product.css 第186行给 .pc-img--fit img 加了 z-index:1
+   （为了压住它自己那层模糊背景 ::before），而 .pc-img 没有建立层叠上下文，
+   于是那张图直接盖到本来该在它上面的文字块上——挤出云、质量入库、智能检测
+   三张浅底图的卡片标题就是这么消失的。 */
+.pcard--img .pc-body{z-index:2;position:absolute;left:0;right:0;bottom:0;padding:clamp(1rem,2.2vw,1.5rem);color:#fff;background:linear-gradient(to top,rgba(7,29,43,.94) 0%,rgba(7,29,43,.80) 42%,rgba(7,29,43,0) 100%);display:flex;flex-direction:column;gap:.5rem;flex:none}
 .pcard--img .pc-body h3{color:#fff;font-size:var(--step-1);line-height:1.3;margin:0;text-shadow:0 1px 14px rgba(0,0,0,.4)}
 .pcard--img .pc-idx{color:rgba(255,255,255,.72)}
 .pcard--img .pc-line{background:rgba(255,255,255,.35)}
