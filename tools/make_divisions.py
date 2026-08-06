@@ -264,7 +264,7 @@ def build(div, lang):
   <div class="sec-banner-in"><h1>{T["eyebrow"]}</h1><span class="sb-en" aria-hidden="true">{B["sub"][lang]}</span></div>
 </section>
 
-<section class="section prod-hero">
+<section class="section prod-hero prod-hero--intro">
   <div class="wrap">
     <h2>{T["h1"]}</h2>
     <p class="lead">{T["lead"]}</p>

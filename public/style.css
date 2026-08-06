@@ -1487,3 +1487,9 @@ a.pcust:hover .pcust-name{color:var(--blue)}
 
 /* 案例视频未限宽，1024px 以下会撑破容器 */
 .case-v{max-width:100%;height:auto}
+
+/* 栏目导语：全幅横幅之下的一段引言。左对齐时它挂在版心左边、右边一大片空，
+   与上方通栏的横幅对不上；居中成栏才是一体的。产品页的 h1 型 hero 不适用。
+   放 style.css 而非 product.css：海狮实力页不加载 product.css。 */
+.prod-hero--intro{text-align:center}
+.prod-hero--intro .lead{margin-inline:auto}

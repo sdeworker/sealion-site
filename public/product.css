@@ -38,9 +38,22 @@
 
 /* 主要功能 */
 /* 功能卡片网格：此前只写了 margin，缺少列定义，导致卡片单列堆叠 */
-.func-grid{margin-top:1.8rem;display:grid;grid-template-columns:repeat(2,1fr);gap:0.9rem}
+.func-grid{margin-top:1.8rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+/* 三张或九张时排三列——两列会把最后一张孤零零丢在左边，右边留一个洞。
+   其余奇数张（7 张）让末张通栏，同样是为了不留洞。
+   必须锁在 961px 以上：:has() 的权重高过下面那条 760px 单列的媒体查询，
+   不圈起来的话手机上会被挤成三列。:has 不支持的旧浏览器退回两列，不会坏。 */
+@media(min-width:961px){
+  .func-grid:has(> .func:nth-child(3):last-child),
+  .func-grid:has(> .func:nth-child(9):last-child){grid-template-columns:repeat(3,1fr)}
+  .func-grid > .func:last-child:nth-child(odd){grid-column:1/-1}
+  .func-grid:has(> .func:nth-child(3):last-child) > .func:last-child,
+  .func-grid:has(> .func:nth-child(9):last-child) > .func:last-child{grid-column:auto}
+}
 @media(max-width:760px){.func-grid{grid-template-columns:1fr}}
-.func{background:var(--paper-2);border:1px solid var(--line);border-left:2px solid var(--signal);border-radius:var(--radius);padding:1rem 1.2rem;font-size:var(--step--1);line-height:1.6;color:var(--ink-70)}
+.func{background:var(--paper-2);border:1px solid var(--line);border-left:2px solid var(--signal);border-radius:var(--radius);padding:1.35rem 1.5rem;font-size:var(--step-0);line-height:1.65;color:var(--ink-70)}
+/* 小标题原先与正文同行同号，读起来是一整块灰字；提到卡片标题一档并单独成行。 */
+.func b{display:block;font-family:var(--display);font-size:var(--step-1);font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:.45rem}
 
 /* 技术参数表 */
 .spec{overflow-x:auto}
