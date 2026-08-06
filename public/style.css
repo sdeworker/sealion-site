@@ -1512,7 +1512,7 @@ a.pcust:hover .pcust-name{color:var(--blue)}
    放 style.css 而非 product.css：海狮实力页不加载 product.css。 */
 .prod-hero--intro{text-align:center}
 /* 标题与导语原本贴在一起（h2 底边＝导语顶边，间距 0），挤成一坨。 */
-.prod-hero--intro h2{margin-bottom:.75rem}
+.prod-hero--intro h2{margin-bottom:.75rem;font-size:var(--step-4)}
 /* 60ch 的导语常常排成「两行满＋一行三五个字」。放宽到 68ch 再交给 balance，
    同样的字数收成两行，且两行等长。 */
 .prod-hero--intro .lead{margin-inline:auto;max-width:min(68ch,100%)}
@@ -1527,5 +1527,10 @@ h1,h2,h3,h4{text-wrap:balance}
 /* 短块（导语、功能卡、联系卡、动态摘要）一律 balance：实测米重页 46 张功能卡，
    pretty 只把末行过短的从 14 张降到 14 张里剩 14，balance 降到 1 张。
    长正文仍用 pretty——balance 在超过六行的块上浏览器本来就不生效。 */
-.lead,.sh h2,.func,.func b,.nw-body p,.cc-body p,.cc-row p{text-wrap:balance}
+.sh h2,.func,.func b,.nw-body p,.cc-body p,.cc-row p{text-wrap:balance}
+.lead{text-wrap:balance}
+/* 唯一的例外：后面还跟着同栏正文段的导语。balance 会把它的行收窄一截，
+   右边缘就和下面几段对不上——关于海狮页第一段就是这么歪的。这种走 pretty，
+   宁可末行短一点，也要和下面几段共一条右边缘。 */
+p.lead:has(~ p){text-wrap:pretty}
 p,.body-p{text-wrap:pretty}
