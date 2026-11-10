@@ -1,0 +1,34 @@
+.intro-sec {
+  scroll-margin-top: var(--header-h, 136px);
+}
+
+.ab-copy .ab-values {
+  color: var(--blue-tx);
+  font-size: var(--step-5);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.ab-values-detail {
+  display: block;
+  margin-top: .65rem;
+  color: var(--ink);
+  font-size: var(--step-3);
+  font-weight: 600;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.ab-values-detail > span {
+  display: block;
+}
+
+.ab-values-detail strong {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .ab-copy .ab-values:lang(zh) {
+    font-size: var(--step-4);
+  }
+}
