@@ -1,4 +1,5 @@
-.intro-sec {
+.intro-sec,
+main:lang(ru) > section[id] {
   scroll-margin-top: var(--header-h, 136px);
 }
 
@@ -25,6 +26,14 @@
 
 .ab-values-detail strong {
   white-space: nowrap;
+}
+
+.timeline-sec:lang(ru) .tl-track {
+  padding-block: clamp(14rem, 16vw, 16rem);
+}
+
+.pcloud.is-paused:lang(ru)::after {
+  content: "Пауза · нажмите, чтобы продолжить";
 }
 
 @media (max-width: 480px) {
