@@ -10,7 +10,7 @@
   const toggle = controls.querySelector("[data-banner-toggle]");
   const status = banner.querySelector("[data-banner-status]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const slideInterval = 2000;
+  const slideInterval = 5000;
   let current = 0;
   let autoplay = !reduceMotion.matches;
   let timer;
