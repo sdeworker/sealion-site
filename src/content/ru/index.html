@@ -2,38 +2,81 @@
  "title": "Sealion Tech — измерение и управление для экструзии пластмасс",
  "description": "Sealion Tech (Гуанчжоу): системы гравиметрического контроля, дозирования суперконцентрата, ультразвукового измерения толщины и контроля качества для линий экструзии труб и кабеля.",
  "css": [
-  "product"
+  "product",
+  "home-banner"
  ],
  "js": [
-  "hero-video"
+  "home-banner"
  ],
  "type": "home"
 }
 ---
-<section class="hero">
-  <div class="hero-video" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="metadata"
-           poster="/assets/2026/video/company-intro-poster.webp">
-      <source src="/assets/2026/video/company-intro-bg.mp4" type="video/mp4">
-    </video>
-  </div>
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Гравиметрия · Ультразвук · Облачный мониторинг</span>
-        <h1>Миллиметровый контроль. Каждый метр измерен.</h1>
-        <p class="lead">Sealion создаёт системы измерения и управления для линий экструзии пластмасс — от взвешивания и дозирования до измерения толщины, контроля качества и передачи данных в облако, чтобы каждый метр продукции оставался в пределах допуска.</p>
-        <div class="hero-cta">
-          <a class="btn btn--primary" href="/ru/pipe/">Экструзия труб</a>
-          <a class="btn btn--onDark" href="/ru/cable/">Экструзия кабеля</a>
-        </div>
-        <button class="hero-play" type="button" data-hero-play aria-label="Смотреть фильм о компании">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-          <span>Фильм о компании</span>
-        </button>
-      </div>
+<section class="hero hero--installations">
+  <div class="home-banner" data-home-banner role="region" aria-label="Монтаж оборудования на производстве">
+    <figure class="home-banner__slide is-active" data-banner-slide>
+      <img src="/assets/home-banner/gravimetric-installation.webp"
+           srcset="/assets/home-banner/gravimetric-installation-960.webp 960w, /assets/home-banner/gravimetric-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1305" alt="Оборудование контроля массы погонного метра на производственной линии" fetchpriority="high" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">Монтаж на производстве</span>
+        <strong>Система контроля массы погонного метра</strong>
+      </figcaption>
+    </figure>
+    <figure class="home-banner__slide" data-banner-slide aria-hidden="true">
+      <img src="/assets/home-banner/ultrasonic-installation.webp"
+           srcset="/assets/home-banner/ultrasonic-installation-960.webp 960w, /assets/home-banner/ultrasonic-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1343" alt="Чёрная труба проходит через поточный ультразвуковой толщиномер" fetchpriority="low" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">Монтаж на производстве</span>
+        <strong>Ультразвуковое измерение толщины в линии</strong>
+      </figcaption>
+    </figure>
+    <figure class="home-banner__slide home-banner__slide--storage" data-banner-slide aria-hidden="true">
+      <img src="/assets/home-banner/quality-storage-installation.webp"
+           srcset="/assets/home-banner/quality-storage-installation-960.webp 960w, /assets/home-banner/quality-storage-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1150" alt="Оранжевые трубы и оборудование контроля качества в конце линии" fetchpriority="low" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">Монтаж на производстве</span>
+        <strong>Система входного контроля качества труб</strong>
+      </figcaption>
+    </figure>
+    <figure class="home-banner__slide home-banner__slide--mixing" data-banner-slide aria-hidden="true">
+      <img src="/assets/home-banner/multi-component-installation.webp"
+           srcset="/assets/home-banner/multi-component-installation-960.webp 960w, /assets/home-banner/multi-component-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1374" alt="Дозирующее и смесительное оборудование на площадках с жёлтыми ограждениями" fetchpriority="low" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">Монтаж на производстве</span>
+        <strong>Многокомпонентное дозирование и смешивание</strong>
+      </figcaption>
+    </figure>
+    <div class="home-banner__controls" data-banner-controls role="group" aria-label="Управление показом фотографий" hidden>
+      <button type="button" data-banner-toggle aria-label="Приостановить показ" data-pause-label="Приостановить показ" data-resume-label="Продолжить показ">
+        <svg class="home-banner__pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5h3v14H8zm5 0h3v14h-3z"/></svg>
+        <svg class="home-banner__resume" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="m9 5 11 7-11 7z"/></svg>
+      </button>
+      <button type="button" data-banner-prev aria-label="Предыдущая фотография" title="Предыдущая фотография">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 6-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="Фотография 1 · Система контроля массы погонного метра" aria-current="true"></button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="Фотография 2 · Ультразвуковое измерение толщины в линии"></button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="Фотография 3 · Система входного контроля качества труб"></button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="Фотография 4 · Многокомпонентное дозирование и смешивание"></button>
+      <button type="button" data-banner-next aria-label="Следующая фотография" title="Следующая фотография">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
-    <div class="hero-lines" aria-hidden="true"></div>
-  </section>
+    <p class="sr-only" data-banner-status aria-live="polite" aria-atomic="true"></p>
+  </div>
+  <div class="hero-copy sr-only">
+    <span class="eyebrow">Гравиметрия · Ультразвук · Облачный мониторинг</span>
+    <h1>Миллиметровый контроль. Каждый метр измерен.</h1>
+    <p class="lead">Sealion создаёт системы измерения и управления для линий экструзии пластмасс — от взвешивания и дозирования до измерения толщины, контроля качества и передачи данных в облако, чтобы каждый метр продукции оставался в пределах допуска.</p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="/ru/pipe/" tabindex="-1">Экструзия труб</a>
+      <a class="btn btn--onDark" href="/ru/cable/" tabindex="-1">Экструзия кабеля</a>
+    </div>
+  </div>
+</section>
 
   <section data-reveal class="section stats" id="stats" aria-label="Четыре проверяемых показателя">
     <div class="wrap"><div class="stats-row">

@@ -1,26 +1,73 @@
 {
  "title": "海狮科技 — 塑料挤出智能测控系统",
  "description": "广州海狮软件科技：为塑料挤出产线打造测量与控制系统——米重色母称重、超声波在线测厚、失重喂料、多组分混料、一出二控制、表面缺陷检测、云端远程监控。",
+ "css": [
+  "home-banner"
+ ],
  "js": [
   "lightbox",
   "back-to-top",
-  "hero-video"
+  "home-banner"
  ],
  "backToTop": true,
  "type": "home"
 }
 ---
-<section class="hero">
-  <div class="hero-figure hero-figure--full">
-    <video autoplay muted loop playsinline preload="metadata"
-           poster="/assets/2026/video/company-intro-poster.webp">
-      <source src="/assets/2026/video/company-intro-bg.mp4" type="video/mp4">
-    </video>
-    <div class="hero-lines" aria-hidden="true"></div>
-    <button class="hero-play" type="button" data-hero-play aria-label="播放企业形象片">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-          <span>播放企业形象片</span>
-        </button>
+<section class="hero hero--installations">
+  <div class="home-banner" data-home-banner role="region" aria-label="产线安装现场">
+    <figure class="home-banner__slide is-active" data-banner-slide>
+      <img src="/assets/home-banner/gravimetric-installation.webp"
+           srcset="/assets/home-banner/gravimetric-installation-960.webp 960w, /assets/home-banner/gravimetric-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1305" alt="产线上成排安装的米重控制设备" fetchpriority="high" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">安装现场</span>
+        <strong>米重控制系统</strong>
+      </figcaption>
+    </figure>
+    <figure class="home-banner__slide" data-banner-slide aria-hidden="true">
+      <img src="/assets/home-banner/ultrasonic-installation.webp"
+           srcset="/assets/home-banner/ultrasonic-installation-960.webp 960w, /assets/home-banner/ultrasonic-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1343" alt="黑色管材穿过生产线上的超声波测厚装置" fetchpriority="low" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">安装现场</span>
+        <strong>超声波在线测厚系统</strong>
+      </figcaption>
+    </figure>
+    <figure class="home-banner__slide home-banner__slide--storage" data-banner-slide aria-hidden="true">
+      <img src="/assets/home-banner/quality-storage-installation.webp"
+           srcset="/assets/home-banner/quality-storage-installation-960.webp 960w, /assets/home-banner/quality-storage-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1150" alt="后端生产线上的橙色管材和检测入库设备" fetchpriority="low" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">安装现场</span>
+        <strong>管材质量安全入库系统</strong>
+      </figcaption>
+    </figure>
+    <figure class="home-banner__slide home-banner__slide--mixing" data-banner-slide aria-hidden="true">
+      <img src="/assets/home-banner/multi-component-installation.webp"
+           srcset="/assets/home-banner/multi-component-installation-960.webp 960w, /assets/home-banner/multi-component-installation.webp 2048w" sizes="100vw"
+           width="2048" height="1374" alt="安装在黄色护栏平台上的多组分配混料设备" fetchpriority="low" decoding="async">
+      <figcaption class="home-banner__caption">
+        <span class="home-banner__eyebrow">安装现场</span>
+        <strong>多组分配混料系统</strong>
+      </figcaption>
+    </figure>
+    <div class="home-banner__controls" data-banner-controls role="group" aria-label="轮播控制" hidden>
+      <button type="button" data-banner-toggle aria-label="暂停轮播" data-pause-label="暂停轮播" data-resume-label="继续轮播">
+        <svg class="home-banner__pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5h3v14H8zm5 0h3v14h-3z"/></svg>
+        <svg class="home-banner__resume" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="m9 5 11 7-11 7z"/></svg>
+      </button>
+      <button type="button" data-banner-prev aria-label="上一张" title="上一张">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 6-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="第 1 张 · 米重控制系统" aria-current="true"></button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="第 2 张 · 超声波在线测厚系统"></button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="第 3 张 · 管材质量安全入库系统"></button>
+      <button class="home-banner__dot" type="button" data-banner-dot aria-label="第 4 张 · 多组分配混料系统"></button>
+      <button type="button" data-banner-next aria-label="下一张" title="下一张">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <p class="sr-only" data-banner-status aria-live="polite" aria-atomic="true"></p>
   </div>
   <div class="hero-copy sr-only">
     <span class="eyebrow">称重控制 · 超声波测厚 · 云端监控</span>
@@ -239,5 +286,3 @@
       </div>
     </div>
   </section>
-
-    
