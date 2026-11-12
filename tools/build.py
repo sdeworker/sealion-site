@@ -182,7 +182,7 @@ def json_ld(lang, rel, meta):
     if rel != "index.html":
         SEC = {"products": {"zh": "产品中心", "en": "Products", "ru": "Продукция"},
                "industries": {"zh": "应用行业", "en": "Industries", "ru": "Отрасли"},
-               "news": {"zh": "海狮动态", "en": "News", "ru": "Новости"},
+               "news": {"zh": "新闻动态", "en": "News", "ru": "Новости"},
                "manual": {"zh": "产品手册", "en": "Manuals", "ru": "Руководства"}}
         parts = [p for p in rel[:-5].split("/") if p and p != "index"]
         items = [{"@type": "ListItem", "position": 1, "name": t(SITE["ui"]["home"], lang),
@@ -247,7 +247,7 @@ def crumb_for(rel, lang, meta):
                 f'{mid}<span>{H.escape(label)}</span></nav>')
     if parts[0] == "news" and len(parts) > 1:
         parent = (f"{root}news.html", t(SITE["ui"]["newsSection"], lang)
-                  if "newsSection" in SITE["ui"] else {"zh": "海狮动态", "en": "News", "ru": "Новости"}[lang])
+                  if "newsSection" in SITE["ui"] else {"zh": "新闻动态", "en": "News", "ru": "Новости"}[lang])
         label = meta.get("crumb") or _re.sub(r"\s*[—|]\s*.*$", "", meta.get("title", "")).strip()
     elif parts[0] in ("pipe", "cable") and parts[-1] == "index.html":
         # 事业部首页不给面包屑：这里只会生成「首页 / 管道挤出事业部」，第二段
@@ -277,9 +277,9 @@ def news_updown(rel, lang):
     idx = next((i for i, (h, _) in enumerate(items) if h.rstrip("/") == here.rstrip("/")), None)
     if idx is None:
         return ""
-    L = {"zh": ("上一篇", "下一篇", "全部动态", "看看我们的产品", "管道挤出", "线缆挤出"),
-         "en": ("Previous", "Next", "All news", "Browse our systems", "Pipe extrusion", "Cable extrusion"),
-         "ru": ("Предыдущая", "Следующая", "Все новости", "Наши системы", "Экструзия труб", "Экструзия кабеля")}[lang]
+    L = {"zh": ("上一篇", "下一篇", "新闻动态", "看看我们的产品", "管道挤出", "线缆挤出"),
+         "en": ("Previous", "Next", "News", "Browse our systems", "Pipe extrusion", "Cable extrusion"),
+         "ru": ("Предыдущая", "Следующая", "Новости", "Наши системы", "Экструзия труб", "Экструзия кабеля")}[lang]
     out = ['<nav class="artnav wrap" aria-label="' + H.escape(L[2]) + '">']
     if idx > 0:
         h, ti = items[idx - 1]
@@ -453,7 +453,7 @@ def render_footer(lang, avail):
     # 前三栏按导航顺序，第四栏固定放动态——页脚要能通到新闻，
     # 而海狮实力与案例展示留在主导航里，避免五六栏挤成小字。
     _kid = [x for x in SITE["nav"] if x.get("children")]
-    _news = [x for x in _kid if x["label"]["zh"] == "海狮动态"]
+    _news = [x for x in _kid if x["href"] == "/news.html"]
     for n in _kid[:3] + _news:
         kids = [c for c in n.get("children", []) if exists_for(c["href"], lang, avail)][:6]
         if not kids:

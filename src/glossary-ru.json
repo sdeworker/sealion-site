@@ -92,7 +92,7 @@
     { "zh": "案例展示", "en": "Cases / References", "ru": "Реализованные проекты", "conf": "high" },
     { "zh": "关于海狮", "en": "About Sealion", "ru": "О компании", "conf": "high" },
     { "zh": "海狮实力", "en": "Our capability", "ru": "Наши возможности", "conf": "med" },
-    { "zh": "海狮动态", "en": "News", "ru": "Новости", "conf": "high" },
+    { "zh": "新闻动态", "en": "News", "ru": "Новости", "conf": "high" },
     { "zh": "联系我们", "en": "Contact", "ru": "Контакты", "conf": "high" },
     { "zh": "产品手册", "en": "Manuals", "ru": "Руководства", "conf": "high" },
     { "zh": "服务支持", "en": "Service & support", "ru": "Сервис и поддержка", "conf": "high" },
